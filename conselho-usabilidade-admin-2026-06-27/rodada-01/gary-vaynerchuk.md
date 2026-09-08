@@ -1,0 +1,7 @@
+# Gary Vaynerchuk — Rodada 1: Diagnóstico
+
+Escuta, esse problema não é técnico. É de empatia. Quem construiu esse sistema pensou do ponto de vista de quem já sabe onde tudo está. Isso é o erro clássico de todo produto — o criador nunca esquece o que já sabe. Mas o admin que entra no sistema pela primeira vez não sabe de nada. Ele olha para aquela tela e o que vê é um dashboard cheio de dados e gráficos. Onde está o controle? Onde está a configuração? Invisível. A causa raiz é ausência de empatia com o usuário novo. Você construiu para você, não para ele.
+
+A maior oportunidade sendo perdida é a primeira impressão. No SaaS, os primeiros 10 minutos do admin determinam se ele vai champion o produto internamente ou se vai ser mais um sistema que "ninguém usa direito." Se o admin não consegue configurar o workspace sem perguntar para o suporte onde fica o painel de apps, você acabou de criar uma dependência desnecessária. E dependência de suporte é o oposto de adoção orgânica. A oportunidade é transformar aquele admin em um campeão autônomo — alguém que entende e controla o sistema e evangeliza para o time.
+
+O jogo é assim: coloque uma entrada visual óbvia para o admin. Não precisa de redesign completo. Um link "Administração" na sidebar, com ícone de engrenagem, separado do menu do app, visível apenas para admins. Ponto. Nada de dropdown escondido atrás de ícone de usuário que parece perfil pessoal. Usuário não vai procurar o que não sabe que existe. Você precisa revelar, não esconder. Paciência com o usuário, proatividade no produto.

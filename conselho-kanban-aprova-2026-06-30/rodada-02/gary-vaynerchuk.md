@@ -1,0 +1,7 @@
+# Gary Vaynerchuk — Rodada 2: Embate
+
+Escuta, eu tô 100% com a solução convergente. Tags de substatus + ações no card, sem inventar coluna nova. É isso. O que eu mudaria? Eu simplificaria ainda mais. Não precisa de hashtag, não precisa de substatus invisível, não precisa de robô se mudando sozinho. Uma tag clara no card, três botões óbvios e o time já sabe o que fazer. O jogo é assim: clareza primeiro, automação depois. Não adianta terceirizar a decisão humana se ainda não sabe o que aprovar.
+
+Onde eu discordo? Do Sandro querendo transição automática e do Grant querendo substatus invisível ao Kanban. Automatizar agora é colocar o carro na frente dos bois: você ainda não mediu onde o roteiro trava, onde a edição demora, então não sabe o que automatizar. E substatus invisível é a mesma coisa que não ter substatus — se eu preciso abrir o card pra saber o que tá em aprovação, você perdeu. O card tem que gritar o status. Quanto ao Marcel, a ideia das hashtags é boa, mas tá overcomplicado. Menos nomenclatura, mais ação. O usuário não quer ler um dicionário, ele quer aprovar ou pedir revisão.
+
+O risco de fazer do jeito dos outros é o mesmo de toda empresa que tenta escalar antes de ter clareza: você constrói um processo lindo que ninguém entende e o time volta a perguntar no Slack. Ou pior: o card se move sozinho, a pessoa errada aprova a coisa errada e você descobre só no ar. Paciência. Começa com tag visível, botão óbvio e medição. Aí, depois de 30 dias vendo onde o tempo morre, você automatiza o que faz sentido.

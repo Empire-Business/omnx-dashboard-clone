@@ -1,0 +1,5 @@
+Reconheço Marcel como o único que entendeu a parte que ninguém quer olhar: estrutura sem dono vira decoração de escritório. Governança, KPIs com responsável e critério claro são o que transforma app em ativo — não o contrário. Faz sentido para você? Mas discordo de quem acha que dá para ficar refinando funil enquanto o negócio sangra no caderno digital dos outros.
+
+Não abro mão da soberania. O Notion morre hoje como fonte de verdade. Os 948 criativos viram histórico imutável no app próprio, e daí para frente tudo nasce, vive e decide dentro do nosso sistema. Sem cordão umbilical, sem sincronização, sem depender de ferramenta que não controlamos. Sistema vence força de vontade — e sistema que depende de terceiro não é sistema, é aluguel.
+
+Se preciso ceder, aceito um funil enxuto de decisão — não o museu binário que Russell desenhou, mas dois ou três portões claros com gatilho automático e dono definido. Velocidade com critério, decisão com estrutura. Mas não cedo no corte: migração completa, sincronização desligada, app nativo no ar. Pense grande, execute maior.

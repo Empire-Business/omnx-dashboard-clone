@@ -1,0 +1,637 @@
+﻿# Transcricao bruta - Reuniao App Criativos (OMNX)
+# Data: 28/08/2026 13h36 BRT | Duracao: 47min21s | Sala Meet: vfu-zxkf-gfn
+# Gerada por Whisper (modelo medium, pt-BR) a partir do audio da gravacao.
+# ATENCAO: texto nao revisado. Ver secao 10 do REUNIAO-CRIATIVOS-2026-08-28.md para os erros conhecidos.
+
+[00:00:15 -> 00:00:18] Fala, Manim, beleza?
+[00:00:18 -> 00:00:20] Fala, mano, boa tarde.
+[00:00:20 -> 00:00:21] Boa tarde.
+[00:00:21 -> 00:00:23] Bem, passa aí com as suas dúvidas.
+[00:00:23 -> 00:00:24] É que eu te passo, senhor.
+[00:00:24 -> 00:00:26] Também ali no...
+[00:00:26 -> 00:00:27] Essa parte do...
+[00:00:27 -> 00:00:29] Do dash ali nunca mexi no...
+[00:00:29 -> 00:00:31] Na parte criativo não, beleza?
+[00:00:31 -> 00:00:32] A gente vai vindo aqui.
+[00:00:32 -> 00:00:33] Eu perguntei pra minha equipa aí.
+[00:00:33 -> 00:00:34] Já que eu tô aqui em berço também.
+[00:00:34 -> 00:00:36] A gente vai te ajudando.
+[00:00:36 -> 00:00:37] Beleza.
+[00:00:37 -> 00:00:38] É...
+[00:00:38 -> 00:00:40] Acho que melhor você compartilhar...
+[00:00:40 -> 00:00:41] Quer dizer, deixa...
+[00:00:41 -> 00:00:43] Acho que eu posso compartilhar aqui, é melhor.
+[00:00:43 -> 00:00:44] Peraí.
+[00:00:44 -> 00:00:50] É porque, assim, é muita funcionalidade, né, e acabou que eu fiquei meio perdido.
+[00:00:50 -> 00:00:51] Não, não, tranquilo.
+[00:00:51 -> 00:00:52] Peraí...
+[00:00:52 -> 00:01:10] Foi você que criou mesmo, ou você já pegou o que estava fazendo?
+[00:01:10 -> 00:01:15] Então, quem começou, começou assim, desde a base ali, foi o Bruno, né?
+[00:01:15 -> 00:01:16] Aham.
+[00:01:16 -> 00:01:21] Ali, tipo, deixou robusto assim, igual atualmente, aí eu pego eventualmente
+[00:01:21 -> 00:01:26] quando o Bruno, o Andreas manda alguma dúvida, né, tipo, algumas questões de
+[00:01:26 -> 00:01:31] de dados ali, tráfego pago também, aí só ocorre, mas ele mesmo que deixou essa forma
+[00:01:31 -> 00:01:32] mais robusta, entendeu?
+[00:01:32 -> 00:01:33] Ah, entendi.
+[00:01:33 -> 00:01:38] Ah, então o Bruno, o Gusella, ele sabe, já tem um conhecimento.
+[00:01:38 -> 00:01:43] É, ele sabe, mas pra te ajudar aqui com a coisa na dublina, a gente já entende.
+[00:01:43 -> 00:01:44] Tá.
+[00:01:44 -> 00:01:45] Tá, beleza.
+[00:01:45 -> 00:01:47] Então, começar aqui a tela inicial, né?
+[00:01:47 -> 00:01:50] Esse App Store seria o que exatamente?
+[00:01:50 -> 00:01:56] Então, aí no caso é, como essa plataforma ela também vai ter outros clientes, tipo
+[00:01:56 -> 00:02:02] que ele vai usar, pra ele ter uma opção, se ele for de mim, de poder habilitar ou desabilitar
+[00:02:02 -> 00:02:03] algumas abas aí.
+[00:02:03 -> 00:02:08] Ah, isso que vai estar dentro do Hi-Tik-Ti-A então, né?
+[00:02:08 -> 00:02:09] Isso.
+[00:02:09 -> 00:02:10] Ah, entendi.
+[00:02:10 -> 00:02:11] Tá.
+[00:02:11 -> 00:02:12] Beleza.
+[00:02:12 -> 00:02:16] Então vamos direto pra parte que eu vou usar, né, porque eu não preciso explicar
+[00:02:16 -> 00:02:21] tudo, já que eu só vou usar uma parte só, é essa aqui dos criativos, né?
+[00:02:21 -> 00:02:22] Sim.
+[00:02:22 -> 00:02:23] Tá.
+[00:02:23 -> 00:02:24] Criativos.
+[00:02:24 -> 00:02:25] Beleza.
+[00:02:25 -> 00:02:26] Criativos.
+[00:02:26 -> 00:02:30] Aí tem essa primeira parte aqui que é o dashboard.
+[00:02:30 -> 00:02:39] Tá, meta semanal, aí estipulou uma meta aqui, validados por semana.
+[00:02:39 -> 00:02:42] Esse validados por semana são os que foram aprovados?
+[00:02:42 -> 00:02:48] Eu creio que sim, isso eu estou confirmando aqui.
+[00:02:48 -> 00:02:49] Tá.
+[00:02:49 -> 00:02:54] Qualquer coisa você vai anotando as dúvidas aí, depois que você se tira ali.
+[00:02:54 -> 00:02:57] Não, beleza, pode prosseguir aí.
+[00:02:57 -> 00:02:58] Beleza.
+[00:02:58 -> 00:03:06] esse lead time não sei exatamente o que que é, não entendi. Essas três aqui, na verdade,
+[00:03:06 -> 00:03:15] cycle time, yield rate, provavelmente eu não vou usar, né? Mas não sei, né? Tá aqui.
+[00:03:15 -> 00:03:28] Porque assim, você falando que agora isso aqui vai ser usado para outras empresas,
+[00:03:28 -> 00:03:40] outras pessoas? A questão, tipo assim, por exemplo, nossos dados aqui da Empyre vai continuar aqui, não vai ter conflito, entendeu? Sim, sim.
+[00:03:40 -> 00:03:48] Mas aí, por exemplo, não pode ser útil pra você, mas pode ser útil pra... É, pra outras pessoas, aham.
+[00:03:48 -> 00:04:00] Esse WIP que também seria tipo o total de criativos? Não, o total que tá aqui. São mil.
+[00:04:00 -> 00:04:02] Esse weeper, não sei o que seria.
+[00:04:14 -> 00:04:16] Vamos lá, primeira pergunta lá, né?
+[00:04:19 -> 00:04:23] Validados por sua irmã, realmente são aprovados mesmo.
+[00:04:26 -> 00:04:30] São os testes decididos como aprovados.
+[00:04:32 -> 00:04:36] Aí, aquelas três caras de desenho lá, que cada um se ganha com uma coisa,
+[00:04:36 -> 00:04:46] lead time. Quanto tempo do zero até o veredito. Aí o cycle time, quanto tempo, só a fase
+[00:04:46 -> 00:04:54] de teste né, média dos dias entre iniciar o teste e bater o martelo. E o último é
+[00:04:54 -> 00:04:58] de tudo que eu testei, quanto prestou né, achei aproveitamento ali. De quantos testes
+[00:04:58 -> 00:05:04] foram feitos e o percentual que foi aprovado dentro dele.
+[00:05:04 -> 00:05:11] Esse lead sai então é do momento que sobe o criativo até ele ser validado?
+[00:05:11 -> 00:05:16] É, média é a esteira por completo, né, ideia, roteiro, gravação, edição, aprovação,
+[00:05:16 -> 00:05:21] do binômetro, vou dar desse dia, o tempo total ali no caso, né.
+[00:05:21 -> 00:05:26] Entendi, então tipo, ah, eu faço um roteiro de um criativo, daí assim que eu faço
+[00:05:26 -> 00:05:32] eu subo aqui na plataforma e aí esse roteiro vai ter que ser gravado, né, depois editado.
+[00:05:32 -> 00:05:36] Isso, até o momento da aprovação é a reprovação dele.
+[00:05:36 -> 00:05:37] Entendi.
+[00:05:37 -> 00:05:42] E aí, se sai pelo time, quanto tempo ele rodou de fato no tráfego?
+[00:05:42 -> 00:05:43] Isso.
+[00:05:43 -> 00:05:47] Aí, isso aí seria o time de tráfego que teria que colocar essa informação aqui.
+[00:05:47 -> 00:05:52] Ou, não sei, realmente eu não sou muito esse mundo aí de tráfego essa questão.
+[00:05:52 -> 00:05:54] Eu não sei onde é que vocês têm essa remétrica, né?
+[00:05:54 -> 00:05:56] Se vem de alguma plataforma acho que da meta, né?
+[00:05:56 -> 00:05:58] É, vem do gerenciador de anúncios.
+[00:05:58 -> 00:05:59] Aí, no caso, eu não tenho acesso, né?
+[00:05:59 -> 00:06:03] Seria que seria o time de tráfego porque eles têm esse controle.
+[00:06:03 -> 00:06:07] Então acho que tem um problema, você deve ter um webhook aqui já implementado,
+[00:06:07 -> 00:06:10] que deve puxar direto já, entendeu?
+[00:06:10 -> 00:06:11] Entendi.
+[00:06:11 -> 00:06:16] É, porque assim, pelo que eu entendi, essa plataforma, ela seria gerenciada pela pessoa
+[00:06:16 -> 00:06:21] que tá fazendo os criativos e pelo time de tráfego também, porque eles precisam
+[00:06:21 -> 00:06:24] colocar algumas informações aqui, que só eles têm acesso.
+[00:06:24 -> 00:06:29] É, sim, tanto que tem um rapaz de tráfego, não sei se tu conhece ele, ele entra
+[00:06:29 -> 00:06:32] em contato com ele direto, quando às vezes tem dados que estão incongruentes.
+[00:06:32 -> 00:06:36] Aham, é o Bruno? Eu acho que é, acho que é.
+[00:06:36 -> 00:06:37] Aham.
+[00:06:37 -> 00:06:40] Aí a gente encontra com ele uma vez pra fazer essa ponte, né?
+[00:06:40 -> 00:06:44] Porque às vezes bate lá, não bate aqui. Às vezes bate aqui, não bate lá.
+[00:06:44 -> 00:06:46] Às vezes tá diferente algum dado ali.
+[00:06:46 -> 00:06:50] Provavelmente ele já deve usar. Então, certamente, se por exemplo,
+[00:06:50 -> 00:06:53] tiver algo lá que não tá aqui, ele vai ter que ter contato comigo.
+[00:06:53 -> 00:06:56] Tipo, vai falar só pra você, você passa pra mim e a gente vê isso.
+[00:06:56 -> 00:07:01] É. E provavelmente vai ter que ter uma explicação aí pra ele também,
+[00:07:01 -> 00:07:04] para ele também para entender como é que funciona a plataforma.
+[00:07:04 -> 00:07:08] Certamente, como é que vocês chamam esse controle aqui?
+[00:07:08 -> 00:07:10] Não tinha ou já tinha algo?
+[00:07:10 -> 00:07:11] Não tinha.
+[00:07:11 -> 00:07:16] Assim, o controle que a gente tem é pelo Notion, mas não tem muita informação
+[00:07:16 -> 00:07:19] assim, não tão detalhada, sabe?
+[00:07:19 -> 00:07:20] Entendi.
+[00:07:20 -> 00:07:21] Então certamente...
+[00:07:21 -> 00:07:22] O que é isso?
+[00:07:22 -> 00:07:25] Certamente é que pegou os dados no Notion, mas que ele filmou em gráfico, na grande
+[00:07:25 -> 00:07:26] parte aqui.
+[00:07:26 -> 00:07:27] É.
+[00:07:27 -> 00:07:33] Deve ter vinculado ali no Notion, provavelmente, e aí puxou os dados.
+[00:07:33 -> 00:07:40] Agora é que o WIP, né, é Work in Progress, é o trabalho-rendamento, basicamente, né?
+[00:07:40 -> 00:07:44] É o estoque, os cativos começaram e não foram terminados ainda.
+[00:07:44 -> 00:07:47] O truque já entrou, né, e não chegou ao fim.
+[00:07:47 -> 00:07:50] Mas o que define que ele não chegou ao fim?
+[00:07:50 -> 00:07:53] Vamos ver aqui.
+[00:07:53 -> 00:07:59] Porque se ele puxou do Notion, provavelmente são os que não estão marcados como...
+[00:07:59 -> 00:08:02] Fica aprovado e reprovado, será que é isso?
+[00:08:02 -> 00:08:11] Porque tem que ver qual que é a relação dos status, porque no Notion tem vários status no Notion.
+[00:08:11 -> 00:08:14] Então por exemplo, tem postado que vê...
+[00:08:14 -> 00:08:18] Vou até te mostrar aqui só pra você ter uma ideia.
+[00:08:18 -> 00:08:22] Aqui tá vendo essa página aqui?
+[00:08:22 -> 00:08:24] Aí tem aqui status concluído, tá vendo?
+[00:08:24 -> 00:08:31] Eu não sei se ele puxou desse status concluído e colocou como...
+[00:08:31 -> 00:08:37] como aprovado né é como aprovado porque tem alguns que não tão com esse status
+[00:08:37 -> 00:08:48] pera aí vou tirar o filtro para você ver melhor tá concluído assim aqui ó
+[00:08:48 -> 00:08:55] por exemplo não iniciado então assim tem alguns status eu não sei se é
+[00:08:55 -> 00:08:59] isso né tem isso aqui revisar edição por exemplo eu não sei se ele puxou esse
+[00:08:59 -> 00:09:04] status concluído né então tudo que não tá concluído tá em andamento não
+[00:09:04 -> 00:09:09] Não sei, só supondo. Mas aqui tá, total discretivos, mil.
+[00:09:09 -> 00:09:16] É, porque aí no caso se for tirar o mil pro 900 e pouco que tem, vai dar só 24 aí, né?
+[00:09:16 -> 00:09:20] É, vai dar o número que não tá concluído, né?
+[00:09:20 -> 00:09:28] Eu não sei se é isso, de fato, teria que verificar qual que é o status que eles querem estar pegando.
+[00:09:28 -> 00:09:32] Deixa eu confirmar, no caso você quer saber o que define todas as questais de Wimpy, né?
+[00:09:32 -> 00:09:33] Isso, é.
+[00:09:33 -> 00:09:35] É, mas cadê a volta que eu não tô até lá, lá?
+[00:09:35 -> 00:09:37] É, tá, peraí.
+[00:09:37 -> 00:09:39] Porque aqui tá constando que tem...
+[00:09:39 -> 00:09:42] 3 mil...
+[00:09:42 -> 00:09:44] 3 mil...
+[00:09:44 -> 00:09:46] 3 mil criativos, né?
+[00:09:46 -> 00:09:48] E aí a pessoa tá constando 900 e pouco.
+[00:09:48 -> 00:09:50] É, o total aqui tá 1.935
+[00:09:50 -> 00:09:52] que são do Notion e 15
+[00:09:52 -> 00:09:54] que são da plataforma, parece.
+[00:09:54 -> 00:09:56] Criativos.
+[00:09:56 -> 00:09:58] Deixa eu confirmar isso aqui também?
+[00:09:58 -> 00:10:00] Que é bom que eu já pego o meu aí, já.
+[00:10:00 -> 00:10:05] Entendeu? Porque é só pra gente entender
+[00:10:05 -> 00:10:11] entender assim, esses mil criativos, tá, 935 são do Notion, beleza, e aí esses
+[00:10:11 -> 00:10:21] criativos em andamento são os que não estão marcados como concluídos, né, pra
+[00:10:21 -> 00:10:27] a gente ter essa ideia. Assim, pra mim isso não tem muita
+[00:10:27 -> 00:10:37] relevância na análise da métrica, mas de repente pra outras pessoas que forem
+[00:10:37 -> 00:10:46] eu vou fazer já mandei aqui já também já fiz essa coisa se bug já tem mais alguma
+[00:10:46 -> 00:10:53] nessa parte da XBOT tem mais alguma parte que você chegou a ver é rapidinho só pra
+[00:10:53 -> 00:10:59] só uma dúvida aí as outras pessoas né que forem ter acesso a essa plataforma outras
+[00:10:59 -> 00:11:05] empresas é também vai vincular o Notion ou não ou vai ser tipo só eles vão subir
+[00:11:05 -> 00:11:10] aqui direto na essa plataforma é ele vai subir direto nosso tá com Notion porque
+[00:11:10 -> 00:11:14] Fazer essa transferência de lá pra cá é um pouco complicado, assim, diretão.
+[00:11:14 -> 00:11:15] Sim, sim.
+[00:11:15 -> 00:11:16] Aí puxou de lá.
+[00:11:16 -> 00:11:19] Eu não sei se eles já estão usando, tipo, eu não sei também, eles já estão botando
+[00:11:19 -> 00:11:20] por aqui direto.
+[00:11:20 -> 00:11:26] É, porque tem aqui 15 nativos, eu não sei se alguém colocou alguma coisa aqui,
+[00:11:26 -> 00:11:27] né?
+[00:11:27 -> 00:11:28] É, porque é como...
+[00:11:28 -> 00:11:31] É, por exemplo, igual a Cami, que antigamente ali fazia as tarefas, as demandas dos
+[00:11:31 -> 00:11:34] clientes pelo Nojo, né?
+[00:11:34 -> 00:11:39] Aí foi emigrado pra Cami, aí tá meio que nessa incogruência, porque tem gente
+[00:11:39 -> 00:11:44] que faz na câmara, que faz no luxo. Aí fica nessa questão, entendeu? Não sei se estão
+[00:11:44 -> 00:11:48] mesclando os dois ou se estão fazendo totalmente direto por aqui. Que é simplesmente a ideia
+[00:11:48 -> 00:11:52] é usar só aqui, entendeu? Para ter noção mesmo.
+[00:11:52 -> 00:12:00] É, eu, assim, eu entendo que a gente tem vários anúncios lá no luxo, mas a maioria
+[00:12:00 -> 00:12:05] não está sendo usado, né? Então, não sei se é interessante vincular o luxo
+[00:12:05 -> 00:12:09] mesmo. Porque tem esse problema, a gente não sabe o que ele está relacionando
+[00:12:09 -> 00:12:14] nos status, qual status significa o que nessa plataforma, entendeu?
+[00:12:14 -> 00:12:21] Acho que essa é a questão, tipo, enfim, depois a gente descobre.
+[00:12:21 -> 00:12:24] Tá, ok, deu resposta aqui, vamos lá.
+[00:12:24 -> 00:12:30] Ó, o que que o app considera o EP hoje?
+[00:12:30 -> 00:12:33] A regra geralmente está contra tudo que não está em escalar nem em arquivado.
+[00:12:33 -> 00:12:38] Só esses dois status são tratados como fim da linha, todo o resto é considerado
+[00:12:38 -> 00:12:39] trabalho em andamento.
+[00:12:39 -> 00:12:42] Ah, então não iniciado em andamento.
+[00:12:42 -> 00:12:43] Isso.
+[00:12:43 -> 00:12:50] aí eu toquei ideia, roteiro, produzir, revisão à lista, provado, pronto, em testes, testada, escalada, tudo é o Wimpy mesmo.
+[00:12:50 -> 00:12:52] É só o que não tá o quê?
+[00:12:52 -> 00:12:56] Só o que não tá em escalar e nem em arquivado.
+[00:12:56 -> 00:12:58] Ah tá, entendi.
+[00:12:58 -> 00:13:04] Aí por exemplo, postado já não entra nessa lista, concluído também já não entra,
+[00:13:04 -> 00:13:08] agora quando tá também sem estátua, acho que esse número pode inflar um pouco,
+[00:13:08 -> 00:13:12] também não tá entrando, ou seja, quem, se não tiver como estátua algum criativo,
+[00:13:12 -> 00:13:15] também não vai entrar aqui.
+[00:13:15 -> 00:13:23] E nem postado no Trial, eu não sei o que significa isso, mas também não entra aqui no Dashboard.
+[00:13:23 -> 00:13:25] Tá. Beleza.
+[00:13:25 -> 00:13:32] Ah, esse aqui é funil de produção, mas trash, fluxo de ideia até escalar pausar.
+[00:13:32 -> 00:13:37] Esse aqui, cara, é... eu não entendi nada.
+[00:13:37 -> 00:13:42] Tu viu? Porque aqui tem... só mostra tipo 8, 4, 1, né?
+[00:13:42 -> 00:13:44] Aí fica 13.
+[00:13:44 -> 00:13:50] O que que seria esses 13, né? Será que é os 15, é os nativos ali, será?
+[00:13:50 -> 00:13:52] O que, é onde?
+[00:13:52 -> 00:13:56] Ah, vamos lá. Funei de produção umas testes, né? Porque, por exemplo, tem 15 nativos, né?
+[00:13:56 -> 00:13:58] Aham, isso.
+[00:13:58 -> 00:14:02] Será que isso não seria essa da ideia, acho que não tá conseguindo...
+[00:14:02 -> 00:14:06] Tá dentro do status aqui, dentro do dash já, direto?
+[00:14:06 -> 00:14:12] Cara, não sei. Eu realmente não entendi isso aqui.
+[00:14:12 -> 00:14:17] Esse fluxo de ideia. Eu não sei o que seria isso aqui.
+[00:14:17 -> 00:14:31] porque só tem 13 realmente tem aqui ó 8 mais 4 mais um 13 eu já fiz aqui a questão
+[00:14:31 -> 00:14:38] questionamento aqui antes de tu avançar pra baixo vem caba ver se alguma coisa ali
+[00:14:38 -> 00:14:45] pode explicar pra gente já antes ou aperta nesse card aí vai que abre alguma coisa
+[00:14:45 -> 00:14:46] Não, na B não.
+[00:14:46 -> 00:14:47] Não tem clique, né?
+[00:14:47 -> 00:14:48] Dele então cabando do lado ali.
+[00:14:48 -> 00:14:49] Cabando...
+[00:14:49 -> 00:14:50] Opa, peraí.
+[00:14:50 -> 00:14:52] Lado esquerdo ali, lado esquerdo no caso.
+[00:14:52 -> 00:14:53] Ah, tá.
+[00:14:53 -> 00:14:58] É, não tem nada aí também, né?
+[00:14:58 -> 00:15:00] É.
+[00:15:00 -> 00:15:01] Nem ideia, nem nada.
+[00:15:01 -> 00:15:03] Tem nada.
+[00:15:03 -> 00:15:04] Então...
+[00:15:04 -> 00:15:06] O edjente tá sem esses números?
+[00:15:06 -> 00:15:07] Biblioteca...
+[00:15:07 -> 00:15:10] Aí aqui a biblioteca aparece, né, o...
+[00:15:10 -> 00:15:11] Sim.
+[00:15:11 -> 00:15:12] É...
+[00:15:12 -> 00:15:14] Testado, pode botar...
+[00:15:14 -> 00:15:20] Então, aí aqui, peraí.
+[00:15:20 -> 00:15:29] o que que eu já tô percebendo que é não tem o eu não consigo opa eu não
+[00:15:29 -> 00:15:38] consigo arrastar pro lado sem o o touch do do do teclado tipo como assim
+[00:15:38 -> 00:15:46] o caso da biblioteca pra dashboard é isso aqui no biblioteca tá vendo
+[00:15:46 -> 00:15:51] tipo tem mais coisa aqui pra direita só que eu não consigo ver eu
+[00:15:51 -> 00:15:53] Eu consigo arrastar.
+[00:15:53 -> 00:15:54] Não tem um scroll, né?
+[00:15:54 -> 00:15:57] É, teria que ter aqui embaixo, tá ligado?
+[00:15:57 -> 00:16:01] Eu só consigo se eu habilitar aqui o touch aqui do...
+[00:16:01 -> 00:16:02] Touchpad, né?
+[00:16:02 -> 00:16:03] Isso, é, exatamente.
+[00:16:03 -> 00:16:06] E aí eu consigo, tipo, tá vendo?
+[00:16:06 -> 00:16:07] Uhum.
+[00:16:07 -> 00:16:08] Fazer, mas só assim, tipo,
+[00:16:08 -> 00:16:14] teria que ter um scroll ali pra eu conseguir ver o que que tem mais pro lado.
+[00:16:14 -> 00:16:16] Deixa que aquele, aquela outra questão,
+[00:16:16 -> 00:16:20] falam que os três que estão aparecendo ali é do Funil.
+[00:16:20 -> 00:16:24] Vem diretamente do Funil.
+[00:16:24 -> 00:16:26] Qual a funil?
+[00:16:26 -> 00:16:27] Deixa eu ver aqui.
+[00:16:27 -> 00:16:37] É biblioteca, né?
+[00:16:37 -> 00:16:38] Essa página que você está, né?
+[00:16:38 -> 00:16:39] Essa aqui, é.
+[00:16:39 -> 00:16:40] Essa é a última que você está.
+[00:16:40 -> 00:16:52] Tá, aí tem nome, beleza, ID, nome, status, beleza, formato, objetivo, beleza, disponível.
+[00:16:52 -> 00:16:57] Tá, foi o mandato que subiu, beleza.
+[00:16:57 -> 00:16:59] Testado, esse pode marcar.
+[00:16:59 -> 00:17:04] Início do teste, eu coloco início do teste, beleza, aprovação, aí bota se
+[00:17:04 -> 00:17:05] foi aprovado.
+[00:17:05 -> 00:17:33] Link. Deixa eu ver aqui. Vídeos. Vai para a pasta de vídeos. Ações, companhia,
+[00:17:33 -> 00:17:52] objetivo, perfil. Tá. Aqui eu acho que tá o quê, tá?
+[00:17:52 -> 00:18:01] Só mais a questão do screw aí mesmo.
+[00:18:01 -> 00:18:15] É. Esse aprovação tem o status concluído e tem aprovação. Aprovação seria aprovação
+[00:18:15 -> 00:18:17] pelo time de tráfego, se foi validado.
+[00:18:17 -> 00:18:30] O estátio concluído? Eu entendo que foi concluído desde o roteiro até a edição.
+[00:18:30 -> 00:18:33] Beleza, está concluído e está pronto. Agora eles vão testar.
+[00:18:33 -> 00:18:36] E aí a aprovação seria depois do teste.
+[00:18:36 -> 00:18:51] Para mim seria isso, né? Tenho certeza.
+[00:18:51 -> 00:18:54] Eu imagino que seja isso.
+[00:18:54 -> 00:18:56] Só para tirar aqui uma dúvida mesmo.
+[00:18:56 -> 00:19:13] a história não confirmado. Levança aí a gente. Tá aí voltando lá no dashboard é isso aqui a
+[00:19:13 -> 00:19:20] gente não não sabe né? É, apontou aqui que veio do funil entendeu? É mas tem que ver tipo qual
+[00:19:20 -> 00:19:25] funil eu não entendi a utilidade disso aqui entendeu? Porque assim eu acho que se não tem
+[00:19:25 -> 00:19:33] se não tem relevância, utilidade para mim não tem porquê estar aqui entendeu? Porque eu
+[00:19:33 -> 00:19:38] Mas assim, se tem muita informação, acaba que dificulta as vezes.
+[00:19:38 -> 00:19:40] Claro que tem coisa que é importante, né?
+[00:19:40 -> 00:19:42] Tipo, ah, isso aqui pode deixar.
+[00:19:42 -> 00:19:44] Tipo, ah, cycle time e tal.
+[00:19:44 -> 00:19:48] Mas isso aqui até eu entendi o que que é, né?
+[00:19:48 -> 00:19:52] Porque eu não entendi realmente se isso é relevante ou não.
+[00:19:52 -> 00:19:54] Eu não sei se faz sentido até aqui.
+[00:19:54 -> 00:19:57] Tá vendo ali que perto de mim tem um botãozinho?
+[00:19:57 -> 00:19:59] Tenta ver se ali vai para outra ala.
+[00:19:59 -> 00:20:03] Ali em cima, no superior direito ali.
+[00:20:03 -> 00:20:06] Aqui é de mim?
+[00:20:06 -> 00:20:09] Calma aí, isso é o tudo, né?
+[00:20:09 -> 00:20:11] Volta pro Zeps aí, volta pro Zeps.
+[00:20:13 -> 00:20:15] Aí vai lá no Criativo de Nu
+[00:20:15 -> 00:20:17] Aí, tá vendo? Superior direito.
+[00:20:17 -> 00:20:20] Superior direito...
+[00:20:20 -> 00:20:22] Onde?
+[00:20:22 -> 00:20:24] Vai pro lado agora, pro lado direito, direito.
+[00:20:24 -> 00:20:27] Ah, Criativos aqui?
+[00:20:27 -> 00:20:29] Não, ali, mais pro canto lá.
+[00:20:29 -> 00:20:31] Ah, tá Criativo.
+[00:20:31 -> 00:20:33] Desceu e aparece como uma subiaba.
+[00:20:33 -> 00:20:35] Um Criativo, um Criativo.
+[00:20:35 -> 00:20:54] navegação entre as abas. Acho que poderia ir para outro lugar, mas não é isso não. Acho que é uma questão de investimento e faturamento, né, acho que é...
+[00:20:54 -> 00:21:10] Ah, esse aqui é o gráfico dos creativos validados nos últimos 15 dias, beleza. Esse aqui, creativos validados por semana, em alerta.
+[00:21:10 -> 00:21:25] Cpl médio por formato, custo por leads. Isso aqui também seria o pessoal do tráfego para preencher.
+[00:21:25 -> 00:21:29] É, eu acho que aí vai ter que fazer, tipo, meio que um trabalho em um, realmente, conjunto, né?
+[00:21:29 -> 00:21:32] É, com certeza.
+[00:21:32 -> 00:21:34] Que eles que vão testar os creativos, né?
+[00:21:34 -> 00:21:36] Não tem como ter acesso a isso com esse controle.
+[00:21:36 -> 00:21:41] Beleza, aí esse é o dashboard.
+[00:21:41 -> 00:21:43] Aí esse ranking aqui,
+[00:21:43 -> 00:21:46] ranking de creativos,
+[00:21:46 -> 00:21:48] 10 creativos, 53 semi-carrier,
+[00:21:48 -> 00:21:50] cultos, creativo...
+[00:21:50 -> 00:21:54] Aqui, eu imagino
+[00:21:54 -> 00:21:56] que ele tenha puxado do gerenciador de anúncio.
+[00:21:56 -> 00:21:59] Da meta.
+[00:21:59 -> 00:22:03] Esses dados. É.
+[00:22:03 -> 00:22:09] Aí é que no caso aqui é mais o pessoal do tráfego, né, que é ver porque...
+[00:22:09 -> 00:22:13] Questões de idade, né?
+[00:22:13 -> 00:22:19] É, que é o investimento, o faturamento, as métricas de MQL, CPL...
+[00:22:19 -> 00:22:27] Aí é que testes, seriam testes criativos, né?
+[00:22:27 -> 00:22:29] Aí, aquela relação lá, né?
+[00:22:29 -> 00:22:30] Oi?
+[00:22:30 -> 00:22:33] Aquele que falou, questão da aprovação do start.
+[00:22:33 -> 00:22:34] Isso, é?
+[00:22:34 -> 00:22:37] Isso, no Canban.
+[00:22:37 -> 00:22:55] Alguém olhou para a peça pronta e liberou para subir. Quem faz? Quem tem a parte do tráfico, gestor aqui no caso, seria normalmente, mas basicamente quem olhou ali o criativo e liberou para apostar, acho que seja isso.
+[00:22:55 -> 00:23:03] Ah, então não é validação, então? É o momento que subiu para o tráfico, então?
+[00:23:03 -> 00:23:08] Isso, isso. Acho que é a aprovação de apostagem. Eu não sei como é que funciona depois de sair para o tráfico.
+[00:23:08 -> 00:23:14] Que assim, o status concluído é quando tá pronto. Vamos dizer assim, o vídeo tá pronto.
+[00:23:14 -> 00:23:20] Daí, aprovação é quando o pessoal do tráfego pegou esse vídeo e já botou pra rodar no tráfego.
+[00:23:20 -> 00:23:24] Ah, então é isso mesmo. Então basicamente, não sei se a aprovação tá certa, não é?
+[00:23:24 -> 00:23:26] Tipo, pode ser esse outro nome.
+[00:23:26 -> 00:23:28] É, exatamente.
+[00:23:28 -> 00:23:33] Tipo, sei lá, publicado. Algo do tipo assim, né?
+[00:23:33 -> 00:23:36] Acho que a aprovação, aprovação é quando fica muito parecido, né?
+[00:23:36 -> 00:23:42] É, porque fica parecendo que ele foi validado, né? Tipo, parece que deu certo, entendeu?
+[00:23:42 -> 00:23:46] Aí testado, realmente, aquilo mesmo, já foi testado, já foi...
+[00:23:46 -> 00:23:58] É, o testado, o início do teste, aí eles vão preencher lá, né? Quando crescer, subiram.
+[00:23:58 -> 00:24:14] Beleza. Aí essa gente já tinha dado uma galera, né?
+[00:24:14 -> 00:24:16] Acho que a gente chegou no ponto do cambam, né?
+[00:24:16 -> 00:24:19] É, o cambam.
+[00:24:19 -> 00:24:23] Aí essa parte aqui era para o quê? Aparecer os...
+[00:24:23 -> 00:24:28] Os criativos, né? Tipo, ele tá por etapa.
+[00:24:28 -> 00:24:34] Mas e que tal, tipo assim, a ideia vem da meta, é isso?
+[00:24:34 -> 00:24:37] Por onde que vocês criam a ideia do Criativo?
+[00:24:37 -> 00:24:44] Não, então, a gente usa o Notion pra ter esse controle pro pessoal no tráfego pegar os criativos
+[00:24:44 -> 00:24:49] e aí eles pegam e sobem no gerenciador lá de anúncios pra rodar no tráfego.
+[00:24:49 -> 00:24:55] Então eu acho que exatamente aqui deve tá com rubus, porque ele já deveria aparecer, né?
+[00:24:55 -> 00:24:58] É, eu não sei, porque ali diz que tem 15 nativos, né? 15 criativos nativos.
+[00:24:58 -> 00:25:03] Para mim, eu tinha entendido que subiram 15 criativos aqui.
+[00:25:05 -> 00:25:07] Mas eu não sei, porque eu não estou vendo.
+[00:25:07 -> 00:25:10] Não, vou dar uma olhada nisso, porque tinha que aparecer pelo menos alguma coisa aí.
+[00:25:10 -> 00:25:13] E aí para eu subir um criativo, como é que faz?
+[00:25:45 -> 00:25:48] Eu fiz aqui a pergunta aqui já, para Iar, mas se for Iar.
+[00:26:14 -> 00:26:17] É, você vai fazer o seguinte,
+[00:26:17 -> 00:26:39] para gastar no app do biblioteca. Aí tem a opção de novo criativo. Aí ele pede para subir no
+[00:26:39 -> 00:26:48] meta com o mesmo código que usou aí, entendeu? O mesmo código? É. Vocês estão a partir de
+[00:26:48 -> 00:27:01] criar um código. Eu não sei se ele gera no final ou algo do tipo assim. Ah, entendi. É porque tem um ID, né?
+[00:27:01 -> 00:27:06] aqui. Isso, ele pede para gerar o mesmo código tanto aí quanto lá, porque...
+[00:27:06 -> 00:27:12] Nossa, foi esse D aqui. É copiar o código, né?
+[00:27:12 -> 00:27:22] Ah, enfim, obviamente, o sistema gera o código automático.
+[00:27:22 -> 00:27:24] O código nasce aqui antes de chegar no meta.
+[00:27:24 -> 00:27:27] Se subir primeiro, cada chave depois, quase sempre o código não entra no nome, né?
+[00:27:27 -> 00:27:31] Até isso fica off. Aí tu copia o código, aí depois disso,
+[00:27:31 -> 00:27:41] subir no meta com o mesmo código, os dois lugares, aí fica só.
+[00:27:41 -> 00:27:49] Por aí tá por ordem de entrada, né? Porque eu tô falando que é 23, do 10, do 25, né?
+[00:27:49 -> 00:28:00] É, acho que tá por ordem crescente aí. Aqui ó, é o 2, 3, 4, 5.
+[00:28:00 -> 00:28:03] É, acho que é assim mesmo.
+[00:28:03 -> 00:28:22] Aí lá embaixo tem aqui, ó. É, 10... É, não tem todos os criativos do No Show aqui, tá faltando.
+[00:28:22 -> 00:28:24] Os estáticos, tipo...
+[00:28:24 -> 00:28:33] Eu vou dar uma olhada se tá faltando, se deu algum problema no meu VLOOK, porque ele pula de algum número pra outra realmente do 1 ao 1.090 mesmo.
+[00:28:33 -> 00:28:37] Se pula algum número é porque a gente tá pegando um logo, né?
+[00:28:37 -> 00:28:39] Eu tô pegando tipo, acho que não tá nem pulando um número, né?
+[00:28:39 -> 00:29:04] Eu tô pegando todos os CRs aqui mesmo.
+[00:29:04 -> 00:29:09] Vou dar uma olhada aqui pra ver se tá faltando aí mesmo.
+[00:29:09 -> 00:29:15] É porque eu não sei, eu vou te mostrar aqui no Notion.
+[00:29:15 -> 00:29:19] Aqui também tá em ordem crescente, eu acho.
+[00:29:19 -> 00:29:25] Aqui, tá vendo? Tem até o CR1256.
+[00:29:26 -> 00:29:28] São vários estáticos aqui.
+[00:29:28 -> 00:29:31] Não tô entrando ainda.
+[00:29:31 -> 00:29:33] É, não apareceu na plataforma.
+[00:29:33 -> 00:29:36] Não, vou dar uma olhada nisso.
+[00:29:36 -> 00:29:41] Aí, tá vendo? Aí tem os objetivos diferentes.
+[00:29:41 -> 00:29:43] Ó, código da audiência, aplicação.
+[00:29:43 -> 00:29:56] Bem que estranho, porque eu tava mostrando o total de mil criativos, só que tem mais de mil aí.
+[00:29:56 -> 00:29:58] É, aí também, pô, tá...
+[00:29:58 -> 00:30:01] Essa filtragem tem que ser um pouco mais fácil, né?
+[00:30:01 -> 00:30:04] porque não dá pra filtrar ali, tipo, subir dos mais recente, dos mais antigos,
+[00:30:04 -> 00:30:06] aí só fica dos mais antigos, mais recente.
+[00:30:06 -> 00:30:07] Exatamente.
+[00:30:07 -> 00:30:08] Exatamente.
+[00:30:08 -> 00:30:16] Até pra localizar, né?
+[00:30:16 -> 00:30:19] Não sei se ali tem um campo de busca.
+[00:30:19 -> 00:30:20] Cadê?
+[00:30:20 -> 00:30:21] Tô trabalhando pelo tatelo.
+[00:30:21 -> 00:30:22] Não sei se ali tem um campo de busca.
+[00:30:22 -> 00:30:25] Aí eu poderia facilitar.
+[00:30:25 -> 00:30:29] Poderia filtrar também pelo modelo, né, por exemplo, rios, estáticos.
+[00:30:29 -> 00:30:31] Aí eu também já tenho objetivo também.
+[00:30:31 -> 00:30:42] Tem só como colocar o por nome, pelo ID.
+[00:30:42 -> 00:30:44] Mas não tem como filtrar por objetivo.
+[00:30:44 -> 00:30:47] Aperta ali em sincronizar, ver se vai acontecer alguma coisa.
+[00:30:48 -> 00:30:51] Acho que nem dá. Apertei. Foi.
+[00:30:51 -> 00:30:55] Pô, parou em 1000. Aí deu problema, então é isso mesmo.
+[00:30:55 -> 00:30:57] Vou coercer esse buldozinho aí.
+[00:30:57 -> 00:31:01] Tem um errozinho em cima.
+[00:31:03 -> 00:31:06] Tá, daí então atingiu e já ficou faltando testes, né?
+[00:31:06 -> 00:31:08] É.
+[00:31:08 -> 00:31:45] O que foi que apareceu? É o testes? Já apertou em testes ainda?
+[00:31:45 -> 00:31:51] Tá, aí está a questão de a gente... Os testes sabe como é que funciona, mais ou menos? Como é que era?
+[00:31:51 -> 00:31:59] Não, então a gente não tem isso no show. Eu nem sei exatamente como que seria isso aqui.
+[00:31:59 -> 00:33:11] Vamos lá. A aba funciona. Primeiro, afila. Mostra os criativos em dois grupos, os prontos e os em testes.
+[00:33:11 -> 00:33:15] O teste já tá rodando e pronto, espera a gente subir.
+[00:33:15 -> 00:33:19] Aí tem um botão escrito aí, iniciar o teste.
+[00:33:19 -> 00:33:23] Acho que é só quando surge um teste novo.
+[00:33:23 -> 00:33:28] Quando você quer um criativo ali na parte de biblioteca.
+[00:33:28 -> 00:33:29] Acho que aí aparece já.
+[00:33:29 -> 00:33:30] É.
+[00:33:30 -> 00:33:31] Deixa eu...
+[00:33:31 -> 00:33:32] Vamos testar.
+[00:33:32 -> 00:33:33] Cadastrar aqui.
+[00:33:33 -> 00:33:36] Pera aí.
+[00:33:36 -> 00:33:37] Só pra testar.
+[00:33:37 -> 00:33:58] Por exemplo, essa parte aqui de campanha, é que tem campanha e objetivo, né?
+[00:33:58 -> 00:34:05] Eu não sei como que ele puxou lá do Notion, mas assim...
+[00:34:05 -> 00:34:10] Eu percebi que o objetivo lá é o que está em campanha aqui, não é isso?
+[00:34:10 -> 00:34:15] Então, eu não sei, porque o que seria o ideal seria eu conseguir filtrar por campanha,
+[00:34:15 -> 00:34:21] então aqui teria que ter a opção pra eu selecionar a campanha.
+[00:34:21 -> 00:34:24] A campanha, por exemplo, aqui no Notion, vou te mostrar.
+[00:34:24 -> 00:34:29] Seria o objetivo, então aqui o objetivo, código da audiência,
+[00:34:29 -> 00:34:35] audiência, aplicação, aí tem que ir BPO, máfia russa, isso aqui são as campanhas,
+[00:34:35 -> 00:34:43] tá como objetivo aqui. E aí isso aqui o ideal seria que eu conseguisse filtrar, então
+[00:34:43 -> 00:34:48] aqui em campanha teria que ter as opções, código da audiência, aplicação e tal,
+[00:34:48 -> 00:34:52] e aí eles ficam marcados com essa tag, cada criativo fica marcado com a tag da
+[00:34:52 -> 00:34:59] campanha. E aí esse objetivo realmente não precisaria preencher, porque já vai estar
+[00:34:59 -> 00:35:07] na campanha é já vai estar vinculado a rede social tá pode botar ou não mas
+[00:35:07 -> 00:35:11] nada disso obrigatório pelo que eu entendi acho que ele é só um nome
+[00:35:11 -> 00:35:21] é a mesma do que tem ali uma exclamação, não é uma exclamação não né, tem um pontinho ali né, que meio que indica que é a mesma
+[00:35:21 -> 00:35:28] aí aqui MVP status, isso aqui seria o que?
+[00:35:28 -> 00:35:34] tá, eu colocaria então
+[00:35:34 -> 00:35:38] então é que tu tá mostrando a tela do Dash né?
+[00:35:38 -> 00:35:47] Aqui, MVP status, aí tem textão de aprovado e reprovado, aí aqui no caso não selecionaria
+[00:35:47 -> 00:35:53] nada ainda, digamos que eu acabei de fazer o roteiro, vou cadastrar aqui na plataforma
+[00:35:53 -> 00:35:58] para o pessoal do tráfico, porra, aqui não vou botar nada então, nesse primeiro
+[00:35:58 -> 00:35:59] momento.
+[00:35:59 -> 00:36:03] MVP, tipo, eu uso, tipo assim, vendo aqui de fora, não entendendo muito bem como é que
+[00:36:03 -> 00:36:05] funciona essa questão de tráfico, de criativo, né?
+[00:36:05 -> 00:36:08] Não estou tão por dentro assim.
+[00:36:08 -> 00:36:10] Essa parte realmente é necessária?
+[00:36:10 -> 00:36:13] Vocês costumam utilizar? Porque MVP é basicamente aquele primeiro esboço, né?
+[00:36:13 -> 00:36:15] Cara, eu não.
+[00:36:15 -> 00:36:19] Assim, na verdade, a maioria disso aqui eu não uso, mas como não vou ser só eu que vou usar,
+[00:36:19 -> 00:36:22] não sei se isso pode ser interessante para outras pessoas.
+[00:36:22 -> 00:36:25] Por exemplo, como eu falei, do objetivo pra mim não é relevante,
+[00:36:25 -> 00:36:28] porque já vai estar a campanha aqui, né?
+[00:36:28 -> 00:36:34] a campanha tinha que saber qual que é o objetivo né? Exato, exatamente. perfil também não sei se é tão interessante
+[00:36:34 -> 00:36:42] rede social tá beleza pode deixar estágio do final também não acho interessante pra mim mas pode deixar aí né
+[00:36:42 -> 00:36:50] enfim, contanto que não seja obrigatório tá ok é tipo de criativo esse aqui é legal mas aí
+[00:36:50 -> 00:36:57] tirar esse copy aqui tirar esse Hulk e CTA que acho que não tem nada a ver pra mim seria o tipo de criativo seria o formato
+[00:36:57 -> 00:37:00] Ah, mas já tá aqui o formato, entendeu?
+[00:37:00 -> 00:37:02] Ah, já tem um xilônimo.
+[00:37:02 -> 00:37:04] Ficou um bigo, né?
+[00:37:04 -> 00:37:06] É, acho que não faz sentido estar isso aqui.
+[00:37:06 -> 00:37:10] Já que tem formato, entendeu?
+[00:37:10 -> 00:37:12] Porque às vezes fica muita informação, entendeu?
+[00:37:12 -> 00:37:14] Essa reunião aqui dá pra pegar a gravação, dá?
+[00:37:14 -> 00:37:15] Dá, dá.
+[00:37:15 -> 00:37:16] Ah, então fechou.
+[00:37:16 -> 00:37:19] Às vezes fica muita informação,
+[00:37:19 -> 00:37:21] e aí mais atrapalha do que ajuda.
+[00:37:21 -> 00:37:22] Também acaba confundindo, né?
+[00:37:22 -> 00:37:24] Às vezes a pessoa pode achar que tem que preencher só em tudo.
+[00:37:24 -> 00:37:26] Pois é, entendeu?
+[00:37:26 -> 00:37:29] Por exemplo, eu tomei um pouco um susto quando vi tanta
+[00:37:29 -> 00:37:37] tanta opção de coisa pra preencher, entendeu? E a maioria eu não acho tão relevante,
+[00:37:37 -> 00:37:44] mas beleza. É esse MVP status também, não sei. Não entendi exatamente se é pra preencher
+[00:37:44 -> 00:37:58] isso agora ou depois, porque eu vou cadastrando agora. Aí aqui a copy, né? Acho que pode
+[00:37:58 -> 00:38:01] deixar essa que seria o que a cópia teria que ver também que cópia é a cópia
+[00:38:01 -> 00:38:09] da legenda do criativo porque tem quando você quando eles vão veicular os
+[00:38:09 -> 00:38:12] anúncios tem opção lá de você colocar a descrição do criativo que é uma
+[00:38:12 -> 00:38:17] legenda é uma legenda que fica ali em cima do anúncio tem a imagem e em
+[00:38:17 -> 00:38:22] cima tem uma legenda no anúncio aí eu não sei se essa cópia seria isso
+[00:38:22 -> 00:38:24] tipo a descrição, né?
+[00:38:24 -> 00:38:26] Eu acho que aí tá mais como...
+[00:38:26 -> 00:38:28] Ou seria o texto do...
+[00:38:28 -> 00:38:29] Ou seria o roteiro, entendeu?
+[00:38:29 -> 00:38:30] É, eu acho que é o roteiro, não.
+[00:38:30 -> 00:38:33] Acho que é tipo o dentro da postagem mesmo.
+[00:38:33 -> 00:38:34] Entendi.
+[00:38:34 -> 00:38:36] Aí colocaria o roteiro aqui.
+[00:38:36 -> 00:38:38] Eu também colocaria, tipo, a legenda.
+[00:38:38 -> 00:38:41] Tipo, pra ter essa parte legenda.
+[00:38:41 -> 00:38:43] É, pode ser interessante colocar.
+[00:38:43 -> 00:38:49] Esse Hulk aqui também não acho relevante.
+[00:38:49 -> 00:38:51] E essa CTA também não acho relevante.
+[00:38:51 -> 00:38:54] Acho que teria que ter legenda do anúncio.
+[00:38:54 -> 00:39:01] porque aí a pessoa coloca o texto que vai em cima daquele anúncio, entendeu?
+[00:39:01 -> 00:39:05] É, observações também, não sei, seria interessante.
+[00:39:05 -> 00:39:09] Quer dizer, pode deixar observações, eu acho, né?
+[00:39:09 -> 00:39:12] É, aí tem os links, pasta de vídeos.
+[00:39:12 -> 00:39:14] Assete final, assete bruto, tá?
+[00:39:14 -> 00:39:19] Aí aqui seria o link do bruto e aqui do final, né, do já finalizado.
+[00:39:19 -> 00:39:24] Aí, por exemplo, se o vídeo já tá editado, estaria aqui o link do vídeo editado.
+[00:39:24 -> 00:39:25] Né?
+[00:39:25 -> 00:39:27] Sim.
+[00:39:27 -> 00:39:28] Acho que é isso, tá?
+[00:39:28 -> 00:39:29] É...
+[00:39:29 -> 00:39:31] Aí bota Criar, Criativo?
+[00:39:31 -> 00:39:32] Criativo não é Bulgaria, né?
+[00:39:32 -> 00:39:34] Ah, foi criado.
+[00:39:34 -> 00:39:35] Criativo criado.
+[00:39:35 -> 00:39:36] Aqui, tá, achou.
+[00:39:36 -> 00:39:37] Apareceu em primeiro aí.
+[00:39:37 -> 00:39:44] Ele foi com um ID, com um nome diferente aqui, tá?
+[00:39:44 -> 00:39:47] Provavelmente porque foi criado aqui, né?
+[00:39:47 -> 00:39:48] Sim.
+[00:39:48 -> 00:39:51] É, porque os nativos, né?
+[00:39:51 -> 00:39:52] É.
+[00:39:52 -> 00:39:53] Aí tá aqui.
+[00:39:53 -> 00:39:54] AN0017.
+[00:39:54 -> 00:39:56] Então esse é o 17º criado aqui.
+[00:39:56 -> 00:40:05] criado aqui é aí status ideia formato agora acho que ele vai aparecer no
+[00:40:05 -> 00:40:12] cambão lá é tá aqui ideia aí eu posso mover
+[00:40:12 -> 00:40:22] acontece a perta aí nada nada eu posso só mover tipo pra roteiro
+[00:40:22 -> 00:40:31] produzindo revisão eu um teste vezes sim lá por um teste
+[00:40:31 -> 00:40:45] que tu consegue, o problema é que é complicado de arrastar ele, pra mim é bom de ter que arrastar de um em um pelo visto
+[00:40:45 -> 00:40:59] é, pera aí, em teste, aí vê se aparece aqui no teste?
+[00:40:59 -> 00:41:04] é, vê se aparece aí, é não
+[00:41:04 -> 00:41:05] não
+[00:41:05 -> 00:41:11] eu vou ver isso, porque quem não tá aparecendo lá também, pegar aqui a textura se não sair, o reunião vai ajudar bastante também
+[00:41:11 -> 00:41:20] tá, pera aí deixa eu saber um negócio aqui
+[00:41:20 -> 00:41:23] Esse ideia é realmente que eu tô tentando entender o que que é.
+[00:41:23 -> 00:41:30] Eu acho que é aquela parte inicial que a pessoa pega e, tipo, meio que vê pra depois
+[00:41:30 -> 00:41:33] começar a partir de produção, entendeu?
+[00:41:33 -> 00:41:35] Ideia, ações, editar.
+[00:41:35 -> 00:41:41] Mas aqui nem tem, tipo, essa opção, nem aparece.
+[00:41:41 -> 00:41:43] Vamos mudar o status por aí, né?
+[00:41:43 -> 00:41:47] É, não tem como mudar o status, tipo, ele já vai direto pra ideia.
+[00:41:47 -> 00:41:48] Entendi.
+[00:41:48 -> 00:41:50] Quer dizer, eu só posso mudar ali no cambão, acho, né?
+[00:41:50 -> 00:41:52] É, só isso mesmo, só no cambão, pelo que eu percebi aqui.
+[00:41:52 -> 00:41:54] Se mudar para roteiro, produzindo, vai ficar lá.
+[00:41:54 -> 00:41:56] Mas aí, tipo, roteiro...
+[00:41:56 -> 00:42:03] Porque assim, pra mim, a partir do momento que eu subo o Criativo,
+[00:42:03 -> 00:42:05] tipo, ele tá pronto.
+[00:42:05 -> 00:42:07] Ele já não sai... Porque assim, eu entendo que,
+[00:42:07 -> 00:42:11] se eu vou criar um card aqui, o roteiro ainda não tá pronto.
+[00:42:11 -> 00:42:15] Né? Tem só realmente a ideia do roteiro, o tema, sei lá.
+[00:42:15 -> 00:42:17] Aí, beleza, aí conforme for passando,
+[00:42:17 -> 00:42:19] ah, agora o roteiro tá pronto, ele ser criativo,
+[00:42:19 -> 00:42:21] vai aqui pro roteiro.
+[00:42:21 -> 00:42:29] Aí depois vai tá produzindo, no caso, sei lá, tá até editando.
+[00:42:29 -> 00:42:32] Aí vai pra revisão.
+[00:42:32 -> 00:42:34] Eu não usaria isso aqui, né?
+[00:42:34 -> 00:42:39] Tipo, eu só iria pra... eu já subiria o criativo pronto.
+[00:42:39 -> 00:42:41] A revisão não, não.
+[00:42:41 -> 00:42:43] É.
+[00:42:43 -> 00:42:48] O cara viria isso, aprovava, reprovava e botava em ajuste, aí você...
+[00:42:48 -> 00:42:50] Isso. Exatamente.
+[00:42:50 -> 00:42:55] Aí tipo, ajusta, aí ele move pra ajuste.
+[00:42:55 -> 00:42:59] Tá aprovado, bota pra aprovado. Deixa eu botar aqui aprovado pra ver.
+[00:42:59 -> 00:43:05] Aí ele vai... Ah tá, status aprovado.
+[00:43:05 -> 00:43:11] Aí tem que ver também essa questão do testado, né? Como que entra aí na parte de testado, né?
+[00:43:11 -> 00:43:15] É, porque é que não dá nem pra eu colocar o início do teste.
+[00:43:15 -> 00:43:23] Ah, pera aí, tem que botar a aprovação, acho, primeiro.
+[00:43:23 -> 00:43:25] Pra liberar isso aqui. Não.
+[00:43:25 -> 00:43:29] Será que tem que botar um da... aí, foi, apareceu.
+[00:43:29 -> 00:43:31] Ah, tem que botar o testado, né?
+[00:43:31 -> 00:43:34] Eu vou tirar o testado e ver se aparece em testes ele.
+[00:43:34 -> 00:43:42] Tira o testado.
+[00:43:42 -> 00:43:43] Também não.
+[00:43:43 -> 00:43:51] Então aqui, pra eu conseguir colocar a data de início do teste, eu tenho que marcar como testado primeiro.
+[00:43:51 -> 00:43:53] O que é meio esquisito, né?
+[00:43:53 -> 00:43:55] Ele ainda não foi testado.
+[00:43:55 -> 00:43:57] Mas tá bom, beleza.
+[00:43:57 -> 00:43:59] Aí, tem que marcar aqui.
+[00:43:59 -> 00:44:00] Depois eu consigo colocar a data.
+[00:44:00 -> 00:44:04] E aí, pra eu conseguir colocar a data, sei lá, tipo...
+[00:44:04 -> 00:44:06] É 28, vou começar.
+[00:44:06 -> 00:44:18] Aí é aprovação. Aí tem que colocar sim, porque você subiu lá, a pessoa do tráfego subiu, e é isso.
+[00:44:18 -> 00:44:22] Será que agora aparece em testes, definitivamente?
+[00:44:22 -> 00:44:28] Também não. Por que não aparece em testes?
+[00:44:28 -> 00:44:39] Então é legal como é que tá funcionando isso, até porque tem que fazer a sincronização com os novos creativos, né?
+[00:44:39 -> 00:44:44] Eu tenho que pegar esses apps que tu ia apontar aqui nessa reunião também.
+[00:44:44 -> 00:44:50] Eu acho que ele precisa realmente, por exemplo, ter isso aqui, fundo de produção mais testes,
+[00:44:50 -> 00:44:55] porque eu acho que eu tô vendo como se eu fosse uma pessoa, tipo assim,
+[00:44:55 -> 00:44:57] po, acabei de entrar aqui, né?
+[00:44:57 -> 00:45:02] É, pra mim tá meio confuso, entendeu?
+[00:45:02 -> 00:45:06] Eu não entendi exatamente.
+[00:45:06 -> 00:45:09] Também acho que melhora um pouco a usabilidade também, né?
+[00:45:09 -> 00:45:13] É, exatamente. Talvez deixar um pouco mais simples,
+[00:45:13 -> 00:45:24] é tirar o que não for relevante, né, mas essa parte de deixar mais, como é que se fala,
+[00:45:24 -> 00:45:25] mais intuitivo, Wafia.
+[00:45:25 -> 00:45:26] Sim, sim.
+[00:45:26 -> 00:45:29] Mas é isso.
+[00:45:29 -> 00:45:36] Beleza, então.
+[00:45:36 -> 00:45:40] Aí você pode até ver com o Bruno também, o Guzel, pra ver se ele tem alguma sugestão
+[00:45:40 -> 00:45:41] que ele acha disso.
+[00:45:41 -> 00:45:46] Não, é aquilo, porque isso já tinha meio que, já tá sendo produzido um tempinho
+[00:45:46 -> 00:45:48] já, né.
+[00:45:48 -> 00:45:54] Aí de fato agora que tá meio que usando pra, tipo assim, o Davi usa ali também um pouco,
+[00:45:54 -> 00:46:00] a galera do tráfico também usa também pra ver alguns dados, eu não sei como é que tá a questão de uso da galera no cotidiano aí.
+[00:46:00 -> 00:46:03] Eles estão conseguindo usar? Eles estão sabendo?
+[00:46:03 -> 00:46:10] Tipo assim, o cara do tráfico, ele manda mensagem mais em relação a alguns dados que a visão não tá batendo.
+[00:46:10 -> 00:46:17] O Davi, tipo às vezes o Bruno não pede pra fazer algumas autorizações melhorias, por exemplo, agora dá pra ver...
+[00:46:17 -> 00:46:23] questão de vendas, né? Se vende algum produto, aí dá pra ver aí dentro, antigamente não tinha essa possibilidade.
+[00:46:23 -> 00:46:30] A gente colocou isso aí, porque o David vem aqui fazendo a planilha.
+[00:46:30 -> 00:46:37] Aí eu não sei quantas pessoas estão falando, tipo assim, constantemente, entendeu?
+[00:46:37 -> 00:46:40] Ah, beleza. Aí você vê então, eu te mando a gravação?
+[00:46:40 -> 00:46:43] Beleza, manda aqui hoje mesmo já.
+[00:46:43 -> 00:46:45] Tento ir a melhorar aqui já.
+[00:46:45 -> 00:46:49] Final do dia eu te mando mensagem, na segunda-feira eu vou falar com você também, que você já veio aí.
+[00:46:49 -> 00:46:49] Beleza.
+[00:46:49 -> 00:46:52] A direita de semana vai me mandando a mensagem, ponto um ano.
+[00:46:52 -> 00:46:54] Pode mandar mensagem se você quiser, cara.
+[00:46:54 -> 00:46:55] Te queria essa questão aqui, ó.
+[00:46:56 -> 00:46:57] Pode mandar pra mim que eu...
+[00:46:57 -> 00:46:58] Que eu falo sua arte, deu?
+[00:46:59 -> 00:46:59] Show.
+[00:46:59 -> 00:47:00] Beleza, então.
+[00:47:00 -> 00:47:03] Aí quando ficar disponível, que eu acho que demora umas duas horas,
+[00:47:03 -> 00:47:05] ou uma hora e meia pra ficar disponível a gravação, aí eu te mando.
+[00:47:05 -> 00:47:06] Não, fechou.
+[00:47:07 -> 00:47:07] Fechou?
+[00:47:07 -> 00:47:08] Beleza.
+[00:47:08 -> 00:47:09] Valeu, então, mano.
+[00:47:09 -> 00:47:10] Valeu, mano.
+[00:47:10 -> 00:47:10] Tchau, tchau.
+

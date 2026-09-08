@@ -1,0 +1,2 @@
+[functions.sync-contact-attribution]
+verify_jwt = false  # Permite chamadas do pg_cron sem depender de token válido

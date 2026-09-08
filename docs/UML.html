@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UML Visual — Empire Business Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+:root{--bg:#0a0a0b;--surface:#121214;--border:#28282d;--text:#e4e4e7;--muted:#9898a0;--accent:#22c55e}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{display:flex;gap:12px;align-items:center;padding:16px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:2}.logo{font-weight:700;color:var(--accent);font-size:18px}.badge{padding:3px 8px;border-radius:99px;background:#16351f;color:var(--accent);font-size:11px}.tabs{display:flex;overflow-x:auto;gap:4px;padding:16px 20px 0}.tab{border:1px solid transparent;border-radius:8px 8px 0 0;background:transparent;color:var(--muted);padding:10px 13px;white-space:nowrap;cursor:pointer;font:inherit}.tab:hover,.tab.active{background:var(--surface);border-color:var(--border);color:var(--accent)}main{background:var(--surface);border-top:1px solid var(--border);min-height:calc(100vh - 110px)}.panel{display:none;padding:24px}.panel.active{display:block}.panel h2{margin:0 0 16px;font-size:20px}.mermaid-wrapper{overflow:auto;padding:20px;background:#0d0d0f;border:1px solid var(--border);border-radius:10px}.mermaid{min-width:max-content;margin:0}footer{padding:20px;text-align:center;color:var(--muted);font-size:12px}@media(max-width:720px){header{padding:14px}.tabs{padding:12px 12px 0}.panel{padding:14px}.mermaid-wrapper{padding:12px}}
+</style>
+</head>
+<body>
+<header><span class="logo">Empire Business Dashboard</span><span class="badge">UML v2026-07-23</span><span style="margin-left:auto;color:var(--muted)">Diagramas do sistema</span></header>
+<nav class="tabs"><button class="tab active" data-panel="0">Acesso e multi-tenant</button>
+  <button class="tab" data-panel="1">Meta Ads</button>
+  <button class="tab" data-panel="2">Ingestão GHL</button>
+  <button class="tab" data-panel="3">Contrato do webhook CRM</button>
+  <button class="tab" data-panel="4">Sync Meta Ads</button>
+  <button class="tab" data-panel="5">Vendas omnx-desk</button>
+  <button class="tab" data-panel="6">Vulnerabilidade histórica</button>
+  <button class="tab" data-panel="7">Guard de membership</button>
+  <button class="tab" data-panel="8">Mapeamento GHL com IA</button>
+  <button class="tab" data-panel="9">Chat Clara</button>
+  <button class="tab" data-panel="10">Credenciais</button>
+  <button class="tab" data-panel="11">Relatórios Clara</button>
+  <button class="tab" data-panel="12">Configuração Clara</button></nav>
+<main><section class="panel active" id="panel-0"><h2>Acesso e multi-tenant</h2><div class="mermaid-wrapper"><pre class="mermaid">classDiagram
+  class AuthUser {
+    +UUID id
+    +email
+  }
+  class Workspace {
+    +UUID id
+    +text name
+    +UUID owner_id
+    +jsonb settings
+  }
+  class WorkspaceMember {
+    +UUID id
+    +UUID workspace_id
+    +UUID user_id
+    +role: owner|admin|member
+    +boolean is_active
+    +boolean clara_habilitado
+  }
+  class ClaraWorkspaceSettings {
+    +UUID workspace_id
+    +boolean is_enabled
+    +text persistent_instructions
+    +text business_context
+    +text response_rules
+    +text[] allowed_modules
+    +text[] allowed_tools
+    +text analysis_depth
+    +int max_response_tokens
+    +int conversation_retention_days
+    +text scheduled_report_instructions
+    +text model_id
+    +UUID updated_by
+  }
+  class ClaraSettingsAudit {
+    +UUID id
+    +UUID workspace_id
+    +UUID changed_by
+    +jsonb changed_fields
+    +timestamptz created_at
+  }
+  class Agency {
+    +UUID id
+    +text name
+    +UUID owner_id
+  }
+  class AgencyMember {
+    +UUID id
+    +UUID agency_id
+    +UUID user_id
+    +role: owner|admin|staff
+    +boolean is_active
+  }
+  class AgencyWorkspace {
+    +UUID id
+    +UUID agency_id
+    +UUID workspace_id
+    +provisioning_mode: auto_discovered|manual_byok|legacy_adopted
+    +status: active|suspended|pending
+  }
+  class WorkspaceRlsHelpers {
+    +is_workspace_member(workspace_id) boolean
+    +is_workspace_admin(workspace_id) boolean
+    +is_workspace_owner(workspace_id) boolean
+  }
+  class AgencyRlsHelpers {
+    +is_agency_member(agency_id) boolean
+    +is_agency_admin(agency_id) boolean
+    +can_access_workspace_via_agency(workspace_id) boolean
+  }
+  class UserDashboardPrefs {
+    +UUID user_id
+    +UUID workspace_id
+    +jsonb prefs
+    +note: PK(user_id, workspace_id); RLS user_id=auth.uid()
+  }
+  AuthUser "1" --> "0..*" Workspace : owner_id
+  AuthUser "1" --> "0..*" UserDashboardPrefs : user_id
+  Workspace "1" --> "0..*" UserDashboardPrefs : workspace_id
+  AuthUser "1" --> "0..*" WorkspaceMember : user_id
+  Workspace "1" --> "1..*" WorkspaceMember : members
+  Workspace "1" --> "0..1" ClaraWorkspaceSettings : configuração
+  Workspace "1" --> "0..*" ClaraSettingsAudit : trilha_auditoria
+  AuthUser "1" --> "0..*" ClaraSettingsAudit : changed_by
+  AuthUser "1" --> "0..*" Agency : owner_id
+  AuthUser "1" --> "0..*" AgencyMember : user_id
+  Agency "1" --> "1..*" AgencyMember : members
+  Agency "1" --> "0..*" AgencyWorkspace : links
+  Workspace "1" --> "0..1" AgencyWorkspace : linked_to
+  WorkspaceRlsHelpers ..> WorkspaceMember : SECURITY DEFINER read
+  AgencyRlsHelpers ..> AgencyMember : SECURITY DEFINER read
+  AgencyRlsHelpers ..> AgencyWorkspace : active link only</pre></div></section>
+<section class="panel" id="panel-1"><h2>Meta Ads</h2><div class="mermaid-wrapper"><pre class="mermaid">classDiagram
+  class Workspace {
+    +UUID id
+    +text name
+  }
+  class WorkspaceMetaAdAccount {
+    +UUID workspace_id
+    +text account_id
+    +boolean is_active
+    +timestamptz created_at
+  }
+  class MetaAdsAccountDaily {
+    +UUID workspace_id
+    +text account_id
+    +date date
+    +decimal spend
+    +integer impressions
+    +integer clicks
+  }
+  class MetaAdsInsight {
+    +UUID workspace_id
+    +text account_id
+    +text campaign_id
+    +text ad_id
+    +date date
+    +decimal spend
+    +integer impressions
+    +integer clicks
+  }
+  class MetaAdsInsightBreakdown {
+    +UUID workspace_id
+    +UUID insights_id
+    +text region
+    +text country
+    +decimal spend
+    +integer impressions
+  }
+  Workspace "1" --> "0..*" WorkspaceMetaAdAccount : contas_meta_vinculadas
+  WorkspaceMetaAdAccount "1" --> "0..*" MetaAdsAccountDaily : gera_metricas_diarias
+  WorkspaceMetaAdAccount "1" --> "0..*" MetaAdsInsight : gera_insights
+  MetaAdsInsight "1" --> "0..*" MetaAdsInsightBreakdown : breakdowns</pre></div></section>
+<section class="panel" id="panel-2"><h2>Ingestão GHL</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor GHL as GoHighLevel
+  participant Hook as webhook-ghl (edge)
+  participant WH as webhooks_ghl
+  participant Ext as extrair_dados_ghl_v2
+  participant Enq as enqueue_ghl_api_job
+  participant Jobs as ghl_api_jobs
+  participant SDR as sync-opp-sdr (edge)
+  participant API as GHL API
+
+  GHL->>Hook: evento (contact/opportunity/...)
+  Hook->>Hook: valida contrato (nunca bloqueia; desvio → webhook_contract_mismatches)
+  Hook->>WH: INSERT payload + workspace_id (via location_id, fail-closed)
+  Hook->>Ext: processa webhook
+  Ext->>Ext: extrai contato/oportunidade/venda/comunicação/reunião
+  Note over Ext: campos fora do contrato → oportunidades.custom_extra
+  Ext->>Enq: PASSO 2.6 — job sync-opp-sdr (context com workspace_id + location_id)
+  Enq->>Jobs: INSERT promovendo tenant do context para as COLUNAS
+  Note over Jobs: worker multi-tenant: coluna > context; sem tenant → job morre fail-closed
+  SDR->>Jobs: drain do job
+  SDR->>API: GET /opportunities/{id} (NÃO /followers — endpoint inexistente, 404 eterno)
+  API-->>SDR: objeto com array followers
+  SDR->>SDR: resolve followers → ghl_users; fallback contatos.owner_name</pre></div></section>
+<section class="panel" id="panel-3"><h2>Contrato do webhook CRM</h2><div class="mermaid-wrapper"><pre class="mermaid">classDiagram
+  class Oportunidade {
+    +UUID id
+    +UUID workspace_id
+    +jsonb custom_extra
+    +note: campos fora do contrato, exibição passiva
+  }
+  class WebhookContractMismatch {
+    +UUID id
+    +UUID workspace_id NOT NULL
+    +text location_id
+    +UUID webhook_ghl_id
+    +text[] missing_identifiers
+    +text[] unknown_customdata_keys
+    +timestamptz created_at
+    +timestamptz acknowledged_at
+    +UUID acknowledged_by
+  }
+  class ContratoHelpers {
+    +get_contract_known_customdata_keys() text[]
+    +extract_ghl_extra_opportunity_fields(payload) jsonb
+    +count_contract_mismatches_pending(workspace_id) int
+  }
+  Workspace "1" --> "0..*" WebhookContractMismatch : vigilância
+  Workspace "1" --> "0..*" Oportunidade : dados</pre></div></section>
+<section class="panel" id="panel-4"><h2>Sync Meta Ads</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor Admin as Owner/Admin
+  participant RPC as save_workspace_credential
+  participant Cred as workspace_integration_credentials
+  participant Map as workspace_meta_ad_accounts
+  participant Sync as sync-meta-ads
+  participant Meta as Meta Graph API
+  participant DB as Tabelas meta_ads_*
+
+  Admin->>RPC: meta token + metadata.ad_account_ids
+  RPC->>RPC: normaliza ids (act_\d+) e valida formato
+  RPC->>Cred: upsert credencial (Vault + metadata com lista)
+  RPC->>Map: ativa ids da lista; desativa ausentes (mesma transação)
+  Note over RPC,Map: falha em qualquer passo = rollback de tudo
+  loop a cada execução (cron ou manual)
+    Sync->>Cred: resolve token meta (Vault, fail-closed)
+    Sync->>Map: lê contas is_active do workspace
+    loop para cada conta ativa
+      Sync->>Meta: insights da conta (params.account_id)
+      Meta-->>Sync: dados ou erro
+      Sync->>DB: raw + processamento com workspace_id + account_id
+      Note over Sync: erro de uma conta não aborta as demais
+    end
+  end</pre></div></section>
+<section class="panel" id="panel-5"><h2>Vendas omnx-desk</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor Ext as omnx-desk (externo)
+  participant Fn as crm-registrar-venda (service_role)
+  participant RPC as resolve_workspace_by_omnx_desk_secret_digest
+  participant Cred as workspace_integration_credentials (provider=omnx_desk)
+  participant Opp as oportunidades
+  participant Vend as vendas_fechamento
+
+  Ext->>Fn: POST secret (x-omnx-desk-secret) + oportunidade_id + venda
+  Fn->>Fn: digest = SHA-256(secret)
+  Fn->>RPC: resolve(digest)
+  RPC->>Cred: metadata->>'secret_sha256' = digest
+  alt secret por conta encontrado
+    RPC-->>Fn: workspace_id (tenant)
+    Fn->>Opp: lê workspace_id da oportunidade
+    Note over Fn: oportunidade.workspace_id ≠ tenant → 403 (cross-tenant fail-closed)
+  else não encontrado
+    Fn->>Fn: fallback: secretsEqual(secret, BRIDGE_SECRET global) — legado
+    Note over Fn: sem match → 401
+  end
+  Fn->>Vend: UPSERT (workspace_id explícito, COALESCE, 422 se sem data de entrada)</pre></div></section>
+<section class="panel" id="panel-6"><h2>Vulnerabilidade histórica</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor Admin as Admin autenticado
+  participant API as PostgREST
+  participant RLS as Policy workspace_members
+  participant DB as PostgreSQL
+  Admin->>API: UPDATE própria membership: role = owner
+  API->>RLS: USING is_workspace_admin(workspace_id)
+  RLS->>DB: helper encontra admin ativo
+  DB-->>RLS: true
+  API->>RLS: WITH CHECK is_workspace_admin(workspace_id)
+  RLS->>DB: helper ainda encontra admin ativo
+  DB-->>RLS: true
+  RLS-->>API: UPDATE permitido
+  API->>DB: persiste role = owner
+  DB-->>Admin: takeover bem-sucedido (P0)</pre></div></section>
+<section class="panel" id="panel-7"><h2>Guard de membership</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor Actor as Owner ou Admin autenticado
+  participant API as PostgREST
+  participant RLS as RLS workspace_members
+  participant Guard as Trigger de transição
+  participant DB as PostgreSQL
+  Actor->>API: UPDATE membership
+  API->>RLS: valida acesso ao workspace
+  RLS-->>API: somente owner/admin ativo
+  API->>Guard: compara papel do ator, OLD e NEW
+  alt ator é owner
+    Guard->>DB: permite mudança de papel/estado
+    Guard->>DB: recusa remover ou desativar último owner ativo
+  else ator é admin
+    Guard->>DB: recusa role, user_id e workspace_id diferentes
+    Guard->>DB: recusa alterar owner
+    Guard->>DB: permite somente campos operacionais autorizados
+  else member ou inativo
+    Guard-->>API: recusa
+  end
+  API-->>Actor: sucesso ou erro de autorização</pre></div></section>
+<section class="panel" id="panel-8"><h2>Mapeamento GHL com IA</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor Admin as Owner/Admin
+  participant UI as GhlMappingAssistant
+  participant Discovery as discover-ghl-config
+  participant AI as ai-ghl-mapping
+  participant Vault as Credencial OpenRouter do workspace
+  participant Qwen as OpenRouter Qwen
+  participant DB as ghl_field_mappings
+
+  Admin->>UI: Detectar campos no GHL
+  UI->>Discovery: discovery autenticada
+  Discovery-->>UI: campos de contato/oportunidade
+  UI->>UI: remove campos já mapeados
+  Admin->>UI: escolhe campo + explica uso
+  UI->>AI: target(field, source, key) + descrição
+  AI->>AI: valida membership owner/admin e target na discovery
+  AI->>Vault: resolve chave por workspace_id (fail-closed)
+  AI->>Qwen: campo alvo + categorias permitidas
+  Qwen-->>AI: proposta JSON
+  AI->>AI: filtra para chave alvo e logical_name permitido
+  Note over AI: outcome = mapped | not_in_vocabulary | unclear; explanation da IA é descartada quando não mapped (evita contradição na UI)
+  AI-->>UI: no máximo uma proposta de campo + outcome
+  Admin->>UI: confirma salvamento
+  UI->>DB: upsert somente do campo escolhido</pre></div></section>
+<section class="panel" id="panel-9"><h2>Chat Clara</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor User as Usuário autenticado
+  participant UI as Dashboard
+  participant Chat as bot-chat
+  participant Vault as Credencial OpenRouter da conta
+  participant Data as bot-chat-data
+  participant DB as Dados e conversas da conta
+
+  User->>UI: envia pergunta
+  UI->>Chat: JWT + workspace_id + pergunta
+  Chat->>Chat: valida membership ativa e Clara habilitada
+  Chat->>Vault: resolve OpenRouter(workspace_id), fail-closed
+  Chat->>DB: lê/cria conversa filtrada por user_id + workspace_id
+  Chat->>Data: workspace_id + tools assinadas internamente
+  Data->>DB: aplica workspace_id a toda consulta permitida
+  Chat-->>UI: resposta e conversation_id da mesma conta</pre></div></section>
+<section class="panel" id="panel-10"><h2>Credenciais</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor Admin as Owner/Admin da conta
+  participant UI as Integrações
+  participant RPC as RPC de credenciais
+  participant Vault as Supabase Vault
+  participant Test as Teste server-side
+
+  Admin->>UI: cadastra ou troca chave
+  UI->>RPC: save_workspace_credential(workspace, openrouter, segredo)
+  RPC->>Vault: cria segredo e grava somente referência
+  Admin->>UI: testa chave
+  UI->>Test: workspace_id + provider=openrouter
+  Test->>Vault: resolve segredo da própria conta
+  Test->>Test: consulta /auth/key sem retornar conteúdo
+  Admin->>UI: remove chave (confirmação)
+  UI->>RPC: revoke_workspace_credential(workspace, openrouter)
+  RPC->>Vault: remove referência e segredo na mesma transação</pre></div></section>
+<section class="panel" id="panel-11"><h2>Relatórios Clara</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  participant Internal as Relatório semanal ou Telegram
+  participant Clara as Worker Clara
+  participant OpenRouter as OpenRouter
+  participant Usage as workspace_ai_usage_events
+
+  Internal->>Clara: workspace_id explícito + chamada autenticada
+  Clara->>Clara: recusa se a conta não estiver mapeada
+  Clara->>OpenRouter: chamada com credencial do workspace
+  OpenRouter-->>Clara: resposta, tokens ou falha
+  Clara->>Usage: workspace_id, modelo, duração, tokens/status sanitizados
+  Note over Usage: Nunca prompt, resposta, segredo ou erro bruto</pre></div></section>
+<section class="panel" id="panel-12"><h2>Configuração Clara</h2><div class="mermaid-wrapper"><pre class="mermaid">sequenceDiagram
+  actor Admin as Owner/Admin da conta
+  participant UI as Relatórios > Configurar Clara
+  participant Settings as clara-settings
+  participant DB as clara_workspace_settings
+  participant Audit as clara_settings_audit
+  participant Vault as Credencial OpenRouter da conta
+  participant Models as OpenRouter /models
+
+  Admin->>UI: abre configuração
+  UI->>Settings: get(workspace_id) com JWT
+  Settings->>Settings: valida membership ativa + papel owner/admin
+  Settings->>DB: lê somente workspace_id solicitado
+  DB-->>Settings: configuração atual ou estado vazio
+  Settings-->>UI: configuração sanitizada
+  Admin->>UI: salva regras/limites
+  UI->>Settings: save(workspace_id, campos permitidos)
+  Settings->>Settings: valida limites e modelo fixado pela política
+  Settings->>DB: upsert escopado por workspace_id
+  Settings->>Audit: registra nomes dos campos alterados, sem segredo
+  Admin->>UI: consulta catálogo de modelos
+  UI->>Settings: models(workspace_id)
+  Settings->>Vault: resolve chave OpenRouter da própria conta
+  Settings->>Models: GET /api/v1/models
+  Models-->>Settings: catálogo
+  Settings-->>UI: catálogo sanitizado + modelo atualmente permitido</pre></div></section></main>
+<footer>Empire Business Dashboard — UML visual atualizado em 2026-07-23 BRT</footer>
+<script>
+mermaid.initialize({startOnLoad:true,theme:'dark',themeVariables:{primaryColor:'#1a1a1e',primaryTextColor:'#e4e4e7',primaryBorderColor:'#2e2e32',lineColor:'#3a3a40',secondaryColor:'#0f0f11',tertiaryColor:'#121214',noteBkgColor:'#1a2a1a',noteTextColor:'#e4e4e7',fontSize:'13px',fontFamily:'Inter, -apple-system, sans-serif'}});
+window.addEventListener('load',()=>{const tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));panels.forEach(x=>x.classList.remove('active'));tab.classList.add('active');document.getElementById('panel-'+tab.dataset.panel)?.classList.add('active')}))});
+</script>
+</body>
+</html>

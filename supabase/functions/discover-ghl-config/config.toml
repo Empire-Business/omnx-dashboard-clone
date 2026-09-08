@@ -1,0 +1,9 @@
+# Configuração da Edge Function: discover-ghl-config
+# Descobre campos customizados e pipelines de uma conta GHL.
+
+[functions.discover-ghl-config]
+verify_jwt = false  # Validação JWT feita internamente (igual workspace-apps)
+
+# Variáveis de ambiente necessárias:
+# - SUPABASE_URL
+# - SUPABASE_SERVICE_ROLE_KEY

@@ -1,0 +1,5 @@
+Escuta, o Marcel tá certo numa coisa: sem dono com poder real, isso vira enfeite. Não adianta ter funil bonito, métrica de morte e sub-app lindo se ninguém decide e ninguém responde. O Sandro também acerta: começa simples — ideia, teste, aprova/reprova — e deixa o resto emergir. Reconheço que precisamos da decisão numérica do Alex e da velocidade do Grant para o MVP não virar conversa de café.
+
+Mas o que eu não abro mão é: criativo é sobre pessoa, não só sobre número. Cada peça que morre carrega uma história do mercado. Por isso o app precisa de um campo de "aprendizado" — o que essa peça tentou dizer, qual reação gerou, como reaproveitar isso no orgânico. E precisa de um dono nomeado, porque accountability é o que separa teste de brincadeira. Brand paga folha sim, só que no longo prazo, e quem ignora isso vive refém do CPM.
+
+Se eu tiver que ceder, aceito que o MVP use a métrica de morte/escala — CPLQ, CPA, ROAS — como gatilho final de decisão. Tá bom, número mata rápido e evita paralisia. Mas cedo nisso só se tivermos, no mínimo, dono nomeado, status claro e um campo onde o time joga o aprendizado da peça. Sem isso, vira fábrica de lixo com dashboard bonito.

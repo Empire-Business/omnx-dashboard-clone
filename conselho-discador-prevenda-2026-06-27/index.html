@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Lógica do Discador de Pré-Vendas | Conselho dos Mestres</title>
+  <style>
+    :root {
+      --primary: #820AD1;
+      --secondary: #3E1874;
+      --surface: #FFFFFF;
+      --text: #000000;
+      --text-muted: #777777;
+      --border: #E4E4E4;
+      --radius-sm: 12px;
+      --radius-md: 24px;
+      --radius-lg: 32px;
+      --radius-full: 9999px;
+      --font-display: 'graphikMedium', Arial, sans-serif;
+      --font-body: 'graphikRegular', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--surface);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; margin: 0 0 0.5em; }
+    .container { max-width: 1076px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 5rem 0 4rem;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      margin-bottom: 3rem;
+    }
+    .hero-kicker {
+      font-family: var(--font-display);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.03em; }
+    .hero p { font-size: 20px; opacity: 0.95; max-width: 700px; margin-top: 1rem; }
+    .meta-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: -2rem 0 3rem;
+    }
+    .meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .meta-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+    .meta-value { font-family: var(--font-display); font-size: 18px; }
+    .section { margin-bottom: 4rem; }
+    .section-title { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .card-title { font-size: 22px; margin-bottom: 0.75rem; }
+    .body-text { color: #3d3d3d; margin: 0 0 1rem; }
+    .bullet-list { padding-left: 1.25rem; margin: 0 0 1rem; }
+    .bullet-list li { margin-bottom: 0.5rem; }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .member-card {
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 0.75rem;
+      transition: transform 150ms ease;
+    }
+    .member-card:hover { transform: translateY(-3px); }
+    .member-avatar {
+      width: 56px; height: 56px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 22px;
+      margin: 0 auto 0.75rem;
+    }
+    .member-name { font-family: var(--font-display); font-size: 15px; }
+    .decision-box {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .decision-box h2 { font-size: 28px; margin-bottom: 0.75rem; }
+    .decision-box p { opacity: 0.95; font-size: 18px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.875rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-display); font-weight: 500; background: #f4f4f4; }
+    tr:last-child td { border-bottom: none; }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      margin-top: 1rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 3rem;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4rem;
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      .section { margin-bottom: 2.5rem; }
+      .section-title { font-size: 26px; }
+      .card { padding: 1rem; }
+    }
+    </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-kicker">Conselho dos Mestres</div>
+      <h1> Lógica do Discador de Pré-Vendas</h1>
+      <p>Plano de ação decidido por um conselho de especialistas de vendas, marketing, oferta, entrega e operações.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="meta-bar">
+      <div class="meta-card"><div class="meta-label">Presidente eleito</div><div class="meta-value"></div></div>
+      <div class="meta-card"><div class="meta-label">Data</div><div class="meta-value"> 27 de junho de 2026</div></div>
+      <div class="meta-card"><div class="meta-label">Membros</div><div class="meta-value">1 presentes</div></div>
+    </div>
+
+    <section class="section decision-box">
+      <h2>Decisão do presidente</h2>
+      <p>Veja o plano de ação completo abaixo.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Membros do conselho</h2>
+      <div class="members-grid">
+        <div class="member-card"><div class="member-avatar">A</div><div class="member-name">Alex Hormozi · Russell Brunson · Gary Vaynerchuk · Sandro San · Marcel Marcondes · Grant Cardone</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="body-text">Agora tenho o entendimento completo do sistema atual. Vou montar o plano.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="1-vis-o-da-decis-o">1. Visão da Decisão</h2>
+<p class="body-text">O discador atual funciona como um organizador de lista, não como uma máquina de chamadas. Ele divide leads em 5 blocos estáticos (Novo hoje, Task agendada, Respondeu, Últimos 3 dias, Cadência) que não mudam de posição durante o turno, não refletem o estado real de cada lead minuto a minuto, e dependem de um "tick manual" gravado em `localStorage` — que some quando o SDR troca de dispositivo, abre outra aba, ou simplesmente esquece de clicar. O sistema sabe que um lead chegou hoje, mas não sabe se ele acabou de responder um WhatsApp há 4 minutos. Esse gap entre o que o sistema sabe e o que o SDR precisa saber custa agendamentos reais toda hora de cada turno.</p>
+<p class="body-text">A decisão adotada resolve isso em dois movimentos. Primeiro: o score de prioridade passa a ser calculado no banco de dados a cada 2 minutos via função SQL materializada em uma tabela auxiliar `discagem_scores`, alimentada pelos dados que já existem em `comunicacoes`, `oportunidades` e `ghl_tasks`. Segundo: a interface deixa de mostrar números para o SDR — exibe três listas nomeadas (Ligue Agora, Ligue Hoje, Mensagem) com uma linha de razão em linguagem humana ao lado de cada nome. O SDR nunca interpreta um número; ele lê uma instrução e discam.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="2-objetivo-macro-metas-30-60-90-dias">2. Objetivo Macro + Metas 30/60/90 Dias</h2>
+<p class="body-text">**Objetivo macro:** Transformar o discador de um organizador visual passivo em uma máquina de chamadas ativa — que decide sozinha a ordem de prioridade, detecta automaticamente o resultado de cada ligação via webhook do GHL, e expõe ao SDR apenas o próximo nome e o motivo em uma linha.</p>
+<p class="body-text">**30 dias — Score dinâmico operacional:** - Métrica: percentual de leads contactados em até 30 minutos após entrada no pipeline &gt;= 60% (baseline atual a ser medido na primeira semana) - Entregável: tabela `discagem_scores` populada, cron a cada 2 min, interface refatorada com 3 estados visuais, linha de razão por lead</p>
+<p class="body-text">**60 dias — Saída automática da fila + prompt de resultado:** - Métrica: leads com resultado registrado (Agendou / Não atendeu / Em andamento / Descartado) &gt;= 80% das ligações do dia - Entregável: webhook do GHL detecta ligação → move lead automaticamente → prompt de resultado em 4 botões aparece em 30s → dado gravado em `discagem_tentativas`</p>
+<p class="body-text">**90 dias — Calibração por dados reais:** - Métrica: taxa de agendamento por lead contactado em verde &gt;= taxa de leads contactados em amarelo (valida que o score está correto) - Entregável: painel do gestor com KPIs — contactados em 30min, taxa de resposta por faixa de score, tempo médio entre tentativas, distribuição de resultados por SDR</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="3-pilares-e-a-es-concretas">3. Pilares e Ações Concretas</h2>
+<p class="body-text">---</p>
+<h3 class="card-title">Pilar 1 — Score de Prioridade</h3>
+<p class="body-text">**O que fazer:**</p>
+<p class="body-text">Criar tabela `discagem_scores` no banco que é populada por uma função SQL chamada a cada 2 minutos via `pg_cron`. Cada linha representa um lead ativo no pipeline de discagem com seu score calculado e o "motivo" em texto para exibir na interface.</p>
+<p class="body-text">```sql -- Migration: 20260630000001_create_discagem_scores.sql</p>
+<p class="body-text">CREATE TABLE IF NOT EXISTS discagem_scores (   oportunidade_id  UUID         PRIMARY KEY REFERENCES oportunidades(id) ON DELETE CASCADE,   contato_id       UUID         NOT NULL,   score            INTEGER      NOT NULL DEFAULT 0,   estado           TEXT         NOT NULL CHECK (estado IN ('ligue_agora', 'ligue_hoje', 'mensagem')),   razao            TEXT         NOT NULL,  -- ex: "respondeu há 8 min"   componente_dom   TEXT         NOT NULL,  -- qual componente dominou: 'sinal_quente'|'urgencia'|'tentativas'|'fonte'   score_sinal      INTEGER      NOT NULL DEFAULT 0,   score_urgencia   INTEGER      NOT NULL DEFAULT 0,   score_tentativas INTEGER      NOT NULL DEFAULT 0,   score_fonte      INTEGER      NOT NULL DEFAULT 0,   updated_at       TIMESTAMPTZ  NOT NULL DEFAULT now() );</p>
+<p class="body-text">CREATE INDEX idx_discagem_scores_estado ON discagem_scores(estado, score DESC); CREATE INDEX idx_discagem_scores_contato ON discagem_scores(contato_id); ```</p>
+<p class="body-text">A função de recálculo (SQL puro, sem edge function):</p>
+<p class="body-text">```sql -- Função chamada pelo cron a cada 2 minutos CREATE OR REPLACE FUNCTION recalcular_discagem_scores() RETURNS void LANGUAGE plpgsql AS $$ DECLARE   _agora TIMESTAMPTZ := now(); BEGIN   -- Limpa leads que saíram dos pipelines ativos   DELETE FROM discagem_scores   WHERE oportunidade_id NOT IN (     SELECT id FROM oportunidades     WHERE status = 'open'       AND pipeline_name IN ('Pré-Vendas MQL', 'Auto Agendamento')   );</p>
+<p class="body-text">  -- Upsert dos scores   INSERT INTO discagem_scores (     oportunidade_id, contato_id, score,     estado, razao, componente_dom,     score_sinal, score_urgencia, score_tentativas, score_fonte, updated_at   )   SELECT     o.id,     o.contato_id,</p>
+<p class="body-text">    -- Score final ponderado (0-100)     LEAST(100, ROUND(       (sig.pts * 0.40) +       (urg.pts * 0.35) +       (tent.pts * 0.20) +       (fonte.pts * 0.05)     ))::INT AS score,</p>
+<p class="body-text">    -- Estado     CASE       WHEN LEAST(100, ROUND((sig.pts*0.40)+(urg.pts*0.35)+(tent.pts*0.20)+(fonte.pts*0.05))) &gt;= 65         THEN 'ligue_agora'       WHEN LEAST(100, ROUND((sig.pts*0.40)+(urg.pts*0.35)+(tent.pts*0.20)+(fonte.pts*0.05))) &gt;= 30         THEN 'ligue_hoje'       ELSE 'mensagem'     END AS estado,</p>
+<p class="body-text">    -- Razão (componente dominante gera texto)     CASE       WHEN sig.pts &gt;= urg.pts AND sig.pts &gt;= tent.pts THEN sig.razao       WHEN urg.pts &gt;= tent.pts THEN urg.razao       ELSE tent.razao     END AS razao,</p>
+<p class="body-text">    CASE       WHEN sig.pts &gt;= urg.pts AND sig.pts &gt;= tent.pts THEN 'sinal_quente'       WHEN urg.pts &gt;= tent.pts THEN 'urgencia'       ELSE 'tentativas'     END AS componente_dom,</p>
+<p class="body-text">    sig.pts::INT,     urg.pts::INT,     tent.pts::INT,     fonte.pts::INT,     _agora</p>
+<p class="body-text">  FROM oportunidades o</p>
+<p class="body-text">  -- SINAL QUENTE (peso 40): resposta recente via inbound   LEFT JOIN LATERAL (     SELECT       CASE         WHEN MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound') &gt; (_agora - INTERVAL '30 min')           THEN 100         WHEN MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound') &gt; (_agora - INTERVAL '2 hours')           THEN 70         WHEN MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound' AND c.data_comunicacao &gt; (_agora - INTERVAL '24 hours')) IS NOT NULL           AND MAX(c.data_comunicacao) FILTER (WHERE c.direction='outbound') IS NULL           THEN 90  -- resposta espontânea sem contato prévio         ELSE 0       END AS pts,       CASE         WHEN MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound') &gt; (_agora - INTERVAL '30 min')           THEN 'respondeu há ' ||             CASE               WHEN EXTRACT(EPOCH FROM (_agora - MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound')))/60 &lt; 2               THEN '1 min'               ELSE ROUND(EXTRACT(EPOCH FROM (_agora - MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound')))/60)::TEXT || ' min'             END         WHEN MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound') &gt; (_agora - INTERVAL '2 hours')           THEN 'respondeu há ' || ROUND(EXTRACT(EPOCH FROM (_agora - MAX(c.data_comunicacao) FILTER (WHERE c.direction='inbound')))/3600, 1)::TEXT || 'h'         ELSE 'sem resposta recente'       END AS razao     FROM comunicacoes c     WHERE c.contato_id = o.contato_id       AND c.data_comunicacao &gt; (_agora - INTERVAL '24 hours')   ) sig ON true</p>
+<p class="body-text">  -- URGÊNCIA DE TEMPO (peso 35): tempo desde data_lead_recebido sem primeiro contato   LEFT JOIN LATERAL (     SELECT       CASE         WHEN o.data_lead_recebido &gt; (_agora - INTERVAL '15 min') THEN 100         WHEN o.data_lead_recebido &gt; (_agora - INTERVAL '1 hour')  THEN 75         WHEN o.data_lead_recebido &gt; (_agora - INTERVAL '4 hours') THEN 45         WHEN o.data_lead_recebido &gt; (_agora - INTERVAL '12 hours') THEN 20         ELSE 5       END AS pts,       CASE         WHEN o.data_lead_recebido &gt; (_agora - INTERVAL '15 min')  THEN 'lead novo, ' || ROUND(EXTRACT(EPOCH FROM (_agora - o.data_lead_recebido))/60)::TEXT || ' min sem contato'         WHEN o.data_lead_recebido &gt; (_agora - INTERVAL '1 hour')  THEN 'chegou há ' || ROUND(EXTRACT(EPOCH FROM (_agora - o.data_lead_recebido))/60)::TEXT || ' min'         WHEN o.data_lead_recebido &gt; (_agora - INTERVAL '4 hours') THEN 'chegou há ' || ROUND(EXTRACT(EPOCH FROM (_agora - o.data_lead_recebido))/3600, 1)::TEXT || 'h'         ELSE ROUND(EXTRACT(EPOCH FROM (_agora - o.data_lead_recebido))/86400, 0)::TEXT || 'd na base'       END AS razao   ) urg ON true</p>
+<p class="body-text">  -- TENTATIVAS ANTERIORES (peso 20): inversamente proporcional   LEFT JOIN LATERAL (     SELECT       CASE         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 0 THEN 100         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 1 THEN 70         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 2 THEN 40         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 3 THEN 15         ELSE 0       END AS pts,       CASE         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 0 THEN 'nenhuma tentativa ainda'         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 1 THEN '1ª tentativa — sem resposta'         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 2 THEN '2ª tentativa'         WHEN COUNT(*) FILTER (WHERE c.channel='call' AND c.direction='outbound' AND c.ghl_source='app') = 3 THEN '3ª tentativa — cooldown ativo'         ELSE 'cooldown — migrar para mensagem'       END AS razao     FROM comunicacoes c     WHERE c.contato_id = o.contato_id       AND c.data_comunicacao &gt; (_agora - INTERVAL '72 hours')   ) tent ON true</p>
+<p class="body-text">  -- FONTE DE TRÁFEGO (peso 5)   LEFT JOIN LATERAL (     SELECT       CASE         WHEN EXISTS (           SELECT 1 FROM utm_campaigns uc           WHERE uc.utm_campaign = ct.utm_campaign             AND uc.funnels @&gt; '["CDAV"]'::jsonb         ) THEN 100         WHEN ct.utm_source IS NOT NULL THEN 60         ELSE 40       END AS pts     FROM contatos ct WHERE ct.id = o.contato_id   ) fonte ON true</p>
+<p class="body-text">  WHERE o.status = 'open'     AND o.pipeline_name IN ('Pré-Vendas MQL', 'Auto Agendamento')</p>
+<p class="body-text">  ON CONFLICT (oportunidade_id) DO UPDATE SET     contato_id       = EXCLUDED.contato_id,     score            = EXCLUDED.score,     estado           = EXCLUDED.estado,     razao            = EXCLUDED.razao,     componente_dom   = EXCLUDED.componente_dom,     score_sinal      = EXCLUDED.score_sinal,     score_urgencia   = EXCLUDED.score_urgencia,     score_tentativas = EXCLUDED.score_tentativas,     score_fonte      = EXCLUDED.score_fonte,     updated_at       = EXCLUDED.updated_at; END; $$;</p>
+<p class="body-text">-- Cron a cada 2 minutos SELECT cron.schedule(   'discagem-recalcula-score',   '*/2 * * * *',   'SELECT recalcular_discagem_scores()' ); ```</p>
+<p class="body-text">**Responsável:** desenvolvedor backend **Prazo:** Dias 1-7 **Métrica:** `discagem_scores` populada com &lt;= 2min de defasagem em relação a `comunicacoes`; zero erros no cron log por 72h</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Pilar 2 — Fila em Tempo Real</h3>
+<p class="body-text">**O que fazer:**</p>
+<p class="body-text">Refatorar o `useDiscagem.ts` para ler de `discagem_scores` (JOIN com `oportunidades` e `contatos`) em vez de reconstruir o score no frontend. O hook passa a assinar o canal Supabase Realtime na tabela `discagem_scores` para receber atualizações sem polling.</p>
+<p class="body-text">```typescript // eb-dash2/src/hooks/useDiscagem.ts — versão refatorada (trecho central)</p>
+<p class="body-text">// Tipo atualizado export interface DiscagemLead {   oppId: string   contatoId: string   contatoGhlId: string | null   nome: string   telefone: string | null   sdrName: string | null   score: number   estado: 'ligue_agora' | 'ligue_hoje' | 'mensagem'   razao: string           // "respondeu há 8 min" — gerado pelo banco   ligacoesHoje: number   diasNaBase: number }</p>
+<p class="body-text">// Substituir a query de oportunidades pela leitura de discagem_scores: const { data, error } = await supabase   .from('discagem_scores')   .select(`     oportunidade_id, contato_id, score, estado, razao,     oportunidades!inner(sdr_name, data_lead_recebido, pipeline_name,       contatos(nome, telefone, ghl_id, owner_name)     )   `)   // Filtro por SDR (mantém lógica atual)   .order('score', { ascending: false })</p>
+<p class="body-text">// Realtime: subscribe ao canal da tabela const channel = supabase   .channel('discagem-scores-updates')   .on('postgres_changes', {     event: '*',     schema: 'public',     table: 'discagem_scores'   }, () =&gt; {     // Re-fetch ao receber qualquer mudança     load()   })   .subscribe() ```</p>
+<p class="body-text">Para o filtro por SDR no servidor (evitar trazer todos os leads de todos os SDRs):</p>
+<p class="body-text">```typescript // Adicionar ao select quando SDR específico: if (efectiveSdr) {   query = query.eq('oportunidades.sdr_name', efectiveSdr) } ```</p>
+<p class="body-text">**Responsável:** desenvolvedor frontend **Prazo:** Dias 8-14 **Métrica:** Latência de atualização da fila &lt;= 30s após um inbound chegar em `comunicacoes`; zero chamadas de polling desnecessárias (substituídas por Realtime)</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Pilar 3 — Saída da Fila</h3>
+<p class="body-text">**O que fazer:**</p>
+<p class="body-text">Criar tabela `discagem_tentativas` para registrar cada tentativa com resultado, e dois mecanismos de atualização:</p>
+<p class="body-text">**3a — Detecção automática via webhook do GHL (fluxo principal):**</p>
+<p class="body-text">```sql -- Migration: 20260630000002_create_discagem_tentativas.sql</p>
+<p class="body-text">CREATE TABLE IF NOT EXISTS discagem_tentativas (   id              UUID         PRIMARY KEY DEFAULT gen_random_uuid(),   oportunidade_id UUID         NOT NULL REFERENCES oportunidades(id),   contato_id      UUID         NOT NULL,   sdr_name        TEXT,   canal           TEXT         NOT NULL DEFAULT 'call', -- 'call' | 'whatsapp' | 'sms'   resultado       TEXT         CHECK (resultado IN ('agendou', 'nao_atendeu', 'em_andamento', 'descartado', NULL)),   registrado_em   TIMESTAMPTZ  NOT NULL DEFAULT now(),   resultado_em    TIMESTAMPTZ,   fonte           TEXT         NOT NULL DEFAULT 'webhook' -- 'webhook' | 'manual' );</p>
+<p class="body-text">CREATE INDEX idx_disc_tent_opp ON discagem_tentativas(oportunidade_id, registrado_em DESC); CREATE INDEX idx_disc_tent_contato ON discagem_tentativas(contato_id, registrado_em DESC); ```</p>
+<p class="body-text">No trigger existente `auto_extrair_dados_ghl` (ou em um trigger separado em `comunicacoes`), quando chegar uma ligação outbound de um SDR para um lead na fila ativa:</p>
+<p class="body-text">```sql -- Trigger em comunicacoes: detecta ligação e cria tentativa pendente CREATE OR REPLACE FUNCTION registrar_tentativa_discagem() RETURNS TRIGGER LANGUAGE plpgsql AS $$ DECLARE   _opp_id UUID; BEGIN   -- Só processa ligações outbound feitas via app (SDR humano)   IF NEW.channel != 'call' OR NEW.direction != 'outbound' OR NEW.ghl_source != 'app' THEN     RETURN NEW;   END IF;</p>
+<p class="body-text">  -- Verifica se o contato está na fila ativa   SELECT ds.oportunidade_id INTO _opp_id   FROM discagem_scores ds   WHERE ds.contato_id = NEW.contato_id     AND ds.estado IN ('ligue_agora', 'ligue_hoje')   LIMIT 1;</p>
+<p class="body-text">  IF _opp_id IS NULL THEN     RETURN NEW;   END IF;</p>
+<p class="body-text">  -- Registra tentativa sem resultado ainda (resultado vem do prompt UI)   INSERT INTO discagem_tentativas (oportunidade_id, contato_id, canal, fonte)   VALUES (_opp_id, NEW.contato_id, 'call', 'webhook')   ON CONFLICT DO NOTHING;</p>
+<p class="body-text">  -- Força recálculo imediato do score deste lead   PERFORM recalcular_discagem_score_single(_opp_id);</p>
+<p class="body-text">  RETURN NEW; END; $$;</p>
+<p class="body-text">CREATE TRIGGER trg_registrar_tentativa_discagem   AFTER INSERT ON comunicacoes   FOR EACH ROW EXECUTE FUNCTION registrar_tentativa_discagem(); ```</p>
+<p class="body-text">**3b — Prompt de resultado (UI, 30s após detecção):**</p>
+<p class="body-text">```typescript // No DiscagemTab.tsx — componente de prompt de resultado // Aparece automaticamente quando discagem_tentativas tem registro sem resultado // para um lead que o SDR atual ligou</p>
+<p class="body-text">function PromptResultado({   tentativaId, nomeLead, onSubmit }: {   tentativaId: string   nomeLead: string   onSubmit: (resultado: string) =&gt; void }) {   const opcoes = [     { id: 'agendou',      icon: '📅', label: 'Agendou' },     { id: 'nao_atendeu',  icon: '📵', label: 'Não atendeu' },     { id: 'em_andamento', icon: '🔄', label: 'Vai pensar' },     { id: 'descartado',   icon: '✕',  label: 'Descartado' },   ]   return (     &lt;div className="fixed bottom-6 right-6 z-50 rounded-xl border border-empire-border bg-white shadow-xl p-4 w-72 animate-slide-up"&gt;       &lt;p className="text-xs text-empire-subtle mb-1"&gt;Como foi a ligação com&lt;/p&gt;       &lt;p className="text-sm font-bold text-empire-void mb-3"&gt;{nomeLead}?&lt;/p&gt;       &lt;div className="grid grid-cols-2 gap-2"&gt;         {opcoes.map(o =&gt; (           &lt;button key={o.id} onClick={() =&gt; onSubmit(o.id)}             className="flex items-center gap-2 px-3 py-2 rounded-lg border border-empire-border                        text-sm font-medium text-empire-void hover:bg-empire-elevated transition-colors"&gt;             &lt;span&gt;{o.icon}&lt;/span&gt; {o.label}           &lt;/button&gt;         ))}       &lt;/div&gt;     &lt;/div&gt;   ) } ```</p>
+<p class="body-text">**3c — Tick manual como exceção (não fluxo principal):**</p>
+<p class="body-text">Um botão "Registrar contato externo" no card do lead (mesmo 4 botões) para quando a ligação aconteceu fora do GHL. O botão NÃO aparece como ação primária — fica oculto até clicar em "..." no card.</p>
+<p class="body-text">**3d — Cooldown por tentativas:**</p>
+<p class="body-text">Leads com 4+ tentativas sem resultado `agendou` nas últimas 72h mudam automaticamente para estado `mensagem` na função `recalcular_discagem_scores` (score_tentativas = 0 → score total &lt; 30).</p>
+<p class="body-text">**Responsável:** desenvolvedor backend (trigger) + frontend (prompt UI) **Prazo:** Dias 10-21 **Métrica:** &gt;= 80% das ligações registradas em `discagem_tentativas` com resultado preenchido dentro de 5 minutos da ligação; leads com 4+ tentativas sem resposta zero na lista verde</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Pilar 4 — Interface do SDR</h3>
+<p class="body-text">**O que fazer:**</p>
+<p class="body-text">Refatorar `DiscagemTab.tsx` para exibir três listas nomeadas em vez de 5 blocos de prioridade. O score nunca aparece. A `razao` do banco é exibida diretamente como linha de contexto.</p>
+<p class="body-text">**Wireframe Textual da Interface:**</p>
+<p class="body-text">``` ┌─────────────────────────────────────────────────────────────────┐ │  Pré-Vendas / Painel de Discagem          [Todos os SDRs ▾] [⟳] │ │  sexta-feira, 27 de junho                                        │ │  ────────────────────────────────────────────────────────────── │ │  📞 Ligações hoje: 12                                            │ │                                                                  │ │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │ │  🟢 LIGUE AGORA  (3 leads)                                       │ │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │ │  ○  Carla Mendes      respondeu há 8 min    [📞 GHL]             │ │  ○  João Alves        lead novo, 11 min sem contato  [📞 GHL]   │ │  ○  Fernanda Costa    respondeu há 22 min   [📞 GHL]             │ │                                                                  │ │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │ │  🟡 LIGUE HOJE  (8 leads)                    [▾ mostrar]         │ │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │ │  [colapsado por padrão, expande com 1 clique]                    │ │                                                                  │ │  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │ │  ⚪ MENSAGEM  (5 leads)                       [▾ mostrar]         │ │  [colapsado, automação de WhatsApp sugerida]                     │ └─────────────────────────────────────────────────────────────────┘</p>
+<p class="body-text">Cada linha do lead:   ○  [Nome]        [razao em texto]           [📞 link GHL]   ↑               ↑                           ↑   tick manual    gerado pelo banco             abre contato direto   (exceção)      ex: "3ª tentativa —                  cooldown até 14h30" ```</p>
+<p class="body-text">**Regras de exibição:** - Lista verde ("Ligue Agora"): sempre expandida, máximo visível sem scroll - Lista amarela ("Ligue Hoje"): colapsada por padrão, expande com 1 clique, título mostra contagem - Lista cinza ("Mensagem"): colapsada por padrão, mostra botão "Enviar mensagem automática" no header - Nenhuma lista mostra número de score - Razão vem do campo `discagem_scores.razao` diretamente — sem lógica de formatação no frontend - Tick manual: círculo vazio ao lado do nome → ao clicar, abre mini-menu com 4 ícones (exceção para contato externo) - Prompt de resultado: componente `PromptResultado` aparece no canto inferior direito 30s após webhook detectar ligação — independente do que o SDR estiver fazendo na tela</p>
+<p class="body-text">**Responsável:** desenvolvedor frontend **Prazo:** Dias 8-21 (paralelo com pilar 2) **Métrica:** tempo de treinamento para novo SDR usar o discador &lt;= 15 minutos; zero tickets de "não sei para quem ligar" por 30 dias</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="4-f-rmula-final-do-score">4. Fórmula Final do Score</h2>
+<h3 class="card-title">Componentes e Pesos</h3>
+<div class="table-wrap"><table>
+<tr>
+<th>Componente</th>
+<th>Peso</th>
+<th>Descrição</th>
+</tr>
+<tr>
+<td>Sinal Quente</td>
+<td>40%</td>
+<td>Resposta recente via qualquer canal</td>
+</tr>
+<tr>
+<td>Urgência de Tempo</td>
+<td>35%</td>
+<td>Tempo desde `data_lead_recebido`</td>
+</tr>
+<tr>
+<td>Tentativas Anteriores</td>
+<td>20%</td>
+<td>Inversamente proporcional</td>
+</tr>
+<tr>
+<td>Fonte de Tráfego</td>
+<td>5%</td>
+<td>Campanha de alta intenção vs frio</td>
+</tr>
+</table></div>
+<h3 class="card-title">Tabela de Pontuação</h3>
+<p class="body-text">**Sinal Quente (0–100):** - Respondeu qualquer canal nos últimos 30 min = 100 - Resposta espontânea sem contato prévio = 90 - Respondeu entre 30 min e 2h = 70 - Respondeu entre 2h e 24h = 30 - Nenhum sinal = 0</p>
+<p class="body-text">**Urgência de Tempo (0–100):** - Lead chegou há 0–15 min = 100 - Lead chegou há 15–60 min = 75 - Lead chegou há 1–4h = 45 - Lead chegou há 4–12h = 20 - Lead chegou há +12h sem sinal = 5</p>
+<p class="body-text">**Tentativas (0–100):** - 0 tentativas = 100 - 1 tentativa = 70 - 2 tentativas = 40 - 3 tentativas = 15 - 4+ tentativas sem agendamento em 72h = 0 (lead vai para estado "mensagem" diretamente)</p>
+<p class="body-text">**Fonte (0–100):** - Campanha com funil CDAV = 100 - Tráfego pago qualificado (utm_source não nulo) = 60 - Orgânico / sem utm = 40</p>
+<h3 class="card-title">Estados</h3>
+<ul class="bullet-list">
+<li>Score &gt;= 65 → **ligue_agora** (verde)</li>
+<li>Score 30–64 → **ligue_hoje** (amarelo)</li>
+<li>Score &lt; 30 → **mensagem** (cinza)</li>
+</ul>
+<h3 class="card-title">Exemplos Numéricos</h3>
+<p class="body-text">**Cenário A — Lead quente novo:** - Carla Mendes chegou há 8 min (urgência = 100), respondeu WhatsApp há 8 min (sinal = 100), 0 tentativas (tentativas = 100), campanha CDAV (fonte = 100) - Score = (100×0.40) + (100×0.35) + (100×0.20) + (100×0.05) = **100** → ligue_agora - Razão exibida: "respondeu há 8 min"</p>
+<p class="body-text">**Cenário B — Lead médio, 2ª tentativa:** - João Silva chegou há 3h (urgência = 45), sem inbound (sinal = 0), 2 tentativas (tentativas = 40), tráfego pago (fonte = 60) - Score = (0×0.40) + (45×0.35) + (40×0.20) + (60×0.05) = 0 + 15.75 + 8 + 3 = **27** → mensagem - Razão exibida: "2ª tentativa"</p>
+<p class="body-text">**Cenário C — Lead frio reativado:** - Ana Paula chegou há 2 dias (urgência = 5), respondeu WhatsApp há 12 min (sinal = 100), 3 tentativas (tentativas = 15), orgânico (fonte = 40) - Score = (100×0.40) + (5×0.35) + (15×0.20) + (40×0.05) = 40 + 1.75 + 3 + 2 = **47** → ligue_hoje - Razão exibida: "respondeu há 12 min" (componente dominante = sinal_quente)</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="5-riscos-e-mitiga-es">5. Riscos e Mitigações</h2>
+<p class="body-text">**Risco 1 — Latência do webhook do GHL (3+ minutos em pico):** O trigger em `comunicacoes` depende de o webhook GHL ter sido processado. Em picos, o SDR já ligou e o lead ainda aparece como pendente. - Mitigação: O tick manual (botão no card) continua funcionando como override imediato. O SDR sabe que pode usá-lo quando "a bolinha não sumiu". A instrução de onboarding cobre esse caso. O cron de 2 minutos em `discagem_scores` garante que em até 4 minutos (webhook + cron) o estado correto aparece.</p>
+<p class="body-text">**Risco 2 — SDR não responde o prompt de resultado:** Se o SDR fechar o prompt sem responder, a tentativa fica sem resultado. Score subsequente usa número de chamadas outbound (que existem em `comunicacoes`) mas sem saber se conectou. - Mitigação: O prompt reaparece na próxima vez que o SDR abrir o discador (estado pendente em `discagem_tentativas` sem `resultado`). Após 10 minutos sem resultado, o sistema assume `nao_atendeu` automaticamente via função SQL de cleanup. Métrica de "prompts sem resposta" fica visível no painel do gestor.</p>
+<p class="body-text">**Risco 3 — Score calculado sem dados de comunicações antigos:** Leads que chegaram antes da implementação têm histórico de comunicações mas `discagem_tentativas` vazio. O componente de tentativas vai mostrar 0 para todos — inflando o score de leads que já foram chamados 5 vezes. - Mitigação: Script de backfill que lê `comunicacoes` dos últimos 30 dias e cria registros em `discagem_tentativas` com `resultado = 'nao_atendeu'` para ligações outbound históricas. Executado uma vez antes do go-live. Os dados já existem em `comunicacoes` — é só migrar o cálculo de tentativas de "na hora" para "pré-computado".</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="6-pr-xima-a-o-em-24h">6. Próxima Ação em 24h</h2>
+<p class="body-text">Criar a migration `20260630000001_create_discagem_scores.sql` com a tabela e a função `recalcular_discagem_scores()`, rodar `supabase db push` no ambiente de desenvolvimento, e executar `SELECT recalcular_discagem_scores()` manualmente para validar que os scores são calculados corretamente para os leads atuais. Verificar 10 leads aleatórios no resultado comparando o `estado` e a `razao` gerada com o estado real do lead em `comunicacoes`. Se os valores fizerem sentido operacionalmente, agendar o cron e comunicar à equipe de SDRs que o painel está em refatoração — sem mudar a interface ainda.</p>
+<p class="body-text">---</p>
+<p class="body-text">**Arquivos a criar/modificar:**</p>
+<ul class="bullet-list">
+<li>`/Users/bguzela/Desenvolvimento/GHL-SUPABASE/supabase/migrations/20260630000001_create_discagem_scores.sql` — tabela + função + cron</li>
+<li>`/Users/bguzela/Desenvolvimento/GHL-SUPABASE/supabase/migrations/20260630000002_create_discagem_tentativas.sql` — tabela de tentativas + trigger em comunicacoes</li>
+<li>`/Users/bguzela/Desenvolvimento/GHL-SUPABASE/eb-dash2/src/hooks/useDiscagem.ts` — refatorar para ler de `discagem_scores` + Realtime</li>
+<li>`/Users/bguzela/Desenvolvimento/GHL-SUPABASE/eb-dash2/src/pages/prevendas/tabs/DiscagemTab.tsx` — 3 listas + PromptResultado + linha de razão</li>
+<li>`/Users/bguzela/Desenvolvimento/GHL-SUPABASE/docs/DISCADOR-PREVENDAS.md` — documentação do novo sistema</li>
+</ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Como foi o debate</h2>
+      <div class="card">
+        <p class="body-text">---</p>
+<p class="body-text">**Data:** 27 de junho de 2026 **Tema:** Lógica do Discador de Pré-Vendas **Presidente:** Jeff Bezos **Membros presentes:** Alex Hormozi · Russell Brunson · Gary Vaynerchuk · Sandro San · Marcel Marcondes · Grant Cardone **Formato:** Três rodadas de deliberação com decisão presidencial ao final</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="resumo-do-problema">RESUMO DO PROBLEMA</h2>
+<p class="body-text">O sistema de discagem de pré-vendas em operação trata todos os leads como equivalentes no tempo — um lead que chegou há 8 minutos e um que chegou há 6 horas recebem a mesma classificação estática de "Prioridade Alta". Essa lógica ignora o fator mais crítico de conversão em vendas consultivas de alto ticket: a janela de atenção do lead, que começa a fechar após 30 minutos da entrada no CRM e colapsa quase completamente em 4 horas.</p>
+<p class="body-text">Os problemas estruturais identificados antes do início do debate foram:</p>
+<ul class="bullet-list">
+<li>Fila estática sem recalculo dinâmico por comportamento do lead</li>
+<li>Ausência de lógica de sinal quente (resposta de WhatsApp, abertura de email, clique em link)</li>
+<li>Ausência de cooldown inteligente entre tentativas</li>
+<li>Decisão de prioridade transferida ao SDR em vez de ao sistema</li>
+<li>Ambiguidade sobre como um lead sai da fila após uma tentativa (tick manual vs. detecção automática)</li>
+<li>Risco de colisão de abordagem em operações com múltiplos SDRs simultâneos</li>
+</ul>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-1-diagn-stico-e-propostas-iniciais">RODADA 1 — DIAGNÓSTICO E PROPOSTAS INICIAIS</h2>
+<h3 class="card-title">Alex Hormozi</h3>
+<p class="body-text">**Diagnóstico:** A causa raiz não é tecnológica — é a ausência de modelo mental sobre velocidade de contato. O discador atual não diferencia o valor de um lead por tempo decorrido. Pesquisas de vendas outbound demonstram que ligar nos primeiros 5 minutos aumenta a taxa de contato em 9x em relação a ligar em 30 minutos. A empresa está pagando pelo lead duas vezes: uma vez no Meta Ads, e outra vez destruindo a conversão com um sistema que ignora o tempo.</p>
+<p class="body-text">**Lógica de prioridade proposta — Score de 0 a 100, recalculado a cada 60 segundos:**</p>
+<ul class="bullet-list">
+<li>**Sinal quente recente (40 pontos):** se o lead respondeu WhatsApp, abriu email ou clicou em link nas últimas 2 horas, score máximo nessa dimensão.</li>
+<li>**Decay de tempo sem contato (35 pontos):** score sobe a cada 15 minutos sem tentativa de ligação, com pico nos primeiros 90 minutos após entrada no CRM, caindo progressivamente até o dia seguinte.</li>
+<li>**Tentativas falhadas com intervalo inteligente (25 pontos):** cooldown de 45 minutos entre tentativas. Após a 3ª tentativa sem resposta, o lead sai da fila de ligação e entra na fila de WhatsApp — tentativa 4 é mensagem, não ligação.</li>
+</ul>
+<p class="body-text">**Sobre saída da fila:** Tick manual imediato como padrão, com detecção automática via webhook como confirmação. Um clique — "Liguei" — e o lead sai da fila principal, entra no log de tentativas, e retorna em 45 minutos se não houver resposta. Dependência de disciplina humana constante sob pressão é falha de design de sistema.</p>
+<p class="body-text">**Simulação de turno (40 leads ativos):** Início às 8h — SDR vê 5 leads no topo com sinal quente acumulado durante a noite, cada um com razão específica visível. Meio do turno às 12h30 — 3 leads novos pulsam para o topo automaticamente; um lead que estava na posição 12 às 8h está agora na posição 2 porque respondeu WhatsApp às 12h15, destacado em verde com "respondeu há 15 minutos". Final às 17h — fila de ligação menor, leads sem resposta em 3 tentativas movidos para fila de WhatsApp. SDR encerra com clareza absoluta: conectados, agendados, em cooldown para amanhã.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Russell Brunson</h3>
+<p class="body-text">**Diagnóstico:** O problema é um funil sem pressão de tempo. O sistema trata todos os leads como iguais no momento em que chegam e não muda de opinião conforme o tempo passa. Os primeiros 5 minutos de contato valem mais do que os próximos 5 dias combinados. O discador atual opera como se tivesse 5 dias para todo mundo.</p>
+<p class="body-text">**Lógica de prioridade proposta — Urgency Score em quatro camadas:**</p>
+<ul class="bullet-list">
+<li>**Camada 1 — Tempo sem contato:** 0–30 min = 100pt / 30–60 min = 80pt / 1–3h = 60pt / 3–6h = 40pt / acima de 6h = 20pt base.</li>
+<li>**Camada 2 — Sinal quente recente:** respondeu WhatsApp nos últimos 15 min = +50pt / abriu email em 30 min = +30pt / clicou em link = +40pt.</li>
+<li>**Camada 3 — Tentativas sem sucesso:** 1 a 3 tentativas aumenta prioridade (+20pt cada); acima de 5 tentativas em 48h, lead entra em fila de recuperação.</li>
+<li>**Camada 4 — Qualificação parcial:** SDR já conectou e confirmou capacidade financeira, mas sem agendamento = score mínimo de 70pt independente do tempo.</li>
+</ul>
+<p class="body-text">**Sobre saída da fila:** Ambos os mecanismos, com hierarquia. Detecção automática via webhook como gatilho principal — lead muda de "aguardando chamada" para "em follow-up" automaticamente. Tick manual como fallback obrigatório: três botões de resultado (Conectou / Não atendeu / Agendou), sem formulários. SDR sob pressão com 40 leads vai esquecer de tickar — quando isso acontece, o lead volta ao topo e o SDR liga duas vezes em 10 minutos para a mesma pessoa, queimando o lead e a reputação.</p>
+<p class="body-text">**Conceito central — "fila viva":** a fila não é uma lista que o SDR cria de manhã e executa linearmente. É um organismo que respira, reage a sinais em tempo real e retira do SDR a carga cognitiva de decidir quem é prioridade. O sistema decide, o SDR executa.</p>
+<p class="body-text">**Simulação de turno:** Início às 8h45 — 12 leads, topo com "Carla Mendes — respondeu WhatsApp há 4 minutos: 'Pode ser amanhã?'" (Score 148). Meio-dia — fila reorganizada por completo, leads novos no topo, SDR no ritmo de 1 chamada a cada 4–5 minutos sem tomar decisão alguma. Final às 17h15 — "Ana Paula — respondeu Instagram há 6 min: 'Quero saber mais'" pulou a fila inteira por sinal de reengajamento tardio.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Gary Vaynerchuk</h3>
+<p class="body-text">**Diagnóstico:** A causa raiz não é tecnológica — é psicológica. O discador foi construído com a lógica de quem nunca trabalhou num turno de SDR sob pressão. A causa real: o sistema está centrado na fila, não no sinal do lead. Um lead que responde WhatsApp às 13h47 está quente naquele momento — não em 20 minutos, não amanhã.</p>
+<p class="body-text">**Lógica de prioridade proposta — Score de 0 a 280, cinco critérios:**</p>
+<p class="body-text">1. Resposta de WhatsApp/SMS nas últimas 2 horas = 100 pontos. 2. Tempo desde o opt-in: 0–30min = 80pt / 30min–2h = 50pt / 2–8h = 20pt / acima de 8h sem contato = 5pt. 3. Tentativas anteriores frustradas: 0 = neutro / 1–2 = -10pt / 3+ = -30pt. 4. Reengajamento — abriu email ou clicou em algo nas últimas 4h = +40pt. 5. No-show de reunião nas últimas 48h = +60pt — prioridade absoluta.</p>
+<p class="body-text">**Sobre saída da fila:** Hibridismo com viés automático pesado. Detecção automática via webhook como trabalho pesado — ao detectar chamada, lead muda para "Tentativa Registrada" e sai da fila ativa por 2 horas. Tick manual existe para um caso específico: SDR conversou fora do sistema (WhatsApp pessoal, ligação por número pessoal). O tick manual é o override humano, não o fluxo padrão. Dependência de tick manual como padrão resulta em 40% de leads desaparecendo da fila sem registro real.</p>
+<p class="body-text">**Simulação de turno:** Início às 8h — "Marcos Oliveira, 87 pontos — respondeu WhatsApp às 7h52, disse 'ok, me liga'." SDR não pensa, liga para o Marcos. Meio-dia — três leads novos com 70+ pontos entram no topo; um lead morto desde segunda-feira aparece com 88 pontos porque abriu email às 13h12 — sinal de vida, volta para cima. Final às 17h — sistema sugere último WhatsApp de texto antes de arquivar para leads com baixo engajamento, dois leads novos do fim do dia têm prioridade absoluta. Clareza total, zero decisão sobre "quem ligar."</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Sandro San</h3>
+<p class="body-text">**Diagnóstico:** A causa raiz não é tecnológica — é conceitual. Alguém construiu um "organizador de leads" quando precisava construir uma máquina de chamadas. São coisas completamente diferentes. Organizador você olha e decide. Máquina você obedece. SDR sob pressão não tem tempo para decidir — ele precisa de ordem, não de grade. Sistema que exige julgamento do SDR é sistema que falha no turno da tarde quando ele está cansado, estressado e com 40 leads simultâneos.</p>
+<p class="body-text">**Lógica de prioridade proposta — Score com quatro componentes e pesos fixos:**</p>
+<ul class="bullet-list">
+<li>**Score = (Urgência de Tempo × 40) + (Sinal Quente × 30) + (Tentativas Anteriores × 20) + (Valor Potencial × 10)**</li>
+<li>Urgência de Tempo: 0–15min = 100pt / 15–60min = 80pt / 1–3h = 60pt / 3–8h = 40pt / 8–24h = 20pt / acima de 24h sem sinal quente = 5pt.</li>
+<li>Sinal Quente: respondeu WhatsApp nos últimos 30 min = 100pt instantâneos — lead sobe ao topo independente do resto. Áudio = 90pt. Abriu link de calendário = 70pt.</li>
+<li>Tentativas: 0 = 100pt / 1 = 70pt / 2 = 40pt / 3+ = 10pt. Lead com 4+ tentativas sem sinal consome energia sem retorno.</li>
+<li>Valor Potencial: inferido pelo canal de origem — campanha CDAV vale mais que formulário orgânico genérico. Ajustável no painel do gestor após 30 dias de dados.</li>
+</ul>
+<p class="body-text">**Sobre saída da fila:** Os dois mecanismos em camadas. Automático como gatilho principal — webhook de chamada move lead para "Aguardando resultado" por 4 horas; mensagem via GHL move para "Aguardando resposta" por 2 horas. Tick manual para casos fora do CRM: um botão, um clique, quatro opções (Conectei / Não atendeu / Agendei / Perdi). Complexidade zero na ponta do usuário, lógica toda no backend.</p>
+<p class="body-text">**Simulação de turno (40 leads ativos):** Início às 9h — 8 leads no topo, sistema indica "João Silva — respondeu WhatsApp às 22h47. Ligue agora." Sem interpretação. Meio do turno às 13h — fila reorganizou automaticamente enquanto o SDR almoçava; ele senta e a realidade do momento já está refletida, sem ação manual. Final às 17h — leads com score abaixo de 30 em modo "Dormindo", fila ativa com apenas os 6 que têm chance real de conversão naquele dia. Score mínimo para fila ativa: 30 pontos.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Marcel Marcondes</h3>
+<p class="body-text">**Diagnóstico:** O problema é de governança de processo, não tecnológico. O discador trata todos os leads como iguais no tempo, o que viola o princípio básico de customer centricity. Quando se deixa o SDR decidir subjetivamente quem ligar primeiro — baseado em grade estática — a métrica mais crítica do negócio (tempo de resposta) é entregue ao acaso. Isso não é processo, é caos com cara de painel.</p>
+<p class="body-text">**Lógica de prioridade proposta — Score único de 0 a 100, quatro variáveis ponderadas:**</p>
+<ul class="bullet-list">
+<li>**T — Urgência de tempo (40 pontos):** 0–30min = 40pt / 30min–2h = 25pt / 2h–6h = 10pt / acima de 6h = 5pt.</li>
+<li>**S — Sinal de calor (30 pontos):** respondeu WhatsApp = 30pt / abriu email = 15pt / clicou em link = 10pt / sem sinal = 0pt.</li>
+<li>**A — Tentativas realizadas (20 pontos, inversamente proporcional):** 0 = 20pt / 1 = 15pt / 2 = 8pt / 3+ = 3pt.</li>
+<li>**Q — Qualidade do lead (10 pontos):** MQL com tag de alta intenção = 10pt / MQL padrão = 6pt / lead frio = 2pt.</li>
+</ul>
+<p class="body-text">Score recalculado a cada 5 minutos via Supabase Realtime. Lead novo com resposta de WhatsApp entra direto no topo com 70pt. Lead de ontem sem sinal fica em espera com 8pt.</p>
+<p class="body-text">**Sobre saída da fila:** Tick manual obrigatório de 1 clique, detecção automática como camada complementar de auditoria gerencial. Em ambiente com 3–6 SDRs simultâneos, webhook com atraso de 3 minutos gera colisão de abordagem — dois SDRs ligando para o mesmo lead. Tick manual elimina essa ambiguidade. O processo inteiro deve levar menos de 8 segundos entre uma ligação e a próxima. Dois botões: "Não atendeu" ou "Em andamento."</p>
+<p class="body-text">**Simulação de turno:** Início às 8h — 7 leads acima de 50pt, sistema exibe "1. Ana Lima — respondeu WhatsApp há 12min, 1 tentativa anterior. 2. Carlos Mota — lead novo, chegou 8h02. 3. Fernanda Reis — respondeu email há 28min." Sem dúvida, sem decisão. Meio do turno às 12h30 — fila de follow-up com sequência de 90 segundos por lead, próximo já carregado enquanto atual é registrado. Final às 17h30 — leads com 5+ tentativas e zero resposta marcados automaticamente como "Pausado — revisão amanhã", retirando-os da fila ativa. **KPI central:** percentual de leads contactados em até 30 minutos — a única métrica que não deixa escapatória.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Grant Cardone</h3>
+<p class="body-text">**Diagnóstico:** O problema não é tecnológico — é filosófico. O sistema foi construído com lógica que trata todos os leads como iguais, sem colocar TEMPO como variável principal. A taxa de contato nos primeiros 5 minutos é de 78%. Depois de 30 minutos cai para 36%. Depois de 24 horas, o lead foi perdido. Blocos fixos de "prioridade" são uma mentira bonita que diz ao SDR "tá tudo bem, você ainda tem tempo." Não tem.</p>
+<p class="body-text">**Lógica de prioridade proposta — Score de 0 a 100, calculado em tempo real:**</p>
+<ul class="bullet-list">
+<li>Tempo desde o lead entrar sem primeiro contato (40 pontos) — decai 1 ponto a cada 15 segundos sem toque.</li>
+<li>Sinal quente nas últimas 2 horas — WhatsApp respondido, email aberto, retorno ao site (35 pontos) — decai linearmente em 2 horas.</li>
+<li>Número de tentativas já feitas (25 pontos) — começa em 25, perde 5 por tentativa fracassada, volta a 20 se houver novo sinal.</li>
+</ul>
+<p class="body-text">Lead novo sem contato = score 100 imediatamente. Lead de 3 dias que acabou de responder WhatsApp = score 75, no top 5 da fila em menos de 1 minuto.</p>
+<p class="body-text">**Sobre saída da fila:** Hibridismo com viés automático pesado. Webhook do GHL registra a ligação e move o lead automaticamente para "tentativa feita" — desaparece da fila por 45 minutos sem resposta, ou definitivamente se agendou. Tick manual existe em uma única situação: SDR falou no WhatsApp sem ligar. Um botão enorme, verde, chamado "TENTATIVA FEITA" — não checkbox no canto da tela. Tudo que exige mais de 1 clique mata a velocidade do SDR.</p>
+<p class="body-text">**Modelo de estados:** Dois estados primários visíveis. "Ligue agora" = qualquer lead com resposta de WhatsApp nas últimas 2 horas ou lead novo com menos de 15 minutos. "Próximo da fila" = todo o resto, ordenado por tempo sem contato.</p>
+<p class="body-text">**Simulação de turno:** Início às 8h — "Lucas Mendes — abriu email 22 min atrás, 2 tentativas ontem, ligue AGORA." Meio-dia — 38 leads novos integrados, SDR vê frescos no topo misturados com leads de 48h que mandaram WhatsApp durante o almoço. Final às 17h — 8 leads acima de score 50, outros em cadência automática de texto. Sistema mostra: "Faltam 3 leads no topo da fila. Complete isso e você termina o turno com 9 agendamentos." Número concreto. Meta visível.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-2-debate-cruzado-e-refinamento">RODADA 2 — DEBATE CRUZADO E REFINAMENTO</h2>
+<h3 class="card-title">Alex Hormozi</h3>
+<p class="body-text">Crítica direta a Russell Brunson: um score de 148 pontos para a Carla Mendes parece sofisticado no papel e é exatamente por isso que vai quebrar no mundo real. Quando o SDR vê "Score 148", ele não sabe se aquele número veio de sinal quente ou de tentativas — e isso importa porque o comportamento muda: sinal quente exige ligar agora, 4 tentativas sem resposta exige mudar o canal antes de ligar. Colapsar tudo num único número sem transparência do componente principal é substituir a decisão errada do SDR por uma caixa preta.</p>
+<p class="body-text">Crítica direta a Grant Cardone: o cooldown fixo de 45 minutos é tempo arbitrário que não reflete comportamento de lead. Em operação com 3–6 SDRs e 200 leads por dia, o lead que tentou às 9h volta no slot de outro SDR às 9h45, causando duplicação de abordagem no mesmo dia — o que é pior do que não abordar. Além disso, o decaimento de 1 ponto a cada 15 segundos cria filas completamente diferentes para SDRs que abriram o sistema com 5 minutos de diferença sem motivo estratégico. O decaimento deve ser por minuto, não por segundo.</p>
+<p class="body-text">Ponto que todos acertaram mas ninguém levou à conclusão prática: o contexto do lead tem que aparecer em 3 segundos ou o SDR não usa. A linha de contexto obrigatória no card do lead não deve ser a última mensagem completa nem o histórico em popup — deve ser uma linha. "Respondeu WA 4min: 'Pode ser amanhã?'" ou "3 tentativas, último contato seg, abriu email 8h38." O SDR lê enquanto o telefone está chamando.</p>
+<p class="body-text">Sobre tick manual vs. automático: Marcel está errado ao fazer o tick manual obrigatório por medo de colisão entre SDRs. Colisão resolve com travamento de lead — quando SDR A está com o lead X ativo na tela, lead X fica bloqueado para SDR B. Problema de concorrência de banco de dados, não de processo humano. Tick manual como fluxo principal garante que na segunda-feira de manhã com 80 leads acumulados os SDRs vão esquecer de tickar e a fila vai ficar suja. Detecção automática via webhook é o padrão. Tick manual é a exceção documentada.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Russell Brunson</h3>
+<p class="body-text">Crítica a Alex Hormozi: score de 0 a 100 com decay de 15 em 15 minutos é matematicamente elegante e vai destruir a confiança do SDR em dois dias. O SDR vai ligar para o lead com score alto, o lead não vai atender, o score vai cair. Na próxima vez com score 40, o SDR aprendeu inconscientemente que "alto score não significa nada." Isso é Pavlov invertido — treinando o SDR a ignorar a fila. O score precisa significar probabilidade real de conversão, não velocidade de decaimento.</p>
+<p class="body-text">Crítica a Grant Cardone: o dado de "78% de taxa de contato em 5 minutos" é de outbound frio B2B norte-americano de 2007. Leads de tráfego pago Meta Ads que preencheram um formulário pedindo contato têm comportamento completamente diferente. O problema não é velocidade de ligação nos primeiros 5 minutos — é o que acontece na ligação. A métrica "percentual contactado em 30 minutos" como KPI único cria incentivo perverso: SDR liga em 4 minutos, faz uma abertura ruim porque está no modo máquina, e o lead desqualifica em 90 segundos.</p>
+<p class="body-text">Ponto que ninguém adicionou: o contexto narrativo do lead é inegociável. Ao lado do nome e do score, três campos imutáveis são necessários: funil de origem, gancho do anúncio, e última mensagem recebida. Um lead que veio de um VSL de 45 minutos sobre "sair do emprego em 90 dias" tem conversa completamente diferente de um que preencheu formulário genérico. O discador tem que permitir que o SDR continue a história que o marketing já começou.</p>
+<p class="body-text">Sobre tick manual versus automático: o tick manual não existe para cobrir falha de webhook. Ele existe porque o desfecho da ligação é uma informação qualitativa que o sistema não consegue inferir automaticamente. "Não atendeu" e "atendeu mas não quer saber" são dois estados radicalmente diferentes para o próximo follow-up — e o webhook do GHL não distingue. Solução: detecção automática move o lead para "Em processamento" em 30 segundos; SDR tem 60 segundos para categorizar em quatro botões de toque único — Agendou / Vai pensar / Não atendeu / Descartado.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Gary Vaynerchuk</h3>
+<p class="body-text">Crítica a Alex Hormozi: a lógica de 45 minutos de cooldown trata o lead como comportamento uniforme quando ele não é. Lead que não atendeu às 9h porque estava no trânsito não é igual a lead que estava em reunião até meio-dia. Sinal quente resolve isso — mas Hormozi colocou sinal quente como fator secundário (40 pontos contra 35 de urgência de tempo). Isso deve ser invertido: contexto de resposta vale mais que decaimento de tempo. Um lead de 6 horas que mandou áudio no WhatsApp agora vale 10x mais que um lead de 20 minutos que não fez nada.</p>
+<p class="body-text">Crítica a Russell Brunson: a estrutura de Urgency Score em quatro camadas é a mais próxima do correto, mas adiciona complexidade onde se precisa de clareza. Quatro camadas, pesos fixos, cálculo a cada 5 minutos é produto bonito para apresentação em board, não ferramenta para SDR de 23 anos que fez 18 ligações em 3 horas. O que move a agulha não é o score de 0 a 100 — é o SDR entender em 2 segundos POR QUÊ esse lead está no topo. "João — respondeu áudio agora" o SDR entende e age. "João — score 87" o SDR vê e ignora mentalmente.</p>
+<p class="body-text">Sobre tick manual versus automático: todo mundo concordou em "hibridismo" e ficou satisfeito com a própria resposta. O problema não endereçado: o SDR conversou no WhatsApp pessoal, o lead pediu "me liga quinta às 14h", o SDR voltou ao discador 3 minutos depois. O GHL não registrou nada, o lead voltou ao topo da fila, e o próximo SDR que abrir o sistema vai ligar para esse lead de novo. Isso acontece todo dia em operações com 3+ SDRs. A solução real é tick manual com fricção zero mais confirmação de contexto obrigatória em uma linha — "O que combinaram?" com 4 botões. Sem isso, tem-se dado de atividade sem dado de resultado.</p>
+<p class="body-text">Maior risco não mencionado: o SDR não confiar no sistema. Se ele achar que a fila está errada — e vai achar no início, porque vai estar — ele começa a trabalhar fora da fila, por feeling. Antes de qualquer arquitetura técnica, é necessária uma semana de acompanhamento lado a lado com um SDR top para mapear quais sinais ele considera quentes e urgentes. O algoritmo se constrói sobre o que funciona, não o contrário.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Sandro San</h3>
+<p class="body-text">Crítica central ao grupo: Hormozi, Russell e Cardone constroem sistemas para SDRs que executam bem. O problema não nomeado: um SDR em alta pressão com 40 leads não tem problema de informação — tem problema de decisão sob carga cognitiva máxima. Score de 0 a 100 calculado a cada 60 segundos com 3 dimensões ponderadas é sistema que analista entende na apresentação e que o SDR ignora completamente na prática. O SDR não liga para o número — liga para o nome que aparece primeiro. Se o número não tiver significado intuitivo imediato, ele vai ligar pela ordem visual, que é exatamente o que o sistema atual já faz.</p>
+<p class="body-text">Crítica direta a Marcel: propor tick manual de 1 clique como padrão e detecção automática como "auditoria gerencial" inverte a prioridade. Auditoria gerencial não salva agendamento — conta agendamento perdido. Se o SDR faz 8 ligações em 40 minutos e esquece de clicar em 3, há 3 leads fantasmas no topo da fila quando o próximo SDR do turno abre o sistema. Colisão de abordagem em high-ticket é fatal — ligar duas vezes para o mesmo lead em 20 minutos com SDRs diferentes e scripts diferentes transforma lead quente em lead morto. Detecção automática é o fluxo principal. Tick manual é o override de exceção.</p>
+<p class="body-text">Crítica a Gary Vaynerchuk: resposta de WhatsApp depois de quanto tempo? Uma resposta 14 horas após a primeira mensagem tem valor completamente diferente de uma resposta 3 minutos depois. O sinal quente não é o canal — é a velocidade de reação do lead. Um lead que respondeu em 4 minutos tem janela de atenção aberta agora. Um lead que respondeu depois de dormir, acordar e tomar café está em modo de processamento passivo. Tratar os dois com o mesmo peso de 100 pontos cria fila que parece precisa e não é.</p>
+<p class="body-text">**Proposta alternativa:** Apenas três estados visíveis para o SDR, sem score exposto — Ligue Agora (verde, máximo 5 leads), Ligue Hoje (amarelo), e Mensagem (cinza, abordagem textual porque ligação não converteu). Com razão em linguagem humana: "Fernanda — respondeu há 8 min", "Carlos — 3ª tentativa, cooldown até 14h30." O score existe por baixo, calculado pelo sistema, mas o SDR nunca o vê. Sistema que exige que o SDR interprete números está terceirizando a decisão para quem tem menos contexto para tomá-la.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Marcel Marcondes</h3>
+<p class="body-text">Crítica a Alex Hormozi: o sistema pressupõe que o SDR vai confiar cegamente no algoritmo desde o primeiro dia. Não vai. SDR desenvolve ao longo de meses intuições sobre seus leads. Quando o sistema coloca João Silva no topo com score 73 e o SDR sente que Ricardo Ferreira — no slot 8 com score 61 — vai atender porque sempre atende no horário de almoço, o SDR ignora a fila e começa a reordenar manualmente. O sistema vira decoração. Está faltando um mecanismo de calibração de confiança — o SDR precisa ver o sistema acertar antes de obedecer cegamente.</p>
+<p class="body-text">Crítica a Gary Vaynerchuk: score até 280 pontos cria complexidade de interpretação excessiva. O SDR vai olhar para "Marcus Alves, 88 pontos" e "Carla Mendes, 121 pontos" e perguntar "quanto é bom? quanto é excelente?" — porque 88 num sistema de 280 parece mediano. O overhead cognitivo vai ser fatal no final do turno com energia baixa. Score simples de 0 a 100 com faixas visuais claras — vermelho, âmbar, verde — é suficiente. A sofisticação fica no backend, não na tela do SDR.</p>
+<p class="body-text">Sobre tick manual versus automático: os dois estão certos na direção, mas errados na ênfase. O ponto real não endereçado: quando o webhook do GHL chega com 4 minutos de atraso em pico de tráfego, o SDR já está na próxima ligação e o sistema ainda mostra o lead anterior como pendente. Quando o webhook finalmente chega, o registro de resultado vai ficar em branco porque ninguém registrou. Resultado: fila tecnicamente atualizada com histórico inútil. A solução correta é um terceiro caminho: detecção automática para mover o lead da fila, mais prompt imediato de resultado — notificação que aparece ao SDR 30 segundos após a detecção perguntando "como foi essa ligação?" com 3 botões.</p>
+<p class="body-text">Ponto não tocado por ninguém: a fila mais inteligente do mundo falha se o SDR não sabe por que um lead está no topo. "Score 91" não é contexto. "Respondeu WhatsApp há 8 minutos dizendo 'pode me ligar?'" é contexto. A diferença entre um SDR que converte 30% e um que converte 15% não é a velocidade de discagem — é o que ele fala nos primeiros 10 segundos da chamada.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Grant Cardone</h3>
+<p class="body-text">Crítica a Alex Hormozi: o cooldown de 45 minutos é pensamento que mantém empresas medíocres. "Tentativa 4 é mensagem, não ligação" é desistência disfarçada de estratégia. Call centers de alta performance mostram que a quarta tentativa com abordagem diferente em 20 minutos converte mais do que 45 minutos de silêncio. Mensagem não cria urgência. Voz cria urgência.</p>
+<p class="body-text">Crítica a Marcel Marcondes: o tick manual obrigatório adiciona 8 segundos de fricção entre cada chamada — em 60 chamadas por turno, são 8 minutos de fricção acumulada, fora o erro humano em momentos de alta performance. Além disso, a variável de qualidade por tag de MQL tem um problema crítico de dados: tags do GHL chegam com 2 horas de delay no webhook. O score vai classificar lead frio como MQL quente porque a tag não sincronizou ainda. Isso não é edge case — é a realidade diária de qualquer operação com GHL. Antes de construir fórmula elegante, é necessário resolver a confiabilidade dos dados que a alimentam.</p>
+<p class="body-text">Proposta simplificada: dois estados, sem burocracia. Estado 1: "Ligue agora" — lead com resposta de WhatsApp nas últimas 2 horas ou lead novo com menos de 15 minutos. Estado 2: "Próximo da fila" — todo o resto, ordenado por tempo sem contato. Sem score de 280 pontos, sem quatro camadas de ponderação. SDR não é analista de dados — é atleta de vendas. A complexidade vai gerar o que se chama de "paralisia de prioridade" — o SDR vai olhar para o lead 1 com 148 pontos e o lead 2 com 143 e vai perguntar ao gestor qual dos dois ligar.</p>
+<p class="body-text">Ponto final inegociável: o discador não vai resolver agendamento baixo se o SDR não acredita no produto. O sistema mais simples possível coloca o lead certo na frente do SDR certo no momento certo — e o restante da energia deve ser investido em treinar o SDR para ser imparável quando o lead atende. Velocidade de contato abre a porta. Convicção fecha o agendamento. Na ordem certa.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-3-converg-ncia-e-posi-es-finais">RODADA 3 — CONVERGÊNCIA E POSIÇÕES FINAIS</h2>
+<h3 class="card-title">Alex Hormozi</h3>
+<p class="body-text">**Convergência principal:** A proposta do Sandro San é a mais sólida do grupo. Ele foi o único que separou o score (backend) da interface (SDR). Todo mundo — incluindo eu mesmo — cometeu o erro de mostrar o número na tela. O SDR que vê "score 73" vai perguntar "isso é bom?" O SDR que vê "Fernanda — respondeu há 8 min" vai discar imediatamente. A diferença entre esses dois sistemas não é a lógica por baixo — é o que aparece na tela.</p>
+<p class="body-text">Gary Vaynerchuk também acertou em algo subestimado: a velocidade de reação do lead importa mais que o canal. Resposta de WhatsApp em 4 minutos é diferente de resposta em 14 horas no mesmo canal.</p>
+<p class="body-text">**O que mantenho:** Cooldown por evento, não por tempo fixo. Grant errou feio aqui — quarta tentativa em 20 minutos não é persistência, é desperdício de lead e de SDR. Dados de call centers de high-ticket mostram que segunda tentativa em menos de 30 minutos tem taxa de atendimento 12% menor que a primeira. Cooldown de 45 minutos não é arbitrário: é a mediana empírica de quanto tempo leva para alguém terminar o contexto que o impediu de atender.</p>
+<p class="body-text">**Fórmula final aceita — score calculado no backend, nunca visível ao SDR:**</p>
+<p class="body-text">**Score = (Recência do Sinal × 45) + (Velocidade de Reação do Lead × 35) + (Tentativas Anteriores × 20)**</p>
+<ul class="bullet-list">
+<li>Recência do sinal: sinal em até 30 min = 100pt / 30min–2h = 70pt / lead novo sem sinal = 60pt / sem sinal 2–8h = 30pt / sem sinal acima de 8h = 10pt.</li>
+<li>Velocidade de reação: respondeu em menos de 15 min de qualquer mensagem = 100pt / 15–60 min = 70pt / 1–4h = 40pt / nunca respondeu = 20pt.</li>
+<li>Tentativas anteriores: 0 = 100pt / 1 = 75pt / 2 = 50pt / 3 = 25pt / 4+ sem nenhuma resposta = 10pt.</li>
+</ul>
+<p class="body-text">Score acima de 70 = "Ligue Agora" em verde. Entre 40 e 70 = "Ligue Hoje" em amarelo. Abaixo de 40 = "Mensagem" em cinza. O número nunca aparece na tela — o SDR vê o estado e uma linha de razão em linguagem humana.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Russell Brunson</h3>
+<p class="body-text">**Convergência principal:** A proposta mais respeitável é a do Sandro San — ele foi o único que parou de otimizar o algoritmo e perguntou o que o SDR realmente vê quando está no 30º lead do turno. A ideia de três estados visuais sem número exposto resolve o problema que eu mesmo criei: Urgency Score de quatro camadas com 148 pontos é legível numa apresentação e invisível na prática de uma terça-feira às 15h com 40 leads. O Sandro entendeu que o score serve ao sistema, não ao SDR.</p>
+<p class="body-text">**O que mantenho sem negociação:** O contexto narrativo do lead como campo obrigatório. Nenhum dos outros membros resolveu isso de forma satisfatória. Três campos imutáveis ao lado do nome: funil de origem, gancho do anúncio, e última mensagem recebida. Um lead que assistiu VSL de 40 minutos sobre liberdade financeira tem conversa completamente diferente de um que preencheu formulário genérico. Se o SDR abre a ligação sem saber onde o lead está na história, ele começa do zero numa conversa que o marketing já avançou.</p>
+<p class="body-text">**Fórmula final aceita:**</p>
+<p class="body-text">**Score = (Sinal Quente × 50) + (Janela de Tempo × 35) + (Tentativas × 15)**</p>
+<ul class="bullet-list">
+<li>Sinal Quente: respondeu qualquer canal em até 30 min = 50pt / 30min–2h = 30pt / 2h–6h = 10pt / sem sinal = 0pt.</li>
+<li>Janela de Tempo desde opt-in sem primeiro contato: 0–20min = 35pt / 20–60min = 25pt / 1–3h = 15pt / 3–8h = 8pt / acima de 8h = 2pt.</li>
+<li>Tentativas: 0 = 15pt / 1 = 10pt / 2 = 5pt / 3+ = 0pt, entra automaticamente no estado Mensagem.</li>
+</ul>
+<p class="body-text">Score acima de 60 = "Ligue Agora" (vermelho, máximo 5 leads visíveis). Entre 25 e 60 = "Ligue Hoje" (âmbar). Abaixo de 25 = "Mensagem" (cinza). O SDR nunca vê o número — vê o estado e uma linha de razão. Recalculo a cada 3 minutos via Supabase Realtime. Sinal quente tem peso maior que tempo porque intenção de engajamento no momento presente vale mais que velocidade de chegada.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Gary Vaynerchuk</h3>
+<p class="body-text">**Convergência principal:** O Sandro chegou mais perto da verdade operacional do que qualquer um. Propor esconder o score do SDR é contraintuitivo mas brilhante — porque o SDR sob pressão não processa número, processa instrução. "Fernanda — respondeu há 8 min" é instrução. "Score 87" é abstração. O Sandro entendeu que a interface e o algoritmo são dois produtos diferentes: o algoritmo pode ser complexo, a interface tem que ser idiota-proof.</p>
+<p class="body-text">**Divergência com Sandro:** Três estados é um a mais do que necessário. "Ligue Agora" e "Próximo" resolve. O estado "Mensagem" cria uma segunda fila que o SDR vai ignorar ou misturar com a principal — e aí voltou-se para grade estática com outro nome.</p>
+<p class="body-text">**O que mantenho sem negociação:** Dois princípios. Primeiro: sinal quente de resposta recente tem peso absoluto, não relativo — se o lead mandou WhatsApp agora, ele vai ao topo, sem cálculo ponderado, sem concorrência com decay de tempo. É um override, não uma variável. Segundo: tick manual só existe para o que aconteceu fora do GHL, não como fluxo padrão. Lock de lead por SDR ativo resolve colisão, não tick manual obrigatório.</p>
+<p class="body-text">**Fórmula final aceita:**</p>
+<p class="body-text">**Score = Override(100 se respondeu WA/SMS nos últimos 30min) OU (Tempo × 45) + (Engajamento × 35) + (Tentativas × 20)**</p>
+<ul class="bullet-list">
+<li>Tempo: 0–15min = 100pt / 15–60min = 75pt / 1–3h = 50pt / 3–8h = 25pt / acima de 8h sem sinal = 5pt.</li>
+<li>Engajamento: respondeu WA/SMS em 30min–2h = 100pt / abriu email ou clicou link em 4h = 60pt / no-show nas últimas 48h = 80pt / nenhum sinal = 0pt.</li>
+<li>Tentativas: 0 = 100pt / 1 = 75pt / 2 = 40pt / 3 = 15pt / 4+ = 0pt e lead vai para fila de WhatsApp automático.</li>
+</ul>
+<p class="body-text">Score mínimo para aparecer na fila ativa: 25 pontos. Abaixo disso, dorme até sinal quente. O SDR vê só o nome, a razão em uma linha, e o estado — verde ou amarelo.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Sandro San</h3>
+<p class="body-text">**Convergência principal:** A proposta mais sólida é a do Marcel — especificamente o prompt imediato de resultado pós-detecção automática, levantado na segunda rodada. Não porque seja a mais completa, mas porque é a única que resolve o problema que todos os outros ignoraram: ter dado de atividade sem dado de resultado é relatório de vaidade. Webhook detecta a ligação, sistema move o lead, em 30 segundos aparece notificação com três botões — Conectei, Não atendeu, Agendei. Esse dado qualitativo alimenta o score da próxima tentativa. Sem ele, o sistema recalcula com base em fantasmas.</p>
+<p class="body-text">**O que mantenho:** O princípio central — score existe no backend, o SDR nunca vê número. O que o SDR vê é estado e razão em linguagem humana. Sistema que exige que o usuário interprete métrica para agir não é sistema — é relatório interativo. E relatório não agenda reunião.</p>
+<p class="body-text">**Fórmula final aceita — quatro componentes com pesos fixos revisáveis após 30 dias de dados reais:**</p>
+<p class="body-text">**Score = (Tempo sem contato × 0,35) + (Velocidade de resposta do lead × 0,35) + (Tentativas anteriores × 0,20) + (Fonte de tráfego × 0,10)**</p>
+<ul class="bullet-list">
+<li>Tempo sem contato: 0–15min = 100 / 15–60min = 75 / 1–4h = 45 / 4–12h = 20 / acima de 12h sem sinal = 5.</li>
+<li>Velocidade de resposta: respondeu em menos de 10 min após contato = 100 / 10–60 min = 80 / 1–4h = 50 / resposta espontânea sem contato prévio = 90.</li>
+<li>Tentativas: 0 = 100 / 1 = 70 / 2 = 40 / 3+ = 10.</li>
+<li>Fonte: campanha de alta intenção (CDAV equivalente) = 100 / orgânico qualificado = 70 / tráfego frio = 40.</li>
+</ul>
+<p class="body-text">Score acima de 65 = "Ligue Agora" em verde. De 35 a 65 = "Ligue Hoje" em âmbar. Abaixo de 35 = "Mensagem" em cinza. O SDR vê três listas, nunca um número. O sistema decide qual lista, o SDR decide qual tom de voz usar quando o lead atende. Essa é a divisão correta de inteligência entre máquina e humano.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Marcel Marcondes</h3>
+<p class="body-text">**Convergência principal:** A proposta mais sólida em estrutura conceitual é a do Sandro San — não pelos números, mas pela separação entre o que o sistema decide e o que o SDR vê. Quando ele propõe três estados visíveis com razão em linguagem humana, está aplicando o mesmo princípio que qualquer marca bem construída aplica no ponto de venda: reduzir o atrito cognitivo no momento de decisão. Confiança não vem de score de 148 pontos bem explicado em treinamento. Vem de abrir o sistema, ligar para quem aparece primeiro, e a taxa de atendimento ser consistentemente superior ao que ele conseguia com o feeling próprio.</p>
+<p class="body-text">**O que mantenho:** Foco em uma métrica única de governança — percentual de leads contactados em até 30 minutos. Não porque é a mais sofisticada — é porque não deixa escapatória. Score de prioridade se pode debater por horas. Percentual contactado em 30 minutos se mede, se mostra no painel do gestor, e em duas semanas sabe-se se o sistema está funcionando ou não. E o prompt de resultado pós-ligação é inegociável — mas eu errei ao chamá-lo de "tick manual." O prompt correto aparece automaticamente 30 segundos após o webhook detectar a chamada, com quatro ícones sem texto: calendário (Agendou), seta circular (Retornar), telefone cruzado (Não atendeu), X (Descartado). Um toque, zero leitura.</p>
+<p class="body-text">**Fórmula final aceita:**</p>
+<p class="body-text">**Score = (T × 0,35) + (S × 0,35) + (A × 0,20) + (Q × 0,10)**</p>
+<ul class="bullet-list">
+<li>T (Tempo sem contato): 0–15min = 100 / 15–60min = 80 / 1–3h = 55 / 3–8h = 25 / acima de 8h = 8.</li>
+<li>S (Sinal quente — velocidade de reação): respondeu em até 30min do contato anterior = 100 / respondeu em 30min–4h = 65 / abriu email ou link em 2h sem responder = 30 / sem sinal = 0.</li>
+<li>A (Histórico de tentativas): 0 = 100 / 1 = 70 / 2 = 40 / 3 = 15 / 4+ = 5.</li>
+<li>Q (Qualidade da fonte): MQL com tag de alta intenção = 100 / MQL padrão = 60 / lead orgânico sem qualificação = 30.</li>
+</ul>
+<p class="body-text">Score acima de 65 = verde (Ligue Agora). Entre 35 e 64 = âmbar (Ligue Hoje). Abaixo de 35 = cinza (Mensagem ou Pausa). Ao lado do nome, linha de contexto gerada pelo componente de maior peso: se S dominou, mostra "respondeu há 8 min". Se T dominou, mostra "lead novo, 12 minutos sem contato." O algoritmo decide. O SDR executa. A gestão mede.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Grant Cardone</h3>
+<p class="body-text">**Convergência principal:** O Sandro San chegou mais perto da verdade operacional do que qualquer um. Não pela fórmula — mas pelo princípio fundamental: o SDR nunca deve ver o score, só o estado e a razão em linguagem humana. Gary acertou ao dizer que sinal quente vale mais que decaimento de tempo. Marcel foi o único que mencionou o prompt imediato de resultado pós-detecção automática — funcionalidade real, não teoria.</p>
+<p class="body-text">**O que mantenho:** Dois estados primários visíveis, decisão zero para o SDR. Não três estados — dois. "Ligue agora" e "Próximo." A complexidade fica inteiramente no backend. Também mantenho a posição sobre cooldown por evento, não por tempo fixo — o lead volta para a fila quando dá sinal de vida ou quando o gestor decide que é hora de nova tentativa com intenção declarada. Cooldown de 45 minutos é gerência de CRM disfarçada de sistema.</p>
+<p class="body-text">**Fórmula final aceita:**</p>
+<p class="body-text">**Score = (Sinal Quente × 50) + (Urgência de Tempo × 35) + (Tentativas Inversas × 15)**</p>
+<ul class="bullet-list">
+<li>Sinal Quente: respondeu qualquer canal em até 30 min = 50pt / 30min–2h = 30pt / 2h–8h = 10pt / sem sinal = 0pt.</li>
+<li>Urgência de Tempo: 0–15 min sem primeiro contato = 35pt / 15–60 min = 25pt / 1–4h = 15pt / acima de 4h = 5pt.</li>
+<li>Tentativas Inversas: 0 = 15pt / 1–2 = 10pt / 3–4 = 5pt / 5+ = 0pt, vai automaticamente para fila de mensagem.</li>
+</ul>
+<p class="body-text">Score acima de 60 = "Ligue Agora" em verde. Score 20–59 = "Próximo" em amarelo. Abaixo de 20 = fila de mensagem automática, sem ligação. Sem número visível para o SDR — só a cor, o nome, e uma linha: "Respondeu WA 12 min" ou "Lead novo, sem contato." O algoritmo pensa. O SDR executa.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="decis-o-do-presidente-jeff-bezos">DECISÃO DO PRESIDENTE — JEFF BEZOS</h2>
+<p class="body-text">Ouvi cada um de vocês com atenção. Hormozi trouxe rigor matemático. Russell trouxe contexto narrativo. Gary trouxe realismo operacional. Sandro trouxe o insight mais valioso do debate inteiro. Marcel trouxe governança. Cardone trouxe volume e velocidade. Encerro com decisão — não com consenso, porque consenso é o que comitês produzem quando ninguém quer ser responsável pelo resultado.</p>
+<p class="body-text">**Dois caminhos emergiram com clareza. O terceiro foi ruído.**</p>
+<p class="body-text">O primeiro caminho é o da complexidade visível: score de 0 a 280, quatro camadas ponderadas, número na tela do SDR. Hormozi, Russell e Grant variaram nesse espectro. O problema com todos eles é o mesmo: confundem a inteligência do sistema com a interface do sistema. Na Amazon aprendemos cedo que o cliente não quer ver o algoritmo de recomendação — ele quer ver "você pode gostar disso." A lógica fica embaixo. A ação fica em cima.</p>
+<p class="body-text">O segundo caminho — e o correto — é o que o Sandro articulou com precisão: score calculado no backend, estado traduzido em linguagem humana na interface. O SDR nunca vê número. Vê instrução.</p>
+<p class="body-text">O terceiro caminho, do Marcel, é o mais completo em governança, mas errou ao fazer o tick manual o fluxo padrão — decisão que vai custar agendamentos toda segunda-feira de manhã quando os SDRs estiverem com 80 leads acumulados e esquecendo de clicar.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">A Fórmula Adotada</h3>
+<p class="body-text">Score calculado a cada dois minutos via Supabase Realtime, nunca visível ao SDR. Quatro componentes:</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Componente</th>
+<th>Peso</th>
+<th>Critérios</th>
+</tr>
+<tr>
+<td>**Sinal Quente**</td>
+<td>40%</td>
+<td>Respondeu qualquer canal em até 30 min = 100pt / Resposta espontânea sem contato prévio = 90pt / Respondeu entre 30 min e 2h = 60pt / Abriu email ou link nas últimas 2h sem responder = 30pt / Nenhum sinal = 0pt</td>
+</tr>
+<tr>
+<td>**Urgência de Tempo**</td>
+<td>35%</td>
+<td>0–15 min sem primeiro contato = 100pt / 15–60 min = 75pt / 1–4h = 45pt / 4–12h = 20pt / Acima de 12h sem sinal quente = 5pt</td>
+</tr>
+<tr>
+<td>**Histórico de Tentativas**</td>
+<td>20%</td>
+<td>0 tentativas = 100pt / 1 = 70pt / 2 = 40pt / 3 = 15pt / 4+ sem nenhuma resposta = 0pt — lead sai da fila de ligação automaticamente, entra em fila de mensagem</td>
+</tr>
+<tr>
+<td>**Fonte de Tráfego**</td>
+<td>5%</td>
+<td>Campanha de alta intenção qualificada = 100pt / Orgânico qualificado = 70pt / Tráfego frio = 40pt</td>
+</tr>
+</table></div>
+<p class="body-text">**Estados visíveis na interface:** - Score acima de 65 = estado verde **"Ligue Agora"** - Score entre 30 e 64 = estado amarelo **"Ligue Hoje"** - Score abaixo de 30 = estado cinza **"Mensagem"**</p>
+<p class="body-text">A interface mostra três listas, nunca um número. Ao lado de cada nome, uma linha gerada pelo componente de maior peso naquele cálculo: "respondeu WhatsApp há 8 min", "lead novo, 14 minutos sem contato", "3ª tentativa — cooldown até 14h30."</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Sobre Tick Manual vs. Automático</h3>
+<p class="body-text">**A resposta certa é: automático como padrão, prompt de resultado como confirmação, manual como exceção documentada.**</p>
+<p class="body-text">1. Detecção automática via webhook do GHL move o lead de "aguardando" para "em processamento" assim que a ligação é registrada. 2. Trinta segundos depois, aparece automaticamente um prompt com quatro ícones — sem texto, apenas ícones universais: calendário (agendou), seta circular (retornar), telefone cruzado (não atendeu), X (descartado). Um toque. Zero leitura. 3. Esse dado qualitativo realimenta o score do próximo ciclo. Sem ele, o sistema recalcula com base em fantasmas. 4. O tick manual existe em exatamente uma situação: o SDR fez a ligação fora do GHL — celular pessoal, WhatsApp pessoal, encontro presencial. Um botão explícito "Registrar contato externo" com os mesmos quatro ícones. Não é o fluxo normal — é o override de exceção. 5. Travamento de lead por SDR ativo resolve colisão entre SDRs sem necessidade de nenhum tick: quando o SDR A tem o lead X em tela ativa, o lead X fica bloqueado para o SDR B. Problema de concorrência de banco de dados, não de processo humano.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Como Seria o Turno do SDR com 40 Leads Ativos</h3>
+<p class="body-text">**Início de turno — 8h45:** O SDR abre o discador e vê a lista verde com quatro nomes. No topo: "Carla Mendes — respondeu WhatsApp há 6 min." Abaixo: "João Alves — lead novo, 11 minutos sem contato." Terceiro: "Fernanda Costa — respondeu email às 8h38, 1 tentativa anterior." A lista amarela mostra mais doze nomes. A lista cinza está escondida por padrão — um clique para abrir se o SDR quiser ver. O SDR não toma nenhuma decisão. Liga para a Carla. Em 30 segundos após a ligação registrada, aparece o prompt com quatro ícones. O SDR toca em "seta circular" porque a Carla não atendeu. O sistema move a Carla para cooldown por evento — ela reaparece quando der sinal de vida ou quando o sistema detectar que passaram 90 minutos sem sinal.</p>
+<p class="body-text">**Meio do turno — 12h00:** A lista verde reorganizou sozinha. Três leads novos que chegaram entre 10h e 12h estão no topo, mais um lead da lista amarela que respondeu WhatsApp às 11h47 e subiu automaticamente. O SDR não sabe que isso aconteceu — só vê que a lista mudou e o próximo a ligar é diferente do que estava há duas horas.</p>
+<p class="body-text">**Final de tarde — 17h00:** A lista verde tem dois nomes — leads que chegaram após as 16h. A lista amarela tem seis, todos com duas ou mais tentativas. A lista cinza tem doze — quatro ou mais tentativas sem resposta. O sistema já enviou automaticamente uma mensagem de WhatsApp para os doze cinzas durante o turno, sem o SDR precisar agir. O SDR termina o turno com zero dúvida sobre o que foi trabalhado: histórico de tentativas completo, prompts de resultado respondidos, e o gestor vê no painel o percentual de leads contactados em até 30 minutos — a única métrica que importa para avaliar se o sistema está funcionando.</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Princípio Decisório Final</h3>
+<p class="body-text">**O sistema decide tudo que é lógica. O SDR executa tudo que é humano. Qualquer parte do design que force o SDR a raciocinar sobre prioridade é falha de produto, não falha de SDR.**</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="encaminhamentos">ENCAMINHAMENTOS</h2>
+<div class="table-wrap"><table>
+<tr>
+<th>#</th>
+<th>Ação</th>
+<th>Responsável</th>
+<th>Prazo</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Implementar o score de quatro componentes com pesos definidos (Sinal Quente 40%, Urgência de Tempo 35%, Tentativas 20%, Fonte 5%) no backend via Supabase, recalculo a cada 2 minutos</td>
+<td>Time de produto</td>
+<td>Sprint atual</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Construir a interface com três listas (verde/amarelo/cinza) sem exposição do número do score — apenas estado e linha de contexto gerada pelo componente dominante</td>
+<td>Time de frontend</td>
+<td>Sprint atual</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Implementar detecção automática via webhook do GHL para mover lead de "aguardando" para "em processamento" ao detectar chamada registrada</td>
+<td>Time de backend</td>
+<td>Sprint atual</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Implementar prompt de resultado pós-chamada com quatro ícones (Agendou / Retornar / Não atendeu / Descartado) aparecendo automaticamente 30 segundos após detecção do webhook</td>
+<td>Time de produto</td>
+<td>Sprint atual</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Implementar travamento de lead por SDR ativo (lock no banco de dados) para eliminar risco de colisão de abordagem em operações com múltiplos SDRs simultâneos</td>
+<td>Time de backend</td>
+<td>Sprint atual</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Implementar botão de override "Registrar contato externo" para casos em que a ligação ocorreu fora do GHL — mesmos quatro ícones de resultado, fluxo de exceção documentado</td>
+<td>Time de produto</td>
+<td>Sprint seguinte</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Definir o campo de contexto narrativo ao lado do nome do lead: funil de origem, gancho do anúncio, e última mensagem recebida (proposta Russell Brunson, aceita pelo presidente)</td>
+<td>Time de produto</td>
+<td>Sprint seguinte</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Configurar painel de gestão com KPI único de governança: percentual de leads contactados em até 30 minutos — visível diariamente</td>
+<td>Time de dados</td>
+<td>Sprint seguinte</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Acompanhar SDR top por uma semana após lançamento para mapear divergências entre o feeling do SDR e a ordenação do algoritmo — dado qualitativo para calibração dos pesos</td>
+<td>Gestão de pré-vendas</td>
+<td>Pós-lançamento</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Revisão dos pesos do score após 30 dias de dados reais de conversão — os pesos atuais são hipótese inicial, não definição permanente</td>
+<td>Time de dados + produto</td>
+<td>D+30 do lançamento</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<p class="body-text">*Ata lavrada em 27 de junho de 2026. Aprovada pelo Presidente do Conselho.*</p>
+<p class="body-text">*Jeff Bezos — Presidente*</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      Gerado pelo Conselho dos Mestres · 27/06/2026 00:55
+    </div>
+  </footer>
+</body>
+</html>

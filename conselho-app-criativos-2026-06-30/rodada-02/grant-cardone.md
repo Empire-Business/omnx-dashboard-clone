@@ -1,0 +1,7 @@
+# Grant Cardone — Rodada 2
+
+Marcel, você está esperando a estrela se alinhar. "Dois semanas no Notion antes de codar"? Esquece. O mercado não espera você amadurecer processo em planilha. Criativo é venda, e venda exige velocidade. Eu não estou dizendo para ignorar governança — estou dizendo que governança sem volume de ação é desculpa de quem tem medo de lançar. Você constrói o avião enquanto voa. O MVP não precisa ser perfeito; precisa estar no ar, gerando dados, gerando decisões. Quem espera o processo ficar maduro perde o mercado para quem já testou vinte peças nesse meio-tempo. 10X de velocidade, Marcel. Não 10X de reunião.
+
+Gary, você tem razão em uma coisa: sem dono, morre. Mas aonde você erra feio é colocar brand no mesmo peso de venda. Brand não paga a folha sexta-feira. Venda paga. Todo hook que funciona no ad não é "um post orgânico esperando para nascer" — é uma MÁQUINA DE DINHEIRO que já está ligada. Primeiro você vende. Depois, se sobrar tempo, transforma em conteúdo orgânico. O app de criativos não é about page, não é storytelling bonitinho: é o controle do ativo que mais impacta aquisição. Brand é consequência de escala de venda, não o contrário.
+
+Aqui é o seguinte: separa o domínio, ativa o RLS, joga a base notion_creatives para dentro e entrega o MVP. Ontem. Campanha, status, métrica de morte ou escala, dono nomeado. Segurança é inegociável, mas tudo depois disso é ação massiva. Quem testa mais, vende mais. Massive action!

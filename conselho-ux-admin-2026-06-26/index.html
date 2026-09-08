@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conselho de UX · Empire Dashboard · Decisão Final</title>
+<style>
+  :root {
+    --gold: #FCD535;
+    --gold-soft: rgba(252, 213, 53, 0.12);
+    --dark: #070B11;
+    --dark-2: #0C121C;
+    --ink: #E7ECF3;
+    --ink-dim: #93A0B4;
+    --line: rgba(255, 255, 255, 0.08);
+    --glass: rgba(255, 255, 255, 0.04);
+    --green: #34D399;
+    --blue: #60A5FA;
+    --violet: #A78BFA;
+    --rose: #FB7185;
+    --amber: #FBBF24;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, system-ui, sans-serif;
+    background: var(--dark);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(900px 600px at 80% -10%, rgba(252,213,53,0.10), transparent 60%),
+      radial-gradient(700px 500px at 0% 20%, rgba(96,165,250,0.08), transparent 55%),
+      radial-gradient(800px 700px at 50% 120%, rgba(167,139,250,0.07), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* HERO */
+  header.hero { padding: 120px 0 70px; text-align: center; }
+  .eyebrow {
+    display: inline-block; letter-spacing: .28em; text-transform: uppercase;
+    font-size: 11px; color: var(--gold); font-weight: 700;
+    padding: 7px 16px; border: 1px solid var(--line); border-radius: 999px;
+    background: var(--gold-soft); margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 7vw, 76px); font-weight: 800; letter-spacing: -.03em;
+    line-height: 1.02; margin-bottom: 22px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #B9C4D4 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero h1 span { color: var(--gold); -webkit-text-fill-color: var(--gold); }
+  .hero p.sub { font-size: clamp(16px, 2.2vw, 20px); color: var(--ink-dim); max-width: 640px; margin: 0 auto 14px; }
+  .hero .meta { font-size: 13px; color: var(--ink-dim); margin-top: 30px; letter-spacing: .04em; }
+  .hero .meta b { color: var(--ink); }
+
+  /* SECTION */
+  section { padding: 56px 0; }
+  .sec-tag { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; }
+  .sec-tag .num {
+    font-size: 13px; font-weight: 700; color: var(--dark); background: var(--gold);
+    width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center;
+  }
+  .sec-tag h2 { font-size: clamp(24px, 4vw, 34px); font-weight: 800; letter-spacing: -.02em; }
+
+  /* GLASS CARD */
+  .glass {
+    background: var(--glass);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    box-shadow: 0 20px 60px -30px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  /* PROBLEM */
+  .problem { padding: 34px 36px; }
+  .problem p { color: var(--ink-dim); font-size: 17px; margin-bottom: 16px; }
+  .problem p:last-child { margin-bottom: 0; }
+  .problem strong { color: var(--ink); }
+  .problem .bad { color: var(--rose); font-weight: 600; }
+
+  /* COUNCIL GRID */
+  .council { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 720px) { .council { grid-template-columns: 1fr; } }
+  .member { padding: 24px 24px 22px; display: flex; flex-direction: column; gap: 12px; transition: transform .25s ease, border-color .25s ease; }
+  .member:hover { transform: translateY(-4px); border-color: rgba(252,213,53,0.35); }
+  .member .top { display: flex; align-items: center; gap: 14px; }
+  .avatar {
+    width: 50px; height: 50px; border-radius: 14px; flex-shrink: 0;
+    display: grid; place-items: center; font-weight: 800; font-size: 18px;
+    color: var(--dark); position: relative;
+  }
+  .member .name { font-weight: 700; font-size: 16px; }
+  .member .role { font-size: 12px; color: var(--ink-dim); }
+  .member .quote { font-size: 14px; color: var(--ink-dim); font-style: italic; border-left: 2px solid var(--line); padding-left: 14px; }
+  .badge {
+    align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    padding: 4px 11px; border-radius: 999px; text-transform: uppercase;
+  }
+  .b-cedeu { background: rgba(251,191,36,0.14); color: var(--amber); border: 1px solid rgba(251,191,36,0.3); }
+  .b-consenso { background: rgba(52,211,153,0.14); color: var(--green); border: 1px solid rgba(52,211,153,0.3); }
+
+  /* DECISION */
+  .decision { padding: 40px 40px; border-color: rgba(252,213,53,0.28); }
+  .decision .author { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+  .decision .author .avatar { background: linear-gradient(135deg, #fff, #c9c9c9); }
+  .decision .author .name { font-weight: 800; font-size: 18px; }
+  .decision .author .role { font-size: 12px; color: var(--gold); letter-spacing: .04em; text-transform: uppercase; }
+  .decision p { color: var(--ink-dim); font-size: 16px; margin-bottom: 18px; }
+  .decision p strong { color: var(--ink); }
+  .decision .pull {
+    font-size: clamp(19px, 3vw, 26px); font-weight: 700; color: var(--ink);
+    line-height: 1.35; margin: 28px 0; letter-spacing: -.01em;
+  }
+  .decision .pull span { color: var(--gold); }
+  .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
+  @media (max-width: 720px) { .verdict-grid { grid-template-columns: 1fr; } }
+  .verdict { padding: 22px 24px; border-radius: 16px; }
+  .v-yes { background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.25); }
+  .v-no { background: rgba(251,113,133,0.06); border: 1px solid rgba(251,113,133,0.22); }
+  .verdict h4 { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+  .v-yes h4 { color: var(--green); }
+  .v-no h4 { color: var(--rose); }
+  .verdict ul { list-style: none; }
+  .verdict li { font-size: 14px; color: var(--ink-dim); padding: 7px 0 7px 24px; position: relative; }
+  .v-yes li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .v-no li::before { content: "✕"; position: absolute; left: 0; color: var(--rose); font-weight: 700; }
+
+  /* METRIC STRIP */
+  .metric { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding: 26px 30px; margin-top: 26px; text-align: center; }
+  .metric .big { font-size: clamp(40px, 7vw, 64px); font-weight: 800; color: var(--gold); letter-spacing: -.03em; line-height: 1; }
+  .metric .lbl { text-align: left; }
+  .metric .lbl .t { font-weight: 700; font-size: 15px; }
+  .metric .lbl .d { font-size: 13px; color: var(--ink-dim); }
+
+  /* PLAN */
+  .phase { padding: 28px 30px; margin-bottom: 18px; }
+  .phase .ph-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+  .phase .ph-name { font-size: 19px; font-weight: 800; letter-spacing: -.01em; }
+  .phase .ph-time { font-size: 12px; font-weight: 700; color: var(--gold); background: var(--gold-soft); padding: 4px 12px; border-radius: 999px; }
+  .phase .ph-goal { font-size: 14px; color: var(--ink-dim); margin-bottom: 18px; font-style: italic; }
+  .task { display: flex; gap: 13px; padding: 11px 0; border-top: 1px solid var(--line); align-items: flex-start; }
+  .task:first-of-type { border-top: none; }
+  .task .box { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--ink-dim); flex-shrink: 0; margin-top: 3px; }
+  .task .txt { font-size: 14.5px; color: var(--ink); }
+  .task .txt small { display: block; color: var(--ink-dim); font-size: 13px; margin-top: 3px; }
+  .task .txt code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: var(--gold); background: rgba(252,213,53,0.08); padding: 1px 6px; border-radius: 5px; }
+
+  .order { padding: 22px 28px; margin-top: 8px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .order .step { font-size: 14px; font-weight: 700; padding: 8px 16px; border-radius: 10px; background: var(--gold-soft); border: 1px solid var(--line); color: var(--ink); }
+  .order .arrow { color: var(--gold); font-size: 18px; }
+
+  footer { text-align: center; padding: 70px 0 60px; color: var(--ink-dim); font-size: 13px; }
+  footer .sig { color: var(--gold); font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Conselho de Produto · UX</div>
+    <h1>Governança não é sobre <span>apps</span>.<br>É sobre <span>pessoas</span>.</h1>
+    <p class="sub">Decisão final do conselho sobre a administração e o modelo de permissões do Empire Dashboard.</p>
+    <div class="meta">Empire Dashboard · <b>26 de junho de 2026</b> · Presidência: <b>Steve Jobs</b> · 3 rodadas de debate</div>
+  </header>
+
+  <!-- PROBLEMA -->
+  <section id="problema">
+    <div class="sec-tag"><span class="num">01</span><h2>O Problema</h2></div>
+    <div class="glass problem">
+      <p>O Empire Dashboard é um painel B2B interno de analytics de vendas com um sistema multi-app — <strong>sub-apps ativáveis por workspace</strong>. Hoje, a administração do workspace está <span class="bad">embutida dentro dos apps</span>, usando a sidebar deles.</p>
+      <p>As permissões são organizadas <span class="bad">app-first</span>: você escolhe o app primeiro e só então vê os usuários. Para dar acesso a uma pessoa, o admin precisa pensar em software antes de pensar em gente.</p>
+      <p>Deveria ser o contrário. <strong>A entidade central da governança é o usuário</strong> — você seleciona a pessoa e vê, de uma vez, todos os apps e funções dela.</p>
+    </div>
+  </section>
+
+  <!-- CONSELHO -->
+  <section id="conselho">
+    <div class="sec-tag"><span class="num">02</span><h2>O Conselho</h2></div>
+    <div class="council">
+
+      <div class="glass member">
+        <div class="top">
+          <div class="avatar" style="background:linear-gradient(135deg,#FB7185,#9F1239)">RB</div>
+          <div><div class="name">Russell Brunson</div><div class="role">Arquiteto de Funis</div></div>
+        </div>
+        <div class="quote">"Pensa como um funil — cada passo leva ao próximo." Corrigido por Sandro: governança não é conversão.</div>
+        <span class="badge b-cedeu">Cedeu · "funil" → "estado de contexto"</span>
+      </div>
+
+      <div class="glass member">
+        <div class="top">
+          <div class="avatar" style="background:linear-gradient(135deg,#60A5FA,#1E3A8A)">SS</div>
+          <div><div class="name">Sandro San</div><div class="role">Estrategista de Sistemas</div></div>
+        </div>
+        <div class="quote">"Não é funil, é estado de contexto — onde a pessoa está e o que ela pode ser ali." Venceu o vocabulário.</div>
+        <span class="badge b-consenso">Consenso · "estado de contexto"</span>
+      </div>
+
+      <div class="glass member">
+        <div class="top">
+          <div class="avatar" style="background:linear-gradient(135deg,#A78BFA,#5B21B6)">MM</div>
+          <div><div class="name">Marcel</div><div class="role">UX / Fricção</div></div>
+        </div>
+        <div class="quote">"Uma tela só resolve tudo." Corrigido por Brunson para uma régua melhor: cliques-até-poder.</div>
+        <span class="badge b-cedeu">Cedeu · "tela única" → métrica de fricção</span>
+      </div>
+
+      <div class="glass member">
+        <div class="top">
+          <div class="avatar" style="background:linear-gradient(135deg,#34D399,#065F46)">AH</div>
+          <div><div class="name">Alex Hormozi</div><div class="role">Execução / Valor</div></div>
+        </div>
+        <div class="quote">"Sequência atrasa." Cedeu em aceitar um dia de estrutura mínima antes de correr.</div>
+        <span class="badge b-cedeu">Cedeu · aceitou "um dia" de fundação</span>
+      </div>
+
+      <div class="glass member">
+        <div class="top">
+          <div class="avatar" style="background:linear-gradient(135deg,#FBBF24,#92400E)">GC</div>
+          <div><div class="name">Grant Cardone</div><div class="role">Velocidade</div></div>
+        </div>
+        <div class="quote">"Velocidade antes de tudo." Cedeu em ter estrutura mínima antes da execução massiva.</div>
+        <span class="badge b-cedeu">Cedeu · estrutura mínima antes</span>
+      </div>
+
+      <div class="glass member">
+        <div class="top">
+          <div class="avatar" style="background:linear-gradient(135deg,#FCD535,#B45309)">GV</div>
+          <div><div class="name">Gary Vee</div><div class="role">Voz do Usuário</div></div>
+        </div>
+        <div class="quote">Trouxe vocabulário B2C; cedeu em adotar a métrica de fricção do Marcel como linguagem comum.</div>
+        <span class="badge b-cedeu">Cedeu · adotou cliques-até-poder</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DECISÃO -->
+  <section id="decisao">
+    <div class="sec-tag"><span class="num">03</span><h2>Decisão do Presidente</h2></div>
+    <div class="glass decision">
+      <div class="author">
+        <div class="avatar">SJ</div>
+        <div><div class="name">Steve Jobs</div><div class="role">Presidente do Conselho</div></div>
+      </div>
+
+      <p>Um administrador entra para dar acesso a uma pessoa e tem que escolher um <em>app</em> primeiro? Isso é loucura. O app não é a pessoa. A máquina foi desenhada para a conveniência do banco de dados, não para a mente de quem usa. Isso acaba hoje.</p>
+
+      <div class="pull">A coisa mais importante aqui é uma só: a unidade de governança é o <span>ser humano</span>, não o software.</div>
+
+      <p>Está <strong>aprovado</strong>: um portal de administração separado, layout próprio, sem a sidebar de nenhum app, vivendo em <code style="font-family:ui-monospace,monospace;color:var(--gold)">/workspace/*</code>. A tela inicial é <strong>Pessoas</strong>. Você clica numa pessoa e vê, de uma vez só, numa única matriz, todos os apps e funções dela. Liga, desliga, pronto.</p>
+
+      <p>O eixo usuário-primeiro não é fase 2 de nada — é a fundação, vem primeiro. E ninguém escreve cinquenta telas antes de provar a base. <strong>Um dia</strong> de estrutura mínima — modelo de permissão no banco e esqueleto da tela Pessoas — antes da execução em massa. Velocidade sem fundação é só pressa.</p>
+
+      <div class="verdict-grid">
+        <div class="verdict v-yes">
+          <h4>Aprovado</h4>
+          <ul>
+            <li>Portal de admin separado em <code style="font-family:ui-monospace,monospace">/workspace/*</code>, sem sidebar de app</li>
+            <li>Permissões user-first: pessoa → todos os apps e funções de uma vez</li>
+            <li>Eixo usuário-primeiro como fundação (decisão binária, vem antes)</li>
+            <li>Entidade central = USUÁRIO, não o app</li>
+            <li>Métrica de aceite = cliques-até-poder</li>
+            <li>Um dia de estrutura mínima antes da execução massiva</li>
+          </ul>
+        </div>
+        <div class="verdict v-no">
+          <h4>Descartado</h4>
+          <ul>
+            <li>Admin embutido dentro dos apps</li>
+            <li>Navegação app-first nas permissões</li>
+            <li>Contagem de telas como métrica</li>
+            <li>Vocabulário de "funil" (Brunson)</li>
+            <li>"Uma tela só" (Marcel)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass metric">
+        <div class="big">&lt; 3</div>
+        <div class="lbl">
+          <div class="t">cliques-até-poder</div>
+          <div class="d">a única régua: do "quero dar acesso" ao "acesso concedido"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANO -->
+  <section id="plano">
+    <div class="sec-tag"><span class="num">04</span><h2>Plano de Ação</h2></div>
+
+    <div class="glass phase">
+      <div class="ph-head"><span class="ph-name">Fase 0 — Fundação</span><span class="ph-time">1 dia</span></div>
+      <div class="ph-goal">Provar o eixo user-first no banco e no esqueleto antes de qualquer UI em massa.</div>
+      <div class="task"><div class="box"></div><div class="txt">Modelo de permissão por usuário no banco<small>Tabela <code>workspace_user_app_roles</code> (workspace_id, user_id, app_id, role, enabled). RLS por workspace + índice (workspace_id, user_id) para leitura única.</small></div></div>
+      <div class="task"><div class="box"></div><div class="txt">Desenhar a tela "Pessoas" como hub central de <code>/workspace</code><small>Wireframe: lista de pessoas → matriz user-first (apps × funções, toggles inline). Medir baseline de cliques-até-poder.</small></div></div>
+    </div>
+
+    <div class="glass phase">
+      <div class="ph-head"><span class="ph-name">Fase 1 — Admin Portal</span><span class="ph-time">1 sprint</span></div>
+      <div class="ph-goal">O portal separado existe, é user-first, e o admin some das sidebars dos apps.</div>
+      <div class="task"><div class="box"></div><div class="txt">Criar <code>WorkspaceLayout</code> — layout próprio, sem sidebar de app<small>eb-dash2/src/components/layout/WorkspaceLayout.tsx</small></div></div>
+      <div class="task"><div class="box"></div><div class="txt">Rota <code>/workspace</code> → redirect para <code>/workspace/users</code></div></div>
+      <div class="task"><div class="box"></div><div class="txt">Rota <code>/workspace/users</code> → lista de pessoas com resumo de apps/permissões</div></div>
+      <div class="task"><div class="box"></div><div class="txt">Rota <code>/workspace/users/:id</code> → perfil com a matriz user-first<small>O coração da decisão: todos os apps + funções num só lugar, toggles inline.</small></div></div>
+      <div class="task"><div class="box"></div><div class="txt">Rota <code>/workspace/apps</code> → toggle de apps on/off</div></div>
+      <div class="task"><div class="box"></div><div class="txt">Mover <code>AdminAppsPage</code> e <code>AdminPermissionsPage</code> para dentro de <code>WorkspaceLayout</code></div></div>
+      <div class="task"><div class="box"></div><div class="txt">Remover links de "Admin" da sidebar de cada app<small>Sidebar.tsx — manter sincronia, sem entradas mortas.</small></div></div>
+    </div>
+
+    <div class="glass phase">
+      <div class="ph-head"><span class="ph-name">Fase 2 — Polimento por métrica</span><span class="ph-time">contínuo</span></div>
+      <div class="ph-goal">Provar com número que ficou mais simples. A régua é cliques-até-poder.</div>
+      <div class="task"><div class="box"></div><div class="txt">Medir cliques-até-poder (baseline — fluxo app-first antigo)</div></div>
+      <div class="task"><div class="box"></div><div class="txt">Medir cliques-até-poder (after — fluxo user-first novo)</div></div>
+      <div class="task"><div class="box"></div><div class="txt">Iterar até &lt; 3 cliques para conceder acesso total a um usuário</div></div>
+    </div>
+
+    <div class="glass order">
+      <span class="step">Fase 0 · 1 dia</span>
+      <span class="arrow">→</span>
+      <span class="step">Fase 1 · 1 sprint</span>
+      <span class="arrow">→</span>
+      <span class="step">Fase 2 · até &lt; 3 cliques</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="sig">"Foco é dizer não a mil boas ideias."</div>
+    Conselho de UX/Produto · Empire Dashboard · 26 jun 2026 · Presidência de Steve Jobs
+  </footer>
+
+</div>
+</body>
+</html>

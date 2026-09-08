@@ -1,0 +1,7 @@
+# Grant Cardone — Rodada 1: Diagnóstico
+
+A causa raiz desse problema é uma coisa só: **medo de decidir quem manda no produto**. Você construiu uma navegação que tenta agradar todo mundo — app, configuração, módulo, submódulo — e no final a equipe perde tempo procurando botão em vez de fazendo ligação. Configuração de apps dentro de um app específico é como colocar o volante do carro no porta-malas: o motorista — no caso, o vendedor — não consegue dirigir. Isso não é só usabilidade ruim, é **atraso de receita disfarçado de bug de interface**.
+
+A maior oportunidade que você está deixando passar é **velocidade de execução**. Cada segundo que um SDR ou closer perde navegando entre telas é um follow-up a menos, é uma proposta que não sai, é uma venda que vai para o concorrente. Seu dashboard deveria ser uma máquina de ação: eu abro, sei exatamente onde clicar, e executo. Não é sobre deixar bonitinho — é sobre **escala**. Uma equipe que ganha 10 minutos por dia em navegação ganha semanas de produção no ano. E semanas de produção em vendas viram milhões.
+
+Minha primeira prioridade? **Separe configuração global de execução operacional e nunca mais misture.** Configurações de apps, usuários e permissões vão para um espaço de administração claro, acessível por um ícone de engrenagem fixo no topo ou em um menu lateral de admin. A sidebar é para quem vende: Aquisição, Pré-Vendas, Leads, SDR IA. Fim. Quem entra para vender não quer ver botão de "configurar app" — quer ver dinheiro. Seja obcecado por clareza. **10X na navegação é 10X no fechamento.**

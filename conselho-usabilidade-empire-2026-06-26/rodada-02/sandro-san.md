@@ -1,0 +1,9 @@
+# Sandro San — Rodada 2
+
+Russell, você enxerga funil em tudo. Até numa tela de configuração. Mas essa não é uma jornada de vendas — é arquitetura de poder. Ninguém precisa ser "engajado" para descobrir onde muda uma permissão; precisa saber, com clareza absoluta, quem manda no que. Transformar navegação em funil é sofisticar o problema em vez de resolvê-lo. Aqui não se vende nada. Aqui se governa. E governança não pode depender de etapas emocionais. Faz sentido para você?
+
+Grant, você tem razão na urgência, mas corre o risco de medir o sintoma errado. Não é só tempo perdido procurando botão — é autoridade perdida toda vez que um operador cai numa tela de configuração dentro de um app que não deveria tê-la. Velocidade sem hierarquia é corrida para lugar nenhum. Você fala em engrenagem fixa no topo, e eu concordo com o símbolo, mas o ponto não é acessibilidade rápida. É acessibilidade correta. O administrador precisa sentir que está numa camada diferente, não apenas mais rápida.
+
+Marcel chegou mais perto do que parece. Governança projetada na tela é exatamente isso. Mas eu iria além: o problema não é só separar global de contextual. É que o produto ainda não decidiu se é uma ferramenta ou uma plataforma. Ferramenta empilha funções. Plataforma distribui poder. O Empire precisa parecer uma plataforma. Isso significa que o espaço de administração global não é um "hub" bonitinho — é o trono. E cada app é um vassalo com território delimitado.
+
+Minha prioridade continua a mesma: crie uma camada de administração soberana, visível e separada, acessível de qualquer ponto do dashboard, mas nunca confundida com a operação. Depois, escreva uma regra simples e inflexível: se a configuração afeta mais de um app, ela não mora dentro de nenhum app. Pense grande, mas construa pequeno e sem ambiguidade.

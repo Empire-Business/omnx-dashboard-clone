@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(.claude/approved-plans/**)",
+      "Read(**/*)",
+      "Write(**/*)",
+      "Edit(**/*)",
+      "Bash",
+      "WebFetch",
+      "WebSearch",
+      "Task",
+      "Glob",
+      "Grep",
+      "NotebookEdit",
+      "Bash(git pull:*)",
+      "Bash(curl:*)",
+      "Bash(jq:*)",
+      "Skill(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf /*)",
+      "Bash(sudo rm -rf:*)",
+      "Bash(mkfs:*)",
+      "Bash(dd if=/dev/zero:*)",
+      "Bash(chmod -R 777 /)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Aplicar migrations versionadas deste repositorio no Supabase de producao (projeto qzesffnkqgelmtfblzkr), via Management API (curl para https://api.supabase.com/v1/projects/qzesffnkqgelmtfblzkr/*) ou via CLI supabase autenticado. Cobre DDL aditiva (ADD COLUMN IF NOT EXISTS, CREATE OR REPLACE FUNCTION, GRANT, REVOKE), leitura e verificacao, e login do CLI com access token. NAO cobre DROP TABLE, DROP COLUMN, TRUNCATE, DELETE sem WHERE, nem supabase db push."
+    ]
+  }
+}

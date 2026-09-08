@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Pré-Vendas — Empire Business</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --empire: #0D1829;
+    --gold: #C9A240;
+    --ink: #0D1829;
+    --steel: #6B7280;
+    --ghost: #E5E7EB;
+    --mist: #F9FAFB;
+    --danger: #DC2626;
+    --emerald: #059669;
+    --amber: #D97706;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; background: var(--mist); color: var(--ink); }
+
+  .header { background: var(--empire); color: #fff; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+  .header .subtitle { font-size: 0.8rem; opacity: 0.6; margin-top: 2px; }
+  .header .periodo-form { display: flex; gap: 8px; align-items: center; }
+  .header input[type=date] { padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 0.8rem; }
+  .header input[type=date]::-webkit-calendar-picker-indicator { filter: invert(1); }
+  .header button { padding: 7px 16px; background: var(--gold); color: #fff; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
+  .header button:hover { opacity: 0.9; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+  .section-title { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--steel); margin-bottom: 12px; }
+
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  @media(max-width:900px){ .grid-5,.grid-4{grid-template-columns:repeat(2,1fr);} .grid-2{grid-template-columns:1fr;} }
+
+  .kpi-card { background: #fff; border: 1px solid var(--ghost); border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .kpi-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--steel); }
+  .kpi-value { font-size: 1.6rem; font-weight: 700; margin-top: 4px; color: var(--ink); }
+  .kpi-sub { font-size: 0.7rem; color: var(--steel); margin-top: 2px; }
+  .kpi-value.green { color: var(--emerald); }
+  .kpi-value.amber { color: var(--amber); }
+  .kpi-value.red { color: var(--danger); }
+
+  .card { background: #fff; border: 1px solid var(--ghost); border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 24px; }
+  .card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+  .card .card-sub { font-size: 0.75rem; color: var(--steel); margin-bottom: 16px; }
+
+  .funil-row { margin-bottom: 12px; }
+  .funil-meta { display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px; }
+  .funil-meta .label { font-weight: 500; }
+  .funil-meta .right { display: flex; gap: 12px; }
+  .funil-meta .total { font-weight: 700; }
+  .funil-meta .pct-ant { font-weight: 600; }
+  .funil-meta .pct-ini { color: var(--steel); font-size: 0.7rem; }
+  .funil-bar { height: 22px; background: var(--ghost); border-radius: 6px; overflow: hidden; }
+  .funil-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--empire), var(--gold)); transition: width 0.8s; }
+
+  .canal-row { margin-bottom: 10px; }
+  .canal-meta { display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 3px; }
+  .canal-bar { height: 16px; background: var(--ghost); border-radius: 4px; overflow: hidden; }
+  .canal-fill { height: 100%; border-radius: 4px; transition: width 0.8s; }
+
+  .heatmap { display: flex; gap: 3px; align-items: flex-end; flex-wrap: wrap; }
+  .hora-col { display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1; min-width: 28px; }
+  .hora-block { width: 100%; border-radius: 4px; transition: height 0.5s; }
+  .hora-label { font-size: 0.6rem; color: var(--steel); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  thead tr { background: var(--mist); border-bottom: 1px solid var(--ghost); }
+  th { padding: 10px 12px; text-align: left; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--steel); white-space: nowrap; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--ghost); white-space: nowrap; }
+  tr:hover td { background: var(--mist); }
+  td.num { text-align: center; }
+  td.green { color: var(--emerald); font-weight: 600; }
+  td.amber { color: var(--amber); font-weight: 600; }
+  td.red { color: var(--danger); font-weight: 600; }
+  td.bold { font-weight: 700; }
+
+  .loading { text-align: center; padding: 48px; color: var(--steel); font-size: 0.9rem; }
+  .section { margin-bottom: 32px; }
+
+  .print-btn { position: fixed; bottom: 24px; right: 24px; padding: 10px 20px; background: var(--empire); color: #fff; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  .print-btn:hover { background: #1a2d47; }
+  @media print { .print-btn, .header .periodo-form { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Relatório de Pré-Vendas</h1>
+    <div class="subtitle">Empire Business · Conversão, Velocidade e Desempenho</div>
+  </div>
+  <div class="periodo-form">
+    <label style="color:rgba(255,255,255,0.7);font-size:0.75rem">De</label>
+    <input type="date" id="startDate">
+    <label style="color:rgba(255,255,255,0.7);font-size:0.75rem">até</label>
+    <input type="date" id="endDate">
+    <button onclick="carregarTudo()">Carregar</button>
+  </div>
+</div>
+
+<div class="container" id="app">
+  <div class="loading">Carregando dados...</div>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Imprimir</button>
+
+<script>
+const SUPABASE_URL = 'https://qzesffnkqgelmtfblzkr.supabase.co'
+const SUPABASE_ANON_KEY = 'REMOVED_ANON_KEY_SET_ENV_VAR_SUPABASE_ANON_KEY'
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+// ─── Date setup ───────────────────────────────────────────────
+function spToday() {
+  return new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' })
+}
+function spDaysAgo(n) {
+  const d = new Date()
+  d.setDate(d.getDate() - n)
+  return d.toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' })
+}
+document.getElementById('startDate').value = spDaysAgo(29)
+document.getElementById('endDate').value = spToday()
+
+// ─── Helpers ─────────────────────────────────────────────────
+function pct(n, d, dec=1) { return d ? `${((n/d)*100).toFixed(dec)}%` : '—' }
+function pctVal(n, d) { return d ? (n/d)*100 : null }
+function fmtHoras(h) {
+  if (h === null || h === undefined) return '—'
+  if (h < 1) return `${Math.round(h*60)}min`
+  if (h < 24) return `${h.toFixed(1)}h`
+  return `${(h/24).toFixed(1)}d`
+}
+function media(arr) {
+  const v = arr.filter(x => x !== null && isFinite(x))
+  return v.length ? v.reduce((a,b)=>a+b,0)/v.length : null
+}
+function diffHoras(a, b) {
+  if (!a || !b) return null
+  const d = new Date(b)-new Date(a)
+  return d < 0 ? null : d/3600000
+}
+function corPct(v, bom=50) {
+  if (v===null) return ''
+  return v >= bom ? 'green' : v >= bom*0.7 ? 'amber' : 'red'
+}
+
+// ─── Fetch com paginação ──────────────────────────────────────
+async function fetchAll(table, select, filters=[]) {
+  const PAGE = 1000
+  let all = [], page = 0
+  while (true) {
+    let q = sb.from(table).select(select)
+    for (const [col, op, val] of filters) {
+      if (op === 'gte') q = q.gte(col, val)
+      else if (op === 'lte') q = q.lte(col, val)
+      else if (op === 'not_null') q = q.not(col, 'is', null)
+      else if (op === 'neq') q = q.neq(col, val)
+    }
+    const { data } = await q.order('id', { ascending: true }).range(page*PAGE, (page+1)*PAGE-1)
+    all = all.concat(data || [])
+    if ((data||[]).length < PAGE) break
+    page++
+  }
+  return all
+}
+
+// ─── MAIN ─────────────────────────────────────────────────────
+async function carregarTudo() {
+  const startDate = document.getElementById('startDate').value
+  const endDate   = document.getElementById('endDate').value
+  const startISO  = `${startDate}T00:00:00-03:00`
+  const endISO    = `${endDate}T23:59:59-03:00`
+
+  document.getElementById('app').innerHTML = '<div class="loading">Carregando dados...</div>'
+
+  try {
+    // 1. Oportunidades no período
+    const opps = await fetchAll('oportunidades',
+      'id, contato_id, sdr_name, status, data_lead_recebido, data_conectado, data_agendamento_reuniao, data_realizacao_vendas, data_no_show, contatos(owner_name)',
+      [['data_lead_recebido','gte',startISO],['data_lead_recebido','lte',endISO]]
+    )
+
+    // 2. Vendas no período
+    const vendas = await fetchAll('vendas_fechamento',
+      'oportunidade_id, data_pagamento_entrada',
+      [['data_pagamento_entrada','gte',startISO],['data_pagamento_entrada','lte',endISO]]
+    )
+    const vendaSet = new Set(vendas.filter(v=>v.data_pagamento_entrada).map(v=>v.oportunidade_id))
+
+    // 3. Comunicações (primeiro contato outbound)
+    const comms = await fetchAll('comunicacoes',
+      'contato_id, channel, data_comunicacao, direction, ghl_source',
+      [['data_comunicacao','gte',startISO],['data_comunicacao','lte',endISO]]
+    )
+
+    // ── Cálculos base ──────────────────────────────────────────
+    const totalLeads   = opps.length
+    const conectados   = opps.filter(o => o.data_conectado)
+    const reunioes     = opps.filter(o => o.data_agendamento_reuniao)
+    const realizadas   = opps.filter(o => o.data_realizacao_vendas)
+    const noShows      = opps.filter(o => o.data_no_show)
+    const vendasOpps   = opps.filter(o => vendaSet.has(o.id))
+
+    // ── Velocidade ─────────────────────────────────────────────
+    const tAplContat = media(conectados.map(o => diffHoras(o.data_lead_recebido, o.data_conectado)))
+    const tAplReun   = media(reunioes.map(o => diffHoras(o.data_lead_recebido, o.data_agendamento_reuniao)))
+    const pct1h  = conectados.length ? (conectados.filter(o => (diffHoras(o.data_lead_recebido, o.data_conectado)||99)<1).length / conectados.length)*100 : null
+    const pct24h = conectados.length ? (conectados.filter(o => (diffHoras(o.data_lead_recebido, o.data_conectado)||999)<24).length / conectados.length)*100 : null
+    const pct48h = conectados.length ? (conectados.filter(o => (diffHoras(o.data_lead_recebido, o.data_conectado)||9999)<48).length / conectados.length)*100 : null
+
+    // ── Análise por canal ──────────────────────────────────────
+    const outboundApp = comms.filter(c => c.direction==='outbound' && c.ghl_source==='app')
+    const primContato = new Map()
+    for (const c of outboundApp.sort((a,b) => new Date(a.data_comunicacao)-new Date(b.data_comunicacao))) {
+      if (!primContato.has(c.contato_id)) primContato.set(c.contato_id, { channel: c.channel||'outro', hora: new Date(c.data_comunicacao).getHours() })
+    }
+    const contatoIds = [...primContato.keys()]
+    const conectadoSet = new Set(conectados.map(o=>o.contato_id))
+
+    const canalMap = {}
+    for (const [cid, info] of primContato) {
+      const k = info.channel
+      if (!canalMap[k]) canalMap[k] = { total:0, conectados:0 }
+      canalMap[k].total++
+      if (conectadoSet.has(cid)) canalMap[k].conectados++
+    }
+    const CANAL_LABEL = { call:'Ligação', whatsapp:'WhatsApp', sms:'SMS', email:'Email', instagram:'Instagram', facebook:'Facebook' }
+    const porCanal = Object.entries(canalMap)
+      .map(([k,v]) => ({ canal: CANAL_LABEL[k]||k, ...v, taxa: v.total ? (v.conectados/v.total)*100 : null }))
+      .sort((a,b) => (b.taxa||0)-(a.taxa||0))
+
+    // ── Por hora ───────────────────────────────────────────────
+    const horaMap = {}
+    for (let h=0;h<24;h++) horaMap[h]={total:0,conectados:0}
+    for (const [cid, info] of primContato) {
+      horaMap[info.hora].total++
+      if (conectadoSet.has(cid)) horaMap[info.hora].conectados++
+    }
+    const maxHoraTaxa = Math.max(...Object.values(horaMap).map(h => h.total ? (h.conectados/h.total)*100 : 0), 1)
+
+    // ── Por SDR ────────────────────────────────────────────────
+    const sdrMap = {}
+    for (const o of opps) {
+      const sdr = o.sdr_name || o.contatos?.owner_name || 'Sem SDR'
+      if (!sdrMap[sdr]) sdrMap[sdr] = { leads:0, conectados:0, reunioes:0, realizadas:0, noShows:0, vendas:0, tContatos:[] }
+      const s = sdrMap[sdr]
+      s.leads++
+      if (o.data_conectado) { s.conectados++; s.tContatos.push(diffHoras(o.data_lead_recebido, o.data_conectado)) }
+      if (o.data_agendamento_reuniao) s.reunioes++
+      if (o.data_realizacao_vendas) s.realizadas++
+      if (o.data_no_show) s.noShows++
+      if (vendaSet.has(o.id)) s.vendas++
+    }
+    const porSdr = Object.entries(sdrMap)
+      .map(([nome, s]) => ({ nome, ...s, tMedioH: media(s.tContatos), taxaContato: pctVal(s.conectados,s.leads), taxaConversao: pctVal(s.vendas,s.realizadas) }))
+      .sort((a,b) => b.leads - a.leads)
+
+    // ── Funil ──────────────────────────────────────────────────
+    const funil = [
+      { label:'Leads recebidos', n: totalLeads },
+      { label:'Conectados',      n: conectados.length },
+      { label:'Reuniões agend.', n: reunioes.length },
+      { label:'Realizadas',      n: realizadas.length },
+      { label:'No-shows',        n: noShows.length },
+      { label:'Vendas',          n: vendasOpps.length },
+    ]
+
+    // ─── RENDER ────────────────────────────────────────────────
+    const dataStr = new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})
+    const periodoStr = `${new Date(startISO).toLocaleDateString('pt-BR')} → ${new Date(endISO).toLocaleDateString('pt-BR')}`
+
+    document.getElementById('app').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <p style="font-size:0.75rem;color:var(--steel)">Gerado em ${dataStr} · Período: ${periodoStr}</p>
+    </div>
+
+    <!-- VELOCIDADE -->
+    <div class="section">
+      <p class="section-title">Velocidade de Contato</p>
+      <div class="grid-5">
+        <div class="kpi-card"><div class="kpi-label">Tempo médio até contato</div><div class="kpi-value">${fmtHoras(tAplContat)}</div><div class="kpi-sub">aplicação → conectado</div></div>
+        <div class="kpi-card"><div class="kpi-label">Tempo médio até reunião</div><div class="kpi-value">${fmtHoras(tAplReun)}</div><div class="kpi-sub">aplicação → agendamento</div></div>
+        <div class="kpi-card"><div class="kpi-label">Contactados em até 1h</div><div class="kpi-value ${corPct(pct1h,30)}">${pct1h!==null?pct1h.toFixed(1)+'%':'—'}</div><div class="kpi-sub">${conectados.length} conectados no período</div></div>
+        <div class="kpi-card"><div class="kpi-label">Contactados em até 24h</div><div class="kpi-value ${corPct(pct24h,70)}">${pct24h!==null?pct24h.toFixed(1)+'%':'—'}</div><div class="kpi-sub">meta: >70%</div></div>
+        <div class="kpi-card"><div class="kpi-label">Contactados em até 48h</div><div class="kpi-value ${corPct(pct48h,90)}">${pct48h!==null?pct48h.toFixed(1)+'%':'—'}</div><div class="kpi-sub">meta: >90%</div></div>
+      </div>
+    </div>
+
+    <!-- CONVERSÃO -->
+    <div class="section">
+      <p class="section-title">Taxas de Conversão</p>
+      <div class="grid-4">
+        <div class="kpi-card"><div class="kpi-label">Taxa de contato</div><div class="kpi-value ${corPct(pctVal(conectados.length,totalLeads),40)}">${pct(conectados.length,totalLeads)}</div><div class="kpi-sub">${conectados.length} de ${totalLeads} leads</div></div>
+        <div class="kpi-card"><div class="kpi-label">Taxa de agendamento</div><div class="kpi-value ${corPct(pctVal(reunioes.length,conectados.length),30)}">${pct(reunioes.length,conectados.length)}</div><div class="kpi-sub">${reunioes.length} de ${conectados.length} conectados</div></div>
+        <div class="kpi-card"><div class="kpi-label">Taxa de no-show</div><div class="kpi-value ${(() => { const v=pctVal(noShows.length,reunioes.length); return v===null?'':v<=20?'green':v<=35?'amber':'red' })()}">${pct(noShows.length,reunioes.length)}</div><div class="kpi-sub">${noShows.length} de ${reunioes.length} reuniões</div></div>
+        <div class="kpi-card"><div class="kpi-label">Taxa de conversão</div><div class="kpi-value ${corPct(pctVal(vendasOpps.length,realizadas.length),20)}">${pct(vendasOpps.length,realizadas.length)}</div><div class="kpi-sub">${vendasOpps.length} vendas de ${realizadas.length} realizadas</div></div>
+      </div>
+    </div>
+
+    <!-- FUNIL -->
+    <div class="section">
+      <div class="card">
+        <h3>Funil de Conversão</h3>
+        <div class="card-sub">Período: ${periodoStr}</div>
+        ${funil.map((e,i) => {
+          const antPct = i>0 ? pctVal(e.n, funil[i-1].n) : null
+          const iniPct = pctVal(e.n, totalLeads)
+          const larg = totalLeads>0 ? (e.n/totalLeads)*100 : 0
+          const pAnt = antPct!==null ? `<span class="${corPct(antPct,30)}" style="font-weight:600">${antPct.toFixed(1)}% do anterior</span>` : ''
+          const pIni = iniPct!==null ? `<span style="color:var(--steel);font-size:0.7rem">${iniPct.toFixed(1)}% do total</span>` : ''
+          return `<div class="funil-row">
+            <div class="funil-meta"><span class="label">${e.label}</span><div class="right"><span class="total">${e.n.toLocaleString('pt-BR')}</span>${pAnt}${pIni}</div></div>
+            <div class="funil-bar"><div class="funil-fill" style="width:${larg}%"></div></div>
+          </div>`
+        }).join('')}
+      </div>
+    </div>
+
+    <!-- CANAIS -->
+    <div class="grid-2">
+      <div class="card">
+        <h3>Taxa de Conexão por Canal</h3>
+        <div class="card-sub">Baseado no primeiro contato outbound do SDR</div>
+        ${porCanal.length === 0 ? '<p style="color:var(--steel);font-size:0.8rem">Sem dados de comunicação no período.</p>' :
+          porCanal.map(c => {
+            const t = c.taxa||0
+            const cor = t>=40?'#10b981':t>=20?'#f59e0b':'#ef4444'
+            return `<div class="canal-row">
+              <div class="canal-meta">
+                <span style="font-weight:500">${c.canal}</span>
+                <div style="display:flex;gap:10px">
+                  <span style="color:var(--steel)">${c.total} contatos</span>
+                  <span style="font-weight:600;color:${cor}">${t.toFixed(1)}%</span>
+                </div>
+              </div>
+              <div class="canal-bar"><div class="canal-fill" style="width:${Math.min(t,100)}%;background:${cor}"></div></div>
+            </div>`
+          }).join('')
+        }
+      </div>
+
+      <div class="card">
+        <h3>Melhor Horário para Contactar</h3>
+        <div class="card-sub">Taxa de conexão por hora do primeiro contato (BRT)</div>
+        <div class="heatmap">
+          ${Array.from({length:24},(_,h) => {
+            const { total, conectados: c } = horaMap[h]
+            const taxa = total ? (c/total)*100 : 0
+            const altura = total ? Math.max(12, (taxa/maxHoraTaxa)*60) : 8
+            const cor = taxa>=40?'#10b981':taxa>=20?'#f59e0b':'#6366f1'
+            const op = total===0 ? 0.15 : Math.max(0.2, taxa/100)
+            return `<div class="hora-col" title="${h}h: ${total} contatos, ${taxa.toFixed(0)}% conexão">
+              <div class="hora-block" style="height:${altura}px;background:${cor};opacity:${op}"></div>
+              <div class="hora-label">${h}h</div>
+            </div>`
+          }).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- SDRs -->
+    <div class="section">
+      <div class="card" style="padding:0;overflow:hidden">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--ghost)"><h3>Desempenho por SDR</h3></div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr>
+              <th>SDR</th><th>Leads</th><th>Conectados</th><th>Reuniões</th><th>Realizadas</th><th>No-shows</th><th>Vendas</th>
+              <th>% Contato</th><th>% Agend.</th><th>% No-show</th><th>% Conversão</th><th>T.Médio Contato</th>
+            </tr></thead>
+            <tbody>
+              ${porSdr.map(s => {
+                const tCt = pctVal(s.conectados, s.leads)
+                const tAg = pctVal(s.reunioes, s.conectados)
+                const tNS = pctVal(s.noShows, s.reunioes)
+                const tCv = pctVal(s.vendas, s.realizadas)
+                return `<tr>
+                  <td class="bold">${s.nome}</td>
+                  <td class="num">${s.leads}</td>
+                  <td class="num">${s.conectados}</td>
+                  <td class="num">${s.reunioes}</td>
+                  <td class="num">${s.realizadas}</td>
+                  <td class="num">${s.noShows}</td>
+                  <td class="num green bold">${s.vendas}</td>
+                  <td class="num ${corPct(tCt,40)}">${pct(s.conectados,s.leads)}</td>
+                  <td class="num ${corPct(tAg,30)}">${pct(s.reunioes,s.conectados)}</td>
+                  <td class="num ${tNS===null?'':tNS<=20?'green':tNS<=35?'amber':'red'}">${pct(s.noShows,s.reunioes)}</td>
+                  <td class="num ${corPct(tCv,20)}">${pct(s.vendas,s.realizadas)}</td>
+                  <td class="num">${fmtHoras(s.tMedioH)}</td>
+                </tr>`
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>`
+
+  } catch(e) {
+    document.getElementById('app').innerHTML = `<div class="loading" style="color:var(--danger)">Erro: ${e.message}</div>`
+  }
+}
+
+carregarTudo()
+</script>
+</body>
+</html>

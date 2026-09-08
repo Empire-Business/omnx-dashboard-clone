@@ -1,0 +1,51 @@
+rank,name,email,score,tier,pipeline_name,pipeline_stage,sdr_name,total_messages,days_since_lead,is_mql,is_sql,engagement_score,progression_score
+1,"Gabriel Terçarolli",gabe@realizanetwork.com.br,21.85,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",177,155,Yes,Yes,26,25
+2,"Elizabeth",elizabeth@naturepack.com.br,21.50,"TIER 1 - HOT","Pré-Vendas MQL","d67d11e2-e178-48ed-bbe1-6dcf6f20f571","Fernanda Torres",66,10,Yes,Yes,25,25
+3,"Odair rodrigues",ceo@b4.capital,21.35,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",183,96,Yes,Yes,26,23
+4,"Fernando Souza",aramath@aramath.com.br,21.25,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",60,135,Yes,Yes,25,24
+5,"Fabiana",contato@fpbusinesshub.com,21.25,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",33,38,No,Yes,25,24
+6,"Marcus Peterson",marcus@marcuspeterson.adv.br,21.25,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",109,104,Yes,Yes,25,24
+7,"Bruno Reis",bruno.reis@itadvisor.com.br,21.15,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",70,20,Yes,Yes,24,25
+8,"Rafael Santos Martins",rafael@impulsojuridico.com.br,21.15,"TIER 1 - HOT","Vendas SQL","af55ba13-1750-4a6c-8556-5b2e2d912eaf","Fernanda Torres",90,115,No,Yes,24,25
+9,"Igor Drudi",igor@drin.com.br,21.10,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",320,63,Yes,Yes,26,22
+10,"Bruno Kikumoto",bruno@canalsolar.com.br,21.10,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",161,70,Yes,Yes,26,25
+11,"Ezequias sena",ezequias.sena@gmail.com,21.00,"TIER 1 - HOT","Vendas SQL","d67d11e2-e178-48ed-bbe1-6dcf6f20f571","Bruno Andrease",75,34,Yes,Yes,25,25
+12,"Guto Moizés",guto@sinaiinvest.com.br,20.90,"TIER 1 - HOT","Vendas SQL","9b3cd05e-2325-4553-a035-9f08a0377d43","Fernanda Torres",86,124,No,Yes,24,24
+13,"Adeise Marcondes",falecom@kamalleoon.com.br,20.90,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",33,142,Yes,Yes,24,24
+14,"Paulo Cordeiro",paulo@4mdg.com.br,20.90,"TIER 1 - HOT","Vendas SQL","af55ba13-1750-4a6c-8556-5b2e2d912eaf","Bruno Andrease",83,101,Yes,Yes,24,24
+15,"Antonio Henrique Kulaif",antonio.kulaif@akws.com.br,20.85,"TIER 1 - HOT","Vendas SQL","d67d11e2-e178-48ed-bbe1-6dcf6f20f571","Lucas Leonardo",83,52,No,Yes,26,24
+16,"Marcela de Paula Santos de Oliveira",marcela@marcelasantoli.com,20.85,"TIER 1 - HOT","Pré-Vendas nMQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",65,10,No,Yes,26,24
+17,"Jorge Musumeci Musumeci",jorge.musumeci@century21.ptjorge.musumeci,20.80,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",33,86,Yes,Yes,23,25
+18,"Campa - Fernando Campanholo",campanholo@vivapositivamente.com.br,20.80,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",204,108,Yes,Yes,23,25
+19,"Darlene Arruda",darlene@3idigital.com.br,20.75,"TIER 1 - HOT","Pré-Vendas MQL","d67d11e2-e178-48ed-bbe1-6dcf6f20f571","Fernanda Torres",100,14,Yes,Yes,25,25
+20,"Thiago Gonzalez",thiago.gonzalez@adoxy.com.br,20.75,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",253,122,Yes,Yes,25,25
+21,"Fellipe Moraes Franca",fellipe@link2home.com.br,20.75,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",39,67,Yes,Yes,25,25
+22,"Julio Engel",julio@engeladvogados.com.br,20.75,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",73,91,Yes,Yes,25,22
+23,"Gabriel Martins",gabriel@beure.com.br,20.75,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",56,127,No,Yes,25,25
+24,"Fernando cardoso",fernandocardoso@ofcconsultoria.com,20.75,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",31,131,No,Yes,25,25
+25,"Airá Azevedo",airaazevedosilva@gmail.com,20.65,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",23,85,No,Yes,24,25
+26,"Luan Andrade",luan_qix80@hotmail.com,20.65,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",68,157,Yes,Yes,24,25
+27,"Thiago Bonfim",thiago@caren.app,20.55,"TIER 1 - HOT","Vendas SQL","dc9b94f4-4772-4848-acf0-688afa826949","Lucas Leonardo",179,90,Yes,Yes,23,24
+28,"Carlos Rivero",carlos.rivero@ropamedica.online,20.55,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",22,133,No,Yes,23,24
+29,"Gustavo Macedo",gustavo@gmparticipacoes.com,20.55,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",69,85,Yes,Yes,23,24
+30,"Kaike Ribeiro",kaike@finanto.com.br,20.55,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",30,69,No,No,24,25
+31,"Odair Junior",odairjr@bemviverseguros.com.brodairjr,20.50,"TIER 1 - HOT","Vendas SQL","d67d11e2-e178-48ed-bbe1-6dcf6f20f571","Fernanda Torres",27,89,Yes,Yes,25,24
+32,"Leonardo Magalhães",leo@l6m.com.br,20.50,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",26,41,No,Yes,25,24
+33,"Richard Harary",richard@macrobaby.com,20.50,"TIER 1 - HOT","Vendas SQL","af55ba13-1750-4a6c-8556-5b2e2d912eaf","Bruno Andrease",147,141,Yes,Yes,25,24
+34,"Igor Martins",igormartins@olhovivoseg.com.br,20.50,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",66,62,Yes,Yes,25,24
+35,"Jonifer Eduardo",jonifer@vendexa.com.br,20.50,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",43,129,No,Yes,25,24
+36,"caio de mattos",caio@nearx.com.br,20.45,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",97,82,Yes,Yes,22,25
+37,"Daniel Silva Carvalho",daniel@dominuspatrimonial.com.br,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",524,43,Yes,Yes,24,25
+38,"CARLOS VAGNER DA SILVA MARQUES",carlos@esaas.com.br,20.40,"TIER 1 - HOT","Vendas SQL","d67d11e2-e178-48ed-bbe1-6dcf6f20f571","Fernanda Torres",34,127,No,Yes,24,25
+39,"Arthur Marabin",marabin@techsavvy.com.br,20.40,"TIER 1 - HOT","Vendas SQL","d67d11e2-e178-48ed-bbe1-6dcf6f20f571","Bruno Andrease",117,39,Yes,Yes,24,25
+40,"Jéssica Martani",martanij@hotmail.com,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",50,106,No,Yes,24,24
+41,"Maris Tavares",maristavaresconsultoria@gmail.com,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Bruno Andrease",55,112,No,Yes,24,24
+42,"JOAO NASCIMENTO",executivo@nfoodja.com.br,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",134,129,Yes,Yes,24,25
+43,"Roberto",roberto@otimiza.org,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",58,125,Yes,Yes,24,25
+44,"Ader Miranda",ader.miranda123@gmail.com,20.40,"TIER 1 - HOT","Vendas SQL","af55ba13-1750-4a6c-8556-5b2e2d912eaf","Lucas Leonardo",132,93,No,Yes,24,24
+45,"Fernando Martins",fernando@faholding.com.br,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",76,117,Yes,Yes,24,25
+46,"TARCISIO DE SOUZA FILHO",omundoeoseular@gmail.com,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",77,139,Yes,Yes,24,24
+47,"Marcos Renan Santos de Oliveira",renan.oliveira@remarsolutions.com,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",86,151,Yes,Yes,24,25
+48,"Luiza",fasttattooeventos@gmail.com,20.40,"TIER 1 - HOT","Vendas SQL","9b3cd05e-2325-4553-a035-9f08a0377d43","Lucas Leonardo",16,154,Yes,Yes,24,24
+49,"Daniel Ludwig",danieldouglasludwig@gmail.com,20.40,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Fernanda Torres",27,153,No,Yes,24,24
+50,"Ana Miriã Laurentino",ana@originpartners.com.br,20.30,"TIER 1 - HOT","Vendas SQL","5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf","Lucas Leonardo",80,126,Yes,Yes,23,23

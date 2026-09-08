@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Scoring Report - Análise Completa</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; opacity: 0.8; }
+        .section { background: white; margin: 20px 0; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .section h2 { color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px; margin-bottom: 20px; }
+        .section h3 { color: #16213e; margin: 20px 0 10px; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+        .kpi-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; }
+        .kpi-card.green { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .kpi-card.orange { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .kpi-card.red { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .kpi-value { font-size: 2.5em; font-weight: bold; }
+        .kpi-label { font-size: 0.9em; opacity: 0.9; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #1a1a2e; color: white; }
+        tr:hover { background: #f5f5f5; }
+        .insight-box { background: #e8f4f8; border-left: 4px solid #2196F3; padding: 15px; margin: 15px 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 15px 0; }
+        .danger-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0; }
+        .creative-card { background: #f8f9fa; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin: 15px 0; }
+        .creative-card h4 { color: #e94560; margin-bottom: 10px; }
+        .tag { display: inline-block; background: #e94560; color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.8em; margin: 2px; }
+        .pain-point { background: #1a1a2e; color: white; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .pain-point strong { color: #e94560; }
+        .funnel { display: flex; align-items: center; justify-content: center; gap: 5px; flex-wrap: wrap; }
+        .funnel-stage { background: #667eea; color: white; padding: 15px 25px; text-align: center; border-radius: 5px; }
+        .funnel-stage.drop { background: #f5576c; }
+        .funnel-arrow { font-size: 1.5em; color: #999; }
+        .toc { background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .toc ul { list-style: none; padding-left: 20px; }
+        .toc li { margin: 8px 0; }
+        .toc a { color: #667eea; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        .emoji { font-size: 1.2em; margin-right: 5px; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+        footer { text-align: center; padding: 20px; color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔥 Análise Completa de Lead Scoring</h1>
+        <p>8.278 Leads | 97 Compradores | R$ 3.56M em Receita</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Generated: April 2026</p>
+    </header>
+
+    <div class="container">
+        <!-- Table of Contents -->
+        <div class="section toc">
+            <h2>📋 Índice</h2>
+            <ul>
+                <li><a href="#executive">Resumo Executivo</a></li>
+                <li><a href="#demographic">Perfil Demográfico</a></li>
+                <li><a href="#behavioral">Engajamento Comportamental</a></li>
+                <li><a href="#conversations">Análise de Conversas</a></li>
+                <li><a href="#scoring">Modelo de Scoring</a></li>
+                <li><a href="#ranking">Ranking de Leads</a></li>
+                <li><a href="#pain-points">Dores & Crenças Limitantes</a></li>
+                <li><a href="#creatives">🎨 Criativos Recomendados</a></li>
+                <li><a href="#ads-optimization">📢 Otimização de Campanhas</a></li>
+            </ul>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section" id="executive">
+            <h2>📊 Resumo Executivo</h2>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">8.278</div>
+                    <div class="kpi-label">Total de Leads</div>
+                </div>
+                <div class="kpi-card green">
+                    <div class="kpi-value">1.286</div>
+                    <div class="kpi-label">MQLs (15,5%)</div>
+                </div>
+                <div class="kpi-card orange">
+                    <div class="kpi-value">97</div>
+                    <div class="kpi-label">Compradores Reais</div>
+                </div>
+                <div class="kpi-card green">
+                    <div class="kpi-value">R$ 35k</div>
+                    <div class="kpi-label">Ticket Médio</div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h3>🎯 Descoberta Principal</h3>
+                <p><strong>95% dos fechados vêm do pipeline Vendas SQL</strong> - focar em leads que demonstram intenção clara de compra, não apenas volume de MQLs.</p>
+            </div>
+
+            <h3>Distribuição por Tier</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card red">
+                    <div class="kpi-value">246</div>
+                    <div class="kpi-label">🔥 HOT (3%)</div>
+                </div>
+                <div class="kpi-card orange">
+                    <div class="kpi-value">304</div>
+                    <div class="kpi-label">🌡️ WARM (3,7%)</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">1.662</div>
+                    <div class="kpi-label">🌱 NURTURING (20%)</div>
+                </div>
+                <div class="kpi-card" style="background: #6c757d;">
+                    <div class="kpi-value">6.066</div>
+                    <div class="kpi-label">❄️ COLD (73%)</div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Problema Crítico Encontrado</h3>
+                <p><strong>2.867 leads (35%) NÃO têm SDR atribuído</strong> - taxa de fechamento de apenas 0,3%. Cada lead sem SDR é dinheiro perdido.</p>
+            </div>
+        </div>
+
+        <!-- Demographic Profile -->
+        <div class="section" id="demographic">
+            <h2>👥 Perfil Demográfico</h2>
+
+            <h3>Email Domain Analysis</h3>
+            <table>
+                <tr><th>Tipo</th><th>Taxa de Fechamento</th><th>Impacto</th></tr>
+                <tr><td>📧 Email Corporativo</td><td>71,8%</td><td>+30% vs pessoal</td></tr>
+                <tr><td>📧 Email Pessoal (gmail, hotmail)</td><td>55,3%</td><td>Baseline</td></tr>
+            </table>
+
+            <div class="insight-box">
+                <strong>💡 Insight:</strong> Leads com email corporativo convertem 30% mais. Priorizarargeting para profissionais com emails corporativos.
+            </div>
+
+            <h3>Top SDRs por Performance</h3>
+            <table>
+                <tr><th>SDR</th><th>Leads</th><th>Taxa Conversão</th><th>MQL→Close</th></tr>
+                <tr><td>Bruno Andrease</td><td>-</td><td>Alta</td><td>474,5%</td></tr>
+                <tr><td>Davi Louback</td><td>-</td><td>Alta</td><td>17,95 avg score</td></tr>
+                <tr><td>Felipe Mazzola</td><td>-</td><td>Alta</td><td>15,04 avg score</td></tr>
+                <tr><td>Fernanda Torres</td><td>1.736</td><td>Média</td><td>8,63 avg score</td></tr>
+            </table>
+
+            <h3>Top Campanhas</h3>
+            <table>
+                <tr><th>Campanha</th><th>Volume</th><th>Conversão</th></tr>
+                <tr><td>Campanha 12</td><td>4.956 leads</td><td>66,9%</td></tr>
+                <tr><td>Campanha 24</td><td>100+ leads</td><td>91%+</td></tr>
+                <tr><td>Campanha 17</td><td>100+ leads</td><td>91%+</td></tr>
+                <tr><td>Campanha 21</td><td>100+ leads</td><td>91%+</td></tr>
+            </table>
+
+            <h3>Top Fontes de Tráfego</h3>
+            <table>
+                <tr><th>Fonte</th><th>Volume</th><th>Conversão</th></tr>
+                <tr><td>Instagram Orgânico (iorg-3)</td><td>1.459 leads</td><td>61,6%</td></tr>
+                <tr><td>Facebook Ads</td><td>-</td><td>-</td></tr>
+                <tr><td>Google Ads</td><td>-</td><td>-</td></tr>
+            </table>
+        </div>
+
+        <!-- Behavioral Engagement -->
+        <div class="section" id="behavioral">
+            <h2>📱 Engajamento Comportamental</h2>
+
+            <h3>Canal de Comunicação</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">39%</div>
+                    <div class="kpi-label">WhatsApp</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">29,6%</div>
+                    <div class="kpi-label">Email</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">24,7%</div>
+                    <div class="kpi-label">Inbound Ratio</div>
+                </div>
+            </div>
+
+            <h3>📊 Funil de Conversão</h3>
+            <div class="funnel">
+                <div class="funnel-stage">Lead Recebido</div>
+                <span class="funnel-arrow">→</span>
+                <div class="funnel-stage drop">Conectado (-75%)</div>
+                <span class="funnel-arrow">→</span>
+                <div class="funnel-stage">Reunião Agendada</div>
+                <span class="funnel-arrow">→</span>
+                <div class="funnel-stage drop">Reunião Realizada (-79%)</div>
+                <span class="funnel-arrow">→</span>
+                <div class="funnel-stage">Fechado</div>
+            </div>
+
+            <div class="danger-box">
+                <h3>🚨 Maior Drop-off: Lead → Conexão (-75%)</h3>
+                <p><strong>Problema:</strong> 63% das ligações duram menos de 10 segundos - o lead não atende ou desliga rápido.</p>
+                <p><strong>Causa provável:</strong> Abordagem agressiva demais, falta de rapport, ou timing ruim.</p>
+            </div>
+
+            <h3>Mensagens por Tipo de Lead</h3>
+            <table>
+                <tr><th>Tipo</th><th>Mensagens Médias</th></tr>
+                <tr><td>MQLs</td><td>26,1 mensagens</td></tr>
+                <tr><td>Closed Deals</td><td>27,3 mensagens</td></tr>
+                <tr><td>Não-MQLs</td><td>5,6 mensagens</td></tr>
+            </table>
+
+            <h3>Tempo Médio de Conversão</h3>
+            <table>
+                <tr><th>Etapa</th><th>Leads Fechados</th><th>Leads Perdidos</th></tr>
+                <tr><td>Lead → Conectado</td><td>11,2 dias</td><td>9,5 dias</td></tr>
+                <tr><td>Lead → Reunião Realizada</td><td>18 dias</td><td>-</td></tr>
+            </table>
+
+            <div class="insight-box">
+                <strong>💡 Insight:</strong> Leads que compram levam MAIS tempo para conectar (11.2 vs 9.5 dias). Não descarte leads que demoram - eles podem ser mais qualificados.
+            </div>
+
+            <h3>No-Show Analysis</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card red">
+                    <div class="kpi-value">526</div>
+                    <div class="kpi-label">No-shows (8,4%)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conversation Analysis -->
+        <div class="section" id="conversations">
+            <h2>💬 Análise de Conversas (AI)</h2>
+
+            <div class="insight-box">
+                <h3>📊 Análise das dores dos leads (baseado em 1.383 resumos IA)</h3>
+            </div>
+
+            <div class="pain-point">
+                <strong>💸 99,2%</strong> — Problemas com <strong>faturamento e vendas</strong>
+            </div>
+            <div class="pain-point">
+                <strong>⏰ 73,9%</strong> — <strong>Falta de tempo</strong> para fazer tudo
+            </div>
+            <div class="pain-point">
+                <strong>📈 71,5%</strong> — Querem <strong>escalar/crescer</strong>
+            </div>
+            <div class="pain-point">
+                <strong>👥 59,2%</strong> — Vieram por <strong>indicação/referral</strong>
+            </div>
+
+            <h3>Objeções Mais Comuns</h3>
+            <table>
+                <tr><th>Objeção</th><th>Frequência</th><th>Como Responder</th></tr>
+                <tr><td>"Preciso de mais informações"</td><td>24,3%</td><td>Oferecer análise gratuita + case detalhado</td></tr>
+                <tr><td>"Não tenho budget"</td><td>4,3%</td><td>Mostrar ROI e opções de pagamento</td></tr>
+                <tr><td>"Já tenho outra solução"</td><td>2,6%</td><td>Descobrir gaps da solução atual</td></tr>
+                <tr><td>"É caro demais"</td><td>0,01%</td><td><strong>RARO</strong> - preço não é objeção principal</td></tr>
+            </table>
+
+            <div class="success-box">
+                <h3>🎯 Descoberta Surpreendente</h3>
+                <p><strong>Objeção de PREÇO é quase INEXISTENTE!</strong> Apenas 1 menção em 88.752 mensagens.</p>
+                <p><strong>Implicação:</strong> O problema não é quanto custa, mas sim <em>mostrar o valor</em> e <em>qualificar melhor</em>.</p>
+            </div>
+
+            <h3>Sinais de Compra</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card green">
+                    <div class="kpi-value">98,8%</div>
+                    <div class="kpi-label">Pedem reunião</div>
+                </div>
+                <div class="kpi-card green">
+                    <div class="kpi-value">59,2%</div>
+                    <div class="kpi-label">Por indicação</div>
+                </div>
+                <div class="kpi-card green">
+                    <div class="kpi-value">18,1%</div>
+                    <div class="kpi-label">Confirmam direto</div>
+                </div>
+            </div>
+
+            <h3>O Que Eles Querem Resolver (Mesmo Que Não Digam)</h3>
+            <ul style="margin: 20px; line-height: 2;">
+                <li>🎯 <strong>Faturar mais</strong> — sem precisar trabalhar mais horas</li>
+                <li>⏰ <strong>Ter tempo livre</strong> — sair do operacionais e focar no estratégico</li>
+                <li>📊 <strong>Previsibilidade</strong> — saber quanto vai entrar no mês</li>
+                <li>🚀 <strong>Escalar sem contratar</strong> — fazer mais com a mesma equipe</li>
+                <li>💎 <strong>Ser reconhecido</strong> — como autoridade no mercado</li>
+                <li>🛡️ <strong>Segurança</strong> — ter um sistema que não depende de uma pessoa só</li>
+            </ul>
+
+            <h3>Crenças Limitantes Identificadas</h3>
+            <div class="pain-point">
+                <strong>❌ "Já tentei outras coisas e não funcionou"</strong> — Ceticismo com soluções
+            </div>
+            <div class="pain-point">
+                <strong>❌ "Preciso pensar mais"</strong> — Medo de tomar decisão errada
+            </div>
+            <div class="pain-point">
+                <strong>❌ "Meu caso é diferente"</strong> — Acreditam que ninguém entende sua situação
+            </div>
+            <div class="pain-point">
+                <strong>❌ "É caro demais pra mim"</strong> — Autossabotagem (mesmo quando não é objeção direta)
+            </div>
+            <div class="pain-point">
+                <strong>❌ "Preciso consultar meu sócio/cônjuge"</strong> — Transferência de decisão
+            </div>
+        </div>
+
+        <!-- Scoring Model -->
+        <div class="section" id="scoring">
+            <h2>🎯 Modelo de Scoring</h2>
+
+            <h3>Fórmula de Pontuação</h3>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; font-family: monospace; margin: 15px 0;">
+                <p><strong>Score = Engajamento (35%) + Progressão (25%) + Fit (25%) + Sinais Explícitos (15%)</strong></p>
+            </div>
+
+            <h3>Pesos Detalhados</h3>
+            <table>
+                <tr><th>Categoria</th><th>Peso</th><th>Fatores</th></tr>
+                <tr><td>Engajamento</td><td>35%</td><td>Messages, inbound ratio, recência, call duration</td></tr>
+                <tr><td>Progressão</td><td>25%</td><td>Dias para conectar, dias para reunião, estágio pipeline</td></tr>
+                <tr><td>Fit</td><td>25%</td><td>Email domain, tags, traffic source</td></tr>
+                <tr><td>Sinais Explícitos</td><td>15%</td><td>MQL tag, SQL tag, [fn] tags, SDR</td></tr>
+            </table>
+
+            <h3>Validação do Modelo</h3>
+            <table>
+                <tr><th>Métrica</th><th>Buyers</th><th>Non-Buyers</th><th>Lift</th></tr>
+                <tr><td>Score Médio</td><td>12.28</td><td>6.44</td><td>1.9x</td></tr>
+                <tr><td>% Hot</td><td>30,9%</td><td>2,6%</td><td>12x</td></tr>
+                <tr><td>% Warm+Hot</td><td>47,4%</td><td>6,2%</td><td>7.6x</td></tr>
+            </table>
+
+            <div class="success-box">
+                <strong>✅ Modelo Validado:</strong> Buyers têm score 1.9x maior em média. Taxa de conversão entre HOT é 12x maior que baseline.
+            </div>
+
+            <h3>Thresholds</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card red">
+                    <div class="kpi-value">18-22</div>
+                    <div class="kpi-label">🔥 HOT</div>
+                </div>
+                <div class="kpi-card orange">
+                    <div class="kivo-value">14-17</div>
+                    <div class="kpi-label">🌡️ WARM</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">8-13</div>
+                    <div class="kpi-label">🌱 NURTURING</div>
+                </div>
+                <div class="kpi-card" style="background: #6c757d;">
+                    <div class="kpi-value">0-7</div>
+                    <div class="kpi-label">❄️ COLD</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Ranking -->
+        <div class="section" id="ranking">
+            <h2>🏆 Ranking de Leads</h2>
+
+            <h3>🔥 Top 10 Leads Mais Quentes (Não Compraram)</h3>
+            <table>
+                <tr><th>#</th><th>Nome</th><th>Score</th><th>Pipeline</th><th>SDR</th><th>Engajamento</th></tr>
+                <tr><td>1</td><td>Gabriel Terçarolli</td><td>21.85</td><td>Vendas SQL</td><td>Lucas Leonardo</td><td>177 msgs</td></tr>
+                <tr><td>2</td><td>Elizabeth</td><td>21.50</td><td>Pré-Vendas MQL</td><td>Fernanda Torres</td><td>Alto</td></tr>
+                <tr><td>3</td><td>Odair Rodrigues</td><td>21.35</td><td>Vendas SQL</td><td>Bruno Andrease</td><td>Alto</td></tr>
+                <tr><td>4</td><td>Fernando Souza</td><td>21.25</td><td>Vendas SQL</td><td>Lucas Leonardo</td><td>Alto</td></tr>
+                <tr><td>5</td><td>Fabiana</td><td>21.25</td><td>Vendas SQL</td><td>Fernanda Torres</td><td>Alto</td></tr>
+                <tr><td>6</td><td>André Janitschek</td><td>21.20</td><td>Vendas SQL</td><td>Bruno Andrease</td><td>Alto</td></tr>
+                <tr><td>7</td><td>Mariana Borges</td><td>21.15</td><td>Vendas SQL</td><td>Bruno Andrease</td><td>Alto</td></tr>
+                <tr><td>8</td><td>Raquel</td><td>21.10</td><td>Vendas SQL</td><td>Lucas Leonardo</td><td>Alto</td></tr>
+                <tr><td>9</td><td>Pedro Henrique</td><td>21.05</td><td>Vendas SQL</td><td>Davi Louback</td><td>Alto</td></tr>
+                <tr><td>10</td><td>Renata</td><td>21.00</td><td>Vendas SQL</td><td>Fernanda Torres</td><td>Alto</td></tr>
+            </table>
+
+            <h3>SDR Leaderboard</h3>
+            <table>
+                <tr><th>SDR</th><th>Leads</th><th>Score Médio</th><th>Conversão</th></tr>
+                <tr><td>🥇 Davi Louback</td><td>-</td><td>17.95</td><td>Alta</td></tr>
+                <tr><td>🥈 Felipe Mazzola</td><td>-</td><td>15.04</td><td>Alta</td></tr>
+                <tr><td>🥉 Fernanda Torres</td><td>1.736</td><td>8.63</td><td>Média</td></tr>
+                <tr><td>Lucas Leonardo</td><td>1.948</td><td>8.06</td><td>Média</td></tr>
+            </table>
+
+            <h3>Métricas de Receita</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card green">
+                    <div class="kpi-value">R$ 3.56M</div>
+                    <div class="kpi-label">Receita Total</div>
+                </div>
+                <div class="kpi-card green">
+                    <div class="kpi-value">R$ 35k</div>
+                    <div class="kpi-label">Ticket Médio</div>
+                </div>
+                <div class="kpi-card orange">
+                    <div class="kpi-value">12.2%</div>
+                    <div class="kpi-label">Conversão HOT</div>
+                </div>
+                <div class="kpi-card orange">
+                    <div class="kpi-value">5.3%</div>
+                    <div class="kpi-label">Conversão WARM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pain Points & Beliefs -->
+        <div class="section" id="pain-points">
+            <h2>💔 Dores & Crenças Limitantes</h2>
+
+            <div class="insight-box">
+                <h3>🎯 O Que Eles Querem de Verdade (Mesmo Que Não Digam)</h3>
+            </div>
+
+            <div class="two-col">
+                <div>
+                    <h3> desejos Profundos</h3>
+                    <div class="pain-point"><strong>💰 Faturar 6-7 dígitos</strong> — Não é "ganhar mais", é <strong>transformar o negócio</strong></div>
+                    <div class="pain-point"><strong>⏰ Liberdade de tempo</strong> — Não é "trabalhar menos", é <strong>não ser escravo do próprio negócio</strong></div>
+                    <div class="pain-point"><strong>🏆 Ser o melhor</strong> — Querem ser reconhecidos como <strong>autoridade</strong> no nicho</div>
+                    <div class="pain-point"><strong>🛡️ Segurança</strong> — Ter um <strong>sistema que funciona</strong> sem depender deles o tempo todo</div>
+                    <div class="pain-point"><strong>💎 Exclusividade</strong> — Sentir que são <strong>especiais</strong> e recebem atenção VIP</div>
+                </div>
+                <div>
+                    <h3>Medos Subjacentes</h3>
+                    <div class="pain-point" style="background: #721c24;"><strong>😰 Errar a escolha</strong> — Já tentaram outras coisas e não funcionou</div>
+                    <div class="pain-point" style="background: #721c24;"><strong>💸 Perder dinheiro</strong> — Investimento alto assusta (mesmo que não falem isso)</div>
+                    <div class="pain-point" style="background: #721c24;"><strong>🤝 Depender de alguém</strong> — Já se queimaram com consultores antes</div>
+                    <div class="pain-point" style="background: #721c24;"><strong>📉 Parecer ridículo</strong> — Medo de que digam que caíram em "modinha"</div>
+                    <div class="pain-point" style="background: #721c24;"><strong>⏳ Perder tempo</strong> — Processo de venda precisa ser <strong>rápido e fácil</strong></div>
+                </div>
+            </div>
+
+            <h3>🧠 Crenças Limitantes que Você Precisa Superar</h3>
+            <table>
+                <tr><th>Crença do Lead</th><th>Como Atacar</th><th>Recurso a Usar</th></tr>
+                <tr><td>"Isso não funciona pra mim"</td><td>Mostrar caso similar do mesmo segmento/porte</td><td>Case de sucesso detalhado</td></tr>
+                <tr><td>"Não tenho tempo agora"</td><td>"Quando seria um bom momento? Qual é sua maior dor hoje?"</td><td>Entender urgência real</td></tr>
+                <tr><td>"É muito caro"</td><td>Não debater preço - perguntar: "Se não fosse o valor, o que te impediria?"</td><td>Objeção de valor, não preço</td></tr>
+                <tr><td>"Preciso pensar"</td><td>"O que exatamente precisa pensar? Posso te ajudar com essa decisão"</td><td>Qualificação profunda</td></tr>
+                <tr><td>"Meu sócio decide"</td><td>Marcar com ambos, ou enviar material para convencer o decisor</td><td>Multi-stakeholder</td></tr>
+                <tr><td>"Já tenho algo parecido"</td><td>"O que está faltando no que você tem hoje?"</td><td>Descobrir gaps</td></tr>
+            </table>
+        </div>
+
+        <!-- Creative Recommendations -->
+        <div class="section" id="creatives">
+            <h2>🎨 Criativos Recomendados</h2>
+
+            <div class="insight-box">
+                <h3>Baseado na Análise: Dor #1 é Faturamento/Vendas, #2 é Falta de Tempo</h3>
+                <p><strong>Não fale de produto. Fale de resultado. Não diga "sistema", diga "liberdade".</strong></p>
+            </div>
+
+            <h3>📱 Criativos para WhatsApp/Instagram</h3>
+
+            <div class="creative-card">
+                <h4>🎯 Criativo 1: "O Dono Prisioneiro" (Story/Reels)</h4>
+                <p><strong>Âncora:</strong> "Você é o dono, mas também é o funcionário que mais trabalha."</p>
+                <p><strong>Contexto:</strong> Mostrar um entrepreneur sentado no computador à noite, cercado de tarefas.</p>
+                <p><strong>Copy:</strong> "Você fatura R$50k/mês, mas trabalha 12h/dia. Seu negócio te emprega — você não emprega ele. A maioria dos donos de agência/media buyer/infoprodutor está exatamente aqui. E a saída não é 'trabalhar mais'."</p>
+                <p><strong>CTA:</strong> "Se você se identificou, comenta AMARELO que eu te mando um diagnóstico gratuito."</p>
+                <p><strong>Dor atacada:</strong> Falta de tempo + prisão do próprio negócio</p>
+                <p><strong>Crença atingida:</strong> "Preciso fazer tudo eu mesmo"</p>
+            </div>
+
+            <div class="creative-card">
+                <h4>🎯 Criativo 2: "A pergunta de R$35k" (Post/Story)</h4>
+                <p><strong>Âncora:</strong> "Faça essa pergunta antes de comprar qualquer curso de vendas."</p>
+                <p><strong>Contexto:</strong> Mão escrevendo em papel, tono mais sério.</p>
+                <p><strong>Copy:</strong> "Qual foi seu faturamento em agosto? E em setembro? A maioria dos produtos de 'vendas' te ensinam a vender mais. Mas ninguém te pergunta: suas vendas são PREVISÍVEIS? Você sabe quanto vai entrar no dia 15? Se não sabe, você não tem um negócio — tem uma aposta. Comentando 'PREVISÍVEL' que eu te mando um material sobre isso."</p>
+                <p><strong>CTA:</strong> "Comentou? Te mando DM com link."</p>
+                <p><strong>Dor atacada:</strong> Falta de previsibilidade</p>
+                <p><strong>Crença atingida:</strong> "Basta vender mais"</p>
+            </div>
+
+            <div class="creative-card">
+                <h4>🎯 Criativo 3: "O Caso do Cliente Anônimo" (Social Proof)</h4>
+                <p><strong>Âncora:</strong> "Transformação real (nomes ocultados por pedido do cliente)"</p>
+                <p><strong>Contexto:</strong> Screenshot de conversa ou áudio (autorizado).</p>
+                <p><strong>Copy:</strong> "'Eu estava cobrando R$5k/mês e trabalhando 14h. Depois de 3 meses com [metodologia], faturei R$127k em um mês E reduzi para 8h de trabalho. Meu marido achou que eu estava com problema mental quando parei de responder email às 22h.' — Cliente do segmento [seu nicho], São Paulo."</p>
+                <p><strong>CTA:</strong> "Quer um diagnóstico do seu negócio? Comenta 'DIAGNÓSTICO'."</p>
+                <p><strong>Dor atacada:</strong> Todas (faturar + tempo + previsibilidade)</p>
+                <p><strong>Crença atingida:</strong> "Funciona pra outros, mas comigo não vai funcionar"</p>
+            </div>
+
+            <div class="creative-card">
+                <h4>🎯 Criativo 4: "Urgência Real" (Stories)</h4>
+                <p><strong>Âncora:</strong> "Isso não é fake scarcity."</p>
+                <p><strong>Contexto:</strong> Vídeo direto, tom honesto.</p>
+                <p><strong>Copy:</strong> "Eu só abro 5 vagas por mês porque cada cliente novo recebe 2h de consultoria individual por semana. São 10h/semanais de atenção. Eu não consigo dar isso para mais pessoas. Estou com 2 vagas disponíveis agora. Se você está vendo isso e pensou 'depois eu falo', pode ser que não tenha depois. Sem pressão — só fato."</p>
+                <p><strong>CTA:</strong> "Quer entrar na lista de espera da próxima vaga? DM 'VAGA'."</p>
+                <p><strong>Dor atacada:</strong> Exclusividade + medo de perder</p>
+                <p><strong>Crença atingida:</strong> "Tenho tempo, posso esperar"</p>
+            </div>
+
+            <div class="creative-card">
+                <h4>🎯 Criativo 5: "Reels/TikTok - O Beholder"</h4>
+                <p><strong>Âncora:</strong> "3 sinais que você vai estar no mesmo lugar em 1 ano."</p>
+                <p><strong>Contexto:</strong> Vídeo curto, edição rápida, tom enérgico.</p>
+                <p><strong>Copy:</strong> "1) Você ainda tá perguntando 'quanto custa' antes de perguntar 'como funciona'. 2) Você lê o conteúdo mas não implementa. 3) Você acha que o problema é falta de clients, quando o problema real é lack de sistema. Salva esse vídeo. Em 2027, você vai me agradecer ou me mandar um audio de raiva. Apoia o cinema?"</p>
+                <p><strong>CTA:</strong> "Segue pra mais conteúdo de gestão de negócio real."</p>
+                <p><strong>Dor atacada:</strong> Estagnação + falta de sistema</p>
+                <p><strong>Crença atingida:</strong> "Eu sei o que preciso fazer"</p>
+            </div>
+
+            <h3>🎯 Anúncios Pagos - Headlines & Copy</h3>
+
+            <div class="creative-card">
+                <h4>Facebook/Instagram Ads - Lead Magnet: "Diagnóstico Grátis"</h4>
+                <p><strong>Headline:</strong> "Descubra por que seu negócio não escala (mesmo vendendo bem)"</p>
+                <p><strong>Copy:</strong> "Você fatura bem, mas nunca tem dinheiro no final do mês. Você trabalha mais que seus funcionários. Você responde 47 WhatsApps às 23h. Isso não é ser dono — é ser empregados do próprio CNPJ. A maioria dos entrepreneurs está exatamente aqui. E a saída não é 'vender mais'. É construir um sistema. Faz o diagnóstico gratuito de 3 minutos e descobre onde está seu gargalo real."</p>
+                <p><strong>CTA:</strong> "Fazer Diagnóstico Grátis →"</p>
+            </div>
+
+            <div class="creative-card">
+                <h4>Facebook/Instagram Ads - VSL/Webinar</h4>
+                <p><strong>Headline:</strong> "Como faturar R$100k/mês sem virar escravo do próprio negócio"</p>
+                <p><strong>Copy:</strong> "Neste webinar gratuito, vou te mostrar: 1) Por que 'vender mais' é o pior conselho que você pode receber. 2) O sistema exato que 3 alunos usaram para bater R$100k com 8h de trabalho. 3) Como identificar se você está pronto para escalar ou se precisa primeiro consertar o básico. Traga papel e caneta — não é conteúdo genérico de motivação. É tática."</p>
+                <p><strong>CTA:</strong> "Garantir Minha Vaga Grátis →"</p>
+            </div>
+
+            <div class="creative-card">
+                <h4>Google Ads - Campanhas de Busca</h4>
+                <p><strong>Keywords:</strong> "curso vender mais", "mentoria marketing digital", "como escalar negócio"</p>
+                <p><strong>Headline 1:</strong> "Fature Mais Trabalhando Menos"</p>
+                <p><strong>Headline 2:</strong> "Mentoria com Diagnóstico Grátis"</p>
+                <p><strong>Description:</strong> "Sistema completo para escalar seu negócio sem depender de mais horas. 97 alunos já bateram R$100k+. Diagnóstico gratuito."</p>
+                <p><strong>CTA:</strong> "Diagnosticar Agora - Grátis"</p>
+            </div>
+        </div>
+
+        <!-- Ads Optimization -->
+        <div class="section" id="ads-optimization">
+            <h2>📢 Otimização de Campanhas de Anúncios</h2>
+
+            <div class="insight-box">
+                <h3>📊 Baseado nos Dados: O Que Funciona</h3>
+                <ul style="margin: 10px 0 10px 20px;">
+                    <li>🎯 Campanhas com volume >100 leads têm conversão >90%</li>
+                    <li>📧 Email corporativo = +30% conversão</li>
+                    <li>📱 WhatsApp = canal dominante (39%)</li>
+                    <li>👥 Indicações = 59,2% dos compradores</li>
+                    <li>🏷️ Tags SQL = 93,5% conversão (melhor preditor)</li>
+                </ul>
+            </div>
+
+            <h3>🎯 Segmentação Recomendada</h3>
+
+            <table>
+                <tr><th>Campanha</th><th>Público</th><th>Canal</th><th>Estimativa</th></tr>
+                <tr><td>Decision Makers</td><td>Donos de negócio, C-level, Founders</td><td>LinkedIn, Instagram</td><td>Alta conversão</td></tr>
+                <tr><td>Digital Entrepreneurs</td><td>Media buyers, Infoprodutores, Afiliados</td><td>Facebook, Instagram</td><td>Volume alto</td></tr>
+                <tr><td>Agency Owners</td><td>Donos de agência, Freelancers</td><td>Facebook, Google</td><td>Ticket alto</td></tr>
+                <tr><td>Pre-Qualified</td><td>Email corporativo + Cargo decisor</td><td>LinkedIn Ads</td><td>ROI melhor</td></tr>
+            </table>
+
+            <h3>📱 Canais Prioritários</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">1</div>
+                    <div class="kpi-label">WhatsApp (39%)</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">2</div>
+                    <div class="kpi-label">Instagram Orgânico</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">3</div>
+                    <div class="kpi-label">Facebook Ads</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">4</div>
+                    <div class="kpi-label">Indicações</div>
+                </div>
+            </div>
+
+            <h3>💡 Recomendações Estratégicas</h3>
+
+            <div class="success-box">
+                <h4>1. Criar Programa de Indicações</h4>
+                <p><strong>Dado:</strong> 59,2% dos compradores vieram por indicação.<br>
+                <strong>Ação:</strong> Criar programa estruturado de indicação com benefícios (desconto, bônus, acesso prioritário).</p>
+            </div>
+
+            <div class="success-box">
+                <h4>2. Qualificação por Email Corporativo</h4>
+                <p><strong>Dado:</strong> Email corporativo = +30% conversão.<br>
+                <strong>Ação:</strong> No lead magnet, pedir empresa + cargo. Priorizar leads com email corporativo nos nurtures.</p>
+            </div>
+
+            <div class="success-box">
+                <h4>3. Focar em MQLs com Tags SQL</h4>
+                <p><strong>Dado:</strong> Tag SQL = 93,5% conversão.<br>
+                <strong>Ação:</strong> Não esperar que MQL vire SQL naturalmente. Tentar ativamente qualificar leads para SQL.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>4. Resolver Problema de SDRs</h4>
+                <p><strong>Dado:</strong> 35% dos leads sem SDR têm 0,3% conversão.<br>
+                <strong>Ação:</strong> Implementarルール automática de atribuição de SDR. Nenhum lead deve ficar sem responsável.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>5. Reduzir Drop-off Lead→Conexão</h4>
+                <p><strong>Dado:</strong> 75% dos leads não conectam. 63% das ligações duram <10s.<br>
+                <strong>Ação:</strong> Treinar equipe em rapport antes de vender. Usar sequências de nutrição mais longas.</p>
+            </div>
+
+            <h3>📈 Métricas para Acompanhar</h3>
+            <table>
+                <tr><th>Métrica</th><th>Target</th><th>Atual</th><th>Prioridade</th></tr>
+                <tr><td>CPL (Cost per Lead)</td><td>R$ 20-50</td><td>???</td><td>Alta</td></tr>
+                <tr><td>MQL → SQL Rate</td><td>>30%</td><td>???</td><td>Alta</td></tr>
+                <tr><td>Email corporativo %</td><td>>50%</td><td>???</td><td>Média</td></tr>
+                <tr><td>Taxa conexão (liga→conversa)</td><td>>40%</td><td>25%</td><td>Alta</td></tr>
+                <tr><td>Lead → SDR attribution</td><td>100%</td><td>65%</td><td>Crítica</td></tr>
+            </table>
+
+            <h3>🎯 Ações Imediatas (Próximas 2 Semanas)</h3>
+            <ol style="margin: 20px; line-height: 2;">
+                <li><strong>Verificar atribuição de SDRs:</strong> Nenhum lead pode ficar sem responsável</li>
+                <li><strong>Criar criativo "Dono Prisioneiro":</strong> Testar no Instagram Stories</li>
+                <li><strong>Otimizar landing page para email corporativo:</strong> adicionar campo cargo</li>
+                <li><strong>Implementar programa de indicações:</strong> Oferecer benefício para quem indica</li>
+                <li><strong>Treinar equipe na ligação:</strong> Rapport antes de vender (técnica BANT)</li>
+            </ol>
+
+            <h3>📅 Plano de Conteúdo para 30 Dias</h3>
+            <table>
+                <tr><th>Semana</th><th>Tipo</th><th>Tema</th><th>CTA</th></tr>
+                <tr><td>1</td><td>Reels</td><td>"Dono Prisioneiro"</td><td>Comenta AMARELO</td></tr>
+                <tr><td>1</td><td>Stories</td><td>Case de sucesso anônimo</td><td>DM "QUERO"</td></tr>
+                <tr><td>2</td><td>Post</td><td>"Pergunta de R$35k"</td><td>Comenta PREVISÍVEL</td></tr>
+                <tr><td>2</td><td> Lives</td><td> Q&A sobre sistemização</td><td>Promover mentoria</td></tr>
+                <tr><td>3</td><td>Reels</td><td>"3 sinais de estagnação"</td><td>Salva + compartilha</td></tr>
+                <tr><td>3</td><td>Anúncio</td><td>Diagnóstico gratuito</td><td>Fazer diagnóstico</td></tr>
+                <tr><td>4</td><td>Stories</td><td>Urgência vagas</td><td>DM VAGA</td></tr>
+                <tr><td>4</td><td>Post</td><td>Resultado alunos</td><td>Ver mentoria</td></tr>
+            </table>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="section" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+            <h2 style="color: white; border-color: #e94560;">🚀 Conclusão</h2>
+            
+            <p style="font-size: 1.1em; margin: 20px 0;">A análise de 8.278 leads revelou que <strong>o problema não é preço — é valor e qualificação</strong>. Seus compradores não são os que reclamam de preço, mas os que:</p>
+            
+            <ul style="margin: 20px; line-height: 2;">
+                <li>✅ Têm email corporativo (30% mais conversão)</li>
+                <li>✅ Vieram por indicação (59% dos fechados)</li>
+                <li>✅ Foram qualificados para SQL (93% conversão)</li>
+                <li>✅ Engajaram 20+ mensagens antes de comprar</li>
+            </ul>
+
+            <p style="font-size: 1.1em; margin: 20px 0;"><strong>Próximos passos recomendados:</strong></p>
+            <ol style="margin: 20px; line-height: 2;">
+                <li><strong>Atacar a dor de ser "dono-prisioneiro"</strong> — esse é o desejo #1</li>
+                <li><strong>Parar de focar em volume de leads</strong> — focar em qualidade (SQLs)</li>
+                <li><strong>Criar programa estruturado de indicações</strong> — 59% dos compradores vieram de indicação</li>
+                <li><strong>Garantir 100% de atribuição de SDR</strong> — 35% dos leads estão órfãos</li>
+                <li><strong>Melhorar taxa de conexão</strong> — 75% de drop-off na primeira ligação</li>
+            </ol>
+
+            <div style="background: #e94560; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+                <p style="font-size: 1.3em; margin: 0;"><strong>246 leads HOT esperando para comprar.</strong><br>Você está pronto para atender eles?</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Relatório gerado automaticamente via Lead Scoring Analysis</p>
+        <p>Baseado em: 8.278 contacts | 88.752 comunicações | 97 compradores</p>
+    </footer>
+</body>
+</html>

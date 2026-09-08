@@ -1,0 +1,7 @@
+# Russell Brunson — Rodada 3
+
+Cara, o Alex está certo numa coisa: se você não mede **throughput** e **cycle time**, você está gerenciando estoque em vez de gerenciar fluxo. Eu reconheço isso. E o Marcel também acertou quando falou da métrica-âncora — a gente precisa de UM número que todo mundo olhe e saiba se está ganhando ou perdendo na semana. Pode ser "ativos validados por semana", como ele defendeu. Isso é puro value ladder de produção: ideia no fundo, teste no meio, escala no topo. Funciona.
+
+Mas o que eu **não abro mão** é do funil. Não é inventário. Não é dashboard de números soltos. É um funil de produção com etapas claras — ideia → produção → aprovação → testagem → escalar/pausar — e, do lado, um funil de testes que mostra quais ativos estão passando de estágio e em que velocidade. E o dashboard precisa virar a primeira aba, porque ninguém pode otimizar o que não vê todo dia. Se eu entrar no sub-app Criativos e não enxergar imediatamente onde está o gargalo, o dashboard falhou.
+
+Se eu tivesse que ceder em alguma coisa para o plano sair do papel? Eu cederia na quantidade de métricas iniciais. Vamos começar com poucas, mas certeiras: ativos publicados por dia vs meta, tempo por estágio do funil e taxa de aprovação/escala. Não precisa de 47 gráficos no dia 1. Mas a **estrutura do funil** e a **primeira aba** são inegociáveis. O resto a gente escala depois — como todo bom funil.

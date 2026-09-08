@@ -1,0 +1,88 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+.env.test
+eb-dash2/.env
+
+# Supabase
+.supabase/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Local tooling
+.tools/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Logs
+logs/
+*.log
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.pem
+*.cert
+*.key
+
+# Supabase CLI binary
+bin/supabase.exe
+supabase.exe
+
+# Agent / local tooling
+.claude/
+
+# Screenshots e relatórios de teste gerados localmente
+eb-dash2/screenshots/
+playwright-report/
+
+# Outputs de scripts (dados sensíveis de leads)
+output/
+scripts/logs/
+
+# Temporary secrets files created by provision-new-client.ts
+.empire-secrets-*.env
+
+# Lead scoring raw data (dados sensíveis - nunca commitar)
+docs/lead-scoring/raw_*.json
+
+# Dados sensíveis temporários
+tmp_analise_cami/
+tmp_analise_cami.mjs
+
+# Relatórios de auditoria de segurança (podem conter detalhes de vulnerabilidades)
+security-report/
+
+.playwright-cli/
+playwright-screenshots/

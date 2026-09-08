@@ -1,0 +1,7 @@
+# Marcel Marcondes — Rodada 3
+
+Reconheço como válido o argumento do Alex Hormozi: a confusão real é entre espaço de decisão e espaço de execução. Se o gestor perde tempo navegando para encontrar onde configura um app, a decisão fica cara — e decisão cara é dinheiro parado. Concordo também com o Russell Brunson sobre a necessidade de hierarquia visual clara, porque uma boa arquitetura de navegação reduz o atrito cognitivo antes mesmo de qualquer métrica ser medida.
+
+O que eu não abro mão é a governança em três camadas bem desenhadas: conta do usuário, tenant/organização e contexto operacional do app. E, acima de tudo, não abro mão da métrica. Antes de qualquer redesign ser declarado vencedor, precisamos definir o indicador que move a agulha: tempo médio para acessar configurações globais, número de cliques até a ação desejada, taxa de erro na navegação e NPS de usabilidade. Crescimento sem disciplina é sorte; redesign sem métrica é opinião.
+
+Se eu tivesse que ceder em algo para chegar a um plano viável, cederia na velocidade de implementação. Aceito lançar em fases — primeiro separar configurações globais do contexto operacional, depois refinar a hierarquia visual e só então otimizar redirecionamentos inteligentes — desde que cada fase tenha objetivo claro, responsável e métrica de pass/fail. Mas não cedo na regra soberana: o que afeta mais de um app não pode morar dentro de um app específico. Isso é princípio, não negociável.

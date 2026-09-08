@@ -1,0 +1,5 @@
+# Marcel Marcondes — Rodada 3
+
+Reconheço como válido o ponto do Gary: observar três clientes reais antes de codar evita que a gente projete a `/admin` pelo espelho da própria equipe. Mas a observação precisa ser enxuta e instrumentada — entrevista de 30 minutos, mapeamento do caminho atual e trava em métricas. Não abro mão da arquitetura de experiência: GHL no centro da página como protagonista absoluto, status binário visível, checklist obrigatório de setup e, principalmente, a separação física entre configurações de negócio e configurações de plataforma. Sem essa estrutura, aumentar o card ou colorir a tela vira só maquiagem.
+
+Se precisar ceder em algo para o plano sair, abro mão da pesquisa extensa. Faço a observação em 48 horas com três clientes já ativos, extraio o mapa de dor e parto para o protótipo na mesma semana. A única condição é instalar o KPI logo no go-live: tempo médio para deixar o status GHL verde, taxa de ativação em 7 dias e baseline de suporte — com meta de revisão em 30 dias.

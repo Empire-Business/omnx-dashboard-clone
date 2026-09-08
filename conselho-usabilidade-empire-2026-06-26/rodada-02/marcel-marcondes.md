@@ -1,0 +1,9 @@
+# Marcel Marcondes — Rodada 2
+
+Gary, empatia é pré-requisito, não estratégia. Dizer "testem com duas pessoas reais" soa bonito, mas duas entrevistas sem hipótese clara e sem métrica de sucesso vão te dar histórias bonitas que justificam qualquer caminho. O que precisa é um teste controlado: define antes o que você quer melhorar — tempo para encontrar a configuração, taxa de erro na navegação, satisfação do operador — e só então valide com usuários. Sem isso, você troca a opinião do desenvolvedor pela opinião do usuário, e nenhuma das duas é dado.
+
+Grant, discordo da urgência retórica. "Cada segundo perdido é uma venda para o concorrente" é a frase que justifica qualquer reforma radical sem critério. Velocidade de execução é resultado de clareza, não de redesign agressivo. Se você jogar configurações globais para um novo espaço de admin sem mapear quem acessa, com que frequência e para quê, você pode criar mais atrito do que remove. Escalar confusão só muda o endereço do problema.
+
+Aqui está o ponto que reforço para todo mundo: a separação entre global e contextual é correta, mas ela precisa de governança. Eu enxergo três camadas — conta do usuário, tenant/organização e contexto operacional do app — e cada uma precisa ter dono, permissão e métrica. Apps, usuários e permissões ficam no espaço de administração global, acessível por qualquer ponto do dashboard, mas isolado visualmente da operação. Configurações que só fazem sentido dentro de um módulo — filtros padrão, campos obrigatórios, regras de pipeline — ficam dentro do próprio app.
+
+Minha recomendação é não redesenhar tudo de uma vez. Escolha uma métrica que move a agulha, como tempo médio para um admin encontrar a tela de permissões, teste a nova arquitetura com um grupo pequeno, meça, ajuste e só então expanda. Crescimento sem disciplina é sorte. E sorte não escala.

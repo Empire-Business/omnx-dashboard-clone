@@ -1,0 +1,2 @@
+-- ARQUIVO VAZIO: criado por engano - tabelas contatos e oportunidades já existem
+-- Não executar nada aqui

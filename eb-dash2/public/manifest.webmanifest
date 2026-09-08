@@ -1,0 +1,17 @@
+{
+  "name": "OMNX",
+  "short_name": "OMNX",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#820ad1",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon-omnx.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

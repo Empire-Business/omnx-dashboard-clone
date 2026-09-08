@@ -1,0 +1,7 @@
+# Russell Brunson — Réplica e Convergência
+
+Olha, o Alex acertou em cheio numa coisa: funil binário sem metadados de oferta é como tentar vender sem saber para quem você está vendendo. Eu reconheço isso de pé. Você precisa saber o ângulo, a promessa, a objeção que aquele criativo está atacando — senão o portão não decide nada, ele só fica bonito no slide. Então sim, antes de ligar os gatilhos automáticos, precisamos encher esses 948 criativos de contexto: oferta, persona, hook. Isso é a gasolina do funil.
+
+Mas o que eu não abro mão — e aqui é onde o jogo vira — é o **Creative Funnel com decisões automáticas**. Sem isso, você tem um museu. 948 peças de arte empoeiradas. Eu quero uma máquina: criativo entra, gasta X, passa pelo portão do CTR, depois do ROAS, depois da retenção, e em cada etapa ele sobe, morre ou vira aprendizado. Gatilhos claros, donos claros, nenhum criativo sentado no limbo. Dados sem decisão são estatísticas de LinkedIn. Decisão é o que paga o imposto.
+
+Se eu tivesse que ceder para chegar num plano viável hoje? Eu simplificaria o funil. Não vou insistir nos 4 portões de primeira. Vamos lançar com **dois portões binários**: (1) spend mínimo atingiu? e (2) CTR acima do piso? Quem passa, vira winner. Quem não passa, vira aprendizado. Depois a gente adiciona ROAS, retenção e ascensão. Mas a lógica do funil tem que existir desde o dia 1 — senão daqui a seis meses estamos de volta no Notion chorando.

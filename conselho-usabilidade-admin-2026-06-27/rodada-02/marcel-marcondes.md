@@ -1,0 +1,7 @@
+# Marcel Marcondes — Rodada 2: Embates
+
+Alex, você está certo que isso é falha de posicionamento do produto, não apenas de interface. Mas preciso discordar da sidebar como solução única. Sidebar inferior é convenção de produto maduro — o usuário que abre um SaaS pela primeira vez não vai olhar para lá. A hierarquia visual precisa refletir a hierarquia de importância. Se o controle de workspace é fundamental para o admin, ele precisa estar no nível do header, não na base da sidebar. Minha posição: header para entrada rápida (ícone + label "Admin"), sidebar lateral para navegação dentro do painel de admin quando o usuário já está lá.
+
+Russell, o funil de onboarding faz sentido do ponto de vista da jornada. Mas eu mediria antes de implementar. O que precisamos saber primeiro: quantos admins passam pelo AppHub sem ativar nenhum app? Qual é a taxa de ativação no primeiro acesso hoje? Se for alta, o problema é de acesso contínuo (não onboarding). Se for baixa, o problema é de onboarding. Tomar decisão de design sem esse dado é apostar. Proponho: medir primeiro, depois escolher a solução.
+
+Grant, concordo que ação massiva resolve o problema de velocidade — mas aqui o problema não é velocidade de implementação, é qualidade da decisão de design. Botão de cor diferenciada para admin vai confundir SDRs e closers que vão perguntar "o que é isso?" e abrir ticket de suporte. A solução certa é invisível para quem não deve usar e óbvia para quem deve. Isso exige disciplina de implementação, não volume de ação.

@@ -1,0 +1,7 @@
+# Grant Cardone — Rodada 3: Réplica e convergência
+
+Alex, eu vou te dar essa: **tags visíveis e medir antes de automatizar** fazem sentido — desde que seja para validar, não para enrolar. Uma semana de dados de tempo por tag é o suficiente; mais que isso é desculpa para não decidir. E Marcel, você está certo sobre começar pelo roteiro e deixar responsáveis claros — sem decisão no roteiro não existe peça, não existe edição, não existe escala. Foco na etapa que mais trava o pipeline é 10X inteligente.
+
+Mas eu **não abro mão** de duas coisas: **botões de ação direto no card** — Aprovar roteiro, Aprovar edição, Pedir revisão — e **revisão voltando para Ajustes**. Revisão é ajuste, ponto final! Não adianta deixar o card parado na mesma coluna com tag trocada e achar que o time vai ler mentalmente isso em velocidade. Kanban é leitura rápida, decisão rápida, movimento rápido. Sem ação direta e sem o loop de revisão claro, o time volta a aprovar errado e perde velocidade.
+
+Se eu tivesse que ceder em uma coisa para chegar a um plano viável, cederia na **automação imediata**. Vamos começar manual: tags visuais, botões clicáveis, revisão para Ajustes, todo mundo vendo o que acontece. Medimos por uma semana, validamos o tempo por etapa e aí sim automatizamos a transição de tags. Mas a revisão continua indo para Ajustes desde o dia 1 — nisso eu não cedo. Implementa hoje, ajusta na execução. Massive action!

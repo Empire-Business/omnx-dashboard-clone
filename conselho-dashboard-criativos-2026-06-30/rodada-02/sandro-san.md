@@ -1,0 +1,5 @@
+Russell, seu funil de produção é bonito, mas é exatamente o tipo de diagrama que empaca o time. Funil elaborado vira tela que ninguém olha. O que o criativo precisa saber não é quantas etapas existem, é onde o dinheiro está parado agora. Lead time e fila de testes dizem mais que qualquer mapa de estágios. Se o dashboard não gritar vermelho na etapa que parou, você construiu mais um relatório de ocorrência pintado de funil.
+
+Grant, "meta que assusta" é frase de quem vende curso lotado, não de quem produz ativo. Volume sem filtro gera creative ruim, teste quebrado e time queimado. A meta não é produzir mais; é produzir o certo, rápido. Taxa de aprovação por produtor é o verdadeiro medidor de velocidade. Uma peça aprovada vale mais que dez peças jogadas no tráfego.
+
+Alex e Marcel estão no caminho certo: tempo de ciclo e métrica-âncora primeiro. Mas a âncora não pode ser "peças produzidas". A âncora é tempo de lead e taxa de aprovação. Coloca isso no centro do dashboard, move para a primeira aba e faz o sistema piscar vermelho quando qualquer produtor parar além da cadência definida. O resto é decoração.

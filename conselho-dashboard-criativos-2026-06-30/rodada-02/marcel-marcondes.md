@@ -1,0 +1,9 @@
+# Marcel Marcondes — Rodada 2: Embate
+
+Antes de discutir dashboard, precisamos ser honestos sobre uma coisa: ainda não existe um modelo operacional claro por trás dessa tela. Todo mundo aqui quer velocidade, funil e gargalo à mostra — e eu concordo com o diagnóstico geral. Mas dashboard sem cadência de decisão vira arte. Por isso minha primeira prioridade continua sendo definir a métrica-âncora e o ritmo de decisão antes de desenhar qualquer gráfico novo. Velocidade só gera valor quando alguém age sobre ela todo dia, na mesma hora, com regra clara.
+
+Grant, colocar uma meta que "assusta" sem estrutura é receita para queimar o time e diluir a marca. Já vi isso acontecer: volume explode, qualidade cai, aprovação desaba e, no fim, você produz mais para escalar menos. Ação massiva sem capacidade e sem padrão não escala; gera retrabalho. A meta semanal precisa existir, mas ela deve ser derivada da capacidade real de cada estágio, não de um número que soa bem na reunião. Dashboard que pressiona sem mostrar onde o processo quebra é instrumento de culpa, não de gestão.
+
+Gary, você tem razão quando fala em velocidade, cadência e atenção do time. Mas "paciência com a consistência" sem métrica-âncora vira desculpa. Colocar o Dashboard como primeira aba é correto, mas só muda comportamento se a reunião diária ou semanal olhar para ele e decidir: produzir mais, matar criativo, desbloquear etapa ou ajustar briefing. Sem esse ritual, a aba vira mais uma tela que ninguém abre. Velocidade precisa de destino.
+
+Então vamos ao ponto: a métrica-âncora aqui é o lead time do criativo, do briefing até a decisão de escalar ou matar. Tudo gira em torno dela. A partir daí, desenhamos o funil de produção, o funil de testes, as metas semanais por estágio e os alertas que forçam decisão. Dashboard como primeira aba? Sim. Meta semanal? Sim. Mas primeiro definimos o ritmo operacional. Crescimento sem disciplina é sorte — e ninguém aqui está apostando em sorte.

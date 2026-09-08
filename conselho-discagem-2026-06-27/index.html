@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Redesign da fila de discagem SDR — de relatório para sistema operacional | Conselho dos Mestres</title>
+  <style>
+    :root {
+      --primary: #820AD1;
+      --secondary: #3E1874;
+      --surface: #FFFFFF;
+      --text: #000000;
+      --text-muted: #777777;
+      --border: #E4E4E4;
+      --radius-sm: 12px;
+      --radius-md: 24px;
+      --radius-lg: 32px;
+      --radius-full: 9999px;
+      --font-display: 'graphikMedium', Arial, sans-serif;
+      --font-body: 'graphikRegular', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--surface);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; margin: 0 0 0.5em; }
+    .container { max-width: 1076px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 5rem 0 4rem;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      margin-bottom: 3rem;
+    }
+    .hero-kicker {
+      font-family: var(--font-display);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.03em; }
+    .hero p { font-size: 20px; opacity: 0.95; max-width: 700px; margin-top: 1rem; }
+    .meta-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: -2rem 0 3rem;
+    }
+    .meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .meta-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+    .meta-value { font-family: var(--font-display); font-size: 18px; }
+    .section { margin-bottom: 4rem; }
+    .section-title { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .card-title { font-size: 22px; margin-bottom: 0.75rem; }
+    .body-text { color: #3d3d3d; margin: 0 0 1rem; }
+    .bullet-list { padding-left: 1.25rem; margin: 0 0 1rem; }
+    .bullet-list li { margin-bottom: 0.5rem; }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .member-card {
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 0.75rem;
+      transition: transform 150ms ease;
+    }
+    .member-card:hover { transform: translateY(-3px); }
+    .member-avatar {
+      width: 56px; height: 56px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 22px;
+      margin: 0 auto 0.75rem;
+    }
+    .member-name { font-family: var(--font-display); font-size: 15px; }
+    .decision-box {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .decision-box h2 { font-size: 28px; margin-bottom: 0.75rem; }
+    .decision-box p { opacity: 0.95; font-size: 18px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.875rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-display); font-weight: 500; background: #f4f4f4; }
+    tr:last-child td { border-bottom: none; }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      margin-top: 1rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 3rem;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4rem;
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      .section { margin-bottom: 2.5rem; }
+      .section-title { font-size: 26px; }
+      .card { padding: 1rem; }
+    }
+    </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-kicker">Conselho dos Mestres</div>
+      <h1> Redesign da fila de discagem SDR — de relatório para sistema operacional</h1>
+      <p>Plano de ação decidido por um conselho de especialistas de vendas, marketing, oferta, entrega e operações.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="meta-bar">
+      <div class="meta-card"><div class="meta-label">Presidente eleito</div><div class="meta-value"></div></div>
+      <div class="meta-card"><div class="meta-label">Data</div><div class="meta-value"> 2026-06-27</div></div>
+      <div class="meta-card"><div class="meta-label">Membros</div><div class="meta-value">6 presentes</div></div>
+    </div>
+
+    <section class="section decision-box">
+      <h2>Decisão do presidente</h2>
+      <p>Veja o plano de ação completo abaixo.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Membros do conselho</h2>
+      <div class="members-grid">
+        <div class="member-card"><div class="member-avatar">A</div><div class="member-name">Alex Hormozi</div></div><div class="member-card"><div class="member-avatar">R</div><div class="member-name">Russell Brunson</div></div><div class="member-card"><div class="member-avatar">G</div><div class="member-name">Gary Vaynerchuk</div></div><div class="member-card"><div class="member-avatar">S</div><div class="member-name">Sandro San</div></div><div class="member-card"><div class="member-avatar">M</div><div class="member-name">Marcel Marcondes</div></div><div class="member-card"><div class="member-avatar">G</div><div class="member-name">Grant Cardone</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="body-text">**Data:** 2026-06-27   **Presidente:** Jeff Bezos   **Membros:** Alex Hormozi, Russell Brunson, Gary Vaynerchuk, Sandro San, Marcel Marcondes, Grant Cardone   **Tema:** Redesign da aba de Discagem — de relatório para fila operacional</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="vis-o-da-decis-o">Visão da Decisão</h2>
+<p class="body-text">A aba de Discagem atual funciona como um relatório de leads: exibe informações, organiza por estado (ligue_agora / ligue_hoje / mensagem) e deixa o SDR decidir quem chamar. Esse é o problema central. Quando o operador decide a prioridade em tempo real, ele estrategiza onde deveria executar. O custo desse atrito é invisível mas constante: leads quentes esfriam enquanto o SDR pondera, e leads com horário marcado se perdem no meio da lista.</p>
+<p class="body-text">A decisão do conselho é construir uma **fila de 4 camadas ordenada pelo motor**, onde o sistema decide e o SDR executa o topo. O card de cada lead fala linguagem humana, indica o estágio da cadência e adapta seu destaque visual conforme a camada. Toda ação do SDR gera um evento que retroalimenta o motor em tempo real.</p>
+<p class="body-text">Essa mudança não é cosmética — é uma mudança de responsabilidade. A priorização sai da cabeça do operador e entra no código.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="objetivos">Objetivos</h2>
+<p class="body-text">**Macro:** SDR bate o olho na tela e sabe o que fazer — sem escolha, sem dúvida, sem fila vazia.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Prazo</th>
+<th>Objetivo</th>
+</tr>
+<tr>
+<td>**30 dias**</td>
+<td>Fila em 4 camadas em produção, card com linguagem humana, loop de feedback ativo</td>
+</tr>
+<tr>
+<td>**60 dias**</td>
+<td>Instrumentação completa (eventos por camada, taxa de conexão por camada, score calibrado)</td>
+</tr>
+<tr>
+<td>**90 dias**</td>
+<td>Primeira análise de dados → ajuste de hierarquia ou score se evidência justificar</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<h2 class="section-title" id="pilares-de-a-o">Pilares de Ação</h2>
+<h3 class="card-title">Pilar 1 — Motor de Prioridade (Backend)</h3>
+<p class="body-text">Reescrever a lógica que popula `discagem_scores` para implementar 4 camadas explícitas.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Por que importa</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica</th>
+</tr>
+<tr>
+<td>Definir campo de "horário de retorno marcado" no banco (coluna em `oportunidades` ou parsing de `comunicacoes`)</td>
+<td>Camada 1 é impossível sem detectar compromisso explícito do lead</td>
+<td>Dev backend</td>
+<td>48h</td>
+<td>Campo preenchido em &gt;90% dos leads com retorno marcado</td>
+</tr>
+<tr>
+<td>Implementar detecção de "respondeu recentemente" (última mensagem inbound em comunicacoes &lt; X min)</td>
+<td>Camada 2 — mão levantada em tempo real</td>
+<td>Dev backend</td>
+<td>48h</td>
+<td>Lead com resposta recente aparece no topo em &lt;30s após resposta</td>
+</tr>
+<tr>
+<td>Implementar SLA de speed-to-lead (data_lead_recebido → agora, threshold configurável)</td>
+<td>Camada 3 — lead novo esfria em minutos</td>
+<td>Dev backend</td>
+<td>48h</td>
+<td>Lead novo aparece no topo em &lt;1 min após criação</td>
+</tr>
+<tr>
+<td>Implementar detecção de camada de cadência por data_tentativa_N + regra de canal</td>
+<td>Camada 4 — cadência roteirizada, não improviso</td>
+<td>Dev backend</td>
+<td>72h</td>
+<td>Score de cadência correto para 100% dos leads em follow-up</td>
+</tr>
+<tr>
+<td>Score financeiro dentro de cada camada: prob_atender × prob_fechar × ticket ÷ minutos_esforço</td>
+<td>Elimina sub-escolha dentro da camada (Hormozi)</td>
+<td>Dev backend</td>
+<td>1 semana</td>
+<td>Score correlacionado com taxa de conexão histórica</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 2 — Card em Linguagem Humana (Frontend)</h3>
+<p class="body-text">Redesenhar o card da DiscagemTab para comunicar a decisão do motor, não os dados brutos.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Por que importa</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica</th>
+</tr>
+<tr>
+<td>Card em modo "lead novo": cronômetro speed-to-lead em destaque + "Lead novo — ligue agora"</td>
+<td>Lead novo precisa de urgência visual (Russell + Hormozi)</td>
+<td>Dev frontend</td>
+<td>3 dias</td>
+<td>SDR disca lead novo em &lt;5 min após chegada</td>
+</tr>
+<tr>
+<td>Card em modo "follow-up": estágio da cadência em destaque + canal sugerido ("Tentativa 3 — mande WhatsApp")</td>
+<td>SDR não improvisa canal (Russell)</td>
+<td>Dev frontend</td>
+<td>3 dias</td>
+<td>Tentativas no canal certo aumentam 20%+</td>
+</tr>
+<tr>
+<td>Motivo em linguagem humana por camada: "Marcou retorno para agora" / "Respondeu há 4 min" / "Lead novo" / "Tentativa X de 6"</td>
+<td>Card que não fala humano não é seguido (Gary)</td>
+<td>Dev frontend</td>
+<td>3 dias</td>
+<td>SDR não ignora fila (medido por % de toques no topo)</td>
+</tr>
+<tr>
+<td>Botão único e visível: "Ligar" / "Enviar WhatsApp" / "Enviar SMS" conforme camada</td>
+<td>Reduce tempo entre decisão do motor e ação do SDR</td>
+<td>Dev frontend</td>
+<td>3 dias</td>
+<td>Tempo entre abrir card e iniciar chamada &lt; 10s</td>
+</tr>
+<tr>
+<td>Tela nunca vazia: quando fila de alta prioridade zera, mostra próxima camada automaticamente</td>
+<td>SDR parado é o maior desperdício (Sandro)</td>
+<td>Dev frontend</td>
+<td>3 dias</td>
+<td>Zero "telas vazias" em horário comercial</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 3 — Loop de Feedback (Tempo Real)</h3>
+<p class="body-text">O motor reordena a fila em resposta às ações do SDR.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Por que importa</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica</th>
+</tr>
+<tr>
+<td>"Discou — não conectou" → marca data_tentativa_N → motor reordena</td>
+<td>Sem loop, fila vira foto, não filme (Marcel)</td>
+<td>Dev backend</td>
+<td>1 semana</td>
+<td>Reordenação em &lt;5s após ação do SDR</td>
+</tr>
+<tr>
+<td>"Lead atendeu" → remove da fila ativa</td>
+<td>Evita religue desnecessário</td>
+<td>Dev backend</td>
+<td>1 semana</td>
+<td>Zero leads atendidos na fila</td>
+</tr>
+<tr>
+<td>Polling/realtime na DiscagemTab (30s ou Supabase realtime)</td>
+<td>Fila do SDR reflete estado atual, não estado de 30 min atrás</td>
+<td>Dev frontend</td>
+<td>3 dias</td>
+<td>Latência máxima da fila = 30s</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 4 — Instrumentação (Desde o Dia 1)</h3>
+<p class="body-text">Toda ação da fila gera evento. Sem instrumentação, não há aprendizado.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Por que importa</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica</th>
+</tr>
+<tr>
+<td>Log de evento por linha servida: camada, score, motivo, SDR, timestamp</td>
+<td>Régua antes do experimento (Marcel)</td>
+<td>Dev backend</td>
+<td>Junto com deploy</td>
+<td>100% das ações logadas desde o primeiro dia</td>
+</tr>
+<tr>
+<td>Dashboard de gestão (não do SDR): taxa de conexão por camada, tempo médio de resposta, leads por camada</td>
+<td>Gestão enxerga o que o motor está fazendo</td>
+<td>Dev frontend</td>
+<td>2 semanas</td>
+<td>Gestor consegue auditar hierarquia sem pedir SQL</td>
+</tr>
+<tr>
+<td>Alerta automático se camada 1 (horário marcado) ficar sem ação por &gt;15 min</td>
+<td>Horário marcado é compromisso com o lead — furar é dano de marca</td>
+<td>Dev backend</td>
+<td>2 semanas</td>
+<td>0 violações de SLA de camada 1</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 5 — Cadência Roteirizada (Configuração)</h3>
+<p class="body-text">As 6 tentativas têm canal e script definido — o SDR executa, não decide.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Por que importa</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica</th>
+</tr>
+<tr>
+<td>Definir cadência padrão: T1-T2 telefone, T3-T4 WhatsApp + valor, T5-T6 break-up</td>
+<td>Tentativa 1 e 8 com mesma energia queima o lead (Russell + Grant)</td>
+<td>Gestão comercial + Dev</td>
+<td>1 semana</td>
+<td>Cadência documentada e implementada no motor</td>
+</tr>
+<tr>
+<td>Card mostra script resumido por tentativa (1 linha)</td>
+<td>SDR não inventa abordagem no calor do momento</td>
+<td>Dev frontend</td>
+<td>2 semanas</td>
+<td>Script seguido em &gt;80% das tentativas</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<h2 class="section-title" id="riscos-e-mitiga-es">Riscos e Mitigações</h2>
+<div class="table-wrap"><table>
+<tr>
+<th>Risco</th>
+<th>Probabilidade</th>
+<th>Mitigação</th>
+</tr>
+<tr>
+<td>Campo de "horário de retorno" não existe no banco — leads marcam horário no WhatsApp em texto livre</td>
+<td>Alta</td>
+<td>Parser de mensagens + campo manual de confirmação pelo SDR; no curto prazo, camada 1 usa só campo customizado de oportunidade</td>
+</tr>
+<tr>
+<td>SDR ignora a fila e continua escolhendo na mão</td>
+<td>Média</td>
+<td>Gestão monitora % de toques no topo da fila vs total de ligações; conversa de onboarding antes do deploy</td>
+</tr>
+<tr>
+<td>Score financeiro requer dados de fechamento por lead — base pode ser pequena inicialmente</td>
+<td>Média</td>
+<td>Score começa simples (prob_atender baseado em camada + tentativa) e evolui com dados reais nas semanas seguintes</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<h2 class="section-title" id="pr-ximo-passo-imediato-48h">Próximo Passo Imediato (48h)</h2>
+<p class="body-text">**Definir e implementar a detecção das 4 camadas na lógica do motor de `discagem_scores`**, usando dados já disponíveis:</p>
+<p class="body-text">1. **Camada 1** — `oportunidades` campo customizado de horário de retorno (ou parsing de última mensagem inbound com texto de hora) 2. **Camada 2** — `comunicacoes` WHERE direction='inbound' AND data_comunicacao &gt; NOW() - INTERVAL '60 min' 3. **Camada 3** — `oportunidades.data_lead_recebido` &gt; NOW() - INTERVAL configurável (ex: 30 min) 4. **Camada 4** — count de data_tentativa_N preenchidos → define T atual → define canal sugerido</p>
+<p class="body-text">O card da DiscagemTab passa a mostrar apenas: nome do lead, motivo em português, botão de ação. Uma linha, sem jargão.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="backlog-v2-n-o-mvp">Backlog v2 (Não é MVP)</h2>
+<ul class="bullet-list">
+<li>Contador motivacional ("você tá voando hoje — X de Y leads trabalhados")</li>
+<li>A/B test da hierarquia de camadas com dado limpo (após 30 dias)</li>
+<li>Score financeiro calibrado com histórico real de fechamento</li>
+<li>Script completo por tentativa no card</li>
+</ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Como foi o debate</h2>
+      <div class="card">
+        <p class="body-text">**Data:** 2026-06-27   **Tema:** Redesign da fila de discagem SDR — de relatório para sistema operacional   **Presidente:** Jeff Bezos   **Membros presentes:** Alex Hormozi, Russell Brunson, Gary Vaynerchuk, Sandro San, Marcel Marcondes, Grant Cardone  </p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="resumo-do-problema">Resumo do Problema</h2>
+<p class="body-text">A aba de Discagem do CRM da Empire Business (React + Supabase) exibe leads em 3 buckets (ligue_agora / ligue_hoje / mensagem) mas funciona como um relatório — o SDR escolhe quem ligar. A empresa atua com mentoria de alto ticket; cada lead custa dinheiro de tráfego pago. O SDR precisa "bater o olho e saber o que fazer." Dados disponíveis: data_lead_recebido, 8 tentativas de contato, data_conectado, comunicações (ligações/WhatsApp/SMS) e discagem_scores com score/estado/razao.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-1-diagn-stico">Rodada 1 — Diagnóstico</h2>
+<p class="body-text">**Grant Cardone:** Dados não fecham venda, AÇÃO fecha. O problema é o SDR que pensa quando deveria ligar. Precisa de uma fila onde ele nunca para — 10X de discagens. A fortuna está no follow-up: 92% das vendas acontecem depois do quinto contato. As colunas data_tentativa_1 a 8 existem para empurrar o SDR de volta ao telefone, não para virar dashboard. Solução: volume massivo, cadência obrigatória, SDR sem momento de inércia.</p>
+<p class="body-text">**Alex Hormozi:** Confundiram "ter dados" com "ter decisão." O sistema coleta tudo mas não decide nada — transferiu a decisão para o operador. Uma fila, um motivo por linha. Score como valor esperado: prob_atender × prob_fechar × ticket ÷ minutos de esforço. Speed-to-lead bate volume todo dia da semana. Ordem proposta: lead recém-entrado → horário marcado → respondeu → score. Volume negociado, velocidade ganha.</p>
+<p class="body-text">**Sandro San:** Construíram relatório, não fila. Relatório informa. Fila manda. SDR vê: nome, motivo em uma linha, botão ligar. Score e histórico ficam no motor, invisíveis ao operador. SDR parado é o maior desperdício possível. O sistema decide a guerra; o SDR aperta o gatilho. Nunca terceirizar para o operador a decisão de quem ligar.</p>
+<p class="body-text">**Marcel Marcondes:** Erro de governança — a decisão de priorização não pertence ao operador. Speed-to-lead é a métrica que separa sistemas bons de ruins. Hierarquia proposta: horário marcado → lead novo com SLA → respondeu. O score ordena dentro da camada, nunca substitui a hierarquia temporal. Loop de feedback obrigatório: discou e não conectou → motor reordena imediatamente.</p>
+<p class="body-text">**Russell Brunson:** A fila atual é um funil quebrado com excesso de escolha. Hook = lead certo, Story = motivo claro, Offer = botão único. Cadência roteirizada: tentativa 1-2 telefone, 3-4 WhatsApp com valor diferente, 5-6 break-up. Estágio visível no card ("Tentativa 2 de 6 — use WhatsApp agora"). Ordem: horário marcado → respondeu recentemente → lead novo → score.</p>
+<p class="body-text">**Gary Vaynerchuk:** Linguagem humana no card é o que separa ferramenta de artefato. "Acabou de preencher, tá quente agora" vs timestamp frio — o SDR que lê o primeiro entra na ligação diferente. Contador motivacional ("4 de 12 hoje"), não opressivo. Uma tela, um card, um motivo. Empatia com o operador escala.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-2-embates">Rodada 2 — Embates</h2>
+<p class="body-text">**Grant** atacou o consenso de "card único": esconde a profundidade da fila, ensina preguiça. Cedeu no topo para speed-to-lead. Manteve contador de volume e follow-up roteirizado nas tentativas 4-8.</p>
+<p class="body-text">**Hormozi** atacou Grant: "10X cego é tanque furado — mais ligação do lead errado é mais desperdício mais rápido." Atacou o card único de Russell/Gary: "sem ver o backlog, SDR perde noção de urgência." Propôs "12 de 40 trabalhados hoje" como alternativa motivacional. Score financeiro por minuto como critério de ordenação dentro da camada.</p>
+<p class="body-text">**Sandro** atacou Grant: volume sem estratégia é desperdício x10. Lead de alto ticket custou dinheiro — queimar com ligação errada é prejuízo duplo. Concordou com Russell no diagnóstico de "funil quebrado." Horário marcado &gt; lead novo: compromisso explícito bate velocidade. Sistema decide, SDR executa, ponto final.</p>
+<p class="body-text">**Marcel** propôs A/B test na hierarquia de camadas. Pediu loop de feedback imediato como requisito não-negociável. Atacou Grant: volume cego tem custo de oportunidade. Score deve ser medido em reais fechados por hora de SDR, não em ligações feitas.</p>
+<p class="body-text">**Russell** atacou Grant: "tentativa 1 e 8 com a mesma energia queima o lead." Cadência roteirizada com variação de canal é o diferencial. Card em Hook-Story-Offer: cronômetro é o Hook, estágio é a Story, botão é a Offer. Ligeiramente discordou de Marcel na ordem: "respondeu" sobe acima de "lead novo".</p>
+<p class="body-text">**Gary** atacou o número bruto na tela: "47 pendentes cria ansiedade, não performance." Concordou com Russell na cadência. Adicionou: linguagem do card muda como o SDR age — empatia com o operador não é detalhe, é adoção.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-3-r-plicas-e-converg-ncia">Rodada 3 — Réplicas e Convergência</h2>
+<p class="body-text">**Grant:** Aceitou speed-to-lead no topo. Manteve follow-up roteirizado (canal muda por tentativa) e contador de volume. Cedeu: lead novo SLA pode liderar o topo da fila.</p>
+<p class="body-text">**Hormozi:** Reconheceu cadência roteirizada do Russell e linguagem humana do Gary como válidos. Manteve score financeiro por minuto e cronômetro de speed-to-lead. Cedeu: contador motivacional (não opressivo), linguagem humana no card.</p>
+<p class="body-text">**Sandro:** Reconheceu loop de feedback do Marcel como o que "sustenta tudo o resto." Manteve linguagem humana e uma linha por card. Cedeu: cronômetro discreto na camada de lead novo.</p>
+<p class="body-text">**Marcel:** Reconheceu score financeiro do Hormozi como forma de tornar a hierarquia econômica, não teológica. Reconheceu Gary: linguagem humana = adoção. Manteve instrumentação desde o dia 1 e loop de feedback. Cedeu: A/B test só após semanas de dado limpo, não no dia 1.</p>
+<p class="body-text">**Russell:** Reconheceu cronômetro do Hormozi como Hook do card. Score financeiro como moeda, não enfeite. Propôs card em dois modos: lead novo = cronômetro lidera; follow-up = cadência lidera. Cedeu: speed-to-lead lidera o card na camada 3.</p>
+<p class="body-text">**Gary:** Reconheceu Hormozi: "valor esperado por minuto é o norte verdadeiro." Reconheceu Russell: estágio da cadência é contexto, não firula. Manteve linguagem humana como piso inegociável. Cedeu: contador motivacional vai para backlog v2.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="decis-o-do-presidente">Decisão do Presidente</h2>
+<p class="body-text">**Jeff Bezos** ouviu o debate completo e decidiu:</p>
+<p class="body-text">"Na Amazon, temos uma frase: 'Good intentions don't work, mechanisms do.' O problema desta fila não é falta de intenção dos SDRs — é a ausência de um mecanismo que retire a decisão do operador e a coloque no sistema."</p>
+<p class="body-text">**Decisão:** Construir fila em 4 camadas com score financeiro, card em linguagem humana e instrumentação desde o primeiro dia.</p>
+<p class="body-text">**Incorporado:** - Hierarquia de 4 camadas: horário marcado → respondeu recentemente → lead novo no SLA → cadência roteirizada - Score como valor esperado por minuto (Hormozi): ordena dentro da camada, nunca substitui - Card em dois modos: lead novo = cronômetro; follow-up = estágio da cadência - Linguagem humana: "Marcou retorno para agora", "Respondeu há 4 min", "Tentativa 3 — mande WhatsApp" - Loop de feedback: não conectou → motor reordena em tempo real - Instrumentação desde o dia 1: evento por linha servida com camada, score, resultado</p>
+<p class="body-text">**Descartado:** - Contador de volume opressivo: "47 pendentes" gera ansiedade. Vai para backlog v2 como contador motivacional - A/B test no dia 1: semanas de dado limpo primeiro - Score visível para o SDR: motor usa, tela esconde</p>
+<p class="body-text">**Primeira ação (48h):** Detectar as 4 camadas com dados existentes e redesenhar card para mostrar nome + motivo em português + botão. Uma linha. Sem jargão.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="encaminhamentos">Encaminhamentos</h2>
+<ul class="bullet-list">
+<li>**Plano de ação completo:** [`plano_acao.md`](./plano_acao.md)</li>
+<li>**HTML visual:** [`index.html`](./index.html)</li>
+<li>**Decisão do presidente:** [`decisao-presidente.md`](./decisao-presidente.md)</li>
+</ul>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      Gerado pelo Conselho dos Mestres · 27/06/2026 18:04
+    </div>
+  </footer>
+</body>
+</html>

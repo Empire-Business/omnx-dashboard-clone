@@ -1,0 +1,20 @@
+{
+  "omnx_version": "1.11",
+  "setup_complete": true,
+  "claude_md_installed": true,
+  "claude_md_merged_at": "2026-05-08T00:00:00-03:00",
+  "agents_md_installed": true,
+  "agents_md_synced_at": "2026-07-17T00:00:00-03:00",
+  "security_auditor_installed": true,
+  "security_auditor_version": "v1.11",
+  "security_auditor_ref": "v1.11 (edição local, sem tag)",
+  "github_repo": "Empire-Business/GHL-SUPABASE",
+  "github_repo_private": null,
+  "last_update_check": "2026-07-10T00:00:00-03:00",
+  "last_version_gate_check": "up_to_date",
+  "last_version_gate_checked_at": "2026-07-19T00:00:00-03:00",
+  "last_audit_gate": "PASS",
+  "last_audit_at": "2026-07-18T14:10:27Z",
+  "last_audit_commit": "f5a3e26bc898044378c1d27c5edfb837069fe50c",
+  "last_handoff_at": "2026-07-20T19:20:00Z"
+}

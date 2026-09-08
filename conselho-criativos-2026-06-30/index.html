@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Tornar o app de Criativos autossuficiente, rápido e independente do Notion | Conselho dos Mestres</title>
+  <style>
+    :root {
+      --primary: #820AD1;
+      --secondary: #3E1874;
+      --surface: #FFFFFF;
+      --text: #000000;
+      --text-muted: #777777;
+      --border: #E4E4E4;
+      --radius-sm: 12px;
+      --radius-md: 24px;
+      --radius-lg: 32px;
+      --radius-full: 9999px;
+      --font-display: 'graphikMedium', Arial, sans-serif;
+      --font-body: 'graphikRegular', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--surface);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; margin: 0 0 0.5em; }
+    .container { max-width: 1076px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 5rem 0 4rem;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      margin-bottom: 3rem;
+    }
+    .hero-kicker {
+      font-family: var(--font-display);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.03em; }
+    .hero p { font-size: 20px; opacity: 0.95; max-width: 700px; margin-top: 1rem; }
+    .meta-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: -2rem 0 3rem;
+    }
+    .meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .meta-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+    .meta-value { font-family: var(--font-display); font-size: 18px; }
+    .section { margin-bottom: 4rem; }
+    .section-title { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .card-title { font-size: 22px; margin-bottom: 0.75rem; }
+    .body-text { color: #3d3d3d; margin: 0 0 1rem; }
+    .bullet-list { padding-left: 1.25rem; margin: 0 0 1rem; }
+    .bullet-list li { margin-bottom: 0.5rem; }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .member-card {
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 0.75rem;
+      transition: transform 150ms ease;
+    }
+    .member-card:hover { transform: translateY(-3px); }
+    .member-avatar {
+      width: 56px; height: 56px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 22px;
+      margin: 0 auto 0.75rem;
+    }
+    .member-name { font-family: var(--font-display); font-size: 15px; }
+    .decision-box {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .decision-box h2 { font-size: 28px; margin-bottom: 0.75rem; }
+    .decision-box p { opacity: 0.95; font-size: 18px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.875rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-display); font-weight: 500; background: #f4f4f4; }
+    tr:last-child td { border-bottom: none; }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      margin-top: 1rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 3rem;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4rem;
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      .section { margin-bottom: 2.5rem; }
+      .section-title { font-size: 26px; }
+      .card { padding: 1rem; }
+    }
+    </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-kicker">Conselho dos Mestres</div>
+      <h1> Tornar o app de Criativos autossuficiente, rápido e independente do Notion</h1>
+      <p>Plano de ação decidido por um conselho de especialistas de vendas, marketing, oferta, entrega e operações.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="meta-bar">
+      <div class="meta-card"><div class="meta-label">Presidente eleito</div><div class="meta-value"></div></div>
+      <div class="meta-card"><div class="meta-label">Data</div><div class="meta-value"> 30/06/2026</div></div>
+      <div class="meta-card"><div class="meta-label">Membros</div><div class="meta-value">6 presentes</div></div>
+    </div>
+
+    <section class="section decision-box">
+      <h2>Decisão do presidente</h2>
+      <p>** Vamos fazer um app de Criativos nativo, autossuficiente e soberano. O Notion morre como fonte de verdade; o app vive como cérebro dos criativos.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Membros do conselho</h2>
+      <div class="members-grid">
+        <div class="member-card"><div class="member-avatar">A</div><div class="member-name">Alex Hormozi</div></div><div class="member-card"><div class="member-avatar">R</div><div class="member-name">Russell Brunson</div></div><div class="member-card"><div class="member-avatar">G</div><div class="member-name">Gary Vaynerchuk</div></div><div class="member-card"><div class="member-avatar">S</div><div class="member-name">Sandro San</div></div><div class="member-card"><div class="member-avatar">M</div><div class="member-name">Marcel Marcondes</div></div><div class="member-card"><div class="member-avatar">G</div><div class="member-name">Grant Cardone</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="body-text">**Tema:** Tornar o app de Criativos autossuficiente, rápido e independente do Notion **Presidente:** Steve Jobs **Decisão:** Vamos fazer um app de Criativos nativo, autossuficiente e soberano. O Notion morre como fonte de verdade; o app vive como cérebro dos criativos.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="1-vis-o-da-decis-o">1. Visão da decisão</h2>
+<p class="body-text">O app de Criativos não pode continuar sendo um espelho do Notion. A decisão do conselho, liderada por Steve Jobs, é transformá-lo no sistema nativo de gestão do ciclo de vida dos criativos: ideia, produção, teste, decisão e escala. Os 948 criativos históricos serão migrados como legado imutável, preservando memória organizacional, mas todo criativo novo ou editado passa a nascer, viver e decidir dentro do app.</p>
+<p class="body-text">Incorporamos de Alex Hormozi a centralidade da oferta: cada criativo novo deve carregar metadados de oferta (ângulo, avatar, promessa, prova, gatilho). De Russell Brunson, incorporamos a lógica do Creative Funnel, mas enxuta: dois portões binários iniciais (spend mínimo + CTR), evoluindo para ROAS. De Sandro San e Marcel Marcondes, a soberania total dos dados, KPIs com dono e RLS firme. De Gary Vaynerchuk, a obsessão por velocidade de iteração. E de Grant Cardone, a urgência de colocar o app no ar agora, sem esperar a perfeição.</p>
+<p class="body-text">Descartamos o corte total sem estrutura (geraria caos), o funil de 4 portões imediato (viraria burocracia) e a paralisia de preencher metadados nos 948 antigos antes de lançar (histórico não pode paralisar o futuro).</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="2-objetivos">2. Objetivos</h2>
+<h3 class="card-title">Objetivo macro</h3>
+<p class="body-text">Em 90 dias, o sub-app Criativos é a única fonte de verdade para criação, edição, produção e decisão de criativos do workspace, sem dependência do Notion, com carregamento inicial &lt; 2s e decisão automática baseada em 2 portões binários.</p>
+<h3 class="card-title">30 dias</h3>
+<ul class="bullet-list">
+<li>Migrar os 948 criativos do Notion para `notion_creatives` como legado imutável (`source='notion'`)</li>
+<li>Congelar criação/edição no Notion e comunicar o time</li>
+<li>Lançar formulário nativo de criar/editar criativo com metadados de oferta obrigatórios</li>
+<li>Desligar a sincronização do Notion como fonte primária</li>
+<li>Garantir RLS por workspace e performance de listagem (paginação + índices)</li>
+</ul>
+<h3 class="card-title">60 dias</h3>
+<ul class="bullet-list">
+<li>Implementar Kanban de produção com os 12 status e transições validadas</li>
+<li>Adicionar painel de Testes com critérios configuráveis por workspace</li>
+<li>Ligar o Creative Funnel enxuto: 2 portões automáticos (spend mínimo + CTR)</li>
+<li>Construir dashboard próprio com KPIs: tempo médio entre status, taxa de aprovação, CPL médio</li>
+</ul>
+<h3 class="card-title">90 dias</h3>
+<ul class="bullet-list">
+<li>Evoluir Creative Funnel para ROAS e retenção</li>
+<li>Adicionar alertas automáticos (sem teste há +5 dias, orçamento mínimo atingido, CPL alto)</li>
+<li>Entregar relatório semanal automático para reunião de quinta</li>
+<li>Validar com métricas reais: 100% dos criativos novos criados no app, zero criação no Notion</li>
+</ul>
+<p class="body-text">---</p>
+<h2 class="section-title" id="3-pilares-de-a-o">3. Pilares de ação</h2>
+<h3 class="card-title">Pilar 1: Soberania dos dados e migração do legado</h3>
+<p class="body-text">**Origem no conselho:** Sandro San, Marcel Marcondes e Grant Cardone concordaram que o app precisa ser a fonte única da verdade. A diferença foi a velocidade do corte — Steve Jobs optou pela transição cirúrgica, preservando o histórico.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica de sucesso</th>
+</tr>
+<tr>
+<td>Congelar Notion como fonte de verdade e comunicar time</td>
+<td>Matheus / Diretor de Marketing</td>
+<td>24h</td>
+<td>Nenhum criativo novo/editado no Notion após a data</td>
+</tr>
+<tr>
+<td>Criar migration que marca 948 registros como `source='notion'` e adiciona colunas para metadados de oferta</td>
+<td>Tech Lead / Dev</td>
+<td>7 dias</td>
+<td>100% dos criativos com `source` preenchido</td>
+</tr>
+<tr>
+<td>Validar integridade dos 948 registros (ids CR-xxx, campos essenciais)</td>
+<td>Tech Lead / QA</td>
+<td>10 dias</td>
+<td>Zero perda de dados; audit log completo</td>
+</tr>
+<tr>
+<td>Desligar edge function `notion-creatives-sync` como fonte primária</td>
+<td>Tech Lead / Dev</td>
+<td>14 dias</td>
+<td>Criativos novos não mais vêm do Notion</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 2: Criação e edição nativas</h3>
+<p class="body-text">**Origem no conselho:** Alex Hormozi defendeu metadados de oferta obrigatórios. Steve Jobs decidiu que isso vale para criativos novos/editados; os 948 legados entram sem metadados completos.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica de sucesso</th>
+</tr>
+<tr>
+<td>Expandir schema `notion_creatives` com campos: ângulo, avatar, promessa, prova, gatilho, source</td>
+<td>Tech Lead / Dev</td>
+<td>7 dias</td>
+<td>Schema migrado com RLS atualizado</td>
+</tr>
+<tr>
+<td>Construir formulário de criar/editar criativo com validação obrigatória dos metadados</td>
+<td>Frontend Dev</td>
+<td>14 dias</td>
+<td>Formulário funcional e validado com testes E2E</td>
+</tr>
+<tr>
+<td>Implementar geração automática de próximo ID `CR-xxx`</td>
+<td>Backend / Edge Function</td>
+<td>10 dias</td>
+<td>IDs gerados sequencialmente por workspace, sem conflito</td>
+</tr>
+<tr>
+<td>Substituir tela de produção atual por experiência nativa no sub-app</td>
+<td>Frontend Dev</td>
+<td>21 dias</td>
+<td>Biblioteca do sub-app permite criar/editar</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 3: Creative Funnel e decisão automática</h3>
+<p class="body-text">**Origem no conselho:** Russell Brunson propôs o funil de decisão. O conselho convergiu para começar enxuto: 2 portões (spend mínimo + CTR).</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica de sucesso</th>
+</tr>
+<tr>
+<td>Criar tabela `creative_test_criteria` (CPL alvo, spend min/máx, janela min/máx)</td>
+<td>Tech Lead / Dev</td>
+<td>14 dias</td>
+<td>Critérios configuráveis por workspace</td>
+</tr>
+<tr>
+<td>Implementar cálculo de spend e CTR por criativo a partir de `meta_ads_insights`</td>
+<td>Backend / Edge Function</td>
+<td>21 dias</td>
+<td>Métricas atualizadas automaticamente</td>
+</tr>
+<tr>
+<td>Construir painel de Testes com sugestão automática: ✅ APROVADO / ❌ REPROVADO / ⏳ AGUARDE</td>
+<td>Frontend Dev</td>
+<td>28 dias</td>
+<td>Decisão sugerida para 100% dos criativos em teste</td>
+</tr>
+<tr>
+<td>Adicionar gatilho manual de "Iniciar Teste" e "Finalizar Teste"</td>
+<td>Frontend Dev</td>
+<td>28 dias</td>
+<td>Fluxo funcional com testes E2E</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 4: Performance e experiência</h3>
+<p class="body-text">**Origem no conselho:** Gary Vaynerchuk defendeu velocidade de iteração. O PRD original exige carregamento &lt; 2s e listagem paginada.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica de sucesso</th>
+</tr>
+<tr>
+<td>Implementar paginação (50/página) e índices otimizados em `notion_creatives`</td>
+<td>Tech Lead / Dev</td>
+<td>10 dias</td>
+<td>Listagem de 948 criativos &lt; 2s</td>
+</tr>
+<tr>
+<td>Adicionar virtualização na tabela de produção</td>
+<td>Frontend Dev</td>
+<td>14 dias</td>
+<td>Scroll fluido sem travamentos</td>
+</tr>
+<tr>
+<td>Revisar e otimizar queries do sub-app Criativos (evitar N+1)</td>
+<td>Frontend Dev</td>
+<td>14 dias</td>
+<td>Lighthouse performance ≥ 80</td>
+</tr>
+</table></div>
+<h3 class="card-title">Pilar 5: Governança e KPIs</h3>
+<p class="body-text">**Origem no conselho:** Marcel Marcondes e Sandro San defenderam KPIs com dono. Sem isso, o dashboard vira decoração.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Ação</th>
+<th>Responsável</th>
+<th>Prazo</th>
+<th>Métrica de sucesso</th>
+</tr>
+<tr>
+<td>Definir 4 KPIs: taxa de aprovação, tempo médio entre status, CPL médio por formato, taxa de reuso de winners</td>
+<td>Matheus / Diretor de Marketing</td>
+<td>7 dias</td>
+<td>KPIs documentados com definição e dono</td>
+</tr>
+<tr>
+<td>Construir dashboard próprio com cards de KPIs e alertas</td>
+<td>Frontend Dev</td>
+<td>35 dias</td>
+<td>Dashboard atualizado em tempo real</td>
+</tr>
+<tr>
+<td>Criar cadência semanal de revisão dos KPIs na reunião de quinta</td>
+<td>Matheus</td>
+<td>14 dias</td>
+<td>Reunião com dados do app, não de planilha</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<h2 class="section-title" id="4-riscos-e-mitiga-es">4. Riscos e mitigações</h2>
+<div class="table-wrap"><table>
+<tr>
+<th>Risco</th>
+<th>Probabilidade</th>
+<th>Impacto</th>
+<th>Mitigação</th>
+</tr>
+<tr>
+<td>Perda ou corrupção dos 948 criativos na migração</td>
+<td>Baixa</td>
+<td>Alto</td>
+<td>Backup PITR do Supabase; migration idempotente; validação linha a linha antes de desligar sync</td>
+</tr>
+<tr>
+<td>Time continuar criando no Notion por hábito</td>
+<td>Alta</td>
+<td>Médio</td>
+<td>Congelar permissões de edição no Notion; comunicação clara; onboarding no novo app</td>
+</tr>
+<tr>
+<td>App fica lento com 948+ criativos nativos</td>
+<td>Média</td>
+<td>Alto</td>
+<td>Paginação, índices, virtualização, PostgREST `max_rows` respeitado</td>
+</tr>
+<tr>
+<td>Decisão automática errada por dados imprecisos</td>
+<td>Média</td>
+<td>Médio</td>
+<td>Portões iniciais conservadores; decisão manual sempre disponível; log de cada sugestão</td>
+</tr>
+<tr>
+<td>Resistência a metadados de oferta obrigatórios</td>
+<td>Média</td>
+<td>Médio</td>
+<td>Campos simples, com exemplos; permitir preenchimento gradual; mostrar valor no dashboard</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<h2 class="section-title" id="5-pr-ximo-passo-imediato">5. Próximo passo imediato</h2>
+<p class="body-text">**Nas próximas 24-48h:** Matheus (ou o dono do produto) comunica oficialmente ao time que o Notion está congelado como fonte de verdade para criativos, e que todo novo criativo deve ser criado no sub-app Criativos. Em paralelo, o Tech Lead inicia a migration que adiciona `source` e os campos de metadados de oferta à tabela `notion_creatives`, preservando os 948 registros existentes.</p>
+<p class="body-text">**Como saber se foi feito:** - Comunicação enviada no canal do time de criativos - Migration aplicada no ambiente de dev/linked com `supabase db push` - `SELECT source, COUNT(*) FROM notion_creatives GROUP BY source` retorna 948 registros como `notion`</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="6-como-acompanhar">6. Como acompanhar</h2>
+<ul class="bullet-list">
+<li>**Revisão semanal das métricas:** KPIs do dashboard (taxa de aprovação, tempo médio entre status, CPL médio por formato, taxa de reuso de winners)</li>
+<li>**Reunião de ajuste:** toda quinta-feira, usando dados do app de Criativos em vez de planilhas</li>
+<li>**Decisão de escalada:** se em 30 dias menos de 80% dos criativos novos forem criados no app, rever a comunicação, onboarding e UX do formulário nativo</li>
+</ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Como foi o debate</h2>
+      <div class="card">
+        <p class="body-text">**Tema:** Tornar o app de Criativos autossuficiente, rápido e independente do Notion **Data:** 30/06/2026 **Presidente:** Steve Jobs **Membros presentes:** Alex Hormozi, Russell Brunson, Gary Vaynerchuk, Sandro San, Marcel Marcondes, Grant Cardone</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="1-resumo-do-problema">1. Resumo do problema</h2>
+<p class="body-text">O usuário tem o projeto GHL-SUPABASE, um dashboard Empire (React + Vite + Supabase) com um sub-app de Criativos recém-criado. Hoje, os criativos de tráfego pago e orgânico (~948 registros) são gerenciados no Notion e sincronizados para a tabela `notion_creatives` via edge function. O app está lento e dependente do Notion. O usuário quer que o app seja autossuficiente: criar/subir criativos direto no app, ter estatísticas e dashboard próprio, sem perder dados antigos e sem depender do Notion.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="2-rodada-1-diagn-stico">2. Rodada 1 — Diagnóstico</h2>
+<h3 class="card-title">Alex Hormozi</h3>
+<p class="body-text">A causa raiz não é o Notion; é o desrespeito pelo ativo criativo. Criativo é a ponta da lança da oferta, e viver no Notion diz que isso é secundário. A maior oportunidade é transformar os 948 criativos em um banco de dados de ângulos, ganchos, promessas e ofertas testadas. Prioridade: congelar o Notion, migrar os 948 uma única vez e desenhar o fluxo ideia → produção → teste → decisão.</p>
+<h3 class="card-title">Russell Brunson</h3>
+<p class="body-text">O problema é gerenciar criativos como planilha de estoque em vez de um funil de produção de winners. 12 status no Kanban sem critério de passar ou morrer é decoração. A oportunidade é transformar o app no "Creative Funnel" que decide automaticamente quais criativos escalam. Prioridade: desenhar 4 decisões binárias antes de montar o Kanban.</p>
+<h3 class="card-title">Gary Vaynerchuk</h3>
+<p class="body-text">A causa raiz é construir o negócio de criativos em cima de uma ferramenta de anotações. Notion é aluguel, não ativo. A oportunidade é velocidade de iteração: testar mais, decidir mais rápido, reaprender em ciclos curtos. Prioridade: migrar os 948 sem perder histórico, ativar app nativo imediatamente e descartar Notion como fonte de verdade.</p>
+<h3 class="card-title">Sandro San</h3>
+<p class="body-text">A causa raiz é delegar a alma do tráfego para um caderno digital que não foi feito para isso. A maior oportunidade é transformar o app no cérebro que decide teste, aprovação e reprovação. Prioridade: transição cirúrgica — migrar 948 como histórico imutável, cortar sincronização como fonte primária no mesmo dia e lançar criação nativa.</p>
+<h3 class="card-title">Marcel Marcondes</h3>
+<p class="body-text">A causa raiz é escalar a operação de criativos sem escalar a governança. 948 registros são 948 decisões de investimento. A oportunidade é transformar o app na fonte única de verdade do processo criativo, com histórico, critérios de teste e decisão. Prioridade: migrar com histórico intacto e definir 3-4 KPIs antes da próxima feature.</p>
+<h3 class="card-title">Grant Cardone</h3>
+<p class="body-text">A causa raiz é falta de comprometimento total — ainda de aluguel no Notion. A oportunidade é transformar o departamento de criativos numa máquina de velocidade e decisão, escalando volume de testes 10x. Prioridade: cortar o cordão umbilical com o Notion em uma única jogada, migrar 948, construir criação/editar, kanban e painel de testes.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="3-rodada-2-embates">3. Rodada 2 — Embates</h2>
+<p class="body-text">**Alex Hormozi** rebateu Russell: funil binário só funciona se cada card carregar a pergunta "qual hipótese de oferta esse criativo está testando?". E rebateu Gary: velocidade sem critério queima dinheiro mais rápido. Defendeu metadados de oferta obrigatórios antes de automatizar.</p>
+<p class="body-text">**Russell Brunson** reforçou que dados sem decisão viram museu. Concordou com Alex que metadados de oferta são a gasolina do funil, mas não abriu mão da lógica do Creative Funnel com decisões automáticas.</p>
+<p class="body-text">**Gary Vaynerchuk** concordou com a ação de cortar o Notion, mas discordou de Hormozi: criativo é atenção, não só ângulo de oferta. E alertou Marcel sobre a "KPI-trap" — medir demais e fazer de menos.</p>
+<p class="body-text">**Sandro San** questionou Russell: funil elaborado sem decisão firme é procrastinação. Contestou Grant: corte cirúrgico, não heróico. Reforçou Marcel: KPIs sem dono viram decoração.</p>
+<p class="body-text">**Marcel Marcondes** rebateu Grant: ação sem estrutura gera dívida. Calibrou Gary: velocidade precisa de critério. Defendeu KPIs com dono e cadência.</p>
+<p class="body-text">**Grant Cardone** reforçou corte total, alertou Russell (funil vira burocracia sem volume) e rebateu Marcel (receita financia estrutura; ação primeiro).</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="4-rodada-3-r-plicas-e-converg-ncia">4. Rodada 3 — Réplicas e convergência</h2>
+<p class="body-text">**Alex Hormozi** reconheceu Russell e Sandro: dados sem decisão viram museu, e corte sem cérebro é tolice. Não abriu mão de metadados de oferta como unidade central. Cedeu em migrar os 948 como legado sem metadados completos, desde que a estrutura seja obrigatória para novos/editados.</p>
+<p class="body-text">**Russell Brunson** reconheceu Alex: funil sem metadados não decide. Não abriu mão do Creative Funnel com decisões automáticas. Cedeu em simplificar para 2 portões binários iniciais (spend mínimo + CTR).</p>
+<p class="body-text">**Gary Vaynerchuk** reconheceu Russell: dados sem decisão viram museu. Não abriu mão de cortar o Notion como fonte de verdade e manter velocidade/atenção. Cedeu em aceitar funil binário + KPIs enxutos sem burocracia.</p>
+<p class="body-text">**Sandro San** reconheceu Marcel: KPIs sem dono viram decoração. Não abriu mão da soberania total. Cedeu em aceitar funil enxuto de 2-3 portões com gatilho automático e dono definido.</p>
+<p class="body-text">**Marcel Marcondes** reconheceu Russell e Alex com ressalvas. Não abriu mão de migrar 948 como histórico imutável, definir 3-4 KPIs com dono e app como fonte única com RLS. Cedeu na velocidade do corte, aceitando corte em duas etapas.</p>
+<p class="body-text">**Grant Cardone** reconheceu Russell. Não abriu mão do corte total e migração imediata. Cedeu em aceitar gatilhos automáticos como fase 2, com prazo curto e dono.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="5-decis-o-do-presidente">5. Decisão do presidente</h2>
+<p class="body-text">**Steve Jobs** elegeu o caminho da transição cirúrgica, mas sem hesitação.</p>
+<p class="body-text">&gt; "Vamos fazer um app de Criativos nativo, autossuficiente e soberano."</p>
+<p class="body-text">Decisão: 1. Congelar o Notion como fonte de verdade agora. 2. Migrar os 948 registros como legado histórico imutável. 3. Construir experiência mínima de criação/edição de criativos, com metadados de oferta obrigatórios. 4. Desligar a sincronização com o Notion assim que o app nativo permitir criar, editar e listar criativos sem perda de dados. 5. Em seguida, adicionar o Creative Funnel enxuto com 2 portões automáticos (spend mínimo + CTR) e um dashboard próprio de estatísticas.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="6-encaminhamentos">6. Encaminhamentos</h2>
+<ul class="bullet-list">
+<li>Plano de ação completo: [`plano_acao.md`](./plano_acao.md)</li>
+<li>Versão visual do plano: [`index.html`](./index.html)</li>
+<li>Próximo passo imediato: Matheus congela o Notion e comunica o time; Tech Lead inicia migration de `source` e metadados de oferta.</li>
+</ul>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      Gerado pelo Conselho dos Mestres · 01/07/2026 19:59
+    </div>
+  </footer>
+</body>
+</html>

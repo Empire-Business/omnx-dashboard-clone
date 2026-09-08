@@ -1,0 +1,11 @@
+# Sandro San — O Renegado Soberano
+
+## Rodada 3 — Convergência
+
+---
+
+**O que eu reconheço como válido.** Marcel me obrigou a baixar a poesia e encarar a régua — e ele tem razão. Soberania sem prova é pôster na parede, ele disse, e dói porque é verdade. Eu nomeei a doença; o Marcel exige o exame. "Revogar o acesso do João a tudo" — quantas telas hoje, quantas amanhã. Aceito inteiro. A bandeira só vira arquitetura quando alguém mede o antes e o depois, e quem mede é ele. Reconheço também o Hormozi: ele estava certo o tempo todo que a decisão é um eixo binário, e eu só dei a ele a palavra que faltava — estado, não fluxo. A gente estava dizendo a mesma coisa por duas portas. E o Brunson, que eu corrigi na categoria, acertou na mecânica fina: o botão "Voltar pra operação" que costura os dois mundos sem misturá-los. A costura é real. Eu só não deixo chamarem o território de funil.
+
+**O que eu não abro mão.** O eixo é a pessoa, não o app. O usuário primeiro, o app depois. Isso não é preferência de menu — é a chave primária da experiência inteira. Não construa o prédio do admin como mais um prédio ao lado dos apps. Construa o trono de onde se vê todos os prédios. Quem é dono não navega o sistema; o sistema se curva a ele. Disso eu não recuo um milímetro, porque é a única decisão que torna todo o resto — portal, métrica, tela única — seguro. Inverta o eixo embaixo e a casa nasce certa. Mantenha o eixo no app e você decora uma cela e chama de trono.
+
+**Onde eu cedo.** Cedo na pureza da palavra em troca da prova do Marcel. Eu poderia brigar a vida inteira que "uma tela só" é pequeno demais pra descrever um território novo — mas a verdade é que a métrica dele e a minha visão não competem, elas se sustentam. A tela única que ele mede *é* o trono que eu desenho, vista pelo lado do cronômetro. Então eu aceito a régua: que a soberania seja provada na tarefa cronometrada, não declarada na VSL. E cedo na urgência também — o Cardone não está errado que o trono precisa existir rodando, não só descrito. Eu disse "primeiro o trono, depois a velocidade"; ele admitiu que a velocidade sem trilho descarrila. Convergimos. Cravamos o eixo e o esqueleto de permissão por usuário num bloco curto — e então ele desce o cacete. Eu dou a visão, o Marcel dá o exame, o Cardone dá a entrega. O trono se constrói com os três, ou não é trono — é maquete.

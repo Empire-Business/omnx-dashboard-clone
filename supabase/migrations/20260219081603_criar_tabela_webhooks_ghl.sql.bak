@@ -1,0 +1,131 @@
+-- ============================================
+-- Tabela: webhooks_ghl
+-- Descrição: Armazena webhooks recebidos do GoHighLevel (GHL)
+-- Segurança: RLS ativado - apenas service_role e funções específicas podem inserir
+-- ============================================
+
+-- Criar enum para status do webhook (se não existir)
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'webhook_status') THEN
+        CREATE TYPE webhook_status AS ENUM ('pending', 'processing', 'completed', 'failed');
+    END IF;
+END $$;
+
+-- Criar tabela webhooks_ghl
+CREATE TABLE IF NOT EXISTS webhooks_ghl (
+    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+    
+    -- Dados do webhook GHL
+    event_type TEXT NOT NULL,
+    location_id TEXT,
+    
+    -- Payload completo do GHL (JSONB para indexação e queries)
+    payload JSONB NOT NULL DEFAULT '{}',
+    
+    -- Headers recebidos (para auditoria)
+    headers JSONB DEFAULT '{}',
+    
+    -- Dados extraídos do payload (para facilitar queries)
+    contact_id TEXT,
+    contact_email TEXT,
+    contact_phone TEXT,
+    opportunity_id TEXT,
+    
+    -- Status de processamento
+    status webhook_status DEFAULT 'pending',
+    processed_at TIMESTAMPTZ,
+    error_message TEXT,
+    retry_count INTEGER DEFAULT 0,
+    
+    -- Metadados
+    ip_address INET,
+    user_agent TEXT,
+    
+    -- Timestamps
+    created_at TIMESTAMPTZ DEFAULT now(),
+    updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Comentários nas colunas
+COMMENT ON TABLE webhooks_ghl IS 'Armazena webhooks recebidos do GoHighLevel (GHL)';
+COMMENT ON COLUMN webhooks_ghl.event_type IS 'Tipo de evento do GHL (ex: contact.created, opportunity.status_update)';
+COMMENT ON COLUMN webhooks_ghl.location_id IS 'ID da location no GHL';
+COMMENT ON COLUMN webhooks_ghl.payload IS 'Payload completo do webhook em JSONB';
+COMMENT ON COLUMN webhooks_ghl.status IS 'Status de processamento: pending, processing, completed, failed';
+
+-- Índices para performance
+CREATE INDEX IF NOT EXISTS idx_webhooks_ghl_event_type ON webhooks_ghl(event_type);
+CREATE INDEX IF NOT EXISTS idx_webhooks_ghl_location_id ON webhooks_ghl(location_id);
+CREATE INDEX IF NOT EXISTS idx_webhooks_ghl_status ON webhooks_ghl(status);
+CREATE INDEX IF NOT EXISTS idx_webhooks_ghl_created_at ON webhooks_ghl(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_webhooks_ghl_contact_id ON webhooks_ghl(contact_id) WHERE contact_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_webhooks_ghl_opportunity_id ON webhooks_ghl(opportunity_id) WHERE opportunity_id IS NOT NULL;
+
+-- Índice GIN para buscas no JSONB payload
+CREATE INDEX IF NOT EXISTS idx_webhooks_ghl_payload_gin ON webhooks_ghl USING GIN(payload);
+
+-- Trigger para atualizar updated_at automaticamente
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = now();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS update_webhooks_ghl_updated_at ON webhooks_ghl;
+CREATE TRIGGER update_webhooks_ghl_updated_at
+    BEFORE UPDATE ON webhooks_ghl
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
+-- ============================================
+-- ROW LEVEL SECURITY (RLS)
+-- ============================================
+
+-- Ativar RLS
+ALTER TABLE webhooks_ghl ENABLE ROW LEVEL SECURITY;
+
+-- Política 1: Permitir INSERT anônimo (para a Edge Function receber webhooks)
+-- A validação do webhook é feita na Edge Function antes de inserir
+DROP POLICY IF EXISTS "Allow anonymous insert for webhooks" ON webhooks_ghl;
+CREATE POLICY "Allow anonymous insert for webhooks"
+    ON webhooks_ghl
+    FOR INSERT
+    TO anon
+    WITH CHECK (true);
+
+-- Política 2: Service role pode tudo (para Edge Functions e admin)
+DROP POLICY IF EXISTS "Service role full access" ON webhooks_ghl;
+CREATE POLICY "Service role full access"
+    ON webhooks_ghl
+    FOR ALL
+    TO service_role
+    USING (true)
+    WITH CHECK (true);
+
+-- Política 3: Usuários autenticados podem apenas LER seus próprios registros
+-- (se houver associação com usuário no futuro)
+DROP POLICY IF EXISTS "Authenticated users read access" ON webhooks_ghl;
+CREATE POLICY "Authenticated users read access"
+    ON webhooks_ghl
+    FOR SELECT
+    TO authenticated
+    USING (true);
+
+-- Política 4: Negar UPDATE/DELETE para anon e authenticated (apenas service_role)
+-- Isso garante imutabilidade dos webhooks recebidos
+DROP POLICY IF EXISTS "No update for regular users" ON webhooks_ghl;
+CREATE POLICY "No update for regular users"
+    ON webhooks_ghl
+    FOR UPDATE
+    TO anon, authenticated
+    USING (false);
+
+DROP POLICY IF EXISTS "No delete for regular users" ON webhooks_ghl;
+CREATE POLICY "No delete for regular users"
+    ON webhooks_ghl
+    FOR DELETE
+    TO anon, authenticated
+    USING (false);

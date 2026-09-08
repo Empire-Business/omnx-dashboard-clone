@@ -1,0 +1,7 @@
+# Sandro San — Rodada 2: Embates
+
+Alex, você acertou na causa e errou na solução. A sidebar inferior é onde eu colocaria funcionalidades que o admin acessa raramente — gestão de backup, configurações de segurança. O controle de apps não é gestão ocasional. É decisão estratégica: quais módulos o meu time vai usar esta semana? Isso tem que estar no nível do header, não escondido na parte inferior de uma coluna lateral. A governança precisa de presença de nível superior, não de rodapé. Faz sentido para você?
+
+Russell, seu "funil de onboarding do admin" tem uma premissa que eu não aceito: que o admin precisa ser guiado como um consumidor. Não precisa. Admin é o tomador de decisão que assinou o contrato, que conhece o negócio, que sabe o que quer. O que ele não sabe é onde o produto escondeu o que já deveria estar óbvio. Ele não quer ser conduzido por uma sequência de passos — ele quer encontrar a funcionalidade, usá-la em dois cliques, e voltar para o que estava fazendo. Trate o admin com a inteligência que ele merece.
+
+Grant, concordo que o produto está sendo tímido. Mas botão com cor diferenciada é a resposta errada. Cor diferenciada cria ansiedade visual para os não-admins — eles veem algo em destaque e se perguntam se deveriam clicar. A solução é visibilidade condicional: o admin vê um ícone de engrenagem com label "Workspace" fixo no header. O SDR não vê nada diferente do que já vê hoje. Cada papel tem sua interface. Isso é soberania de produto — não gritaria visual.

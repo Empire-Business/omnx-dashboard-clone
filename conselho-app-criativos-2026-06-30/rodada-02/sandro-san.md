@@ -1,0 +1,5 @@
+Russell, discordo da parada para desenhar funil. Funil bonito é procrastinação vestida de estratégia. Você não descobre o funil do criativo no quadro branco — descobre no campo, com um dono nomeado, status claro e número na mão. Comece com ideia → teste → aprova/reprova. O resto do funil emerge quando o time começa a usar. Faz sentido para você?
+
+Marcel, soberania e governança são a mesma moeda, concordo. Mas esperar duas semanas rodando em planilha ou Notion antes de codar é deixar o processo apodrecer no limbo. O aprendizado não nasce da planilha — nasce do sistema. Você valida o processo dentro do próprio MVP em uma semana, com campos enxutos, RLS ativado e uma pessoa responsável. Do contrário, vira reunião eterna e ninguém decide nada.
+
+E uma correção para quem acha que CPL resolve: a métrica que mata ou escala não é custo por lead qualquer. É custo por lead qualificado — comprador, não curioso. Aprovar criativo só porque gerou volume é ilusão de performance. Pense grande: o criativo não é só peça de anúncio, é pesquisa de oferta em tempo real. Mas pesquisa só vale dinheiro quando aponta para quem paga mais.

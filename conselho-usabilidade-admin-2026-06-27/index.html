@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Visibilidade e acessibilidade do painel de administração do Acelerador de Audiência | Conselho dos Mestres</title>
+  <style>
+    :root {
+      --primary: #820AD1;
+      --secondary: #3E1874;
+      --surface: #FFFFFF;
+      --text: #000000;
+      --text-muted: #777777;
+      --border: #E4E4E4;
+      --radius-sm: 12px;
+      --radius-md: 24px;
+      --radius-lg: 32px;
+      --radius-full: 9999px;
+      --font-display: 'graphikMedium', Arial, sans-serif;
+      --font-body: 'graphikRegular', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--surface);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; margin: 0 0 0.5em; }
+    .container { max-width: 1076px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 5rem 0 4rem;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      margin-bottom: 3rem;
+    }
+    .hero-kicker {
+      font-family: var(--font-display);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.03em; }
+    .hero p { font-size: 20px; opacity: 0.95; max-width: 700px; margin-top: 1rem; }
+    .meta-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: -2rem 0 3rem;
+    }
+    .meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .meta-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+    .meta-value { font-family: var(--font-display); font-size: 18px; }
+    .section { margin-bottom: 4rem; }
+    .section-title { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .card-title { font-size: 22px; margin-bottom: 0.75rem; }
+    .body-text { color: #3d3d3d; margin: 0 0 1rem; }
+    .bullet-list { padding-left: 1.25rem; margin: 0 0 1rem; }
+    .bullet-list li { margin-bottom: 0.5rem; }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .member-card {
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 0.75rem;
+      transition: transform 150ms ease;
+    }
+    .member-card:hover { transform: translateY(-3px); }
+    .member-avatar {
+      width: 56px; height: 56px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 22px;
+      margin: 0 auto 0.75rem;
+    }
+    .member-name { font-family: var(--font-display); font-size: 15px; }
+    .decision-box {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .decision-box h2 { font-size: 28px; margin-bottom: 0.75rem; }
+    .decision-box p { opacity: 0.95; font-size: 18px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.875rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { font-family: var(--font-display); font-weight: 500; background: #f4f4f4; }
+    tr:last-child td { border-bottom: none; }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      margin-top: 1rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 3rem;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4rem;
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      .section { margin-bottom: 2.5rem; }
+      .section-title { font-size: 26px; }
+      .card { padding: 1rem; }
+    }
+    </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-kicker">Conselho dos Mestres</div>
+      <h1> Visibilidade e acessibilidade do painel de administração do Acelerador de Audiência</h1>
+      <p>Plano de ação decidido por um conselho de especialistas de vendas, marketing, oferta, entrega e operações.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="meta-bar">
+      <div class="meta-card"><div class="meta-label">Presidente eleito</div><div class="meta-value"></div></div>
+      <div class="meta-card"><div class="meta-label">Data</div><div class="meta-value"> 2026-06-27</div></div>
+      <div class="meta-card"><div class="meta-label">Membros</div><div class="meta-value">6 presentes</div></div>
+    </div>
+
+    <section class="section decision-box">
+      <h2>Decisão do presidente</h2>
+      <p>Veja o plano de ação completo abaixo.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Membros do conselho</h2>
+      <div class="members-grid">
+        <div class="member-card"><div class="member-avatar">A</div><div class="member-name">Alex Hormozi</div></div><div class="member-card"><div class="member-avatar">R</div><div class="member-name">Russell Brunson</div></div><div class="member-card"><div class="member-avatar">G</div><div class="member-name">Gary Vaynerchuk</div></div><div class="member-card"><div class="member-avatar">S</div><div class="member-name">Sandro San</div></div><div class="member-card"><div class="member-avatar">M</div><div class="member-name">Marcel Marcondes</div></div><div class="member-card"><div class="member-avatar">G</div><div class="member-name">Grant Cardone</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="body-text">**Presidente:** Steve Jobs **Data:** 2026-06-27 **Tema:** Tornar o painel de administração de apps descobrível em &lt; 5 segundos por qualquer admin</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="1-vis-o-da-decis-o">1. Visão da Decisão</h2>
+<p class="body-text">A decisão do presidente Jobs foi cirúrgica: dois pontos de entrada, nada mais. Um ícone de engrenagem com label "Admin" no header global (visível em qualquer tela para admins/owners), e um card de configuração no AppHub para o primeiro acesso. A sidebar permanece operacional e limpa — sem contaminação de links de governança no espaço de trabalho dos SDRs.</p>
+<p class="body-text">A causa raiz do problema era arrogância de produto: a funcionalidade foi construída e assumiu-se que o usuário descobriria. O `AdminMenu` existente usa ícone de usuário sem label — um ícone ambíguo que não comunica administração. A correção é mínima em código e máxima em impacto de usabilidade.</p>
+<p class="body-text">A regra de ouro: contextos separados não se misturam. Header = governança global. Sidebar = contexto operacional do app. AppHub = ponto de entrada neutro. Cada elemento tem sua responsabilidade. Essa separação é o que Jobs chama de "integridade do produto."</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="2-objetivos">2. Objetivos</h2>
+<p class="body-text">**Macro:** Qualquer admin/owner encontra o painel de controle de apps em &lt; 5 segundos a partir de qualquer tela, sem instrução prévia.</p>
+<div class="table-wrap"><table>
+<tr>
+<th>Horizonte</th>
+<th>Objetivo</th>
+<th>Métrica</th>
+</tr>
+<tr>
+<td>**7 dias**</td>
+<td>Ícone de engrenagem + label "Admin" no header substituindo ícone de usuário</td>
+<td>100% dos admins encontram /admin/apps em 1 clique sem ajuda</td>
+</tr>
+<tr>
+<td>**30 dias**</td>
+<td>Card "Configurar Workspace" no AppHub com estado de apps ativos/inativos</td>
+<td>Tempo médio de configuração de primeiro workspace &lt; 2 minutos</td>
+</tr>
+<tr>
+<td>**60 dias**</td>
+<td>Validação com 3 admins reais medindo cliques até /admin/apps</td>
+<td>Taxa de erro de navegação admin = 0</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<h2 class="section-title" id="3-pilares-de-a-o">3. Pilares de Ação</h2>
+<h3 class="card-title">Pilar 1 — Header: ícone de engrenagem com label "Admin"</h3>
+<p class="body-text">**Urgência:** Crítica. Este é o ponto de entrada global — presente em qualquer tela autenticada.</p>
+<h3 class="card-title">Pilar 2 — AppHub: card de configuração de workspace</h3>
+<p class="body-text">**Urgência:** Alta. Primeiro ponto de contato para admins novos.</p>
+<h3 class="card-title">Pilar 3 — AdminMenu: limpeza e clareza</h3>
+<p class="body-text">**Urgência:** Alta. O dropdown atual tem itens apontando para rotas antigas.</p>
+<h3 class="card-title">Pilar 4 — Validação: testar com admin real</h3>
+<p class="body-text">**Urgência:** Média. Confirmar que a solução resolve antes de iterar.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="4-a-es-detalhadas">4. Ações Detalhadas</h2>
+<h3 class="card-title">Pilar 1 — Header com label "Admin"</h3>
+<p class="body-text">**Ação 1.1 — Trocar ícone de usuário por engrenagem + label em AdminMenu.tsx** - O que fazer: No componente `AdminMenu` (`eb-dash2/src/components/layout/AdminMenu.tsx`), trocar o ícone `Users` por `Settings` do lucide-react. Adicionar label "Admin" ao lado do ícone, visível em telas `md:` e maiores. Manter o botão compacto em mobile (só ícone). Mudar o `title` para "Painel de Administração". - Por que importa: ícone de usuário comunica "perfil", não "administração". Engrenagem é linguagem universal de configuração. (Jobs: "O ícone ambíguo é uma mentira silenciosa para o usuário.") - Responsável: dev frontend - Prazo: Dia 1 - Métrica: Admin novo clica no ícone correto sem hesitação no primeiro acesso</p>
+<p class="body-text">**Ação 1.2 — Verificar que os links do dropdown apontam para /admin/*** - O que fazer: Confirmar que `ADMIN_ITEMS` aponta para `/admin/users` e `/admin/apps` (já corrigido). Adicionar terceiro item "Permissões" → `/admin/permissions`. - Por que importa: menu incompleto = funcionalidade oculta. - Responsável: dev frontend - Prazo: Dia 1 - Métrica: Todos os 3 itens de admin acessíveis pelo dropdown</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Pilar 2 — AppHub com card de configuração</h3>
+<p class="body-text">**Ação 2.1 — Adicionar card/banner "Configurar Workspace" no AppHubPage.tsx** - O que fazer: Em `AppHubPage.tsx`, para usuários com role `admin` ou `owner`, renderizar um card fixo no topo da grade (antes dos cards de apps) com: ícone de engrenagem, título "Gerenciar Workspace", subtítulo "Configure apps, usuários e permissões", botão "Abrir Admin" → `/admin/apps`. Estilo: border `border-empire-primary/30`, background `bg-empire-primary/5`. - Por que importa: AppHub é o ponto de entrada neutro — o contexto perfeito para o primeiro acesso de um admin novo. (Hormozi: "Ativo de retenção escondido é ativo desperdiçado.") - Responsável: dev frontend - Prazo: Dia 2 - Métrica: Admin novo encontra configuração de apps a partir do AppHub sem instrução</p>
+<p class="body-text">**Ação 2.2 — Estado visual de apps não configurados** - O que fazer: Se o workspace tem 0 apps ativos (`apps.filter(a =&gt; a.is_active).length === 0`), mostrar banner de alerta suave no AppHub: "Nenhum app ativo neste workspace. Configure em Admin → Apps." com link direto. - Por que importa: estado vazio sem instrução é desorientador para admin novo. - Responsável: dev frontend - Prazo: Dia 3 - Métrica: Zero admins novos com workspace sem apps configurados por mais de 10 minutos</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Pilar 3 — AdminMenu: limpeza</h3>
+<p class="body-text">**Ação 3.1 — Adicionar "Permissões" ao dropdown** - O que fazer: Acrescentar `{ label: 'Permissões', href: '/admin/permissions', icon: ShieldCheck }` ao `ADMIN_ITEMS` no `AdminMenu.tsx`. - Responsável: dev frontend - Prazo: Dia 1 - Métrica: Acesso a permissões disponível em 1 clique pelo header</p>
+<p class="body-text">---</p>
+<h3 class="card-title">Pilar 4 — Validação</h3>
+<p class="body-text">**Ação 4.1 — Teste com admin real** - O que fazer: Pedir a 1-2 admins do workspace para abrir o sistema e encontrar "onde ativar um app" sem instrução. Medir cliques e tempo. - Responsável: produto/gestor - Prazo: Dia 7 - Métrica: &lt; 5 segundos e &lt; 2 cliques. Se falhar, iterar.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="5-riscos-e-mitiga-es">5. Riscos e Mitigações</h2>
+<div class="table-wrap"><table>
+<tr>
+<th>Risco</th>
+<th>Probabilidade</th>
+<th>Mitigação</th>
+</tr>
+<tr>
+<td>Admin mobile não vê label "Admin" (apenas ícone)</td>
+<td>Média</td>
+<td>Testar em viewport 375px. Se ícone for insuficiente, adicionar tooltip no mobile</td>
+</tr>
+<tr>
+<td>Card do AppHub poluí visual para admins que já configuraram</td>
+<td>Baixa</td>
+<td>Manter card em modo secundário (menor, sem destaque) após configuração concluída</td>
+</tr>
+<tr>
+<td>SDRs/closers veem algum elemento de admin por bug de role</td>
+<td>Baixa</td>
+<td>Testar com conta de SDR após cada alteração. `isAdminOrOwner` já implementado</td>
+</tr>
+</table></div>
+<p class="body-text">---</p>
+<h2 class="section-title" id="6-pr-ximo-passo-imediato-24-48h">6. Próximo Passo Imediato (24-48h)</h2>
+<p class="body-text">**Agora:** Editar `AdminMenu.tsx` — trocar `Users` por `Settings`, adicionar label "Admin" ao lado do ícone em `md:` screens, adicionar "Permissões" ao dropdown.</p>
+<p class="body-text">```tsx // AdminMenu.tsx — mudanças import { Settings, Users, LayoutGrid, ShieldCheck, LogOut } from 'lucide-react'</p>
+<p class="body-text">const ADMIN_ITEMS = [   { label: 'Pessoas', href: '/admin/users', icon: Users },   { label: 'Apps', href: '/admin/apps', icon: LayoutGrid },   { label: 'Permissões', href: '/admin/permissions', icon: ShieldCheck }, ]</p>
+<p class="body-text">// No botão trigger: &lt;Settings className="h-4 w-4" /&gt; &lt;span className="hidden md:inline text-sm font-medium"&gt;Admin&lt;/span&gt; ```</p>
+<p class="body-text">**Amanhã:** Adicionar card "Gerenciar Workspace" no `AppHubPage.tsx` para admins.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Como foi o debate</h2>
+      <div class="card">
+        <p class="body-text">**Data:** 2026-06-27 **Tema:** Visibilidade e acessibilidade do painel de administração do Acelerador de Audiência **Presidente:** Steve Jobs **Membros presentes:** Alex Hormozi, Russell Brunson, Gary Vaynerchuk, Sandro San, Marcel Marcondes, Grant Cardone</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="resumo-do-problema">Resumo do Problema</h2>
+<p class="body-text">O dashboard SaaS "Acelerador de Audiência" possui um sistema de sub-apps modulares por workspace. O admin pode ativar e desativar apps (Tráfego, Pré-Vendas, Metas etc.) pelo painel `/admin/apps`. Porém, esse painel está completamente escondido — acessível apenas por um ícone de usuário sem label no header, que abre um dropdown discreto. SDRs e closers não precisam ver nada disso. O problema: qualquer admin novo precisa saber que existe esse ícone, clicar nele, e só então descobrir as opções. Nenhuma indicação visual sugere que existe um painel de administração. O usuário reportou: *"usabilidade ta uma droga. Cadê o controle de apps fora do app? ta uma merda."*</p>
+<p class="body-text">**Presidente eleito: Steve Jobs**, porque o problema é essencialmente de produto e experiência do usuário — não de negócio, operação ou marketing.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-1-diagn-stico">Rodada 1 — Diagnóstico</h2>
+<p class="body-text">**Alex Hormozi:** A causa raiz é funcionalidade construída sem pensar no acesso. Um ativo de retenção (controle granular de apps) está escondido atrás de um ícone que não comunica nada. A maior oportunidade desperdiçada é que admins saem do sistema achando que não existe a funcionalidade — ou ligam para suporte. Prioridade: seção "Workspace/Admin" fixa na sidebar inferior, visível apenas para admins, 2 links diretos, separador visual. Resultado em 1 clique.</p>
+<p class="body-text">**Russell Brunson:** A causa raiz é ausência de um funil de onboarding do admin. O momento de ativação — configurar o workspace pela primeira vez — nunca acontece de forma guiada. Admin entra, não sabe o que fazer, e o sistema nunca o conduz. Proposta: botão "Gerenciar Apps" fixo no AppHub para admins + sequência linear de onboarding: Admin → AppHub → Gerenciar → Ativa apps.</p>
+<p class="body-text">**Gary Vaynerchuk:** A causa raiz é falta de empatia com o usuário novo. Quem construiu a interface já sabe onde tudo está e esqueceu que o usuário não sabe. Admin perdido não vira champion — vira dependente de suporte ou desiste. Prioridade: link "Administração" na sidebar com ícone de engrenagem, visível apenas para admins, sem dropdown. Simples, direto, sem fricção.</p>
+<p class="body-text">**Sandro San:** A causa raiz é confusão entre Operação e Governança na mesma interface. Operação é o que SDRs fazem. Governança é o que admin faz. Misturar os dois no mesmo espaço visual cria ambiguidade e faz o admin sentir impotência, não soberania. Prioridade: entrada dedicada de governança, estruturalmente separada da operação, sempre visível para admins. Ícone de engrenagem + label "Workspace" no header ou sidebar inferior.</p>
+<p class="body-text">**Marcel Marcondes:** A causa raiz é ausência de hierarquia de papéis na interface. O sistema tem papéis bem definidos no banco de dados, mas a interface trata todos igual. A métrica crítica que está sendo ignorada: "tempo do admin até primeira configuração de workspace." Se essa métrica não existe, o problema também não existe no radar do produto. Proposta: dois níveis formais na interface — Operação e Administração — com entrada fixa no header para admins: ícone + label "Admin/Workspace".</p>
+<p class="body-text">**Grant Cardone:** A causa raiz é timidez no produto. Colocaram o controle escondido com medo de poluir a interface. Esse medo é mediano. Controle escondido = adoção lenta = churn silencioso. Prioridade: botão "Admin" no header com presença visual clara para admins, 1 clique direto para o painel, mais checklist de onboarding dentro do painel: Apps configurados? Usuários? Permissões?</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-2-embates">Rodada 2 — Embates</h2>
+<p class="body-text">**Hormozi** respondeu a Gary: sidebar inferior resolve o usuário do dia 100, mas Gary está certo que o AppHub resolve o dia 1. Precisa dos dois, não de um ou outro.</p>
+<p class="body-text">**Brunson** respondeu a Sandro: Sandro está errado ao recusar o onboarding. Admin também é um usuário que precisa ser guiado no primeiro acesso. Autonomia é legítima, mas só vem depois de ativação. Se o admin não configura no dia 1, não configura nunca.</p>
+<p class="body-text">**Sandro** respondeu a Grant: cor diferenciada no botão de admin é amadorismo de UX. Polui o visual e grita "isso é diferente" sem elegância. A separação estrutural entre Operação e Governança é a resposta — não coloração.</p>
+<p class="body-text">**Marcel** respondeu a Grant: Grant age sem dados; eu meço antes de agir. Mas o grito explícito do usuário ("ta uma merda") já é dado suficiente. Neste caso específico, concordo que podemos agir sem esperar sprint de pesquisa formal.</p>
+<p class="body-text">**Grant** convergiu: header para entrada (acessível de qualquer app) e sidebar interna do /admin para navegação dentro da área de admin. São dois contextos diferentes, não uma escolha — ambos necessários.</p>
+<p class="body-text">**Gary** convergiu com Hormozi: sidebar para power user (day-100), AppHub para primeiro acesso (day-1). Os dois contextos coexistem sem contradição.</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="rodada-3-converg-ncia">Rodada 3 — Convergência</h2>
+<p class="body-text">**Consenso emergente entre todos os membros:** - Duas camadas complementares — header global com ícone/label de admin + AppHub com CTA de configuração para o primeiro acesso - Visibilidade condicional por papel é inegociável — SDRs não veem nada de admin - Máximo 1 clique para chegar ao painel de controle de apps a partir de qualquer tela</p>
+<p class="body-text">**Descartado:** - Cor diferenciada no botão de admin (Grant cedeu) - Onboarding multi-etapas linear (Brunson cedeu — card estático é suficiente) - Esperar pesquisa formal antes de agir (Marcel cedeu) - Links de admin na sidebar operacional (Gary e Hormozi cederam para Jobs)</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="decis-o-do-presidente">Decisão do Presidente</h2>
+<p class="body-text">Steve Jobs rejeitou a complexidade e escolheu dois toques precisos: ícone de engrenagem com label "Admin" no header (visível para admins em qualquer tela) e card "Configurar Workspace" no AppHub (para o primeiro acesso). Nada mais. Sidebar permanece operacional. Sem cor diferenciada. Sem onboarding guiado. Sem links de admin no contexto de trabalho dos SDRs.</p>
+<p class="body-text">*"O ícone ambíguo de usuário é uma mentira silenciosa para o admin. Trocamos por engrenagem + 'Admin'. Dois toques. Descoberto em &lt; 5 segundos. Invisível para quem não precisa ver."*</p>
+<p class="body-text">---</p>
+<h2 class="section-title" id="encaminhamentos">Encaminhamentos</h2>
+<ul class="bullet-list">
+<li>[ ] Alterar `AdminMenu.tsx`: trocar ícone `Users` → `Settings`, adicionar label "Admin" visível em `md:`, adicionar "Permissões" ao dropdown</li>
+<li>[ ] Alterar `AppHubPage.tsx`: adicionar card "Gerenciar Workspace" para admins no topo da grade</li>
+<li>[ ] Testar com admin real: &lt; 5 segundos e &lt; 2 cliques para chegar em `/admin/apps`</li>
+</ul>
+<p class="body-text">Plano completo: `plano_acao.md`</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      Gerado pelo Conselho dos Mestres · 27/06/2026 10:01
+    </div>
+  </footer>
+</body>
+</html>

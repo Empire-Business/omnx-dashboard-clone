@@ -1,0 +1,7 @@
+# Grant Cardone — Rodada 2: Embates
+
+Sandro, você me disse que cor diferenciada cria ansiedade para os não-admins. Tudo bem. Mas sabe o que cria mais ansiedade? Admin que passou 20 minutos procurando onde ativar um módulo e não encontrou. Esse cara desiste. Vai para outra ferramenta. Perde a fé no produto. Visibilidade condicional — admin vê, SDR não vê — é a resposta correta. Mas fazer isso de forma invisível e tímida não é "soberania de produto". É medo de ser visto. Coloque o ícone. Coloque o label. Faça o admin saber que aquele botão existe para ele. 10X na clareza, não na discreção.
+
+Marcel, você quer medir antes de agir. Respeito a disciplina. Mas você sabe o que vai descobrir quando medir? Que a taxa de ativação é baixa. Que admins confusos existem em quantidade. Que o produto está perdendo receita por causa de configuração mal feita. Você já tem o dado: o usuário gritou "cadê o controle de apps, tá uma merda." Esse é o dado. Quando um cliente grita, você não mede — você age. Depois você mede para confirmar que funcionou.
+
+Alex e Gary, vocês estão debatendo sidebar vs header como se fossem excludentes. Não são. A resposta é: header para admin (entrada rápida, 1 clique de qualquer app), sidebar do painel de admin para navegação interna (Usuários, Apps, Permissões). São dois contextos diferentes. No header, o admin encontra a porta. Dentro do `/admin`, a sidebar mostra os cômodos. Parem de escolher um — implementem os dois, meçam qual tem mais uso, e dobrem o que funciona. Isso é 10X de decisão.

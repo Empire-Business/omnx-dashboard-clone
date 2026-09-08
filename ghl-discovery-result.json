@@ -1,0 +1,2401 @@
+{
+  "contact_custom_fields": [
+    {
+      "id": "0f0BbNrLc4iI40gHDLOK",
+      "name": "Social Seller",
+      "key": "contact.social_seller",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "0smhXrryQkcSSx4iZLLT",
+      "name": "[MP] Bloco 03 - Reconhecimento",
+      "key": "contact.mp_bloco_03__reconhecimento",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Respostas do Bloco 03 do Framework Marca Pessoal"
+    },
+    {
+      "id": "13qBiP1z4WfygmlKYPn3",
+      "name": "Faturamento",
+      "key": "contact.faturamento_cliente",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "22dzhSoOwE60prUlvmoC",
+      "name": "tt_campaign",
+      "key": "contact.tt_campaign",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "2V9SXHF8n3vle7eKno4I",
+      "name": "Observações",
+      "key": "contact.observaes",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "2dtedfkr61arGVXkWa9K",
+      "name": "Banco de Ideias de Conteúdo",
+      "key": "contact.ideais_conteudo",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "2jxHr6DsW3Nruvrl0pAG",
+      "name": "Possíveis Objeções",
+      "key": "contact.objecoes_lead",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "347YCvSsnQdgkR9DWWBp",
+      "name": "OBS BOT",
+      "key": "contact.obs_bot_webinarpro",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "3TOmQvb0irXX4Qf1SRY8",
+      "name": "Transcrição da Ligação ",
+      "key": "contact.transcricao_ligacao",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "3UZ0LB8Jl1t0tFISP1CI",
+      "name": "Perfeito! Para encerramos, me diga qual o seu super-herói favorito?",
+      "key": "contact.perfeito_para_encerramos_me_diga_qual_o_seu_superheri_favorito",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "44CLrFi0Q8g6lFiTuEl2",
+      "name": "[MP] Bloco 05 - Arquetipo Dominante",
+      "key": "contact.mp_bloco_05__arquetipo_dominante",
+      "field_type": "TEXT",
+      "placeholder": "Arquetipo dominante selecionado"
+    },
+    {
+      "id": "4PX5R4cGABcrtePRXIne",
+      "name": "Link da Análise",
+      "key": "contact.link_analise",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "4nj97jqhOYXBTGjel1Qz",
+      "name": "Link Instagram",
+      "key": "contact.link_instagram_cliente",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "6xeMVscwwyvwvZNuJQl0",
+      "name": "Qual dessas opções melhor descreve a situação atual do seu negócio em termos de investimentos?",
+      "key": "contact.qual_dessas_opes_melhor_descreve_a_situao_atual_do_seu_negcio_em_termos_de_investimentos",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "73osoepqkdKZapAL0ouq",
+      "name": "Tem disponibilidade para trabalhar presencialmente na Barra da Tijuca?",
+      "key": "contact.tem_disponibilidade_para_trabalhar_presencialmente_na_barra_da_tijuca",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "7BUfXJ7k15RRVqxzFPUY",
+      "name": "Preciso de ajuda para:..",
+      "key": "contact.preciso_de_ajuda_para",
+      "field_type": "CHECKBOX",
+      "placeholder": ""
+    },
+    {
+      "id": "7RgMlocKrvivmfRbRAgI",
+      "name": "Follow Up 11",
+      "key": "contact.followup_11",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "7bdn1UlpFz4XZEzK6fLt",
+      "name": "P12 - Uma coisa para acelerar o crescimento agora",
+      "key": "contact.p12__uma_coisa_para_acelerar_o_crescimento_agora",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "8N21zMlhAIcshJ7Et5Gy",
+      "name": "Obs - Evento",
+      "key": "contact.obs__evento",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "8TQ32XZPkjOc8GPHJTqu",
+      "name": "[MP] Bloco 05 - Justificativa Arquetipo",
+      "key": "contact.mp_bloco_05__justificativa_arquetipo",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Por que o arquetipo faz sentido"
+    },
+    {
+      "id": "8WIrH6CKiNtN5AIELQyA",
+      "name": "P3 - Estrutura de produção de conteúdo",
+      "key": "contact.p3__estrutura_de_produo_de_contedo",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "8bgBRYWeDgWjmL9uxrPX",
+      "name": "Quais são seus principais obstáculos hoje?",
+      "key": "contact.principais_obstculos",
+      "field_type": "CHECKBOX",
+      "placeholder": ""
+    },
+    {
+      "id": "9FNNC7RRq3DAPSy0jJ0I",
+      "name": "SWOT Fraquezas",
+      "key": "contact.swot_fraquezas",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "9jftVnLZWBuFFFXLe5G0",
+      "name": "Follow Up 8",
+      "key": "contact.followup_8",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "9mq4qxcYfVhmYKLxQWJ0",
+      "name": "Qual é o site (link) da sua empresa?",
+      "key": "contact.qual__o_site_link_da_sua_empresa",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ADJe786yCrU0tWmNuYLJ",
+      "name": "Atuaçao (Medico)",
+      "key": "contact.atuaao_medico",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "AFHorlA2Ln8CdCfdJQ2r",
+      "name": "SWOT Oportunidades",
+      "key": "contact.swot_oportunidades",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "AZnc4QCxct1pTZL9lU2s",
+      "name": "Estudo Detalhado de Concorrentes",
+      "key": "contact.estudo_concorrentes",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Aeasbc6FNxBOAxUkUQzt",
+      "name": "Perfil Inteligente do Lead",
+      "key": "contact.perfil_lead",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "B4LNZcVRQkw5Jc34lt9D",
+      "name": "Qual é o seu @ do instagram?",
+      "key": "contact.perfilinsta",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "BeZlZgTZedSXh7WOMb0W",
+      "name": "utm_source",
+      "key": "contact.utm_source",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Bk8rLH1PG8d0Qo64R3QE",
+      "name": "P15 - WhatsApp para continuar a conversa",
+      "key": "contact.p15__whatsapp_para_continuar_a_conversa",
+      "field_type": "TEXT",
+      "placeholder": "(99) 99999-9999"
+    },
+    {
+      "id": "Bv1PE9fijoM8NMLMbyld",
+      "name": "Empresa",
+      "key": "contact.empresa_cliente",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Cti5mJ5eMzrNldSbnaoq",
+      "name": "ID Análise",
+      "key": "contact.id_analise",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "CwTk2AOKhBN30iwTsAsT",
+      "name": "O que não pode faltar neste evento presencial?",
+      "key": "contact.o_que_no_pode_faltar_neste_evento_presencial",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "DARmvo5Q65KCWsryIbzK",
+      "name": "Um membro da nossa equipe vai te chamar no horário combinado, somos muito sérios em relação a isso. Se você está realmente comprometido em comparecer a essa chamada, por favor, escreva a seguinte frase no campo abaixo: “Sim, eu estou!”",
+      "key": "contact.comfirma_comprometimento",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "DgSvKANHIreCJC0kE2BK",
+      "name": "Qual é a maior que o evento pode te ajudar a resolver?",
+      "key": "contact.qual__a_maior_que_o_evento_pode_te_ajudar_a_resolver",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "DwT4ZzCOHQLLQpMkjw1Y",
+      "name": "Follow Up 7",
+      "key": "contact.followup_7",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ERl2yM3OQQReFpJiKbs8",
+      "name": "Concorrente 3: Pontos Fortes Detalhados",
+      "key": "contact.concorrente3_pontos_fortes",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "EtMDxla7yHXZJCJgCWtx",
+      "name": "P6 - O que já tentou e não funcionou",
+      "key": "contact.p6__o_que_j_tentou_e_no_funcionou",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Ex: \"comprei curso mas não consegui aplicar...\""
+    },
+    {
+      "id": "FHfYQiXQ704o1iSxh9L8",
+      "name": "Quantos colaboradores ou prestadores de serviço fixos seu negócio possui?",
+      "key": "contact.quantos_colaboradores_ou_prestadores_de_servio_fixos_seu_negcio_possui",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "Fdxv0cVNDdWqDuxZBdxH",
+      "name": "P2 - Canais usados para vender e aparecer",
+      "key": "contact.p2__canais_usados_para_vender_e_aparecer",
+      "field_type": "CHECKBOX",
+      "placeholder": ""
+    },
+    {
+      "id": "FoZhxGFs2uDNmlejxAiS",
+      "name": "tt_source",
+      "key": "contact.tt_source",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "GCtamD1nnGKcHXLZAjti",
+      "name": "CPF",
+      "key": "contact.cpf",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "GT1sXJzQ8MipF8FIyvVn",
+      "name": "Follow Up 12",
+      "key": "contact.followup_12",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "GbfnBVZ1rgnNwRr1NBjk",
+      "name": "Escreva um roteiro de reels completo, usando uma das ideias que você deu na pergunta anterior",
+      "key": "contact.escreva_um_roteiro_de_reels_completo_usando_uma_das_ideias_que_voc_deu_na_pergunta_anterior",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ISZBOkV7wPBBNRNWlTlA",
+      "name": "Status",
+      "key": "contact.status_cliente",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "J8T5CDGrvW6tFDkQzUFs",
+      "name": "Produto",
+      "key": "contact.produto",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "JLHHsYchrkaGjcmGxJjE",
+      "name": "SWOT Forças",
+      "key": "contact.swot_forcas",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "JNxkBQIWYiwsjTScudAJ",
+      "name": "Há quanto tempo você usa a internet para crescer o seu negócio? Escreva também quais os tipos de ações de marketing que você já tentou fazer ou faz atualmente.",
+      "key": "contact.quanto_tempo_usa_internet_para_crescer_negocio",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Jhyl0YclcjVsmzlsoJ0v",
+      "name": "[MP] Bloco 05 - Arquetipo Secundario",
+      "key": "contact.mp_bloco_05__arquetipo_secundario",
+      "field_type": "TEXT",
+      "placeholder": "Arquetipo secundario selecionado"
+    },
+    {
+      "id": "KAsL9pjRHMOMKa5Gdi9z",
+      "name": "Erro",
+      "key": "contact.erro_analise",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "LQDN9ciNjS2SxtRK7y8e",
+      "name": "Se você pudesse escolher apenas 3 nichos para atender, quais seriam e por quê?",
+      "key": "contact.se_voc_pudesse_escolher_apenas_3_nichos_para_atender_quais_seriam_e_por_qu",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "M8RuiwBeFK7ZnEs4e6Nv",
+      "name": "Cite alguns cases de sucesso seu e comente sobre eles",
+      "key": "contact.cite_alguns_cases_de_sucesso_seu_e_comente_sobre_eles",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "MK2BaYHsCafOjFBD9Ufw",
+      "name": "Data de Renovação",
+      "key": "contact.data_de_renovao",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "MiNaB2LmQ2Ia5ynBxuLe",
+      "name": "Follow Up 13",
+      "key": "contact.followup_13",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "MlpSrt19V0bMki8YCjD4",
+      "name": "P15 - Instagram para continuar a conversa",
+      "key": "contact.p15__instagram_para_continuar_a_conversa",
+      "field_type": "TEXT",
+      "placeholder": "@seuinstagram"
+    },
+    {
+      "id": "NGflWgMObV4jgnVBsWKH",
+      "name": "P4 - O que mais trava em marca, conteúdo ou vendas",
+      "key": "contact.p4__o_que_mais_trava_em_marca_contedo_ou_vendas",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "NZr6GR9GgfEWIq5sMjPj",
+      "name": "P10 - Maior objetivo de crescimento nos próximos 12 meses",
+      "key": "contact.p10__maior_objetivo_de_crescimento_nos_prximos_12_meses",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "OSEznfOf1H4HIzK67AWK",
+      "name": "Quem te indicou para ganhar o ingresso?",
+      "key": "contact.indicacao_ingresso",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Ots6G6fsY7X8ed3QEsH7",
+      "name": "Fale os 3 principais obstáculos que estão impedindo você de atingir as metas acima?",
+      "key": "contact.fale_os_3_principais_obstculos_que_esto_impedindo_voc_de_atingir_as_metas_acima",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "PNNlz5QgUwXHu8nc0BE1",
+      "name": "P9 - Quem está envolvido na decisão de investir",
+      "key": "contact.p9__quem_est_envolvido_na_deciso_de_investir",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "QJbYGD2GzhSXsUA8CxKR",
+      "name": "Você tem sócios no negócio atual?",
+      "key": "contact.voc_tem_scios_no_negcio_atual",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "QXccBxmbLame9jiHTdgN",
+      "name": "P5 - Resultado esperado nos próximos 6 meses",
+      "key": "contact.p5__resultado_esperado_nos_prximos_6_meses",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Ex: \"fechar pelo menos 3 clientes por mês de forma previsível...\""
+    },
+    {
+      "id": "RHec4htsrIHEFc1PhuhV",
+      "name": "SWOT Ameaças",
+      "key": "contact.swot_ameacas",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "RUNOPWaLSaTBwTRAGRz0",
+      "name": "Comunicação: Tendência de Mercado",
+      "key": "contact.tendencia_mercado",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "S3OVITvwZdLMswVNgFQT",
+      "name": "tt_term",
+      "key": "contact.tt_term",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "SVomOg49yP2VoD7YcBhn",
+      "name": "Follow Up 14",
+      "key": "contact.followup_14",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "SzqBhi1Nc6ZDbfYZJM9v",
+      "name": "Contatos Adicionais",
+      "key": "contact.contatos_adicionais_cliente",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "UFEX0UczAPI1aQmk4UmK",
+      "name": "Follow up 1",
+      "key": "contact.followup_1",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Uin8EAp165gnB5bNmi3x",
+      "name": "utm_term",
+      "key": "contact.utm_term",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "VPVIOLFTN2rpElw0gYro",
+      "name": "Status da Análise",
+      "key": "contact.status_analise",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Vm7mqc3EnPmMk9aX0nEs",
+      "name": "P14 - O que automatizaria com IA em marketing e vendas",
+      "key": "contact.p14__o_que_automatizaria_com_ia_em_marketing_e_vendas",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Ex: \"criar conteúdo para Instagram todo dia\""
+    },
+    {
+      "id": "XOiBY347RGJQ1qh2PZAL",
+      "name": "tt_content",
+      "key": "contact.tt_content",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "XjB6KzQ5HCgK16s3dmig",
+      "name": "Qual estado você mora?",
+      "key": "contact.qual_estado_voc_mora",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "Y9GLMahimIQCkgRWq0JF",
+      "name": "Qual é o seu plano para atingir esta meta?",
+      "key": "contact.qual__o_seu_plano_para_atingir_esta_meta",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "YTgLyT8WxSWwOd3K5oQl",
+      "name": "Concorrente 1: Pontos Fortes Detalhados",
+      "key": "contact.concorrente1_pontos_fortes",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "YTiTijuMT69VGLQRiBhn",
+      "name": "P13 - Relação atual com IA no negócio",
+      "key": "contact.p13__relao_atual_com_ia_no_negcio",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "YwM0L1IcW8C4bLfFeqs3",
+      "name": "P11 - Como cresce a audiência hoje",
+      "key": "contact.p11__como_cresce_a_audincia_hoje",
+      "field_type": "CHECKBOX",
+      "placeholder": ""
+    },
+    {
+      "id": "ZKNu0k0DMGTTDFUra5bw",
+      "name": "tt_medium",
+      "key": "contact.tt_medium",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ZX0BPelqVZBk18bOqV8c",
+      "name": "Hashtags",
+      "key": "contact.hashtags",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ZfIVOn9SJyT1VxG1ZT37",
+      "name": "Appointment Owner",
+      "key": "contact.appointment_owner",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Zsnf2jGbzpPiMBwJ7YKr",
+      "name": "Análise de GAP e Pontos Fracos",
+      "key": "contact.gap_pontos_fracos",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "aqpc1FTXtPPGvDL8Pc0u",
+      "name": "Qual é o nome da empresa?",
+      "key": "contact.qual__o_nome_da_empresa",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "b7hhIgOPyKB4MKdOLY3r",
+      "name": "Faturamento anual:",
+      "key": "contact.faturamento_anual",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "bcRaamFBsGnVZ2kdHdwR",
+      "name": "Quanto, em média, você investe em tráfego por mês?",
+      "key": "contact.invest_trafego",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "c9GHYLjWajhDxWa2CzLP",
+      "name": "Plano de Ação: Passo a Passo",
+      "key": "contact.plano_acao",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "cwnnMHvjXkTMqzIxc29y",
+      "name": "Print do Instagram",
+      "key": "contact.print_do_instagram",
+      "field_type": "FILE_UPLOAD",
+      "placeholder": ""
+    },
+    {
+      "id": "e2303uTiqwhYCrCSeH5b",
+      "name": "Preciso de ajuda para:",
+      "key": "contact.objetivo_contato",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "e6IgkDgIaMV8YShL180M",
+      "name": "Follow Up 10",
+      "key": "contact.followup_10",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "eCW2DTQV1hoNPkBefHSa",
+      "name": "P1 - Grau de maturação do negócio",
+      "key": "contact.p1__grau_de_maturao_do_negcio",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "eW6tyf0jtjqmQZBGiIip",
+      "name": "[MP] Analise Gerada",
+      "key": "contact.mp_analise_gerada",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "JSON da analise gerada pela IA"
+    },
+    {
+      "id": "eftjYQAoaUbbj4RrPwWU",
+      "name": "Vai indicar alguém?",
+      "key": "contact.vai_indicar_alguem",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "erdmsZ57hKQfWIzDB7vB",
+      "name": "Concorrente 2: Pontos Fortes Detalhados",
+      "key": "contact.concorrente2_pontos_fortes",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "esSR3D0ZMlZj4NGkUFgF",
+      "name": "Possui quantos clientes atualmente?",
+      "key": "contact.possui_quantos_clientes_atualmente",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "f7u0TLjAvldsGIMdXIYB",
+      "name": "Na sua opinião, o que não pode faltar no workshop?",
+      "key": "contact.na_sua_opinio_o_que_no_pode_faltar_no_workshop",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "f823phFaTJSSvZaCkRkq",
+      "name": "Follow Up 3",
+      "key": "contact.followup_3",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "fVpgZvQ8Kn249HX2NWzk",
+      "name": "Estrategista",
+      "key": "contact.estrategista",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "fXKLxxRXQjTwzxdWCK7s",
+      "name": "Quem faz o conteúdo da sua rede hoje?",
+      "key": "contact.quem_faz_o_contedo_da_sua_rede_hoje",
+      "field_type": "RADIO",
+      "placeholder": ""
+    },
+    {
+      "id": "fZcIGCWfw7ynzx3hkSj6",
+      "name": "Você possui alguma condição de saúde que gostaria de compartilhar conosco?",
+      "key": "contact.voc_possui_alguma_condio_de_sade_que_gostaria_de_compartilhar_conosco",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "fnEioISTjC3AfYxAnNHD",
+      "name": "P7 - Por que resolver isso virou urgente agora",
+      "key": "contact.p7__por_que_resolver_isso_virou_urgente_agora",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "gKlsNZhy7LovRVc6UMfH",
+      "name": "Estratégia Anti-Objeção (Scripts)",
+      "key": "contact.estrategia_antiobjecao",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "gc6BN3K7deP0YafaB8bs",
+      "name": "Conte um pouco sobre o seu negócio e o que espera conseguir com a nossa ajuda",
+      "key": "contact.conteumpouco",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "hDWI5WjmqGhEQt79hGGP",
+      "name": "Faça uma breve descrição do seu negócio atual",
+      "key": "contact.descricao_seu_negocio_atual",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "iIZTc1jhl2vHv0WiYy7Q",
+      "name": "Como nos conheceu",
+      "key": "contact.como_nos_conheceu",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "iUg5hbAEHKZ1TRQADZoF",
+      "name": "Follow Up 5",
+      "key": "contact.followup_5",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "jmeShIW11plrVPbaOlGf",
+      "name": "Já fez algum treinamento de marketing digital? Se sim, qual?",
+      "key": "contact.ja_fez_treinamento_mkt_digital",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "kaJUgMM9SP9OLNfuMmmN",
+      "name": "Qual das opções abaixo melhor descreve você?",
+      "key": "contact.ocupacao_contato",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "m1Lm8drafsAtkMGB2W8b",
+      "name": "Qual tipo de assunto sobre conteúdo e IA mais desperta o seu interesse?",
+      "key": "contact.qual_tipo_de_assunto_sobre_contedo_e_ia_mais_desperta_o_seu_interesse",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "mk7vUt1Hmo989MBWSIht",
+      "name": "Follow Up 15",
+      "key": "contact.followup_15",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ngljOTbKmfYfQvzlCV0t",
+      "name": "Como você gostaria de ver suas redes sociais nos próximos 6 meses? (Marca e Resultado Financeiro)",
+      "key": "contact.resultados_6meses_redes_sociais",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ojBlvpmZdfxKkHmAAZZw",
+      "name": "Dê 3 ideias de conteúdos (títulos + 1 linha de ângulo) para um empresário de vendas b2b.",
+      "key": "contact.d_3_ideias_de_contedos_ttulos__1_linha_de_ngulo_para_um_empresrio_de_vendas_b2b",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "px8E8QwHjuGFf44oId2O",
+      "name": "Follow Up 9",
+      "key": "contact.followup_9",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "rYbJRwPUsV8aXJrwp3Bm",
+      "name": "Follow Up 6",
+      "key": "contact.followup_6",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "rhlHnY961KiTrs401BTy",
+      "name": "[MP] Bloco 02 - As 3 Pessoas",
+      "key": "contact.mp_bloco_02__as_3_pessoas",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Respostas do Bloco 02 do Framework Marca Pessoal"
+    },
+    {
+      "id": "s49ocZH0HpfSmfGVKGeI",
+      "name": "utm_campaign",
+      "key": "contact.utm_campaign",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "sPDkTscYufDXMgl6tpd9",
+      "name": "[MP] Bloco 01 - Valores",
+      "key": "contact.mp_bloco_01__valores",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Respostas do Bloco 01 do Framework Marca Pessoal"
+    },
+    {
+      "id": "t1PAHknOiYd5qWE8JRyi",
+      "name": "Follow Up 4",
+      "key": "contact.followup_4",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "t8nfVn18YHeL9DgYCCAe",
+      "name": "Atua como social media há quanto tempo?",
+      "key": "contact.atua_como_social_media_h_quanto_tempo",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "u2LHrMwniPifUgugPZ7o",
+      "name": "Situação Atual",
+      "key": "contact.situacao_atual",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "u41wsFGfxmEUcaN5iMFS",
+      "name": "Follow Up 2",
+      "key": "contact.followup_2",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "uEpGsIUz22vuXBR8cq1F",
+      "name": "Comunicação: Veredito",
+      "key": "contact.veredito",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "vygws99BOTOH209Eg8E6",
+      "name": "utm_medium",
+      "key": "contact.utm_medium",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "w4i8lTvJcJK11WmJxeTh",
+      "name": "[MP] Bloco 04 - Sustentabilidade",
+      "key": "contact.mp_bloco_04__sustentabilidade",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Respostas do Bloco 04 do Framework Marca Pessoal"
+    },
+    {
+      "id": "w92ClB0qZrVvyNvm7ObG",
+      "name": "Comunicação: Erros Atuais",
+      "key": "contact.erros_atuais",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "wNdja3FTSmdAAI64IYVo",
+      "name": "Análise da Oferta Principal",
+      "key": "contact.analise_oferta_principal",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "whz3jpm1GkT3692yOhCj",
+      "name": "Canais de Venda Recomendados",
+      "key": "contact.canais_venda",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "yL0GfjUf1avAWOsI5KMx",
+      "name": "Qual o seu nível de conhecimento em Inteligência Artificial?",
+      "key": "contact.qual_o_seu_nvel_de_conhecimento_em_inteligncia_artificial",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "zE5pHywHnXg2y9I1nbtP",
+      "name": "Data da Análise",
+      "key": "contact.data_analise",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "zabn9JY4WqeuaY6yK5DL",
+      "name": "P8 - Impacto no negócio em números em 90 dias",
+      "key": "contact.p8__impacto_no_negcio_em_nmeros_em_90_dias",
+      "field_type": "LARGE_TEXT",
+      "placeholder": "Ex: \"fecharia R$30k a mais por mês\""
+    },
+    {
+      "id": "zstms0PuQ1SIhAZ02Hx8",
+      "name": "utm_content",
+      "key": "contact.utm_content",
+      "field_type": "TEXT",
+      "placeholder": ""
+    }
+  ],
+  "opportunity_custom_fields": [
+    {
+      "id": "0QDa3Sj3FfbwOUUmRlPc",
+      "name": "op_Utm_Term",
+      "key": "opportunity.op_utm_term",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "0vLoVc1ocNWWD3xXmOFZ",
+      "name": "MQL-Ganhou-Ingresso",
+      "key": "opportunity.mqlganhouingresso",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "13Sryi5qkHHeWEEMNaml",
+      "name": "op_Complemento do endereço",
+      "key": "opportunity.complemento_do_endereo",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "1t5E73Lyfj41PW0pZfM5",
+      "name": "Data da Reuniãoo",
+      "key": "opportunity.data_reuniao",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "3Ik7NcoqPLhc87LkEvAy",
+      "name": " d_MQL-Contato8",
+      "key": "opportunity.d_mqlcontato8",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "3lTVRxxyVyDE1GcZSzkS",
+      "name": "Op_Análise Gratuita",
+      "key": "opportunity.op_anlise_gratuita",
+      "field_type": "CHECKBOX",
+      "placeholder": ""
+    },
+    {
+      "id": "4jCGRnJGNKnfXnm2ZTwC",
+      "name": "MQL-Contato11",
+      "key": "opportunity.mqlcontato11",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "4lYc2zdOwdExFgsiVbwl",
+      "name": "d_MQL-Perdido",
+      "key": "opportunity.d_mqlperdido",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "57QvYAvTfJ55KoObxEQk",
+      "name": "SQL-Negociação Fria",
+      "key": "opportunity.sqlnegociao_fria",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "5pNKWgsvLzDUdz0VwZ4M",
+      "name": "Op_Forma de pagamento",
+      "key": "opportunity.forma_de_pagamento",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "6GE9GvxvzTgKX5XXi3UR",
+      "name": "d_MQL-Leads Recebidos",
+      "key": "opportunity.d_mqlleads_recebidos",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "7Je5OQstcwlaZF4rNFTV",
+      "name": "d_MQL-No Show",
+      "key": "opportunity.d_mqlno_show",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "8Ii7TX2APvJHEsxprUh9",
+      "name": "Op_Link do contrato assinado",
+      "key": "opportunity.op_link_do_contrato_assinado",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "8MkdNOrWY4ksqkXkugwL",
+      "name": "d_MQL-Contato1",
+      "key": "opportunity.d_mqlcontato1",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "8ujR1bYSDOkJSDAvGxT2",
+      "name": "MQL-Contato6",
+      "key": "opportunity.mqlcontato6",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "9BHVx8jPOPh0azbjNEmX",
+      "name": "op_Município",
+      "key": "opportunity.municipio",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "9SYePlJW2edBv9D8Zp2T",
+      "name": "op_Nome completo do contratante [Para empresas, insira razão social]",
+      "key": "opportunity.nome_contratante",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "9h7Ev2B96asaPhn56bNV",
+      "name": "d_SQL-Negociação",
+      "key": "opportunity.d_sqlnegociao",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "Av2RIrHvi4SSjguhv3Ym",
+      "name": "op_Produto que foi vendido",
+      "key": "opportunity.produto_que_foi_vendido",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "Ay8GCyjwZ8oRGRwTSjxl",
+      "name": "op_Utm_Medium",
+      "key": "opportunity.op_utm_medium",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "BKDh7ibbYKzvTabuz9Of",
+      "name": "d_SQL-Reunião Realizada",
+      "key": "opportunity.d_sqlreunio_realizada",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "BScHgJ1bKQZh2aDJcI7e",
+      "name": "MQL-Reunião Marcada",
+      "key": "opportunity.mqlreunio_marcada",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "BYd61cZ06FBO0iozvkoz",
+      "name": "D_MQL-Contato13",
+      "key": "opportunity.d_mql_contato13",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "CmkPXQynU2vx1GaRmJNr",
+      "name": "Print do Instagram",
+      "key": "opportunity.print_do_instagram",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "CwnBC4QHfYAmxpva9qo2",
+      "name": "op_faturamento",
+      "key": "opportunity.op_faturamento",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "DB0pUHneNZWAO7H0NjU7",
+      "name": "MQL-Sdr IA",
+      "key": "opportunity.mql_sdr_ia",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "DIYuSL2J5LkGYPsN44J0",
+      "name": "d_MQL-Contato4",
+      "key": "opportunity.d_mqlcontato4",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "DR4EVlUzCbW9cPt26sjc",
+      "name": "Op_Data da assinatura do contrato",
+      "key": "opportunity.data_da_assinatura_do_contrato",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "DxAmOkuNKSClGvvOUjSZ",
+      "name": "MQL-Contato10",
+      "key": "opportunity.mqlcontato10",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "FUEYi5iugsfUUsTeKaUn",
+      "name": "D_MQL-Contato14",
+      "key": "opportunity.d_mqlcontato14",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "Feb6FZfdD2vJn9ZLaD6j",
+      "name": "d_MQL-Conectado_Frio",
+      "key": "opportunity.d_mqlconectado_frio",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "GgVVy42g2TIAQFLFW7JP",
+      "name": "d_MQL-Contato3",
+      "key": "opportunity.d_mqlcontato3",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "HNiihTTiww1aNlrAe2fx",
+      "name": "MQL-Contato9",
+      "key": "opportunity.mqlcontato9",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "HjnMML02Qsb3gVy1YXEe",
+      "name": "MQL- Comprou Playbook",
+      "key": "opportunity.mql_comprou_playbook",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "HvfBsWBR2YI8e3POmnzu",
+      "name": "Data da reunião realizada",
+      "key": "opportunity.data_da_reunio_realizada",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "IS4nKZRQkq1Evkwce5Kv",
+      "name": "MQL-Auto Agendamento",
+      "key": "opportunity.mqlauto_agendamento",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "JTf4KlPkh3N1GOCQSpBt",
+      "name": "d_MQL-Reunião Marcada",
+      "key": "opportunity.d_mqlreunio_marcada",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "M7AMJLxfrO3GzLRsgDXV",
+      "name": "MQL-Qualificado",
+      "key": "opportunity.mqlqualificado",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "MQaUbP7BhIu7xad5VeKr",
+      "name": "MQL-Leads Recebidos",
+      "key": "opportunity.mqlleads_recebidos",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "NJdlZyUxdNhyJMEfT835",
+      "name": "D_MQL-150ht",
+      "key": "opportunity.d_mql150ht",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "NtvZPdd3EP7pZF3fM3yN",
+      "name": "SQL-Negociação",
+      "key": "opportunity.sqlnegociao",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "O2RdoKlMFUzuVFGUuewt",
+      "name": "Última Atividade",
+      "key": "opportunity.ltima_atividade",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "OegS0Rqx6ewYs7rzoIX8",
+      "name": "MQL-Contato8",
+      "key": "opportunity.mqlcontato8",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Og8leU8DHTClZcwq6IB7",
+      "name": "MQL-Interessado",
+      "key": "opportunity.mqlinteressado",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "OvHVGeD8xIwMfK4mDSqa",
+      "name": "op_Logradouro / Rua / Avenida",
+      "key": "opportunity.logradouro_rua_avenida",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Q8axQoJmw7LLhtcThfoy",
+      "name": "d_MQL-Contato6",
+      "key": "opportunity.d_mqlcontato6",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "QbdY2sJdnB7Nkth6V3ZW",
+      "name": "d_MQL-Qualificado",
+      "key": "opportunity.d_mqlqualificado",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "Qm69OJOslv3BjMelNRBh",
+      "name": "Análise Cami",
+      "key": "opportunity.anlise_cami",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "QoOUJf2UPpelsoOToErL",
+      "name": "op_Utm_Source",
+      "key": "opportunity.op_utm_source",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "R1za8UNT2PqoQ0gW3TuL",
+      "name": "Percepção do closer",
+      "key": "opportunity.percepo_do_closer",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "RutucxseIXsqgN4Zcguv",
+      "name": " SQL-Pendencias Preenchimento",
+      "key": "opportunity.sqlpendencias_preenchimento",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Rv5mI9CsUMLPWhPQvVzw",
+      "name": "op_@_instagram",
+      "key": "opportunity.op__instagram",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "SxbZeeXGxg50nmclQnnA",
+      "name": "D_MQL-Contato10",
+      "key": "opportunity.d_mqlcontato10",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "T7eRHLptsFmeLsMUWCbO",
+      "name": "Resumo IA",
+      "key": "opportunity.resumo_ia",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "TNW1wLFNGqX9zTivWSa8",
+      "name": "MQL-Contato7",
+      "key": "opportunity.mqlcontato7",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "TTXPCWVXttxink2TMGpp",
+      "name": "Reunião realizada?",
+      "key": "opportunity.reuniao_realizada",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "TbBKEW92XKtOXsriGUY0",
+      "name": "MQL-Contato4",
+      "key": "opportunity.mqlcontato4",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "TbzCgUbgnAx0alOHIXHw",
+      "name": "d_ SQL-Pendencias Preenchimento",
+      "key": "opportunity.d__sqlpendencias_preenchimento",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "U4DMDNWp5YPour49Ccua",
+      "name": "op_Utm_Campaign",
+      "key": "opportunity.op_utm_campaign",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "U7cCyVfGKltJN58GYUmv",
+      "name": "MQL-Conectado",
+      "key": "opportunity.mqlconectado",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "UgOq3M6LN61oS2B9bUCS",
+      "name": "LRT",
+      "key": "opportunity.lrt",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Um4CmyntgZ1vPJKbVgDS",
+      "name": "MQL-Contato3",
+      "key": "opportunity.mqlcontato3",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "VUaFzQ4a6n3zKGjEhXib",
+      "name": "SQL-Reunião Realizada",
+      "key": "opportunity.sqlreunio_realizada",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "WDUTCzIAqeEm9vayj2AR",
+      "name": "MQL-Contato15",
+      "key": "opportunity.mqlcontato15",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "XGyVuWcx9vi7a0kNBH1j",
+      "name": "Op_Vencimentos e parcelas",
+      "key": "opportunity.op_vencimentos_e_parcelas",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "XjMUMOxhrHJpnnPphxLX",
+      "name": "d_SQL-No Show",
+      "key": "opportunity.d_sqlno_show",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "YSknVjAjyDXXxHNaQlPi",
+      "name": "Etapa da Comunicação",
+      "key": "opportunity.etapa_da_comunicacao",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "YpjERgCnMNXQ25TMutb5",
+      "name": "MQL-Contato14",
+      "key": "opportunity.mqlcontato14",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "Yu3CImKIJxEch9WKVctU",
+      "name": "Data da Reunião",
+      "key": "opportunity.data_da_reunio",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "YvqdzX6RvYBrzNMWalES",
+      "name": "MQL-No Show",
+      "key": "opportunity.mqlno_show",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "ZsriuqJpnqzIkkdIlKEV",
+      "name": "D_MQL-Contato9",
+      "key": "opportunity.d_mqlcontato9",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "afuenN15NHj3r6YwjNKr",
+      "name": "op_preciso_de_ajuda_para",
+      "key": "opportunity.op_preciso_de_ajuda_para",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "agb55J2mlg1JIx9wilTF",
+      "name": "MQL-Lead evento",
+      "key": "opportunity.mqllead_evento",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "azgYcwhVCcaKEINuaY0d",
+      "name": "op_CPF ou CNPJ do contratante",
+      "key": "opportunity.cpf_ou_cnpj_do_contratante",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "c0FAaOf7sbwE3R4SS3Md",
+      "name": "op_invest_trafego",
+      "key": "opportunity.op_invest_trafego",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "cgvtZ7QFw1hGvgIwe32O",
+      "name": "d_ MQL-Contato_Frio",
+      "key": "opportunity.d__mqlcontato_frio",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "d4cwjLqTIn5PQnxVXRrb",
+      "name": "d_SQL-Reunião Agendada",
+      "key": "opportunity.d_sqlreunio_agendada",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "dfSl1tmeGVFav7o7j6fX",
+      "name": "MQL - Comprou Evento AA",
+      "key": "opportunity.mqlcomprou_evento_aa",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "diw7k9LJqwMtyYc5HohK",
+      "name": "Op_Valor a ser pago de entrada",
+      "key": "opportunity.valor_a_ser_pago_de_entrada",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "gPusmtpRqMSs3nyeXmrV",
+      "name": "SQL-No Show",
+      "key": "opportunity.sqlno_show",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "gl5Wifg60Nysu6L6UBYn",
+      "name": "SQL-Fechada",
+      "key": "opportunity.sqlfechada",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "hRAKedpcGRHNIMFChu2I",
+      "name": "MQL-Contato13",
+      "key": "opportunity.mqlcontato13",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "hmUgVWDMtVVmwV1y9Ufx",
+      "name": " d_SQL-Negociação Fria",
+      "key": "opportunity.d_sqlnegociao_fria",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "hnXhwYV6ksgZTedNaI4v",
+      "name": "MQL-Contato2",
+      "key": "opportunity.mqlcontato2",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "i5Sf72Iiz19qelfIG0VF",
+      "name": "d_MQL-Contato2",
+      "key": "opportunity.d_mqlcontato2",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "jBLOEiXW5QnBlznJWblC",
+      "name": "op_CEP",
+      "key": "opportunity.cep",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "jqx28zixxhMizWzhoI3b",
+      "name": "MQL-Contato1",
+      "key": "opportunity.mqlcontato1",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "k0FoGd5CUKeMGQdBss3c",
+      "name": "MQL-Conectado_Frio",
+      "key": "opportunity.mqlconectado_frio",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "kV2AFa50Z4RQMEH816l4",
+      "name": "op_Bairro",
+      "key": "opportunity.bairro",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "kXENpMnRrN9sUYJuCjXn",
+      "name": "Vendedor Externo (Não preencher)",
+      "key": "opportunity.vendedor_externo",
+      "field_type": "SINGLE_OPTIONS",
+      "placeholder": ""
+    },
+    {
+      "id": "lJ8CdSL3AyQKPRcuNh0T",
+      "name": "op_Observações sobre a venda",
+      "key": "opportunity.observacoes_venda",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "mMQDkfLPVcnwTg1REDTN",
+      "name": "op_ContaUmPouco",
+      "key": "opportunity.op_contaumpouco",
+      "field_type": "LARGE_TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "nSWDnawzbrezk77T9EyF",
+      "name": "d_MQL-Conectado",
+      "key": "opportunity.d_mqlconectado",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "nWcPoUehRdhJ3ETyEdAp",
+      "name": "d_MQL-Contato5",
+      "key": "opportunity.d_mqlcontato5",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "o55VG2GyJgtSFXy90sdC",
+      "name": "D_MQL-Contato15",
+      "key": "opportunity.d_mqlcontato15",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "oid70Np7AlUquSTBWBpd",
+      "name": "op_Estado / UF",
+      "key": "opportunity.estado_uf",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "oteRm6Agyyq8kjDF7n6T",
+      "name": "MQL - Compra Cami Start",
+      "key": "opportunity.mql_comprou_cami_start",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "pZ0DKOQS9t9c3lUCGR6k",
+      "name": "d_SQL-Fechada",
+      "key": "opportunity.d_sqlfechada",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "pc9H17FffjewM00awApM",
+      "name": "Op_Valor de cada parcela",
+      "key": "opportunity.valor_parcela",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "pf9Y9xMUAt4nhAmGsAh9",
+      "name": "MQL-Contato5",
+      "key": "opportunity.mqlcontato5",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "qCX8c1aP6zCMTUhqAczX",
+      "name": "D_MQL-Contato12",
+      "key": "opportunity.d_mqlcontato13",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "qZq0WtaeTQf4MXY9mkMS",
+      "name": "op_Número do endereço",
+      "key": "opportunity.numero_endereco",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "rPRtDr9hmxww1c7pJAvU",
+      "name": "MQL-Reagendar",
+      "key": "opportunity.mqlreagendar",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "rr3vuKgDcGL5rGhwjZT9",
+      "name": "op_nicho_atuacao",
+      "key": "opportunity.op_nicho_atuacao",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "sUSaucv2Owl9BdqRm4EJ",
+      "name": "D_MQL-Contato11",
+      "key": "opportunity.d_mqlcontato11",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "sldQM8Y2aqdkEYwdlrKR",
+      "name": "Op_Comprovante de pagamento (Suba o arquivo neste drive https://tinyurl.com/y6r99azk e cole o link aqui)",
+      "key": "opportunity.comprovante_pagamento",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "t0udaojCr8kJEyMZtIts",
+      "name": "Op_Número de parcelas",
+      "key": "opportunity.numero_parcelas",
+      "field_type": "NUMERICAL",
+      "placeholder": ""
+    },
+    {
+      "id": "t8wvdGa52JX9fPflQlQ5",
+      "name": "MQL-Perdido",
+      "key": "opportunity.mqlperdido",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "t9tPF59b6mSBpz0txq9z",
+      "name": "op_Utm_Content",
+      "key": "opportunity.op_utm_content",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "tE6KAgBUaHN0UtBZiUBz",
+      "name": "d_MQL-Contato7",
+      "key": "opportunity.d_mqlcontato7",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "ukD5r6nGyPJmFJ4gMBRe",
+      "name": " MQL-Contato_Frio",
+      "key": "opportunity.mqlcontato_frio",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "vAcMDh0eYMLyVk3C2Utn",
+      "name": "Op_Data de pagamento da entrada",
+      "key": "opportunity.data_pagamento_entrada",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "wY8vAXpEHz87ESJ40fvS",
+      "name": "Op_Link da gravação da call de vendas",
+      "key": "opportunity.link_da_gravao_da_call_de_vendas",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "x7jWu1heNdN4pI4uD2o8",
+      "name": "SQL-Reunião Agendada",
+      "key": "opportunity.sqlreunio_agendada",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "xsfR1qEL7t2D0D5JsAZb",
+      "name": "d_MQL-Interessado",
+      "key": "opportunity.d_mqlinteressado",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "xwUd06IXbkvRdIGbm94J",
+      "name": "d_SQL-Perdida",
+      "key": "opportunity.d_sqlperdida",
+      "field_type": "DATE",
+      "placeholder": ""
+    },
+    {
+      "id": "yH8UGC81KLEXgNuHGb6b",
+      "name": "MQL-Contato12",
+      "key": "opportunity.mqlcontato12",
+      "field_type": "TEXT",
+      "placeholder": ""
+    },
+    {
+      "id": "zSps9Ot7TndVKN3tr1Au",
+      "name": "SQL-Perdida",
+      "key": "opportunity.sqlperdida",
+      "field_type": "TEXT",
+      "placeholder": ""
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "dz9ItDIo7qnEmM2wko3E",
+      "name": "[fn] evento",
+      "stages": [
+        {
+          "id": "74b3a429-5d67-494d-b5cd-b427cbbbaa9d",
+          "name": "NoShow"
+        },
+        {
+          "id": "41bd9aac-99cd-435a-9eae-10ab67f7820d",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "90676cdd-8e47-4353-a1c8-5c2a1876df59",
+          "name": "1º contato"
+        },
+        {
+          "id": "048d39ad-b737-4fe5-afba-7fb74a32a3dc",
+          "name": "2º contato"
+        },
+        {
+          "id": "1b5fc8ff-403d-404f-acef-5acf1a45987b",
+          "name": "3º contato"
+        },
+        {
+          "id": "955fc008-d2e6-4099-a58f-5b87c53f62d9",
+          "name": "4º contato"
+        },
+        {
+          "id": "60a92761-deff-4477-a106-661b58dbf54e",
+          "name": "5º contato"
+        },
+        {
+          "id": "06508a9e-fa4b-45c5-bbc3-dc3c3d5001d2",
+          "name": "6º contato"
+        },
+        {
+          "id": "f6048ac5-7952-4e7f-90d5-91e87b0ff3bf",
+          "name": "7º contato"
+        },
+        {
+          "id": "5e306f20-8088-4308-80b1-cf2bfd5cff30",
+          "name": "8º contato"
+        },
+        {
+          "id": "42bdc32c-f99d-4c4a-81d5-6527434e80cd",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "3b7345ca-a965-4ca0-ad4c-ac99d2d5d102",
+          "name": "Reunião marcada"
+        },
+        {
+          "id": "54cbe062-8f50-4c32-85d1-254523cd7efd",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "ssFI7L8fMRjjMmAKCaAU",
+      "name": "[fn] sdr ia",
+      "stages": [
+        {
+          "id": "def405a4-c6c6-4cb4-86da-cfe2c95bcba1",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "43c1dc19-2860-4b58-b4ce-93c33f5c3d65",
+          "name": "Em contato"
+        },
+        {
+          "id": "6bbf35f8-96c5-4518-b2e0-eef5f93f22b3",
+          "name": "Reunião agendada"
+        },
+        {
+          "id": "4c97920e-0a3e-436e-b633-d9f8b1bd581f",
+          "name": "Pendência"
+        },
+        {
+          "id": "fcc0c3f0-f66b-4add-aced-dffa52dc000a",
+          "name": "NoShow"
+        },
+        {
+          "id": "d3ddb9bd-771b-4382-90e5-f24527f4b730",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "smwSHOBdtMWNh64MMpBw",
+      "name": "[fn] webinário",
+      "stages": [
+        {
+          "id": "bd822330-13fc-451f-bd63-9bec8632f299",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "cb569504-4d29-4839-9039-466acb7732c4",
+          "name": "Interessado"
+        },
+        {
+          "id": "4f9b5be6-ce2b-45d4-a5ef-6d16505095cf",
+          "name": "Reunião agendada"
+        },
+        {
+          "id": "1f78dfbb-aedc-4507-99a0-35b551952fc6",
+          "name": "NoShow"
+        },
+        {
+          "id": "a681247a-f2e8-4b00-90fd-dc16be827d97",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "8DAr28W959nKNsmTL8qy",
+      "name": "Auto Agendamento",
+      "stages": [
+        {
+          "id": "5ec2eaeb-b7c5-4bed-9956-9c68dd999088",
+          "name": "No Show"
+        },
+        {
+          "id": "dc4bc4fd-b5d3-4ed6-9804-29577331e4b7",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "34a4281b-8a8b-4f70-b84e-ba33e7fdb0b0",
+          "name": "1º Contato"
+        },
+        {
+          "id": "bfea1222-73d7-4b0e-9ad2-6628d252fba8",
+          "name": "2º Contato"
+        },
+        {
+          "id": "33431540-52b4-4720-866a-ed70e27fd9a1",
+          "name": "3º Contato"
+        },
+        {
+          "id": "54470e84-21e6-48f1-842e-9150696d9038",
+          "name": "4º Contato"
+        },
+        {
+          "id": "8cd75dfb-a1cf-46d3-8d85-399696f5890c",
+          "name": "5º Contato"
+        },
+        {
+          "id": "0a3a4c77-8cff-42e4-8dc0-37dc16242057",
+          "name": "6º Contato"
+        },
+        {
+          "id": "cd360e2e-8056-4291-aca5-bced6855ee77",
+          "name": "7º Contato"
+        },
+        {
+          "id": "0071a900-1ce6-46ca-b93e-b9bb9e78991d",
+          "name": "8º Contato"
+        },
+        {
+          "id": "bf34dffb-e84a-49a9-a7f8-b68f2e9a4f28",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "f9620d41-6b80-4c94-9939-ceb8b9f8fbd8",
+          "name": "Reunião Marcada"
+        },
+        {
+          "id": "de6626bd-8959-488b-852e-234d73655bf9",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "H7Nz08hgySOJ9upSYSPL",
+      "name": "Cami",
+      "stages": [
+        {
+          "id": "d9ab7cd4-6b00-4d02-b7a3-a676df01ba3e",
+          "name": "NoShow"
+        },
+        {
+          "id": "628aa465-6d00-4bb3-81c2-8f8678928dbb",
+          "name": "Comprou-cami-400"
+        },
+        {
+          "id": "d35f3bc6-9b88-413d-9468-6f208d69e642",
+          "name": "Comprou-cami-1000"
+        },
+        {
+          "id": "144bb82a-e3aa-4eac-bdeb-302f665f08bd",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "ddfa3d3b-b7ca-49ef-b3aa-5506cb1f42bd",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "ec6b2a2b-916c-419b-bbb7-b0b8ded43e21",
+          "name": "Reunião marcada"
+        },
+        {
+          "id": "76265405-4e35-4271-a830-dd16e852f8dd",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "Pns0NE0KtoJ6UhviKEU9",
+      "name": "Incompleto",
+      "stages": [
+        {
+          "id": "4c54f3c9-115d-4546-9af0-8969a1e87478",
+          "name": "Grupo \"A Próxima Onda\""
+        },
+        {
+          "id": "d1c5ae27-f325-4afa-b9ac-899ac2cd395b",
+          "name": "Leads"
+        },
+        {
+          "id": "e3c6c21a-532a-4e97-9bd8-e6f133317a19",
+          "name": "NoShow"
+        },
+        {
+          "id": "9fc395ce-c233-4f66-ba8a-79916be01cc8",
+          "name": "1º Contato"
+        },
+        {
+          "id": "6ce1c145-d353-4891-8d8a-5018840e7def",
+          "name": "2º Contato"
+        },
+        {
+          "id": "56d85c9e-c3d9-42e1-824b-d1cef209501c",
+          "name": "3º Contato"
+        },
+        {
+          "id": "22e29922-feee-447d-80d6-b198611887dc",
+          "name": "4º Contato"
+        },
+        {
+          "id": "e75c1b83-72fb-4d44-a62a-0efa3edfb69c",
+          "name": "5º Contato"
+        },
+        {
+          "id": "df79d93f-3f6f-4b70-9d46-5481fd46a4e3",
+          "name": "6º Contato"
+        },
+        {
+          "id": "135e00d8-1ca8-44f0-af82-6bd261cb1d73",
+          "name": "7º Contato"
+        },
+        {
+          "id": "72bed61b-1c31-48bf-879f-8f08e703837f",
+          "name": "8º Contato"
+        },
+        {
+          "id": "d0374ca6-6ac7-4665-9a7e-745fdf892b7c",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "dd53a75e-83b2-467c-9866-5087e2cc79bc",
+          "name": "Reunião marcada"
+        },
+        {
+          "id": "7ac49b32-8373-494e-9e25-f835e0eeae1d",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "rYTsaCEFqnm4NDZxYo7t",
+      "name": "pipe teste",
+      "stages": [
+        {
+          "id": "4d662094-9a6a-49bb-9e89-2671ea0b0b73",
+          "name": "leads recebidos"
+        },
+        {
+          "id": "779c5eb7-7943-4bf7-b63b-62a63a611703",
+          "name": "1 contato"
+        },
+        {
+          "id": "543b4516-03a8-491f-a8b0-b1a8b92e9355",
+          "name": "2 contato"
+        },
+        {
+          "id": "47901e69-da81-4952-9614-d6a00019afc9",
+          "name": "3 contato"
+        },
+        {
+          "id": "13b4a131-028b-4c00-b7d7-f7adb601197c",
+          "name": "4 contato"
+        },
+        {
+          "id": "eeffc828-4d5e-450a-9127-615e67bd0057",
+          "name": "5 contato"
+        },
+        {
+          "id": "6776ffc7-06c8-4fe8-93b9-2637f24f7eb2",
+          "name": "6 contato"
+        },
+        {
+          "id": "1ccba103-d60c-4d1e-a034-882605d2181a",
+          "name": "7 contato"
+        },
+        {
+          "id": "11267096-6174-4b27-bded-8f84c50340ef",
+          "name": "8 contato"
+        },
+        {
+          "id": "70a1c1e8-4070-451b-a8c3-817e47cab203",
+          "name": "conectado"
+        }
+      ]
+    },
+    {
+      "id": "QQXqQvYEkwafSCAB1ybC",
+      "name": "Pré-Vendas MQL",
+      "stages": [
+        {
+          "id": "8a9758e0-4be4-4781-a752-732f2a2e351a",
+          "name": "NoShow"
+        },
+        {
+          "id": "f87d4253-f260-4b21-a5a9-70c023fe9f03",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "fd94d2a4-949e-466d-85c3-ed8ee2f33f90",
+          "name": "1º contato"
+        },
+        {
+          "id": "12570b73-101f-41f3-8717-7da8b64915d7",
+          "name": "2º contato"
+        },
+        {
+          "id": "dc5b1f0b-be24-4156-8349-019375e088b8",
+          "name": "3º contato"
+        },
+        {
+          "id": "6a478665-f893-4dbc-a07c-e1cc98fad6d3",
+          "name": "4º contato"
+        },
+        {
+          "id": "994d716b-a824-459d-94a2-03717b8fc33d",
+          "name": "5º contato"
+        },
+        {
+          "id": "a08c9c67-d8a5-400b-aa4d-56838565d0da",
+          "name": "6º contato"
+        },
+        {
+          "id": "cdf7d6d7-f3d2-4d1b-89da-66d75096de23",
+          "name": "7º contato"
+        },
+        {
+          "id": "68058c05-24c6-49dd-b5b8-9d8ba1fdf354",
+          "name": "8º contato"
+        },
+        {
+          "id": "462f971b-bb9a-4853-a85a-0c1daabd0676",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "f98a0937-e566-4c48-b5af-75e340e69e15",
+          "name": "Reunião marcada"
+        },
+        {
+          "id": "fa46b2f5-a110-4eda-b3ed-233bf0dbbec0",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "sqchZ2kIIZljR6wJ6bko",
+      "name": "Pré-Vendas nMQL",
+      "stages": [
+        {
+          "id": "d980a98b-0470-44a1-97df-70ab48fab1c9",
+          "name": "NoShow"
+        },
+        {
+          "id": "f5cb3faa-dff1-4c88-ac36-fe2870e899d3",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "0f20a77d-2b23-437c-ad3f-92a2caf59bec",
+          "name": "1º contato"
+        },
+        {
+          "id": "5ff2d06c-3133-40d5-bb72-ffc98c65ba93",
+          "name": "2º contato"
+        },
+        {
+          "id": "6841adb4-62e8-4c2d-aa38-568f0a901aea",
+          "name": "3º contato"
+        },
+        {
+          "id": "ec86307c-6369-4e9b-aa39-d8224c1007c9",
+          "name": "4º contato"
+        },
+        {
+          "id": "5fbed196-7d2d-4066-9fda-009f3c5d02c9",
+          "name": "5º contato"
+        },
+        {
+          "id": "b7c7592a-bff3-4891-9c6d-7164e114a93c",
+          "name": "6º contato"
+        },
+        {
+          "id": "e5dacc7d-d392-4450-b209-27aa267736da",
+          "name": "7º contato"
+        },
+        {
+          "id": "dca8d272-e0ea-4b18-ae9d-e726de65cbb2",
+          "name": "8º contato"
+        },
+        {
+          "id": "48b6594d-871c-4648-81ce-fa201beff50f",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "c18b32b7-49fe-40e0-a728-2326c40d909c",
+          "name": "Reunião marcada"
+        },
+        {
+          "id": "92207089-d034-4fe3-859e-c784eefcbe33",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "Sn1Guqcm6zwZNTVOOf5L",
+      "name": "Recuperação",
+      "stages": [
+        {
+          "id": "8b0b8242-036a-4b4f-a5d1-dc1e6686861e",
+          "name": "NoShow"
+        },
+        {
+          "id": "0ac6b4a1-d033-4646-86d8-e2c374bbc712",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "bc7a8ac6-6437-401b-a41a-baceb5f38932",
+          "name": "1º Contato"
+        },
+        {
+          "id": "27f88383-d34c-49c1-b9c4-d503edbe7ea7",
+          "name": "2º Contato"
+        },
+        {
+          "id": "b78094a0-fc7a-4c61-96b6-669c93f6d3d5",
+          "name": "3º Contato"
+        },
+        {
+          "id": "43977b2d-bde3-4613-ada0-aadd41feba89",
+          "name": "4º Contato"
+        },
+        {
+          "id": "0eae5b06-e421-46e4-8bd4-5c8c5489d4db",
+          "name": "5º Contato"
+        },
+        {
+          "id": "ef206e0a-ba4c-482e-b2de-1a4b738568ed",
+          "name": "6º Contato"
+        },
+        {
+          "id": "b0a4d7e3-8e7c-4aea-8868-94823a6a1c84",
+          "name": "7º Contato"
+        },
+        {
+          "id": "03d85cde-abfd-47e8-8912-d2071fefe991",
+          "name": "8º Contato"
+        },
+        {
+          "id": "a03e1015-af0b-464d-999d-72ef3254b366",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "d9917cdf-98a1-4e27-9f96-48f6e9152bc2",
+          "name": "Reunião Marcada"
+        },
+        {
+          "id": "b4f1e3fd-6929-48f1-8b31-92d09ad1bbeb",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "fgh4CfZQ8Un9iRCsgPFw",
+      "name": "Social Selling",
+      "stages": [
+        {
+          "id": "505f215a-e84a-4a51-a659-ac79bcb4d10a",
+          "name": "NoShow"
+        },
+        {
+          "id": "18814921-46c5-4532-90b9-83e31df71b43",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "2418c20c-3841-4cc9-8f79-b381f66dacaa",
+          "name": "1º Contato"
+        },
+        {
+          "id": "a71957ee-35c0-4929-b941-f840d0701cb9",
+          "name": "2º Contato"
+        },
+        {
+          "id": "5f5435e8-ff3c-413b-a5d8-04ab2224faf6",
+          "name": "3º Contato"
+        },
+        {
+          "id": "73e16fe8-22c3-48d1-8d96-649dc8cc73c3",
+          "name": "4º Contato"
+        },
+        {
+          "id": "98a4bf45-eea0-43d6-a6cb-d416922bf6cd",
+          "name": "5º Contato"
+        },
+        {
+          "id": "b324256d-7b6b-486a-aaf1-d2c50b8c0299",
+          "name": "6º Contato"
+        },
+        {
+          "id": "402df791-d2ca-4623-88a5-f1f8d8a39286",
+          "name": "7º Contato"
+        },
+        {
+          "id": "aedd361c-6f45-402c-86a2-8bcde0076d33",
+          "name": "8º Contato"
+        },
+        {
+          "id": "6db3ea2a-81c1-43ae-bcdb-90b4927239a3",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "abce4142-d71e-413d-a445-0e3dec48184e",
+          "name": "Reunião Marcada"
+        },
+        {
+          "id": "76a45114-30f1-45a2-97e1-965cf3b13b4b",
+          "name": "Perdido"
+        }
+      ]
+    },
+    {
+      "id": "ZWuCjEXM2VDyLCx8CtGU",
+      "name": "Vendas SQL",
+      "stages": [
+        {
+          "id": "1619cd48-970a-44a1-b932-3e16c062c3ef",
+          "name": "NoShow"
+        },
+        {
+          "id": "6fe0302a-5393-499c-8c5f-c9b4316ba47d",
+          "name": "Reunião agendada"
+        },
+        {
+          "id": "9b3cd05e-2325-4553-a035-9f08a0377d43",
+          "name": "Reunião realizada"
+        },
+        {
+          "id": "d67d11e2-e178-48ed-bbe1-6dcf6f20f571",
+          "name": "Negociação"
+        },
+        {
+          "id": "af55ba13-1750-4a6c-8556-5b2e2d912eaf",
+          "name": "Negociação Fria"
+        },
+        {
+          "id": "5bcee2fb-eefd-4df0-82f8-4303e1f5c8cf",
+          "name": "Perdida"
+        },
+        {
+          "id": "546d938c-7f8b-4bce-808a-768568fa1c71",
+          "name": "Fechada"
+        },
+        {
+          "id": "dc9b94f4-4772-4848-acf0-688afa826949",
+          "name": "Pendências de Preenchimento"
+        },
+        {
+          "id": "17b7de75-9d2f-441c-a4f7-b119d439b47f",
+          "name": "Assinada"
+        }
+      ]
+    },
+    {
+      "id": "tflq0utP0Yabm6B0v9Vr",
+      "name": "Webinar PRO",
+      "stages": [
+        {
+          "id": "1d1fc904-9b4a-4297-a404-94c35795cc45",
+          "name": "NoShow"
+        },
+        {
+          "id": "3fbdaa20-a98c-42dd-a192-fdb0ebd9c70b",
+          "name": "Leads Recebidos"
+        },
+        {
+          "id": "1113c838-460a-4ab2-b1da-aaad9a0850d5",
+          "name": "1º contato"
+        },
+        {
+          "id": "0910ef68-be94-423a-99ff-1fca5432de8b",
+          "name": "2º contato"
+        },
+        {
+          "id": "cd674efa-6a7f-4a71-823f-8a5bba22834d",
+          "name": "3º contato"
+        },
+        {
+          "id": "924e882d-cb6b-452a-ab9b-84f8693546ff",
+          "name": "4º contato"
+        },
+        {
+          "id": "db911024-cf46-4fb0-9de7-db4f79d5d1b5",
+          "name": "5º contato"
+        },
+        {
+          "id": "67694da3-414e-4227-a190-cbf476ef175e",
+          "name": "6º contato"
+        },
+        {
+          "id": "361a2c7d-2d85-43b8-90b7-5c674414ecb9",
+          "name": "7º contato"
+        },
+        {
+          "id": "d1e9db2d-9317-428c-a0b9-d8cdc74c98c3",
+          "name": "8º contato"
+        },
+        {
+          "id": "135054f3-4aa3-4bb9-b2d8-da7bbf1ea205",
+          "name": "Pendência de Preenchimento"
+        },
+        {
+          "id": "68b07bbb-00b5-45b7-a9a0-d2f0e7c09024",
+          "name": "Reunião marcada"
+        },
+        {
+          "id": "e522aaca-c0f9-4c08-a152-2e6ff1f653ad",
+          "name": "Perdido"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "success",
+  "workspace_id": "7909d02a-4d15-46ea-a7b8-5debeb6e8351",
+  "location_id": "U8FTcw90CB5QELUnbGUu"
+}

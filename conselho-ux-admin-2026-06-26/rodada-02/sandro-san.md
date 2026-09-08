@@ -1,0 +1,13 @@
+# Sandro San — O Renegado Soberano
+
+## Rodada 2 — Embates
+
+---
+
+Brunson chama isso de funil. Erro de categoria. Funil é movimento — você empurra alguém de um estado para outro, do frio ao quente, do clique à compra. Tem direção, tem perda, tem conversão. Mas admin não é uma jornada que o dono percorre uma vez e termina. É um lugar onde ele *vive*. Você não "converte" o soberano para dentro do próprio reino. Ele já é dono. O que falta não é sequência — é endereço. Brunson está otimizando a estrada quando o problema é que não existe a casa. Os três passos dele — `/admin` separado, tela Pessoas, botão Voltar — não estão errados como passos. Estão errados como *moldura*. Chamar de funil mantém a cabeça no eixo do app. E o eixo do app é exatamente a doença. Isso é arquitetura de contexto: o sistema precisa saber, a cada instante, se o usuário está operando ou governando. Não é fluxo. É estado.
+
+Cardone grita. Grita "cofre, trono, ação massiva, hoje, 10X". E eu concordo com a energia. Mas energia jogada num sistema mal estruturado não constrói — espalha. 10X de ação sobre uma arquitetura de permissão app-first te dá 10X de confusão. Você multiplica os caminhos errados. Cada tela nova que ele manda construir "hoje" é mais um cômodo encostado numa fundação torta. Ação massiva é uma alavanca, não uma virtude. Alavanca amplifica o que está embaixo dela. Se embaixo está caos, você ganha caos com escala. O dono não precisa de mais movimento. Precisa de um eixo. Primeiro o trono — depois a velocidade. Cardone pulou a única decisão que torna o 10X seguro.
+
+Marcel acertou o que quase ninguém viu: o backend já carrega os dados certos. A verdade já existe no sistema — está só mal apresentada. Disciplina, sequência, métrica, uma tela só. Tudo correto. Mas Marcel para na execução. Falta a ele a visão de produto: *uma tela só de quê?* Reduzir para uma tela não basta se essa tela ainda for pensada como parte do app. O que Marcel tem de processo, falta de soberania. A tela única certa não é uma simplificação do que existe — é um território novo. O lugar de quem é dono de todos os apps, não mais um app entre eles. Marcel constrói bem a casa que você desenhar. O problema é que ninguém ainda desenhou a casa certa. Disciplina sem visão te dá a coisa errada, feita com perfeição.
+
+Então o veredito da rodada. Não é funil — é contexto. Não é ação massiva — é eixo. Não é uma tela menor — é outro prédio. Gary disse certo na primeira: admin é outro prédio. Eu vou além. Não construa o prédio do admin. Construa o trono de onde se vê todos os prédios. O usuário primeiro. O app depois. Quem é dono não navega o sistema — o sistema se curva a ele.

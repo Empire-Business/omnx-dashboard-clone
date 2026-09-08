@@ -1,0 +1,12 @@
+# Configuração da Edge Function: sync-meta-ads
+# Arquivo de configuração para deploy no Supabase
+
+[functions.sync-meta-ads]
+enabled = true
+verify_jwt = false  # Permite chamadas do pg_cron (sem JWT)
+
+# Variáveis de ambiente necessárias:
+# - META_ACCESS_TOKEN
+# - META_AD_ACCOUNT_ID
+# - SUPABASE_URL
+# - SUPABASE_SERVICE_ROLE_KEY

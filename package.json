@@ -1,0 +1,15 @@
+{
+  "name": "empire-vibe-project",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix eb-dash2 run dev",
+    "test:visual": "playwright test tests/visual",
+    "test:a11y": "playwright test tests/a11y",
+    "test:all": "playwright test",
+    "test:report": "node tests/generate-report.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@supabase/supabase-js": "^2.97.0"
+  }
+}

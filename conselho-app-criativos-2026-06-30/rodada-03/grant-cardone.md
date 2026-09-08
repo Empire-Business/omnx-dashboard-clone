@@ -1,0 +1,5 @@
+Vou reconhecer uma coisa aqui: o Alex está certo quando fala que precisa de uma métrica de morte. Não adianta encher o app de status bonitinho se ninguém sabe quando puxa o gatilho. Número não é tudo, mas é o juiz final. Se CPLQ, CPA ou ROAS não matam o criativo, ele vira zumbi e começa a comer dinheiro. Então sim, métrica de morte é obrigatória, ponto final.
+
+Mas o que eu NÃO abro mão é velocidade de execução. Não tem duas semanas de Notion, não tem planilha, não tem "vamos pensar primeiro". O dinheiro já está saindo do bolso! Separa o domínio, ativa RLS, usa notion_creatives e entrega o MVP com campanha, status e dono nomeado. Ação mediana produz resultado mediano — e quem testa 10x mais criativos descobre 10x mais ganhadores. Criativo não é brand, não é debata, é VENDA.
+
+Se eu tiver que ceder em uma coisa, cedo no processo mínimo de governança: um responsável, uma métrica de morte e uma reunião semanal de decisão. Mas isso acontece DENTRO do app, não antes dele existir. Aprendizado no campo, não no papel. 10X no teste, 10X na decisão, 10X na escala.

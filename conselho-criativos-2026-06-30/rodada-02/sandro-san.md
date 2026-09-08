@@ -1,0 +1,7 @@
+# Sandro San — Rodada 2: Embate
+
+Russell, seu funil de quatro decisões binárias é bonito no quadro branco. Mas na rua, toda camada extra que você coloca antes da primeira decisão vira desculpa para não decidir. Doze status já provam que o time não mata criativo porque não sabe quem mata, não porque falta funil. Antes de desenhar etapas, define quem tem a faca e o queijo na mão: critério claro, dono único, veredito em 24 horas. Funil elaborado sem decisão firme é procrastinação com nome de estratégia. Faz sentido para você?
+
+Grant, "cortar o cordão em uma jogada só" é discurso para auditório. Na operação real, quem desliga tudo de uma vez para parecer corajoso geralmente queima o arquivo que ia salvar o trimestre. 948 criativos não são só dados — são 948 testes de mercado, e mercado fala mais que opinião de diretor. A soberania aqui não é gritaria, é transição cirúrgica: migra com histórico intacto, congela o Notion, valida que o app segura sozinho, aí sim joga a chave fora. Pense grande, mas pise onde tem chão.
+
+Marcel, você acertou na governança, mas falta um ponto: KPIs sem dono viram painel bonito que ninguém olha. Taxa de aprovação, tempo entre status, custo por winner — tudo isso é inútil se não tiver uma pessoa que responde por cada número na reunião de quinta. Métrica só muda comportamento quando alguém perde o sono com ela. Então, antes de encher o dashboard, defina o dono. O resto é consequência.

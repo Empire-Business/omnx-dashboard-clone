@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Guia do Dashboard de Criativos — OMNX</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 20mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1c22; line-height: 1.62; font-size: 10.7pt; margin: 0;
+  }
+  h1, h2, h3 { color: #4c0d7a; line-height: 1.25; }
+  h1 { font-size: 27pt; margin: 0 0 6px; letter-spacing: -0.5px; }
+  h2 {
+    font-size: 16pt; margin: 30px 0 10px; padding-bottom: 6px;
+    border-bottom: 2px solid #e6d6f4; page-break-after: avoid;
+  }
+  h3 { font-size: 12.5pt; margin: 20px 0 6px; color: #820AD1; page-break-after: avoid; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 20px; padding: 0; }
+  li { margin: 4px 0; }
+  code {
+    background: #f3edf9; color: #6b12a8; padding: 1px 5px;
+    border-radius: 4px; font-family: "Consolas", "SF Mono", monospace; font-size: 9.4pt;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9.6pt; page-break-inside: avoid; }
+  th {
+    background: #820AD1; color: #fff; text-align: left; padding: 7px 9px; font-weight: 600;
+  }
+  td { padding: 7px 9px; border-bottom: 1px solid #e8e2ee; vertical-align: top; }
+  tr:nth-child(even) td { background: #faf7fd; }
+  .capa {
+    background: linear-gradient(135deg, #820AD1 0%, #4c0d7a 100%);
+    color: #fff; padding: 42px 36px; border-radius: 14px; margin-bottom: 28px;
+  }
+  .capa h1 { color: #fff; }
+  .capa p { margin: 6px 0 0; opacity: .92; font-size: 11.5pt; }
+  .capa .meta { margin-top: 20px; font-size: 9.5pt; opacity: .8; }
+  .box {
+    border-left: 4px solid #820AD1; background: #faf6fe;
+    padding: 12px 16px; margin: 14px 0; border-radius: 0 8px 8px 0; page-break-inside: avoid;
+  }
+  .box.alerta { border-left-color: #d97706; background: #fffaf0; }
+  .box.perigo { border-left-color: #dc2626; background: #fef4f4; }
+  .box.ok { border-left-color: #059669; background: #f2fbf7; }
+  .box strong:first-child { display: block; margin-bottom: 3px; }
+  .sumario { background: #faf7fd; border: 1px solid #e6d6f4; border-radius: 10px; padding: 16px 22px; }
+  .sumario ol { margin-left: 16px; }
+  .pill {
+    display: inline-block; background: #f3edf9; color: #6b12a8; border-radius: 999px;
+    padding: 2px 10px; font-size: 9pt; font-weight: 600; margin-right: 4px;
+  }
+  .quebra { page-break-before: always; }
+  footer {
+    margin-top: 40px; padding-top: 12px; border-top: 1px solid #e8e2ee;
+    font-size: 8.8pt; color: #7b7688; text-align: center;
+  }
+  .formula { font-family: "Consolas", monospace; font-size: 9.2pt; color: #3d2a52; }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <h1>Dashboard de Criativos</h1>
+  <p>Guia completo de uso — o que cada tela mostra, de onde vem cada número e como tomar decisão com isso.</p>
+  <div class="meta">
+    Plataforma OMNX &nbsp;·&nbsp; ceo.omnx.pro/criativos &nbsp;·&nbsp; Versão de 27 de agosto de 2026
+  </div>
+</div>
+
+<div class="sumario">
+  <strong>O que você vai encontrar aqui</strong>
+  <ol>
+    <li>Para que serve o app de Criativos</li>
+    <li>Como o número chega até a tela (a parte mais importante)</li>
+    <li>Aba Dashboard — a saúde da produção</li>
+    <li>Aba Ranking — o dinheiro</li>
+    <li>Aba Biblioteca — o cadastro</li>
+    <li>Aba Kanban — a esteira de produção</li>
+    <li>Aba Testes — a decisão</li>
+    <li>Dicionário de métricas (com a conta de cada uma)</li>
+    <li>Cohort × Produtividade explicado de vez</li>
+    <li>Rotina semanal recomendada</li>
+    <li>Perguntas frequentes e limitações conhecidas</li>
+  </ol>
+</div>
+
+<h2>1. Para que serve o app de Criativos</h2>
+
+<p>
+O app de Criativos existe para resolver um problema simples de enunciar e difícil de resolver:
+<strong>saber, em dinheiro, qual peça de anúncio está funcionando</strong>.
+</p>
+
+<p>
+Na maioria das operações, a análise de criativo para no Gerenciador de Anúncios do Meta: você vê
+custo por clique, custo por lead, CTR. O problema é que o Meta enxerga só até a porta de entrada —
+ele não sabe se aquele lead virou reunião, nem se comprou, nem quanto pagou. Quem sabe isso é o CRM.
+</p>
+
+<p>
+Este app <strong>costura as duas pontas</strong>: pega o que o Meta gastou com cada criativo e junta com
+o que aconteceu com aquele lead dentro do CRM — se virou MQL, se teve reunião, se virou venda e
+quanto entrou de caixa. O resultado é uma tabela em que cada linha é um criativo e a última coluna
+é, na prática, a resposta para: <em>essa peça se paga?</em>
+</p>
+
+<p>E ele cobre o ciclo inteiro da peça, não só a análise:</p>
+
+<table>
+  <tr><th style="width:22%">Etapa</th><th>Onde acontece no app</th></tr>
+  <tr><td>Ideia e produção</td><td>Kanban — a peça anda pelas colunas até ficar pronta</td></tr>
+  <tr><td>Cadastro</td><td>Biblioteca — a peça ganha código, formato, copy, hook e CTA</td></tr>
+  <tr><td>Teste</td><td>Testes — a peça sobe, acumula gasto e recebe uma sugestão de decisão</td></tr>
+  <tr><td>Decisão</td><td>Testes — aprovar, escalar, reprovar ou matar, com motivo registrado</td></tr>
+  <tr><td>Acompanhamento</td><td>Ranking — desempenho histórico em dinheiro</td></tr>
+  <tr><td>Gestão do processo</td><td>Dashboard — a esteira está rodando no ritmo certo?</td></tr>
+</table>
+
+<h2>2. Como o número chega até a tela</h2>
+
+<p>
+Essa é a parte que vale entender de verdade, porque quase toda dúvida de "por que esse criativo não
+aparece?" se resolve aqui.
+</p>
+
+<h3>2.1. Todo criativo tem um código</h3>
+
+<p>Cada peça cadastrada recebe um código único:</p>
+
+<ul>
+  <li><span class="pill">CR-1234</span> criativos que vêm do <strong>Notion</strong> (fluxo antigo, ainda sincronizado);</li>
+  <li><span class="pill">AN-1234</span> criativos <strong>cadastrados nativamente</strong> dentro do próprio app.</li>
+</ul>
+
+<h3>2.2. Esse código precisa estar no nome do anúncio</h3>
+
+<p>
+Quando o anúncio é criado no Meta, o código do criativo entra no <strong>nome do anúncio</strong>.
+É esse texto que o sistema lê para saber de qual peça aquele gasto veio. O sistema procura o padrão
+<code>CR-número</code> ou <code>AN-número</code> em qualquer posição do nome.
+</p>
+
+<div class="box perigo">
+  <strong>Regra de ouro</strong>
+  Se o código não estiver no nome do anúncio dentro do Meta, aquele investimento fica órfão e o
+  criativo <strong>não aparece no Ranking</strong>. Não é falha do dashboard — é falha de nomenclatura
+  na hora de subir a campanha.
+</div>
+
+<h3>2.3. O mesmo código volta pelo lead</h3>
+
+<p>
+O link do anúncio carrega o código na UTM (no parâmetro <code>utm_term</code>). Quando a pessoa
+clica, preenche o formulário e vira lead no CRM, esse código é gravado junto com o contato.
+</p>
+
+<p>Com isso, o sistema consegue fazer as duas somas e cruzá-las pelo código:</p>
+
+<table>
+  <tr><th style="width:50%">Vem do Meta Ads</th><th>Vem do CRM</th></tr>
+  <tr>
+    <td>Investimento, impressões, cliques, CTR, CPM, visualizações de página e de vídeo</td>
+    <td>Leads, MQLs, reuniões realizadas, vendas, faturamento e caixa recebido</td>
+  </tr>
+</table>
+
+<h3>2.4. E o público, de onde sai?</h3>
+
+<p>
+O nome do anúncio segue um padrão com blocos separados por <code>_</code>. O sistema usa o
+<strong>terceiro bloco</strong> como código do público (o conjunto de anúncios). É por isso que, no
+Ranking, cada criativo pode ser expandido para mostrar o desempenho <strong>público a público</strong> —
+muitas vezes o criativo não é ruim, ele só está sendo entregue para a audiência errada.
+</p>
+
+<div class="quebra"></div>
+
+<h2>3. Aba Dashboard — a saúde da produção</h2>
+
+<p>
+Esta aba não fala de dinheiro. Ela fala de <strong>ritmo</strong>: quanto criativo a operação está
+produzindo, quanto tempo leva para testar e quanto do que foi testado prestou. É a aba para abrir na
+reunião semanal de criativos.
+</p>
+
+<table>
+  <tr><th style="width:26%">Indicador</th><th>O que significa</th></tr>
+  <tr><td><strong>Validados / semana</strong></td><td>Quantos criativos foram decididos e aprovados na semana, comparados com a meta semanal configurada por formato (reels, estático, carrossel, stories).</td></tr>
+  <tr><td><strong>Lead time</strong></td><td>Média de dias entre a criação do criativo e a decisão final sobre ele. Mede a esteira inteira, do zero ao veredito.</td></tr>
+  <tr><td><strong>Cycle time</strong></td><td>Média de dias entre <em>iniciar o teste</em> e <em>decidir</em>. Mede só a fase de teste. Se está alto, o time está demorando para bater o martelo.</td></tr>
+  <tr><td><strong>Yield rate</strong></td><td>Taxa de aproveitamento: de tudo que foi decidido, o percentual que foi aprovado. Testes cancelados ou pendentes não entram na conta.</td></tr>
+  <tr><td><strong>WIP</strong></td><td>Trabalho em andamento — tudo que ainda não foi escalado nem arquivado. WIP alto é sinal de esteira entupida: muita coisa começada e pouca terminada.</td></tr>
+  <tr><td><strong>Tempo até teste</strong></td><td>Quantos dias, em média, o criativo fica pronto na prateleira antes de alguém subir. É o desperdício mais silencioso da operação.</td></tr>
+  <tr><td><strong>Total de criativos</strong></td><td>Volume total cadastrado, separando o que veio do Notion, o que foi criado nativamente e o que foi importado.</td></tr>
+</table>
+
+<p>Além dos cartões, a aba traz:</p>
+
+<ul>
+  <li><strong>Distribuição por status</strong> — gráfico de barras mostrando onde a produção está empilhando.</li>
+  <li><strong>Funil de produção</strong> — o caminho ideia → roteiro → produzindo → revisão → ajustes → aprovado → pronto → em teste → testado → escalar, com o volume em cada etapa.</li>
+  <li><strong>CPL médio por formato</strong> — qual formato tem entregado lead mais barato.</li>
+  <li><strong>Dia da reunião semanal</strong> — configurável; é a data que o app usa como referência dos alertas.</li>
+</ul>
+
+<h3>Alertas automáticos</h3>
+
+<table>
+  <tr><th style="width:34%">Alerta</th><th>O que fazer</th></tr>
+  <tr><td>Critérios de teste não configurados</td><td>Definir CPL alvo e orçamento mínimo — sem isso o app não consegue sugerir decisão nenhuma.</td></tr>
+  <tr><td>Criativo pronto aguardando teste</td><td>Peça finalizada há dias e ninguém subiu. Subir ou arquivar.</td></tr>
+  <tr><td>Teste sem leads</td><td>Está gastando e não gera lead. Candidato a corte imediato.</td></tr>
+</table>
+
+<h2>4. Aba Ranking — o dinheiro</h2>
+
+<p>
+É a tela mais usada do app. Cada linha é um criativo; cada coluna é um número real, cruzando Meta e CRM.
+</p>
+
+<h3>4.1. O que dá para fazer nessa tela</h3>
+
+<ul>
+  <li><strong>Escolher o período</strong> — atalhos de Hoje, Ontem, 7, 30 e 90 dias, Este mês e Mês passado, ou datas manuais.</li>
+  <li><strong>Alternar entre Cohort e Produtividade</strong> — muda completamente a leitura (explicado na seção 9).</li>
+  <li><strong>Filtrar</strong> por campanha, conjunto, anúncio, canal, funil e classificação de MQL.</li>
+  <li><strong>Ordenar</strong> clicando no cabeçalho de qualquer coluna — é assim que se acha o campeão e o vilão.</li>
+  <li><strong>Escolher as colunas</strong> no botão "Colunas": ligar, desligar e reordenar o que aparece.</li>
+  <li><strong>"Só com MQL"</strong> — esconde criativos que trouxeram lead, mas nenhum lead qualificado.</li>
+  <li><strong>Clicar no número</strong> de Leads, MQLs, Reuniões ou Vendas — abre a <strong>lista nominal</strong> das pessoas por trás daquele número.</li>
+  <li><strong>Expandir o criativo</strong> na setinha lateral — mostra o desempenho separado por público.</li>
+  <li><strong>Clicar no código</strong> do criativo — abre o anúncio no Instagram ou Facebook, quando o link estiver cadastrado.</li>
+</ul>
+
+<div class="box alerta">
+  <strong>Só aparece quem gastou</strong>
+  O Ranking exibe apenas criativos com <strong>investimento maior que zero no período selecionado</strong>.
+  Criativo pausado ou que nunca rodou não aparece na lista — isso é proposital, para a tabela não virar
+  um cemitério de linhas zeradas.
+</div>
+
+<div class="quebra"></div>
+
+<h2>5. Aba Biblioteca — o cadastro</h2>
+
+<p>
+É o "RG" de cada peça: a lista completa dos criativos pagos, com busca por nome ou código e filtros por
+status, formato, perfil e campanha.
+</p>
+
+<ul>
+  <li><strong>Novo Criativo</strong> — cria uma peça nativa e gera automaticamente o próximo código <code>AN-XXXX</code>.</li>
+  <li><strong>Editar</strong> — nome, copy, hook, CTA, formato, campanha vinculada, links do material, pilar de conteúdo e etapa do funil.</li>
+  <li><strong>Sincronizar</strong> — puxa do Notion os criativos do fluxo antigo (<code>CR-</code>).</li>
+</ul>
+
+<div class="box">
+  <strong>O campo que mais importa</strong>
+  É o código. Ele é a chave que liga esta ficha ao gasto no Meta e ao lead no CRM. Preencher tudo e
+  esquecer de levar o código para o nome do anúncio é o erro mais comum — e o mais caro, porque a peça
+  roda sem gerar nenhum dado aproveitável.
+</div>
+
+<h2>6. Aba Kanban — a esteira de produção</h2>
+
+<p>
+Funciona como um quadro de Trello: cada coluna é um estágio, e arrastar o card muda o status na hora.
+</p>
+
+<p><strong>As 12 colunas:</strong> Ideia · Roteiro · Produzindo · Revisão · Ajustes · Aprovado · Reprovado ·
+Pronto · Em teste · Testado · Escalar · Arquivado.</p>
+
+<p>Também dá para filtrar por origem (Notion, Nativo, Importado) e buscar por nome ou código.</p>
+
+<div class="box alerta">
+  <strong>Limitação atual</strong>
+  O arrastar e soltar usa o recurso nativo de arraste do navegador, que <strong>não funciona em telas de
+  toque</strong>. Na prática: o Kanban hoje só é operável no computador. Em celular e tablet as demais abas
+  funcionam normalmente, mas o Kanban não. A correção já está mapeada na fila técnica.
+</div>
+
+<h2>7. Aba Testes — a decisão</h2>
+
+<p>
+Esta é a aba que transforma o app de relatório em ferramenta de gestão. A fila mostra os criativos
+<strong>prontos</strong> (esperando subir) e os que já estão <strong>em teste</strong>.
+</p>
+
+<ol>
+  <li>Clique em <strong>Iniciar Teste</strong> — o app registra a data de início e passa a acompanhar o gasto e os resultados daquela peça.</li>
+  <li>O sistema compara os números reais com os <strong>critérios configurados</strong> do workspace.</li>
+  <li>O app exibe uma <strong>sugestão colorida</strong>.</li>
+  <li>Você toma a decisão e <strong>escreve o motivo</strong>. O motivo fica registrado no histórico.</li>
+</ol>
+
+<h3>Como a sugestão é calculada</h3>
+
+<table>
+  <tr><th style="width:24%">Sugestão</th><th>Quando aparece</th></tr>
+  <tr><td><strong>APROVADO / ESCALAR</strong> (verde)</td><td>Já existe lead e o CPL está <em>igual ou abaixo</em> do CPL alvo definido nos critérios.</td></tr>
+  <tr><td><strong>REPROVADO / MATAR</strong> (vermelho)</td><td>Existe lead, mas o CPL está acima do alvo; ou já gastou o orçamento mínimo e <em>não gerou nenhum lead</em>; ou passou do gasto de corte antecipado com CPL muito acima do alvo.</td></tr>
+  <tr><td><strong>AGUARDE</strong> (amarelo)</td><td>Ainda não gastou o suficiente para ter conclusão estatística, ou os critérios não foram configurados.</td></tr>
+</table>
+
+<div class="box ok">
+  <strong>A máquina opina, a pessoa assina</strong>
+  A sugestão nunca aplica sozinha. Ela é um parecer baseado nos critérios que o próprio time definiu —
+  a decisão final, com justificativa escrita, é sempre humana. Isso é de propósito: em três meses, o
+  histórico de motivos vale mais que qualquer relatório.
+</div>
+
+<div class="quebra"></div>
+
+<h2>8. Dicionário de métricas</h2>
+
+<p>Todas as contas abaixo são feitas <strong>por criativo</strong> e dentro do período selecionado.</p>
+
+<table>
+  <tr><th style="width:19%">Métrica</th><th style="width:33%">Como é calculada</th><th>Para que serve</th></tr>
+  <tr>
+    <td><strong>Investimento</strong></td>
+    <td class="formula">soma do gasto no Meta dos anúncios que carregam o código do criativo</td>
+    <td>Quanto essa peça consumiu de verba.</td>
+  </tr>
+  <tr>
+    <td><strong>Faturamento</strong></td>
+    <td class="formula">soma do valor das vendas dos leads atribuídos ao criativo</td>
+    <td>Quanto a peça vendeu no total (valor contratado).</td>
+  </tr>
+  <tr>
+    <td><strong>Caixa</strong></td>
+    <td class="formula">soma do que já foi efetivamente recebido dessas vendas</td>
+    <td>Quanto dinheiro entrou de verdade. É a coluna mais honesta da tabela.</td>
+  </tr>
+  <tr>
+    <td><strong>Leads</strong></td>
+    <td class="formula">quantidade de oportunidades no CRM atribuídas ao criativo</td>
+    <td>Volume bruto de entrada.</td>
+  </tr>
+  <tr>
+    <td><strong>CPL</strong></td>
+    <td class="formula">Investimento ÷ Leads</td>
+    <td>Custo por lead. Primeiro filtro de eficiência.</td>
+  </tr>
+  <tr>
+    <td><strong>MQL</strong></td>
+    <td class="formula">leads que receberam a etiqueta "MQL" no CRM</td>
+    <td>Lead qualificado, com perfil real de compra.</td>
+  </tr>
+  <tr>
+    <td><strong>CPMQL</strong></td>
+    <td class="formula">Investimento ÷ MQL</td>
+    <td>Custo por lead qualificado. Vale muito mais que o CPL para decidir escala.</td>
+  </tr>
+  <tr>
+    <td><strong>Reuniões</strong></td>
+    <td class="formula">leads do criativo com reunião de vendas realizada</td>
+    <td>Mede se o criativo traz gente que aparece na call.</td>
+  </tr>
+  <tr>
+    <td><strong>Vendas</strong></td>
+    <td class="formula">leads do criativo com pagamento de entrada registrado</td>
+    <td>Vendas confirmadas — não basta o contrato mudar de etapa no CRM.</td>
+  </tr>
+  <tr>
+    <td><strong>CPV</strong></td>
+    <td class="formula">Investimento ÷ Vendas</td>
+    <td>Custo por venda. É o número que decide escalar ou cortar.</td>
+  </tr>
+  <tr>
+    <td><strong>CTR</strong></td>
+    <td class="formula">Cliques ÷ Impressões × 100</td>
+    <td>Poder de atração da peça. CTR baixo = criativo não chama atenção.</td>
+  </tr>
+  <tr>
+    <td><strong>CPM</strong></td>
+    <td class="formula">Investimento ÷ Impressões × 1000</td>
+    <td>Custo de mil impressões. Sobe quando o público está saturado ou a peça está mal avaliada pelo Meta.</td>
+  </tr>
+  <tr>
+    <td><strong>Conv. Página</strong></td>
+    <td class="formula">Leads do Meta ÷ Visualizações da página × 100</td>
+    <td>Da gente que chegou na página, quantos preencheram. Conversão baixa costuma ser problema da página, não do criativo.</td>
+  </tr>
+  <tr>
+    <td><strong>Video Hook</strong></td>
+    <td class="formula">Visualizações de vídeo ÷ Impressões × 100</td>
+    <td>Força dos primeiros segundos. Hook fraco derruba tudo o que vem depois.</td>
+  </tr>
+</table>
+
+<div class="box perigo">
+  <strong>O que conta como venda</strong>
+  Em todos os painéis da plataforma, uma venda só é contabilizada quando existe
+  <strong>pagamento de entrada registrado</strong>. Mover o negócio para a etapa "Fechado" no CRM,
+  sozinho, não gera venda em lugar nenhum. Isso evita que o painel comemore dinheiro que ainda não entrou.
+</div>
+
+<h2>9. Cohort × Produtividade explicado de vez</h2>
+
+<p>
+É o botão que mais gera confusão, e a diferença é grande o suficiente para mudar a decisão. Os dois
+modos estão corretos — respondem perguntas diferentes.
+</p>
+
+<table>
+  <tr><th style="width:18%"></th><th style="width:41%">Modo Cohort</th><th>Modo Produtividade</th></tr>
+  <tr>
+    <td><strong>A pergunta</strong></td>
+    <td>"Os leads que <em>chegaram</em> nesse período renderam o quê?"</td>
+    <td>"O que <em>aconteceu</em> dentro desse período?"</td>
+  </tr>
+  <tr>
+    <td><strong>Como conta</strong></td>
+    <td>Fixa o grupo de leads pela data de entrada e acompanha esse grupo até o fim, mesmo que a venda tenha ocorrido meses depois.</td>
+    <td>Conta cada evento pela data em que ele ocorreu. Uma venda de ontem entra no mês de ontem, mesmo que o lead seja antigo.</td>
+  </tr>
+  <tr>
+    <td><strong>Serve para</strong></td>
+    <td>Julgar a <strong>qualidade do criativo</strong> e da safra de leads.</td>
+    <td>Bater com <strong>caixa, financeiro e meta do mês</strong>.</td>
+  </tr>
+  <tr>
+    <td><strong>Cuidado</strong></td>
+    <td>O mês recente sempre parece pior — os leads ainda não tiveram tempo de maturar.</td>
+    <td>Um criativo desligado há meses pode aparecer com venda hoje, porque o lead demorou a fechar.</td>
+  </tr>
+</table>
+
+<p class="formula" style="text-align:center; font-size:11pt; margin-top:14px;">
+  Cohort julga o criativo. Produtividade julga o mês.
+</p>
+
+<div class="box alerta">
+  <strong>Comparando painéis</strong>
+  Antes de dizer que "os números não batem" entre o app de Criativos e o painel de Tráfego, confira se
+  os dois estão no <strong>mesmo modo</strong> e no <strong>mesmo período</strong>. É a origem da maioria
+  absoluta das divergências relatadas.
+</div>
+
+<div class="quebra"></div>
+
+<h2>10. Rotina semanal recomendada</h2>
+
+<p>Fazendo apenas isso, uma vez por semana, você extrai a maior parte do valor da ferramenta:</p>
+
+<table>
+  <tr><th style="width:9%">Passo</th><th style="width:19%">Aba</th><th>O que fazer</th></tr>
+  <tr><td><strong>1</strong></td><td>Dashboard</td><td>Conferir se a esteira andou: validados na semana, WIP e alertas em vermelho.</td></tr>
+  <tr><td><strong>2</strong></td><td>Kanban</td><td>Destravar o que está parado e empurrar para "Pronto" o que já está finalizado.</td></tr>
+  <tr><td><strong>3</strong></td><td>Testes</td><td>Subir os criativos prontos e decidir os que já acumularam gasto suficiente.</td></tr>
+  <tr><td><strong>4</strong></td><td>Ranking (Cohort, 30 dias)</td><td>Ordenar por CPV e por Caixa: escalar os campeões, cortar os que só queimam verba.</td></tr>
+  <tr><td><strong>5</strong></td><td>Biblioteca</td><td>Cadastrar as peças novas da semana, sempre gerando o código antes de subir no Meta.</td></tr>
+</table>
+
+<h2>11. Perguntas frequentes</h2>
+
+<h3>"Meu criativo não aparece no Ranking."</h3>
+<p>
+Três causas, nesta ordem de probabilidade: (1) o código não está no nome do anúncio dentro do Meta;
+(2) o criativo não teve investimento no período selecionado; (3) o período ou o filtro ativo está
+excluindo a linha. Comece sempre conferindo o nome do anúncio.
+</p>
+
+<h3>"O número aqui está diferente do painel de Tráfego."</h3>
+<p>
+Verifique modo (Cohort × Produtividade) e período. Sendo iguais nos dois painéis, os números convergem —
+eles bebem da mesma fonte de dados.
+</p>
+
+<h3>"Fechamos uma venda e ela não apareceu."</h3>
+<p>
+A venda só entra quando o <strong>pagamento de entrada</strong> é registrado. Enquanto isso não acontece,
+o negócio aparece como reunião realizada, não como venda.
+</p>
+
+<h3>"Arrastei o card no Kanban e ele voltou sozinho."</h3>
+<p>
+Sinal de que seu usuário não tem permissão de edição naquele app, ou de que a ação foi feita em uma
+tela de toque (onde o arraste não funciona hoje). Nesses casos a mudança não é gravada.
+</p>
+
+<h3>"O que muda entre criativo CR- e AN-?"</h3>
+<p>
+Só a origem do cadastro: <code>CR-</code> vem do Notion, <code>AN-</code> nasce dentro do próprio app.
+Para efeito de métrica e ranking, os dois são tratados exatamente igual.
+</p>
+
+<h2>12. Limitações conhecidas hoje</h2>
+
+<p>Registradas de forma transparente, com correção já mapeada:</p>
+
+<table>
+  <tr><th style="width:32%">Ponto</th><th>Situação</th></tr>
+  <tr><td>Kanban em celular e tablet</td><td>O arrastar e soltar não funciona em telas de toque. Use o computador para mover cards.</td></tr>
+  <tr><td>Confirmação de salvamento</td><td>Em alguns casos, quando o usuário não tem permissão de edição, a tela mostra sucesso mas a alteração não é gravada. Se o card voltar ao lugar original, a mudança não foi salva.</td></tr>
+  <tr><td>Exclusão de criativo</td><td>Ainda não existe apagar. Criativo cadastrado por engano deve ser movido para "Arquivado".</td></tr>
+  <tr><td>Justificativa da sugestão de teste</td><td>O selo mostra o veredito, mas não detalha na tela qual critério foi violado (CPL alto ou orçamento sem lead).</td></tr>
+</table>
+
+<footer>
+  Guia do Dashboard de Criativos — Plataforma OMNX · ceo.omnx.pro<br>
+  Documento gerado em 27 de agosto de 2026. Em caso de dúvida, fale com o time responsável pelo dashboard.
+</footer>
+
+</body>
+</html>
