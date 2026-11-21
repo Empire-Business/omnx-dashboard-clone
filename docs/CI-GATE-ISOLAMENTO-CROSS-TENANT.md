@@ -1,5 +1,9 @@
 # CI gate — suite de isolamento cross-tenant
 
+> **21/11/2026:** a empresa não usa mais GitHub Actions. O workflow `integration-isolation.yml`
+> saiu; a mesma suite roda à mão com `bash scripts/testar-isolamento.sh` (pula sem as variáveis
+> `SUPABASE_*`/`TEST_PROJECT_REF` do projeto de TESTE). O texto abaixo é o histórico.
+
 | Campo | Valor |
 |-------|-------|
 | **Status** | ✅ Workflow ativo e corrigido; ⚠️ enforcement de branch protection bloqueado por plano do GitHub |
